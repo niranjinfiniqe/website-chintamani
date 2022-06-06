@@ -84,7 +84,7 @@ $exce = mysqli_query($con, $query);
                                         <td><?php echo $row['Alias'] ?></td>
                                         <td><?php echo $row['ShortDescription'] ?></td>
                                         <td>
-                                            <a href="add_project.php?pid=<?php echo $row['PK_Project'];?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                            <a href="edit_project.php?pid=<?php echo $row['PK_Project'];?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                                         </td>
                                         <td>
                                             <a a onClick='javascript:confirmationDelete($(this));return false;'  href="deleteproject.php/?pid=<?php echo $row['PK_Project'];?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>

@@ -32,7 +32,7 @@
                 <li>
                     <a href="Projects.php">
                         <i data-feather="grid"></i>
-                        <span data-key="t-apps">Inquirey</span>
+                        <span data-key="t-apps">inquiry</span>
                     </a>
                 </li>
                 <li>

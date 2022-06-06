@@ -30,20 +30,22 @@ include("../../Helper/connect.php");
 		$status = 5;
 	} 
 
-	if(isset($_REQUEST['pid']) && $_REQUEST['pid'] >0) {
-		$pid = $_REQUEST['pid'];
-		$link->where("PK_Project",$pid);
-		$ad=$link->update("project_master",array("ProjectName"=>$project_name,"Alias"=>$project_alias,"ShortDescription"=>$project_shortDes,"LongDescription"=>$project_longdesc,"ProjectType"=>$project_type,"FK_Status"=>$status,"Keywords"=>$project_keywords,"HiTag"=>$project_HiTag,"Metatitle"=>$project_Metatitle,"MetaDescription"=>$project_MetaDescription,"altTag"=>$project_altTag,"ProjectOgTitle"=>$project_ProjectOgTitle,"ProjectOgTag"=>$project_ProjectOgTag,"TwitterTag"=>$project_TwitterTag));
-	} else if($errMsg == ''){
-			$ad= $link->insert("project_master", array("ProjectName"=>$project_name,"Alias"=>$project_alias,"ShortDescription"=>$project_shortDes,"LongDescription"=>$project_longdesc,"ProjectType"=>$project_type,"FK_Status"=>$status,"Keywords"=>$project_keywords,"HiTag"=>$project_HiTag,"Metatitle"=>$project_Metatitle,"MetaDescription"=>$project_MetaDescription,"altTag"=>$project_altTag,"ProjectOgTitle"=>$project_ProjectOgTitle,"ProjectOgTag"=>$project_ProjectOgTag,"TwitterTag"=>$project_TwitterTag));
-	}
+	// if(isset($_REQUEST['pid']) && $_REQUEST['pid'] >0) {
+	// 	$pid = $_REQUEST['pid'];
+	// 	$link->where("PK_Project",$pid);
+	// 	$ad=$link->update("project_master",array("ProjectName"=>$project_name,"Alias"=>$project_alias,"ShortDescription"=>$project_shortDes,"LongDescription"=>$project_longdesc,"ProjectType"=>$project_type,"FK_Status"=>$status,"Keywords"=>$project_keywords,"HiTag"=>$project_HiTag,"Metatitle"=>$project_Metatitle,"MetaDescription"=>$project_MetaDescription,"altTag"=>$project_altTag,"ProjectOgTitle"=>$project_ProjectOgTitle,"ProjectOgTag"=>$project_ProjectOgTag,"TwitterTag"=>$project_TwitterTag));
+	// } else if($errMsg == ''){
+	// 		$ad= $link->insert("project_master", array("ProjectName"=>$project_name,"Alias"=>$project_alias,"ShortDescription"=>$project_shortDes,"LongDescription"=>$project_longdesc,"ProjectType"=>$project_type,"FK_Status"=>$status,"Keywords"=>$project_keywords,"HiTag"=>$project_HiTag,"Metatitle"=>$project_Metatitle,"MetaDescription"=>$project_MetaDescription,"altTag"=>$project_altTag,"ProjectOgTitle"=>$project_ProjectOgTitle,"ProjectOgTag"=>$project_ProjectOgTag,"TwitterTag"=>$project_TwitterTag));
+	// }
 
-	// if($errMsg == ''){
-	// 	$ad= $link->insert("project_master", array("ProjectName"=>$project_name,"Alias"=>$project_alias,"ShortDescription"=>$project_shortDes,"LongDescription"=>$project_longdesc,"ProjectType"=>$project_type,"FK_Status"=>$status,"Keywords"=>$project_keywords,"HiTag"=>$project_HiTag,"Metatitle"=>$project_Metatitle,"MetaDescription"=>$project_MetaDescription,"altTag"=>$project_altTag,"ProjectOgTitle"=>$project_ProjectOgTitle,"ProjectOgTag"=>$project_ProjectOgTag,"TwitterTag"=>$project_TwitterTag));
+	//if($errMsg == ''){
+	  $ad= $link->insert("project_master", array("ProjectName"=>$project_name,"Alias"=>$project_alias,"ShortDescription"=>$project_shortDes,"LongDescription"=>$project_longdesc,"ProjectType"=>$project_type,"FK_Status"=>$status,"Keywords"=>$project_keywords,"HiTag"=>$project_HiTag,"Metatitle"=>$project_Metatitle,"MetaDescription"=>$project_MetaDescription,"altTag"=>$project_altTag,"ProjectOgTitle"=>$project_ProjectOgTitle,"ProjectOgTag"=>$project_ProjectOgTag,"TwitterTag"=>$project_TwitterTag));
 	
 		if($ad) {
 			if ($_FILES['ProjectImage']['size'] > 0) {
-				$result = addImage('ProjectImage');
+				// $pimage="product_image".$ad.'.'.$ext;	
+				
+				$result = addImage($pimage);
 				if($result)
 				{
 					$link->where('PK_Project',$ad);
@@ -88,6 +90,8 @@ include("../../Helper/connect.php");
 				
 			}
 			if ($_FILES['ProjectImage1']['size'] > 0) {
+				
+
 				$result = addImage('ProjectImage1');
 				if($result)
 				{
@@ -182,7 +186,7 @@ include("../../Helper/connect.php");
 	
 
 function  addImage($imageName){
-		$target_dir = "uploads/";
+		$target_dir = "./uploads/";
 		$target_file = $target_dir . basename($_FILES[$imageName]["name"]);
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -211,6 +215,7 @@ function  addImage($imageName){
 			echo "Sorry, your file was not uploaded.";
 		// if everything is ok, try to upload file
 		} else {
+			
 			if (move_uploaded_file($_FILES[$imageName]["tmp_name"], $target_file)) {
 				return $target_file;
 			}

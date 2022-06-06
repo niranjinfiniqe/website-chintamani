@@ -26,24 +26,6 @@ $pid=0;
         </div>
          <!-- end page title breadcrum -->
    
-        <?php
-            //check for edit
-            if(isset($_REQUEST['pid']) && $_REQUEST['pid'] >0) {
-                $pid = $_REQUEST['pid'];
-                $isUpdate = 1;
-            } else {
-                $isUpdate = 0;
-            }
-
-            if($isUpdate == 1){
-                $ad=$link->rawQueryOne("select * from project_master where PK_Project=?",array($_REQUEST['pid']));
-                if($link->count > 0) {
-                    $project_id=$ad['PK_Project'];
-                }
-            }
-
-        ?>
-
         <!-- Main form starts--> 
         <div class="row">
             <div class="col-12">
@@ -56,12 +38,12 @@ $pid=0;
                                     <div>
                                         <div class="mb-3">
                                             <label for="example-text-input" class="form-label">Project Name</label>
-                                            <input class="form-control" type="text"  value="<?php  if($isUpdate==1){ echo $ad['ProjectName'];} ?>" required id="specificfield" name="ProjectName" id="ProjectName">
+                                            <input class="form-control" type="text"  required id="specificfield" name="ProjectName" id="ProjectName">
                                         </div>
                                         
                                         <div class="col-lg-12">
                                             <label for="example-search-input" class="form-label">Short Description</label>
-                                            <textarea class="form-control" type="text" rows="2"  id="ProjectShortDescription" name="ProjectShortDescription" ><?php  if($isUpdate==1){ echo $ad['ShortDescription'];} ?></textarea>
+                                            <textarea class="form-control" type="text" rows="2"  id="ProjectShortDescription" name="ProjectShortDescription" ></textarea>
                                         </div>
                                         <br>
                                         <br>
@@ -69,21 +51,21 @@ $pid=0;
                                             <label class="form-label">Status</label>
                                             <select class="form-select" name="ProjectStatus" id="ProjectStatus">
                                                 <option>Select</option>
-                                                <option <?php if($ad['FK_Status']=="7"){echo "selected";} ?>>In Progress</option>
-                                                <option <?php if($ad['FK_Status']=="5"){echo "selected";} ?>>Completed</option>
+                                                <option>In Progress</option>
+                                                <option>Completed</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">
                                             <label for="example-tel-input" class="form-label">Thumbnail Image</label>
-                                            <input type="file" name="ProjectImage"  value="<?php  if($isUpdate==1){ echo $ad['ThumbnailImageURL'];} ?>" id="ProjectImage" class="form-control">
+                                            <input type="file" name="ProjectImage"  id="ProjectImage" class="form-control">
                                         </div>
                                         <div class="mb-3">
                                             <label for="example-tel-input" class="form-label">FloorPlant Url</label>
-                                            <input type="file" name="ProjectFloorPlant" id="ProjectFloorPlant" value="<?php  if($isUpdate==1){ echo $ad['FloorPlantImageURL'];} ?>" class="form-control">
+                                            <input type="file" name="ProjectFloorPlant" id="ProjectFloorPlant"  class="form-control">
                                         </div>
                                         <div class="mb-3">
                                             <label for="example-tel-input" class="form-label">Product Image1</label>
-                                            <input type="file" name="ProjectImage1" id="ProjectImage1" value="<?php  if($isUpdate==1){ echo $ad['ProjectImage1'];} ?>" class="form-control">
+                                            <input type="file" name="ProjectImage1" id="ProjectImage1" class="form-control">
                                         </div>
                                         <div class="mb-3">
                                             <label for="example-tel-input" class="form-label">Product Image3</label>
@@ -100,18 +82,18 @@ $pid=0;
                                         <div class="mt-3 mt-lg-0">
                                         <div class="mb-3">
                                                 <label for="example-text-input" class="form-label">Project Alias</label>
-                                                <input class="form-control" type="text" name="ProjectAlias" id="ProjectAlias" value="<?php  if($isUpdate==1){ echo $ad['Alias'];} ?>">
+                                                <input class="form-control" type="text" name="ProjectAlias" id="ProjectAlias">
                                             </div>
                                             <div class="col-lg-12">
                                                 <label for="example-search-input" class="form-label">Long Description</label>
-                                                <textarea class="form-control" type="text"  rows="4" id="ProjectLongDescription" name="ProjectLongDescription"><?php  if($isUpdate==1){ echo $ad['LongDescription'];} ?></textarea>
+                                                <textarea class="form-control" type="text"  rows="4" id="ProjectLongDescription" name="ProjectLongDescription"></textarea>
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label" >Project Type</label>
                                                 <select class="form-select" id="ProjectType" name="ProjectType" >
                                                     <option>Select</option>
-                                                    <option <?php if($ad['ProjectType']=="Commercial"){echo "selected";} ?>>Commercial</option>
-                                                    <option <?php if($ad['ProjectType']=="Residential"){echo "selected";} ?>>Residential</option>
+                                                    <option>Commercial</option>
+                                                    <option>Residential</option>
                                                 </select>
                                             </div>
                                             <div class="mb-3">
@@ -136,7 +118,7 @@ $pid=0;
                                             </div>
                                             <div class="mb-3">
                                                 <label for="example-tel-input" class="form-label">Product Image6</label>
-                                                <input type="file" name="ProjectImage6" id="ProjectImage6" class="form-control" value="<?php  if($isUpdate==1){ echo $ad['ProjectImage6'];} ?>">
+                                                <input type="file" name="ProjectImage6" id="ProjectImage6" class="form-control">
                                             </div>
                                 </div>
                             </div>
@@ -149,49 +131,49 @@ $pid=0;
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Meta Title</label>
-                                                            <input type="text" class="form-control"  id="MetaTitle" name="MetaTitle" value="<?php  if($isUpdate==1){ echo $ad['MetaTitle'];} ?>"/>
+                                                            <input type="text" class="form-control"  id="MetaTitle" name="MetaTitle">
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Meta Description</label>
-                                                            <input type="text"  class="form-control" id="MetaDescription" name="MetaDescription" value="<?php  if($isUpdate==1){ echo $ad['MetaDescription'];} ?>"/>
+                                                            <input type="text"  class="form-control" id="MetaDescription" name="MetaDescription">
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Alt Tag</label>
-                                                            <input type="text" class="form-control" id="altTag" name="altTag"  value="<?php  if($isUpdate==1){ echo $ad['altTag'];} ?>"/>
+                                                            <input type="text" class="form-control" id="altTag" name="altTag" >
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Project OG Title</label>
-                                                            <input type="text" id="ProjectOgTitle" name="ProjectOgTitle" class="form-control" value="<?php  if($isUpdate==1){ echo $ad['ProjectOgTitle'];} ?>" />
+                                                            <input type="text" id="ProjectOgTitle" name="ProjectOgTitle" class="form-control"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Project OG Tag</label>
-                                                            <input type="text" id="ProjectOgTag" name="ProjectOgTag" class="form-control"  value="<?php  if($isUpdate==1){ echo $ad['ProjectOgTag'];} ?>"/>
+                                                            <input type="text" id="ProjectOgTag" name="ProjectOgTag" class="form-control"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Twitter Tag</label>
-                                                            <input type="text" id="TwitterTag" name="TwitterTag" class="form-control" value="<?php  if($isUpdate==1){ echo $ad['TwitterTag'];} ?>" />
+                                                            <input type="text" id="TwitterTag" name="TwitterTag" class="form-control"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>HI Tag</label>
-                                                            <input type="text" id="HiTag" name="HiTag" class="form-control"  value="<?php  if($isUpdate==1){ echo $ad['HiTag'];} ?>"/>
+                                                            <input type="text" id="HiTag" name="HiTag" class="form-control"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Keywords</label>
-                                                            <input type="text" id="Keywords" name="Keywords" class="form-control"  value="<?php  if($isUpdate==1){ echo $ad['Keywords'];} ?>"/>
+                                                            <input type="text" id="Keywords" name="Keywords" class="form-control"  />
                                                         </div>
                                                     </div>
                                                     <!-- <div class="col-xl-4 col-md-6">
