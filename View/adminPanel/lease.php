@@ -1,8 +1,9 @@
 <?php
 include("header.php");
 include("../../Helper/connect.php");
-$query="select * from project_master";
+$query="select * from lease_master where isDeleted=0";
 $exce = mysqli_query($con, $query);
+
 ?>
 <div class="main-content">
 
@@ -32,24 +33,24 @@ $exce = mysqli_query($con, $query);
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex flex-wrap gap-2 justify-content-end">
-                            <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_lease.php" style="color: white;">Add New Project</button>
+                            <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_lease.php" style="color: white;">Add New Lease</a></button>
                         </div>
                     </div>
                     <div class="card-body">
                     <div class="d-flex flex-wrap gap-2">
-                            <button type="button" class="btn btn-secondary waves-effect waves-light" >All Projects</button>
+                            <button href='#' type="button" class="btn btn-secondary waves-effect waves-light"> All Lease</button>
                             <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                   Type of Project <i class="mdi mdi-chevron-down"></i>
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownLocationfilterButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                   Loction<i class="mdi mdi-chevron-down"></i>
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Commercial</a>
-                                    <a class="dropdown-item" href="#">Residential</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownLocationfilterButton">
+                                    <a class="dropdown-item">Commercial</a>
+                                    <a class="dropdown-item">Residential</a>
                                 </div>
                             </div>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                   Status<i class="mdi mdi-chevron-down"></i>
+                                   Area<i class="mdi mdi-chevron-down"></i>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Compelete</a>
@@ -66,6 +67,8 @@ $exce = mysqli_query($con, $query);
                                         <th>Project Name</th>
                                         <th>Alias</th>
                                         <th>Short Description</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -81,6 +84,12 @@ $exce = mysqli_query($con, $query);
                                         <td><?php echo $row['ProjectName'] ?></td>
                                         <td><?php echo $row['Alias'] ?></td>
                                         <td><?php echo $row['ShortDescription'] ?></td>
+                                        <td>
+                                            <a href="add_lease.php?pid=<?php echo $row['PK_Lease'];?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <td>
+                                            <a onClick='javascript:confirmationDelete($(this));return false;'  href="deletelease.php/?pid=<?php echo $row['PK_Lease'];?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                        </td>
                                     </tr>
                                     <?php
                                      }
