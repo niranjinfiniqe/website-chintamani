@@ -49,7 +49,7 @@ $pid=0;
             <div class="col-12">
                 <div class="card-body" >
                     <div class="card-body p-4">
-                        <form action="addproject.php?pid=<?php echo $pid ?> " class="needs-validation" novalidate method="post" name="f1"  enctype="multipart/form-data">
+                        <form action="editproject.php?pid=<?php echo $pid ?> " class="needs-validation" novalidate method="post" name="f1"  enctype="multipart/form-data">
                             <div class="row">
                                 <!-- right pannel details-->
                                 <div class="col-lg-6">
@@ -178,89 +178,89 @@ $pid=0;
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image</label>
+                                                    <label>Upload Brochure</label>
                                                     <div class="card-body">
-									                    <input type="file" name="product_image" id="product_image" class="form-control">
+									                    <input type="file" name="brochure" id="product_image" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ThumbnailImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['BrochureURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image</label>
+                                                    <label>FloorPlant Url</label>
                                                     <div class="card-body">
-									                    <input type="file" name="product_image" id="product_image" class="form-control">
+									                    <input type="file" name="FloorPlant_Image" id="FloorPlant_Image" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ThumbnailImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['FloorPlantImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image</label>
+                                                    <label>Project Image1</label>
                                                     <div class="card-body">
-									                    <input type="file" name="product_image" id="product_image" class="form-control">
+									                    <input type="file" name="ProjectImage1" id="ProjectImage1" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ThumbnailImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage1']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image</label>
+                                                    <label>Project Image2</label>
                                                     <div class="card-body">
-									                    <input type="file" name="product_image" id="product_image" class="form-control">
+									                    <input type="file" name="ProjectImage2" id="ProjectImage2" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ThumbnailImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage2']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image</label>
+                                                    <label>Project Image3</label>
                                                     <div class="card-body">
-									                    <input type="file" name="product_image" id="product_image" class="form-control">
+									                    <input type="file" name="ProjectImage3" id="ProjectImage3" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ThumbnailImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage3']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image</label>
+                                                    <label>Project Image4</label>
                                                     <div class="card-body">
-									                    <input type="file" name="product_image" id="product_image" class="form-control">
+									                    <input type="file" name="ProjectImage4" id="ProjectImage4" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ThumbnailImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage4']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image</label>
+                                                    <label>Project Image5</label>
                                                     <div class="card-body">
-									                    <input type="file" name="product_image" id="product_image" class="form-control">
+									                    <input type="file" name="ProjectImage5" id="ProjectImage5" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ThumbnailImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage5']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image</label>
+                                                    <label>Project Image6</label>
                                                     <div class="card-body">
-									                    <input type="file" name="product_image" id="product_image" class="form-control">
+									                    <input type="file" name="ProjectImage6" id="ProjectImage6" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ThumbnailImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage6']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 

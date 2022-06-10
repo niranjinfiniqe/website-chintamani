@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2022 at 07:48 AM
+-- Generation Time: Jun 10, 2022 at 08:23 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -75,7 +75,11 @@ CREATE TABLE `interior_master` (
   `GalleryImage1` varchar(100) NOT NULL,
   `GalleryImage2` varchar(100) NOT NULL,
   `GalleryImage3` varchar(100) NOT NULL,
-  `GalleryImage4` varchar(100) NOT NULL
+  `GalleryImage4` varchar(100) NOT NULL,
+  `isDeleted` int(1) NOT NULL DEFAULT 0,
+  `MetaDescription` varchar(1000) NOT NULL,
+  `Metatitle` varchar(100) NOT NULL,
+  `Keywords` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -92,6 +96,7 @@ CREATE TABLE `leasing_master` (
   `LongDescription` varchar(5000) NOT NULL,
   `CarpetArea` varchar(100) NOT NULL,
   `CompleteAddress` varchar(10000) NOT NULL,
+  `Location` varchar(100) NOT NULL,
   `Price` int(100) NOT NULL,
   `Packs` int(100) NOT NULL,
   `ThumbnailURL` varchar(100) NOT NULL,
@@ -105,10 +110,11 @@ CREATE TABLE `leasing_master` (
   `W/S` int(10) NOT NULL,
   `SR_Manage` int(10) NOT NULL,
   `ConferenceRoomCount` int(10) NOT NULL,
-  `MeetingRoolcount` int(10) NOT NULL,
+  `MeetingRoomCount` int(10) NOT NULL,
   `ServerRoomCount` int(10) NOT NULL,
   `GeneralWashroom` tinyint(1) NOT NULL,
-  `LadiishWashroom` tinyint(1) NOT NULL,
+  `GentsWashroomCount` int(10) NOT NULL DEFAULT 0,
+  `ladiesWashroom` tinyint(10) NOT NULL,
   `PantryCount` int(10) NOT NULL,
   `StoreroomCount` int(10) NOT NULL,
   `TwitterTag` varchar(100) NOT NULL,
@@ -118,8 +124,20 @@ CREATE TABLE `leasing_master` (
   `LeaseOgTitle` varchar(100) NOT NULL,
   `altTag` varchar(100) NOT NULL,
   `MetaDescription` varchar(100) NOT NULL,
-  `Metatitle` varchar(100) NOT NULL
+  `Metatitle` varchar(100) NOT NULL,
+  `DisplayOrder` int(10) NOT NULL,
+  `FK_Status` int(10) NOT NULL,
+  `isDeleted` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `leasing_master`
+--
+
+INSERT INTO `leasing_master` (`PK_lease`, `Name`, `Alias`, `ShortDescription`, `LongDescription`, `CarpetArea`, `CompleteAddress`, `Location`, `Price`, `Packs`, `ThumbnailURL`, `FloorPlanURL`, `Images`, `VideoURL`, `Furnished/Unfurnished`, `BuildUpArea`, `CabinsCount`, `ReceptionArea`, `W/S`, `SR_Manage`, `ConferenceRoomCount`, `MeetingRoomCount`, `ServerRoomCount`, `GeneralWashroom`, `GentsWashroomCount`, `ladiesWashroom`, `PantryCount`, `StoreroomCount`, `TwitterTag`, `HiTag`, `Keywords`, `LeaseOgTag`, `LeaseOgTitle`, `altTag`, `MetaDescription`, `Metatitle`, `DisplayOrder`, `FK_Status`, `isDeleted`) VALUES
+(1, 'Chintamani classique', 'Chintamani classique', 'Chintamani classique is comerical property in goregoe', 'Chintamani classique is comerical property in goregoe', '2100', 'Goregaon', '', 100, 0, '', '', '', '', 'Furnished', 3465, 1, 1, 34, 5, 1, 3, 0, 1, 0, 1, 1, 1, '', '', '', '', '', '', '', '', 1, 8, 0),
+(2, 'Chintamani venture', 'Chintamani venture', 'Chintamani venture', 'Chintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani venture', '7890', 'Goregaon', 'Goregoan', 232444, 0, '', '', '', '', '', 23, 2, 3, 5, 3, 4, 5, 2, 0, 2, 2, 0, 0, '', '', '', '', '', '', '', '', 3, 8, 0),
+(3, 'Chintamani venture', 'Chintamani venture', 'Chintamani venture', 'Chintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani ventureChintamani venture', '7890', 'Goregaon', 'Goregoan', 232444, 0, '', '', '', '', '', 23, 2, 3, 5, 3, 4, 5, 2, 0, 2, 2, 0, 0, '', '', '', '', '', '', '', '', 3, 8, 0);
 
 -- --------------------------------------------------------
 
@@ -163,10 +181,14 @@ CREATE TABLE `project_master` (
 INSERT INTO `project_master` (`PK_Project`, `ProjectName`, `Alias`, `ShortDescription`, `LongDescription`, `Amenities_ID`, `ProjectType`, `BrochureURL`, `ThumbnailImageURL`, `FloorPlantImageURL`, `isDeleted`, `FK_Status`, `ProjectImage1`, `ProjectImage2`, `ProjectImage3`, `ProjectImage4`, `ProjectImage5`, `ProjectImage6`, `MetaTitle`, `MetaDescription`, `altTag`, `ProjectOgTitle`, `ProjectOgTag`, `Keywords`, `HiTag`, `TwitterTag`) VALUES
 (1, 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)Cama Estate(Goregaon)Cama Estate(Goregaon)', 0, 'Commercial', '', 'uploads/Mirkal.png', '', 0, 5, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 (2, 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)Cama Estate(Goregaon)Cama Estate(Goregaon)', 0, 'Commercial', '', '', '', 0, 7, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(3, 'Test101', '', '', '', 0, 'Select', '', './uploads/Picture1 (2).png', '', 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(3, 'Test101-178898', '', '', '', 0, 'Select', '', './uploads/Picture1 (2).png', '', 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 (4, 'Test101', '', '', '', 0, 'Select', '', '', '', 0, 5, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(5, 'edwd', '', '', '', 0, 'Select', '', './uploads/Mirkal grapg.jpeg', '', 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-(6, 'de', '', '', '', 0, 'Select', '', '', '', 1, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+(5, 'edwd', '', '', '', 0, 'Select', '', './uploads/Mirkal grapg.jpeg', '', 1, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(6, 'de', '', '', '', 0, 'Select', '', '', '', 1, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(7, 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)Cama Estate(Goregaon)Cama Estate(Goregaon)', 0, 'Commercial', '', '', '', 0, 5, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(8, 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)Cama Estate(Goregaon)Cama Estate(Goregaon)', 0, 'Commercial', '', '', '', 0, 5, '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(9, 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)', 'Cama Estate(Goregaon)Cama Estate(Goregaon)Cama Estate(Goregaon)', 0, 'Commercial', '', '', '', 0, 5, '', '', '', './uploads/Picture1.png', '', '', '', '', '', '', '', '', '', ''),
+(10, 'ForamTestFOramytest', '', 'dwedwd', 'dewd', 0, 'Commercial', '', '', '', 0, 7, '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -190,7 +212,9 @@ INSERT INTO `status_master` (`PK_Status`, `Status`) VALUES
 (4, 'Closed'),
 (5, 'Completed'),
 (6, 'On going'),
-(7, 'In Progress');
+(7, 'In Progress'),
+(8, 'Vacant'),
+(9, 'Occupied');
 
 -- --------------------------------------------------------
 
@@ -289,19 +313,19 @@ ALTER TABLE `interior_master`
 -- AUTO_INCREMENT for table `leasing_master`
 --
 ALTER TABLE `leasing_master`
-  MODIFY `PK_lease` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `PK_lease` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `project_master`
 --
 ALTER TABLE `project_master`
-  MODIFY `PK_Project` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `PK_Project` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `status_master`
 --
 ALTER TABLE `status_master`
-  MODIFY `PK_Status` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `PK_Status` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `user`
