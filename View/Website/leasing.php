@@ -1,5 +1,5 @@
 <?php
-include("../../Helper/connect.php");
+include ("../../Helper/connect.php");
 ?>
 
 <!DOCTYPE html>
@@ -369,7 +369,7 @@ include("../../Helper/connect.php");
             </div>
             <div class="header_media  mobile_header_media_sticky_yes header_mediatype_1 with_search_1 header_media_non_elementor"></div>  
                      -->
-                     <?php include('header.php'); ?> 
+                     <?php include ('header.php'); ?> 
                      </div>
             <!-- Breadcrumb -->
             <div class="pre_search_wrapper"></div>
@@ -445,15 +445,14 @@ include("../../Helper/connect.php");
                      <div id="listing_ajax_container" class="" >
 
                      <?php
-                        //$sql=$link->rawQuery("SELECT * FROM `leasing_master` where isDeleted=0 and FK_Status=8 ");
-                        $sql=$link->rawQuery("select * from leasing_master where isDeleted=0 and FK_Status=8 ");
-                        //$count= $sql->count;
-                        //print_r($sql);
+//$sql=$link->rawQuery("SELECT * FROM `leasing_master` where isDeleted=0 and FK_Status=8 ");
+$sql = $link->rawQuery("select * from leasing_master where isDeleted=0 and FK_Status=8 ");
+//$count= $sql->count;
+//print_r($sql);
+foreach ($sql as $lease)
+{
 
-                        foreach($sql as $lease)
-                        {
-                           
-                     ?>
+?>
                      <div class="col-md-6 listing_wrapper" data-modal-title="<?php echo $lease['Name'] ?>" data-modal-link="" data-listid="139">
                         <div class="property_listing  property_card_default"  data-link="">
                            <div class="listing-unit-img-wrapper">
@@ -513,10 +512,10 @@ include("../../Helper/connect.php");
                            </div>
                         </div>
                      </div>
-                  </div>
+                  
                   <?php
-                  }
-                  ?>
+}
+?></div>
 
                      <ul class="pagination pagination_nojax">
                         <li class="roundleft"><a href='https://lasvegas.wpresidence.net/properties-standard-list/'><i class="fas fa-angle-left"></i></a></li>
