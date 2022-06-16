@@ -1,7 +1,7 @@
 <?php
 include("header.php");
 include("../../Helper/connect.php");
-$query="select * from project_master";
+$query="select * from blog_master WHERE isDeleted = 0";
 $exce = mysqli_query($con, $query);
 ?>
 <div class="main-content">
@@ -44,9 +44,14 @@ $exce = mysqli_query($con, $query);
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Project Name</th>
-                                        <th>Alias</th>
-                                        <th>Short Description</th>
+                                        <th>Blog Title</th>
+                                        <th>Blog Owner</th>
+                                        <th>Blog Thumbnail Image</th>
+                                        <th>Blog Image</th>
+                                        <th>BlogDescription</th>
+                                        <th>Blog Status</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -59,9 +64,18 @@ $exce = mysqli_query($con, $query);
                                     ?>
                                     <tr>
                                         <th scope="row"><?php echo $count ++; ?></th>
-                                        <td><?php echo $row['ProjectName'] ?></td>
-                                        <td><?php echo $row['Alias'] ?></td>
-                                        <td><?php echo $row['ShortDescription'] ?></td>
+                                        <td><?php echo $row['BlogTitle'] ?></td>
+                                        <td><?php echo $row['BlogOwner'] ?></td>
+                                        <td><img src="<?php echo $row['BlogThumbImage'] ?>" width="70px" height="70px"  /></td>
+                                        <td><img src="<?php  echo $row['BlogImage'] ?>" width="70px" height="70px"  /></td>
+                                        <td><?php echo $row['BlogDescription'] ?></td>
+                                        <td><?php echo $row['BlogStatus'] ?></td>
+                                        <td>
+                                            <a href="edit_blog.php?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <td>
+                                            <a a onClick='javascript:confirmationDelete($(this));return false;'  href="deleteblog.php?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                        </td>
                                     </tr>
                                     <?php
                                      }
@@ -71,7 +85,7 @@ $exce = mysqli_query($con, $query);
                             </table>
                         </div>
                         <br/>
-                        <nav aria-label="...">
+                        <!-- <nav aria-label="...">
                             <ul class="pagination  justify-content-end mb-0">
                                 <li class="page-item disabled">
                                     <span class="page-link"><i class="mdi mdi-chevron-left"></i></span>
@@ -88,12 +102,20 @@ $exce = mysqli_query($con, $query);
                                     <a class="page-link" href="#"><i class="mdi mdi-chevron-right"></i></a>
                                 </li>
                             </ul>
-                        </nav>
+                        </nav> -->
+                       
                     </div>
                 </div>
             </div>
         </div>
          
+        <script>
+               function confirmationDelete(anchor) {
+        var conf = confirm('Are You Sure Want To Delete ?');
+        if (conf)
+            window.location = anchor.attr("href");
+    }
+        </script>
 
     
 <?php

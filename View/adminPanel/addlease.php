@@ -4,182 +4,221 @@
 <?php
 include("../../Helper/connect.php");
 
-    $leaseProjectName = $_POST['LeaseProjectName'];
-    $shortDescription = $_POST['ProjectShortDescription'];
-    $price = $_POST['Price'];
-    $location = $_POST['Location'];
-    $projectAlias = $_POST['ProjectAlias'];
-    $longDescription = $_POST['ProjectLongDescription'];
-    $area = $_POST['Area'];
-    $parkingSpace = $_POST['ParkingSpace'];
-    $aminities = $_POST['Aminities'];
+// $id = $_POST['pid'];
+$Lease_Name = $_POST['LeaseName'];
+$Lease_Alias = $_POST['LeaseAlias'];
+$ShortDescription = $_POST['ShortDescription'];
+$LongDescription = $_POST['LongDescription'];
+$CarpetArea = $_POST['CarpetArea'];
+$CompleteAddress = $_POST['CompleteAddress'];
+$Location = $_POST['Location'];
+$Price = $_POST['Price'];
+$Packs = $_POST['Packs'];
+$FloorPlanURL = $_POST['FloorPlanURL'];
+// $Images = $_POST['Images'];
+$ThumbnailURL = $_POST['ThumbnailURL'];
+$VideoURL = $_POST['VideoURL'];
+$Furnished_Unfurnished = $_POST['Furnished/Unfurnished'];
+$BuildUpArea = $_POST['BuildUpArea'];
+$CabinsCount = $_POST['CabinsCount'];
+$ReceptionArea = $_POST['ReceptionArea'];
+$W_S = $_POST['W/S'];
+$SR_Manage = $_POST['SRManage'];
+$ConferenceRoomCount = $_POST['ConferenceRoomCount'];
+$MeetingRoomCount = $_POST['MeetingRoomCount'];
+$ServerRoomCount = $_POST['ServerRoomCount'];
+$StoreroomCount = $_POST['StoreroomCount'];
+$GeneralWashroomCount = $_POST['GeneralWashroomCount'];
+$GentsWashroomCount = $_POST['GentsWashroomCount'];
+$ladiesWashroom = $_POST['ladiesWashroom'];
+$PantryCount = $_POST['PantryCount'];
+
+
+// Seo tools
+$Keywords = $_POST['Keywords'];
+$MetaTitle = $_POST['MetaTitle'];
+$DisplayOrder = $_POST['DisplayOrder'];
+$FK_Status = $_POST['DisplayOrder'];
+// $isDeleted = $_POST['isDeleted'];
+$LeaseOgTitle = $_POST['LeaseOgTitle'];
+$LeaseOgTag = $_POST['LeaseOgTag'];
+$MetaDescription = $_POST['MetaDescription'];
+$HiTag = $_POST['HiTag'];
+$TwitterTag = $_POST['TwitterTag'];
+$altTag = $_POST['altTag'];
 
     $errMsg = '';
     $aminitiesId = 0;
     $locationId = 0;
 
     //add Aminities ID
-    if($aminities == 'Commercial'){
-        $aminitiesId = 1;
-    }else if($aminities == 'Residential'){
-        $aminitiesId = 2;
-    }
-    //Add Location ID
-    if($location == 'Commercial'){
-        $locationId = 1;
-    }else if($location == 'Residential'){
-        $locationId = 2;
-    }
+    // if($aminities == 'Commercial'){
+    //     $aminitiesId = 1;
+    // }else if($aminities == 'Residential'){
+    //     $aminitiesId = 2;
+    // }
+    // //Add Location ID
+    // if($location == 'Commercial'){
+    //     $locationId = 1;
+    // }else if($location == 'Residential'){
+    //     $locationId = 2;
+    // }
 
-    if(isset($_REQUEST['pid']) && $_REQUEST['pid'] >0) {
-        $pid = $_REQUEST['pid'];
-        $link->where("PK_Lease",$pid);
-        $ad=$link->update("lease_master",array("ProjectName"=>$leaseProjectName,"Alias"=>$projectAlias,"ShortDescription"=>$shortDescription,"LongDescription"=>$longDescription,"Price"=>$price,"FK_Location"=>$locationId,"Area"=>$area,"ParkingSpace"=>$parkingSpace,"FK_Aminities"=>$aminitiesId));
-    } else if($errMsg == ''){
-            $ad= $link->insert("lease_master",array("ProjectName"=>$leaseProjectName,"Alias"=>$projectAlias,"ShortDescription"=>$shortDescription,"LongDescription"=>$longDescription,"Price"=>$price,"FK_Location"=>$locationId,"Area"=>$area,"ParkingSpace"=>$parkingSpace,"FK_Aminities"=>$aminitiesId));
+    // if(isset($_REQUEST['pid']) && $_REQUEST['pid'] >0) {
+    //     $pid = $_REQUEST['pid'];
+    //     $link->where("PK_Lease",$pid);
+    //     $ad=$link->update("leasing_master",array("ProjectName"=>$leaseProjectName,"Alias"=>$projectAlias,"ShortDescription"=>$shortDescription,"LongDescription"=>$longDescription,"Price"=>$price,"FK_Location"=>$locationId,"Area"=>$area,"ParkingSpace"=>$parkingSpace,"FK_Aminities"=>$aminitiesId));
+    // } else
+
+
+   
+    
+    if($errMsg == ''){
+            $ad= $link->insert("leasing_master",array("Lease_Name"=>$Lease_Name,"Lease_Alias"=>$Lease_Alias,"ShortDescription"=>$ShortDescription,"LongDescription"=>$LongDescription,"CarpetArea"=>$CarpetArea,"CompleteAddress"=>$CompleteAddress,"Location"=>$Location,"Price"=>$Price,"Packs"=>$Packs,"ThumbnailURL"=>$ThumbnailURL,"FloorPlanURL"=>$FloorPlanURL,"VideoURL"=>$VideoURL,"Furnished/Unfurnished"=>$Furnished_Unfurnished,"BuildUpArea"=>$BuildUpArea,"CabinsCount"=>$CabinsCount,"ReceptionArea"=>$ReceptionArea,"W/S"=>$W_S,"SR_Manage"=>$SR_Manage,"ConferenceRoomCount"=>$ConferenceRoomCount,"MeetingRoomCount"=>$MeetingRoomCount,"ServerRoomCount"=>$ServerRoomCount,"GeneralWashroom"=>$GeneralWashroomCount,"GentsWashroomCount"=>$GentsWashroomCount,"ladiesWashroom"=>$ladiesWashroom,"PantryCount"=>$PantryCount,"StoreroomCount"=>$StoreroomCount,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords,"LeaseOgTag"=>$LeaseOgTag,"LeaseOgTitle"=>$LeaseOgTitle,"altTag"=>$altTag,"LeaseOgTitle"=>$LeaseOgTitle,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle,"DisplayOrder"=>$DisplayOrder,"FK_Status"=>$FK_Status));
     }
 
     if($ad) {
-        if ($_FILES['ProductImage']['size'] > 0) {
-            $result = addImage('ProductImage');
+        if ($_FILES['Images']['size'] > 0) {
+            $result = addImage('Images');
             if($result)
             {
-                $link->where('PK_Lease',$ad);
-                    $a1=$link->update("lease_master",array("ProductImage"=>$result));
+                $link->where('PK_lease',$ad);
+                    $a1=$link->update("leasing_master",array("Images"=>$result));
                     if($a1)
                     {		
+                        echo "successfully uploded";
                     }	
                     else {
-                        //echo $ad;
+                        echo "failed";
                     }
             }
             
         }
-        if ($_FILES['ProjectFloorPlantURL']['size'] > 0) {
-            $result = addImage('ProjectFloorPlantURL');
-            if($result)
-            {
-                $link->where('PK_Lease',$ad);
-                    $a1=$link->update("lease_master",array("ProjectFloorPlantURL"=>$result));
-                    if($a1)
-                    {		
-                    }	
-                    else {
-                        //echo $ad;
-                    }
-            }
+    //     if ($_FILES['ProjectFloorPlantURL']['size'] > 0) {
+    //         $result = addImage('ProjectFloorPlantURL');
+    //         if($result)
+    //         {
+    //             $link->where('PK_Lease',$ad);
+    //                 $a1=$link->update("lease_master",array("ProjectFloorPlantURL"=>$result));
+    //                 if($a1)
+    //                 {		
+    //                 }	
+    //                 else {
+    //                     //echo $ad;
+    //                 }
+    //         }
             
-        }
-        if ($_FILES['ProductBrocherURL']['size'] > 0) {
-            $result = addImage('ProductBrocherURL');
-            if($result)
-            {
-                $link->where('PK_Lease',$ad);
-                    $a1=$link->update("lease_master",array("ProductBrocherURL"=>$result));
-                    if($a1)
-                    {		
-                    }	
-                    else {
-                        //echo $ad;
-                    }
-            }
+    //     }
+    //     if ($_FILES['ProductBrocherURL']['size'] > 0) {
+    //         $result = addImage('ProductBrocherURL');
+    //         if($result)
+    //         {
+    //             $link->where('PK_Lease',$ad);
+    //                 $a1=$link->update("lease_master",array("ProductBrocherURL"=>$result));
+    //                 if($a1)
+    //                 {		
+    //                 }	
+    //                 else {
+    //                     //echo $ad;
+    //                 }
+    //         }
             
-        }
-        if ($_FILES['ProductImage1']['size'] > 0) {
-            $result = addImage('ProductImage1');
-            if($result)
-            {
-                $link->where('PK_Lease',$ad);
-                    $a1=$link->update("lease_master",array("ProductImage1"=>$result));
-                    if($a1)
-                    {		
-                    }	
-                    else {
-                        //echo $ad;
-                    }
-            }
+    //     }
+    //     if ($_FILES['ProductImage1']['size'] > 0) {
+    //         $result = addImage('ProductImage1');
+    //         if($result)
+    //         {
+    //             $link->where('PK_Lease',$ad);
+    //                 $a1=$link->update("lease_master",array("ProductImage1"=>$result));
+    //                 if($a1)
+    //                 {		
+    //                 }	
+    //                 else {
+    //                     //echo $ad;
+    //                 }
+    //         }
             
-        }
-        if ($_FILES['ProductImage2']['size'] > 0) {
-            $result = addImage('ProductImage2');
-            if($result)
-            {
-                $link->where('PK_Lease',$ad);
-                    $a1=$link->update("lease_master",array("ProductImage2"=>$result));
-                    if($a1)
-                    {		
-                    }	
-                    else {
-                        //echo $ad;
-                    }
-            }
+    //     }
+    //     if ($_FILES['ProductImage2']['size'] > 0) {
+    //         $result = addImage('ProductImage2');
+    //         if($result)
+    //         {
+    //             $link->where('PK_Lease',$ad);
+    //                 $a1=$link->update("lease_master",array("ProductImage2"=>$result));
+    //                 if($a1)
+    //                 {		
+    //                 }	
+    //                 else {
+    //                     //echo $ad;
+    //                 }
+    //         }
             
-        }
-        if ($_FILES['ProductImage3']['size'] > 0) {
-            $result = addImage('ProductImage3');
-            if($result)
-            {
-                $link->where('PK_Lease',$ad);
-                    $a1=$link->update("lease_master",array("ProductImage3"=>$result));
-                    if($a1)
-                    {		
-                    }	
-                    else {
-                        //echo $ad;
-                    }
-            }
+    //     }
+    //     if ($_FILES['ProductImage3']['size'] > 0) {
+    //         $result = addImage('ProductImage3');
+    //         if($result)
+    //         {
+    //             $link->where('PK_Lease',$ad);
+    //                 $a1=$link->update("lease_master",array("ProductImage3"=>$result));
+    //                 if($a1)
+    //                 {		
+    //                 }	
+    //                 else {
+    //                     //echo $ad;
+    //                 }
+    //         }
             
-        }
-        if ($_FILES['ProductImage4']['size'] > 0) {
-            $result = addImage('ProductImage4');
-            if($result)
-            {
-                $link->where('PK_Lease',$ad);
-                    $a1=$link->update("lease_master",array("ProductImage4"=>$result));
-                    if($a1)
-                    {		
-                    }	
-                    else {
-                        //echo $ad;
-                    }
-            }
+    //     }
+    //     if ($_FILES['ProductImage4']['size'] > 0) {
+    //         $result = addImage('ProductImage4');
+    //         if($result)
+    //         {
+    //             $link->where('PK_Lease',$ad);
+    //                 $a1=$link->update("lease_master",array("ProductImage4"=>$result));
+    //                 if($a1)
+    //                 {		
+    //                 }	
+    //                 else {
+    //                     //echo $ad;
+    //                 }
+    //         }
             
-        }
-        if ($_FILES['ProductImage5']['size'] > 0) {
-            $result = addImage('ProductImage5');
-            if($result)
-            {
-                $link->where('PK_Lease',$ad);
-                    $a1=$link->update("lease_master",array("ProductImage5"=>$result));
-                    if($a1)
-                    {		
-                    }	
-                    else {
-                        //echo $ad;
-                    }
-            }
+    //     }
+    //     if ($_FILES['ProductImage5']['size'] > 0) {
+    //         $result = addImage('ProductImage5');
+    //         if($result)
+    //         {
+    //             $link->where('PK_Lease',$ad);
+    //                 $a1=$link->update("lease_master",array("ProductImage5"=>$result));
+    //                 if($a1)
+    //                 {		
+    //                 }	
+    //                 else {
+    //                     //echo $ad;
+    //                 }
+    //         }
             
-        }
-        if ($_FILES['ProductImage6']['size'] > 0) {
-            $result = addImage('ProductImage6');
-            if($result)
-            {
-                $link->where('PK_Lease',$ad);
-                    $a1=$link->update("lease_master",array("ProductImage6"=>$result));
-                    if($a1)
-                    {		
-                    }	
-                    else {
-                        //echo $ad;
-                    }
-            }
+    //     }
+    //     if ($_FILES['ProductImage6']['size'] > 0) {
+    //         $result = addImage('ProductImage6');
+    //         if($result)
+    //         {
+    //             $link->where('PK_Lease',$ad);
+    //                 $a1=$link->update("lease_master",array("ProductImage6"=>$result));
+    //                 if($a1)
+    //                 {		
+    //                 }	
+    //                 else {
+    //                     //echo $ad;
+    //                 }
+    //         }
             
-        }
+    //     }
         header('location:lease.php');
     }
 
     function  addImage($imageName){
-		$target_dir = "uploads/lease";
+		$target_dir = "./uploads/lease";
 		$target_file = $target_dir . basename($_FILES[$imageName]["name"]);
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -213,4 +252,8 @@ include("../../Helper/connect.php");
 			}
 		}
     }
+
+
+
+
 ?>

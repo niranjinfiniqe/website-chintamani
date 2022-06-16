@@ -6,8 +6,8 @@
 		
 		
 		$id=$_REQUEST['pid'];
-		$link->where('PK_Lease',$id);
-		$a=$link->update("lease_master",array("isDeleted"=>1));
+		$link->where('PK_lease ',$id);
+		$a=$link->update("leasing_master",array("isDeleted"=>1));
 		if($a)
 		{		
 			header('location:../lease.php');

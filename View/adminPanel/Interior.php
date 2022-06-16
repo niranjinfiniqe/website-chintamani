@@ -1,8 +1,10 @@
 <?php
 include("header.php");
 include("../../Helper/connect.php");
-$query="select * from project_master";
+$query="select * from interior_master where isDeleted=0";
 $exce = mysqli_query($con, $query);
+
+
 ?>
 <div class="main-content">
 
@@ -32,7 +34,9 @@ $exce = mysqli_query($con, $query);
                         </div>
                     </div>
                     <div class="card-body">
-                    <div class="d-flex flex-wrap gap-2">
+
+                    <!-- Mridul removebtn -->
+                    <!-- <div class="d-flex flex-wrap gap-2 ">
                             <button type="button" class="btn btn-secondary waves-effect waves-light" >All Projects</button>
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,16 +56,19 @@ $exce = mysqli_query($con, $query);
                                     <a class="dropdown-item" href="#">In-Progress</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <br/>
                         <div class="table-responsive">
                             <table class="table mb-0">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Project Name</th>
+                                        <th>Interior title</th>
                                         <th>Alias</th>
-                                        <th>Short Description</th>
+                                        <th>Gallery</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -74,9 +81,20 @@ $exce = mysqli_query($con, $query);
                                     ?>
                                     <tr>
                                         <th scope="row"><?php echo $count ++; ?></th>
-                                        <td><?php echo $row['ProjectName'] ?></td>
+                                        <td><?php echo $row['InteriorTitle'] ?></td>
                                         <td><?php echo $row['Alias'] ?></td>
-                                        <td><?php echo $row['ShortDescription'] ?></td>
+                                        <td>
+                                            <img src="<?php echo $row['GalleryImage1'];?>" width="70px" height="70px" />
+                                            <img src="<?php echo $row['GalleryImage2'];?>" width="70px" height="70px" />
+                                            <img src="<?php echo $row['GalleryImage3'];?>" width="70px" height="70px" />
+                                            <img src="<?php echo $row['GalleryImage4'];?>" width="70px" height="70px" />
+                                        </td>
+                                        <td>
+                                            <a href="edit_interior.php?pid=<?php echo $row['PK_interior']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <td>
+                                            <a a onClick='javascript:confirmationDelete($(this));return false;'  href="deleteinterior.php?pid=<?php echo $row['PK_interior']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                        </td>
                                     </tr>
                                     <?php
                                      }
@@ -108,6 +126,14 @@ $exce = mysqli_query($con, $query);
                 </div>
             </div>
         </div>
+
+        <script>
+               function confirmationDelete(anchor) {
+        var conf = confirm('Are You Sure Want To Delete ?');
+        if (conf)
+            window.location = anchor.attr("href");
+    }
+        </script>
          
 
     

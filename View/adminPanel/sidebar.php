@@ -41,12 +41,7 @@
                         <span data-key="t-apps">Blogs</span>
                     </a>
                 </li>
-                <li>
-                    <a href="Projects.php">
-                        <i data-feather="grid"></i>
-                        <span data-key="t-apps">Aminities</span>
-                    </a>
-                </li>
+                
 
 
               
