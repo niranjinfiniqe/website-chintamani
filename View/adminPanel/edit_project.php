@@ -2,6 +2,7 @@
 include("header.php");
 include("../../Helper/connect.php");
 $pid=0;
+$id = $_GET['pid'];
 ?>
 <div class="main-content">
 
@@ -41,6 +42,7 @@ $pid=0;
                     $project_id=$ad['PK_Project'];
                 }
             }
+            
 
         ?>
 
@@ -49,7 +51,7 @@ $pid=0;
             <div class="col-12">
                 <div class="card-body" >
                     <div class="card-body p-4">
-                        <form action="editproject.php?pid=<?php echo $pid ?> " class="needs-validation" novalidate method="post" name="f1"  enctype="multipart/form-data">
+                        <form action="editproject.php " class="needs-validation" novalidate method="post" name="f1"  enctype="multipart/form-data">
                             <div class="row">
                                 <!-- right pannel details-->
                                 <div class="col-lg-6">
@@ -57,6 +59,7 @@ $pid=0;
                                         <div class="mb-3">
                                             <label for="example-text-input" class="form-label">Project Name</label>
                                             <input class="form-control" type="text"  value="<?php  if($isUpdate==1){ echo $ad['ProjectName'];} ?>" required id="specificfield" name="ProjectName" id="ProjectName">
+                                            <input type="hidden" value="<?php echo $id; ?>" name="pid" id="pid">
                                         </div>
                                         
                                         <div class="col-lg-12">
@@ -81,7 +84,7 @@ $pid=0;
                                         <div class="mt-3 mt-lg-0">
                                         <div class="mb-3">
                                                 <label for="example-text-input" class="form-label">Project Alias</label>
-                                                <input class="form-control" type="text" name="ProjectAlias" id="ProjectAlias" value="<?php  if($isUpdate==1){ echo $ad['Alias'];} ?>">
+                                                <input onkeyup="aliascheck(this.value)" required class="form-control" type="text" name="ProjectAlias" id="ProjectAlias" value="<?php  if($isUpdate==1){ echo $ad['Alias'];} ?>">
                                             </div>
                                             <div class="col-lg-12">
                                                 <label for="example-search-input" class="form-label">Long Description</label>
@@ -89,7 +92,7 @@ $pid=0;
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label" >Project Type</label>
-                                                <select class="form-select" id="ProjectType" name="ProjectType" >
+                                                <select required class="form-select" id="ProjectType" name="ProjectType" >
                                                     <option>Select</option>
                                                     <option <?php if($ad['ProjectType']=="Commercial"){echo "selected";} ?>>Commercial</option>
                                                     <option <?php if($ad['ProjectType']=="Residential"){echo "selected";} ?>>Residential</option>
@@ -166,101 +169,101 @@ $pid=0;
                                 <div>
                                     <h5 class="card-title mb-4">Project Gallery Details</h5>
                                         <div class="row">
-                                            <div class="col-xl-4 col-md-6"  style="background:">
-                                                    <label>Project Image</label>
+                                            <div class="col-xl-4 col-md-6"  >
+                                                    <label>Brochure Image</label>
                                                     <div class="card-body">
-									                    <input type="file" name="product_image" id="product_image" class="form-control">
+									                    <input type="file" name="BrochureURL" id="BrochureURL" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ThumbnailImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['BrochureURL']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Upload Brochure</label>
+                                                    <label>Thumbnail Image  </label>
                                                     <div class="card-body">
-									                    <input type="file" name="brochure" id="product_image" class="form-control">
+									                    <input required type="file" name="ThumbnailImageURL" id="ThumbnailImageURL" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['BrochureURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ThumbnailImageURL']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>FloorPlant Url</label>
+                                                    <label>FloorPlant Image </label>
                                                     <div class="card-body">
-									                    <input type="file" name="FloorPlant_Image" id="FloorPlant_Image" class="form-control">
+									                    <input type="file" name="FloorPlantImageURL" id="product_image" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['FloorPlantImageURL']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['FloorPlantImageURL']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image1</label>
+                                                    <label>Project Image 1</label>
                                                     <div class="card-body">
-									                    <input type="file" name="ProjectImage1" id="ProjectImage1" class="form-control">
+									                    <input type="file" name="ProjectImage1" id="product_image" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage1']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage1']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image2</label>
+                                                    <label>Project Image 2</label>
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage2" id="ProjectImage2" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage2']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage2']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image3</label>
+                                                    <label>Project Image 3</label>
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage3" id="ProjectImage3" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage3']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage3']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image4</label>
+                                                    <label>Project Image 4</label>
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage4" id="ProjectImage4" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage4']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage4']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image5</label>
+                                                    <label>Project Image 5</label>
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage5" id="ProjectImage5" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage5']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage5']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Project Image6</label>
+                                                    <label>Project Image 6</label>
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage6" id="ProjectImage6" class="form-control">
                                                         <br>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src=<?php echo $ad['ProjectImage6']; ?> alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage6']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
 									                </div> 
@@ -287,8 +290,33 @@ $pid=0;
        <script src="assets/libs/pristinejs/pristine.min.js"></script>
         <!-- form validation -->
        <script src="assets/js/pages/form-validation.init.js"></script>
+       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
-<!-- <script>
+
+<script>
+    function aliascheck(val)
+        {
+            $.ajax({
+             type: "POST",
+               url: "alias_check.php",
+               data: "alias_edit_project="+val,
+                    
+                    // serializes the form's elements.
+               success: function(data)
+               {
+                if(data === val+'already')
+                    {
+                        console.log( "Data already exits");
+                    }
+                    else
+                    {
+                       console.log("Data accepted");
+                    }
+               }
+            });
+            
+        }
+</script>
              
     
 <?php
