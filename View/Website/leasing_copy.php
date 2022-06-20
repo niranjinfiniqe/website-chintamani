@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
-   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <!-- <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> -->
+   
    <head>
-      <meta charset="UTF-8" />
+   <?php include("header.php");  ?>
+      <!-- <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
       <link rel="pingback" href="https://lasvegas.wpresidence.net/xmlrpc.php" />
       <meta name="google-signin-client_id" content="13759604714-0t7p0dh546nvkefuvt58ojmj6dcr82ld.apps.googleusercontent.com">
@@ -34,12 +36,12 @@
          background: none !important;
          padding: 0 !important;
          }
-      </style>
-      <link rel='stylesheet' id='wp-block-library-css' href='https://las-vegas.b-cdn.net/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' />
+      </style> -->
+      <!-- <link rel='stylesheet' id='wp-block-library-css' href='https://las-vegas.b-cdn.net/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3' type='text/css' media='all' />
       <link rel='stylesheet' id='bootstrap.min-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/css/bootstrap.min.css?ver=4.4' type='text/css' media='all' />
       <link rel='stylesheet' id='bootstrap-theme.min-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/css/bootstrap-theme.min.css?ver=4.4' type='text/css' media='all' />
-      <link rel='stylesheet' id='wpestate_style-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/style.css?ver=4.4' type='text/css' media='all' />
-      <style id='wpestate_style-inline-css' type='text/css'>
+      <link rel='stylesheet' id='wpestate_style-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/style.css?ver=4.4' type='text/css' media='all' /> -->
+      <!-- <style id='wpestate_style-inline-css' type='text/css'>
          body::after{
          position:absolute;
          width:0;
@@ -49,7 +51,7 @@
          content:url(https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/couple-login-modal-3.jpeg);   // load images
          }
          }
-      </style>
+      </style> -->
       <link rel='stylesheet' id='wpestate_media-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/css/my_media.css?ver=4.4' type='text/css' media='all' />
       <link rel='stylesheet' id='font-awesome-5.min-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/css/fontawesome/css/all.css?ver=5.9.3' type='text/css' media='all' />
       <link rel='stylesheet' id='fontello-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/css/fontello.min.css?ver=5.9.3' type='text/css' media='all' />

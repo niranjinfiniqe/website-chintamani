@@ -82,7 +82,7 @@
          }		
       </style>
    </head>
-<div class="master_header   wide   topbar_transparent">
+<!-- <div class="master_header   wide   topbar_transparent">
       <div class="mobile_header mobile_header_sticky_yes">
          <div class="mobile-trigger"><i class="fas fa-bars"></i></div>
          <div class="mobile-logo">
@@ -156,4 +156,4 @@
          </div>
       </div>
    </div>
-   <div class="header_media  mobile_header_media_sticky_yes header_mediatype_1 with_search_1 header_media_non_elementor"></div>
+   <div class="header_media  mobile_header_media_sticky_yes header_mediatype_1 with_search_1 header_media_non_elementor"></div> -->

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-US">
+<?php include("header.php");  ?>
    <!-- Mirrored from lasvegas.wpresidence.net/half-map-properties-list/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jun 2022 06:47:14 GMT -->
    <!-- Added by HTTrack -->
-   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+   <!-- <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> -->
    <!-- /Added by HTTrack -->
   <!--  <head>
       <meta charset="UTF-8" />
@@ -1097,6 +1098,9 @@
          /* ]]> */
       </script>
       <script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/ajaxcalls.js?ver=4.4' id='ajaxcalls-js'></script>
+   
    </body>
+
+   <?php include("footer.php");  ?>
    <!-- Mirrored from lasvegas.wpresidence.net/half-map-properties-list/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jun 2022 06:47:14 GMT -->
 </html>
