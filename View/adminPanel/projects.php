@@ -14,6 +14,7 @@ $no_of_pages = ceil($Total_no_of_rows / $rows_to_be_displayed);
 if (isset($_GET["page_id"])) {
     $Pageid = $_GET["page_id"];
 } else {
+
     $Pageid = 1;
 }
 $offset  = ($Pageid - 1) * $rows_to_be_displayed;
@@ -70,7 +71,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                             <div class="d-flex flex-wrap gap-4 mb-3">
 
                                 <button class="btn btn-secondary " type="button" id="loadAllData" onclick="loadAllData()">
-                                    All Projects
+                                    <a style="text-decoration:none ;color:white" href="projects.php?page_id=1"> All Projects</a>
                                 </button>
 
 
@@ -84,9 +85,9 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                         <a value="residential" class="dropdown-item">Residential</a>
                                     </div>
                                     <!-- <select id="fetchvalue" name="fetchvalue">
-        <option value="Commercial">Commercial</option>
-        <option value="Residential">Residential</option>
-    </select> -->
+                                <option value="Commercial">Commercial</option>
+                                <option value="Residential">Residential</option>
+                            </select> -->
                                 </div>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -160,12 +161,14 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                             <br />
 
                             <!-- Pagination Starts here -->
+
                             <nav aria-label="...">
                                 <ul class="pagination  justify-content-end mb-0">
                                     <!-- <li class="page-item disabled">
                                         <span class="page-link"><i class="mdi mdi-chevron-left"></i></span>
                                     </li> -->
                                     <?php
+
                                     for ($i = 1; $i <= $no_of_pages; $i++) {
 
                                     ?>
@@ -176,19 +179,12 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
 
                                     <?php
                                     }
+
                                     ?>
-                                    <!-- <li class="page-item active">
-                                        <span class="page-link">
-                                            2
-                                            <span class="sr-only">(current)</span>
-                                        </span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-                                    <!-- <li class="page-item">
-                                        <a class="page-link" href="#"><i class="mdi mdi-chevron-right"></i></a>
-                                    </li> -->
+
                                 </ul>
                             </nav>
+
                         </div>
                     </div>
                 </div>
@@ -209,25 +205,25 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
 
 
 
-    const loadAllData = () => {
-        var value = $('#loadAllData').html();
+    // const loadAllData = () => {
+    //     var value = $('#loadAllData').html();
+    //     console.log(value);
 
-        $.ajax({
-            url: "fetchdata_for_project.php",
-            type: 'POST',
-            data: 'request_all_data_from_projects=' + value,
-            beforeSend: function() {
-                $(".testing").html("<h1>loading...</h1>");
-            },
-            success: function(data) {
+    //     $.ajax({
+    //         url: "fetchdata_for_project.php",
+    //         type: 'POST',
+    //         data: {all_data:value},
+    //         beforeSend: function() {
+    //             $(".testing").html("<h1>loading...</h1>");
+    //         },
+    //         success: function(data) {
 
-                $(".testing").html(data);
-                console.log(data);
-                // $(".testing").html("<h1>loading...</h1>");
-            }
-        });
-    }
-
+    //             $(".testing").html(data);
+    //             // console.log(data);
+    //             // $(".testing").html("<h1>loading...</h1>");
+    //         }
+    //     });
+    // }
 
 
 
@@ -241,14 +237,16 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
             $.ajax({
                 url: "fetchdata_for_project.php",
                 type: 'POST',
-                data: 'request_from_projects=' + value,
+                data: {
+                    selected_data: value
+                },
                 beforeSend: function() {
                     $(".testing").html("<h1>loading...</h1>");
                 },
                 success: function(data) {
 
                     $(".testing").html(data);
-                    console.log(data);
+                    // console.log(data);
                     // $(".testing").html("<h1>loading...</h1>");
                 }
             });
@@ -273,7 +271,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
             success: function(data) {
 
                 $(".testing").html(data);
-                console.log(data);
+                // console.log(data);
                 // $(".testing").html("<h1>loading...</h1>");
             }
 

@@ -194,7 +194,7 @@
 				<div class="snap-drawer snap-drawer-left">
 					<div class="mobilemenu-close"><i class="fas fa-times"></i></div>
 					<ul id="menu-main-menu" class="mobilex-menu">
-						<li id="menu-item-19214" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-19214"><a href="https://lasvegas.wpresidence.net/">Home</a></li>
+						<li id="menu-item-19214" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-19214"><a href="https://demo.wpresidence.net>Home</a></li>
 						<li id="menu-item-20475" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20475"><a target="_blank" rel="noopener" href="https://demo.wpresidence.net/#demos">Demos</a></li>
 						<li id="menu-item-837" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-837">
 							<a href="#">Properties</a>

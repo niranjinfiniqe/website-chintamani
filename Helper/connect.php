@@ -3,8 +3,8 @@
 //	$link=new MysqliDb("localhost","root","","chariot");
 // 	$con = mysqli_connect('localhost','root','','chariot');
 	
-    $link=new MysqliDb("localhost","root","","chintamani_db");
-	$con = mysqli_connect('localhost','root','','chintamani_db');
+    $link=new MysqliDb("localhost","root","","chintamani_db_updated");
+	$con = mysqli_connect('localhost','root','','chintamani_db_updated');
 	
 	ini_set('POST_MAX_SIZE','64M');
 	ini_set('UPLOAD_MAX_FILESIZE','64M');
