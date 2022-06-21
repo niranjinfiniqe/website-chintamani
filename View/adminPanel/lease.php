@@ -3,6 +3,28 @@ include("header.php");
 include("../../Helper/connect.php");
 $query = "select * from leasing_master where isDeleted=0";
 $exce = mysqli_query($con, $query);
+
+
+// For pagination
+$Total_no_of_rows = mysqli_num_rows($exce);
+$rows_to_be_displayed = "5";
+$no_of_pages = ceil($Total_no_of_rows / $rows_to_be_displayed);
+
+if (isset($_GET["page_id"])) {
+    $Pageid = $_GET["page_id"];
+} else {
+    $Pageid = 1;
+}
+$offset  = ($Pageid - 1) * $rows_to_be_displayed;
+// offset- The number after which need to fetch the rows.
+$query_for_pagniation = "select * from leasing_master where isDeleted=0 LIMIT {$offset},{$rows_to_be_displayed}";
+$exce_for_pagination = mysqli_query($con, $query_for_pagniation);
+
+
+
+
+
+
 ?>
 <div class="main-content">
 
@@ -34,8 +56,8 @@ $exce = mysqli_query($con, $query);
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
-                            <div class="d-flex flex-wrap gap-2 justify-content-end">
+                        <div  class="card-header mx-2 my-2" style="padding:0;padding-bottom:10px">
+                            <div  class="d-flex flex-wrap justify-content-end">
                                 <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_lease.php" style="color: white;">Add New Lease</a></button>
                             </div>
                         </div>
@@ -81,9 +103,9 @@ $exce = mysqli_query($con, $query);
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $count = 1;
-                                        if (mysqli_num_rows($exce) > 0) {
-                                            while ($row = mysqli_fetch_array($exce)) {
+                                        $count = ($rows_to_be_displayed*($Pageid-1))+1;
+                                        if (mysqli_num_rows($exce_for_pagination) > 0) {
+                                            while ($row = mysqli_fetch_array($exce_for_pagination)) {
                                         ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $count++; ?></th>
@@ -121,22 +143,22 @@ $exce = mysqli_query($con, $query);
                                 </table>
                             </div>
                             <br />
+                            <!-- Pagination starts here -->
                             <nav aria-label="...">
                                 <ul class="pagination  justify-content-end mb-0">
-                                    <li class="page-item disabled">
+                                    <!-- <li class="page-item disabled">
                                         <span class="page-link"><i class="mdi mdi-chevron-left"></i></span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active">
-                                        <span class="page-link">
-                                            2
-                                            <span class="sr-only">(current)</span>
-                                        </span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
+                                    </li> -->
+                                    <?php
+                                    for($i=1;$i<=$no_of_pages;$i++)
+                                    { 
+                                    ?> 
+                                    <li class="page-item <?php if($i == $Pageid){echo 'active';}  ?>"><a class="page-link" href="lease.php?page_id=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                                    <?php } ?>
+                                 
+                                    <!-- <li class="page-item">
                                         <a class="page-link" href="#"><i class="mdi mdi-chevron-right"></i></a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </nav>
                         </div>

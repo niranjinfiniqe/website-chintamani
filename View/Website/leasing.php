@@ -77,7 +77,7 @@ include ("../../Helper/connect.php");
                            </div>
                         </div>
                      </div>
-                     <div class="spinner" id="listing_loader"  style=""> 
+                     <div class="spinner" id="listing_loader"  > 
                         <div class="new_prelader"></div>
                      </div>
                      <div id="listing_ajax_container" class="" >
@@ -89,7 +89,7 @@ foreach ($sql as $lease)
 {
 
 ?>
-                     <div class="col-md-6 listing_wrapper" data-modal-title="<?php echo $lease['Name'] ?>" data-modal-link="" data-listid="139">
+                     <div class="col-md-6 listing_wrapper" data-modal-title="<?php echo $lease['Lease_Name'] ?>" data-modal-link="" data-listid="139">
                         <div class="property_listing  property_card_default"  data-link="">
                            <div class="listing-unit-img-wrapper">
                               <div class="prop_new_details">
@@ -99,11 +99,11 @@ foreach ($sql as $lease)
                                     <i class="fas fa-camera"></i> 6
                                  </div>
                                  <div class="property_location_image">
-                                    <span class="property_marker"></span><a href="https://lasvegas.wpresidence.net/property_area/downtown/">Downtown</a>, <a href="https://lasvegas.wpresidence.net/property_city/las-vegas/" rel="tag">Las Vegas</a>
+                                    <span class="property_marker"></span><a href="estate_property.php?leaseID=<?php echo $lease["PK_lease"]; ?>">Downtown</a>, <a href="estate_property.php?leaseID=<?php echo $lease["PK_lease"]; ?>" rel="tag">Las Vegas</a>
                                  </div>
                                  <div class="featured_gradient"></div>
                               </div>
-                              <a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/" target="_self"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" /></a> 
+                              <a href="estate_property.php?leaseID=<?php echo $lease["PK_lease"]; ?>" target="_self"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" /></a> 
                               <div class="tag-wrapper">
                                  <div class="featured_div">Featured</div>
                                  <div class="status-wrapper">
@@ -113,17 +113,17 @@ foreach ($sql as $lease)
                            </div>
                            <div class="property-unit-information-wrapper" style ="background:pink">
                               <h4>
-                                 <a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">
-                                 <?php echo $lease['Name'] ?></a>
+                                 <a href="estate_property.php?leaseID=<?php echo $lease["PK_lease"]; ?>">
+                                 <?php echo $lease['Lease_Name'] ?></a>
                               </h4>
                               <div class="listing_unit_price_wrapper">
-                                 5.500.000 $ <span class="price_label"></span>
+                              <?php echo $lease['Price'] ?> <span class="price_label"></span>
                               </div>
                               <div class="listing_details the_grid_view">
-                              <?php echo $lease['ShortDescription'] ?><a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/" class="unit_more_x"> ...</a> 
+                              <?php echo $lease['ShortDescription'] ?><a href="estate_property.php?leaseID=<?php echo $lease["PK_lease"]; ?>" class="unit_more_x"> ...</a> 
                               </div>
                               <div class="listing_details the_list_view">
-                              <?php echo $lease['ShortDescription'] ?> <a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/" class="unit_more_x"> ...</a> 
+                              <?php echo $lease['ShortDescription'] ?> <a href=estate_property.php?leaseID=<?php echo $lease["PK_lease"]; ?>" class="unit_more_x"> ...</a> 
                               </div>
                               <div class="property_listing_details" style="background:yellow">
                                  <span class="inforoom">
@@ -142,7 +142,7 @@ foreach ($sql as $lease)
                                     <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.500145 0H0.000160627V5.50004H1.0001V1.70713L5.14654 5.85362L5.85368 5.14647L1.70724 0.999979H5.50011V3.21257e-05L0.500145 0ZM14.5 0H15V5.50004H14.0001V1.70713L9.85362 5.85362L9.14648 5.14647L13.2929 0.999979H9.50005V3.21257e-05L14.5 0ZM15 15H9.50002V14.0001H13.2929L9.14644 9.85357L9.85359 9.14641L14 13.2929V9.49999H15L15 15ZM0.499984 15H0V9.49996H0.999935V13.2929L5.14638 9.14638L5.85352 9.85353L1.70708 14H5.49995V15L0.499984 15Z" fill="black" />
                                     </svg>
-                                    250 ft<sup>2</sup>
+                                    <?php echo $lease["CarpetArea"];?>ft<sup>2</sup>
                                  </span>
                               </div>
                            </div>

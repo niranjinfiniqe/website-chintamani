@@ -5,6 +5,25 @@ include("../../Helper/connect.php");
 $query = "select * from project_master where isDeleted=0";
 $exce = mysqli_query($con, $query);
 
+
+// For Pagination
+$Total_no_of_rows = mysqli_num_rows($exce);
+$rows_to_be_displayed = "5";
+$no_of_pages = ceil($Total_no_of_rows / $rows_to_be_displayed);
+
+if (isset($_GET["page_id"])) {
+    $Pageid = $_GET["page_id"];
+} else {
+    $Pageid = 1;
+}
+$offset  = ($Pageid - 1) * $rows_to_be_displayed;
+// offset- The number after which need to fetch the rows.
+$query_for_pagniation = "select * from project_master where isDeleted=0 LIMIT {$offset},{$rows_to_be_displayed}";
+$exce_for_pagination = mysqli_query($con, $query_for_pagniation);
+
+
+
+
 ?>
 
 <div class="main-content">
@@ -74,8 +93,8 @@ $exce = mysqli_query($con, $query);
                                         Status<i class="mdi mdi-chevron-down"></i>
                                     </button>
                                     <div id="fetchvalue1" name="fetchvalue1" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a onclick = "hello('5')"  class="dropdown-item">Compeleted</a>
-                                        <a onclick = "hello('7')"  class="dropdown-item">In-Progress</a>
+                                        <a onclick="hello('5')" class="dropdown-item">Compeleted</a>
+                                        <a onclick="hello('7')" class="dropdown-item">In-Progress</a>
                                     </div>
                                 </div>
 
@@ -104,9 +123,9 @@ $exce = mysqli_query($con, $query);
                                     <tbody>
                                         <?php
 
-                                        $count = 1;
-                                        if (mysqli_num_rows($exce) > 0) {
-                                            while ($row = mysqli_fetch_array($exce)) {
+                                        $count = ($rows_to_be_displayed * ($Pageid - 1) + 1);
+                                        if (mysqli_num_rows($exce_for_pagination) > 0) {
+                                            while ($row = mysqli_fetch_array($exce_for_pagination)) {
                                         ?>
                                                 <tr>
                                                     <th scope="row"><?php echo $count++; ?></th>
@@ -139,22 +158,35 @@ $exce = mysqli_query($con, $query);
                                 </table>
                             </div>
                             <br />
+
+                            <!-- Pagination Starts here -->
                             <nav aria-label="...">
                                 <ul class="pagination  justify-content-end mb-0">
-                                    <li class="page-item disabled">
+                                    <!-- <li class="page-item disabled">
                                         <span class="page-link"><i class="mdi mdi-chevron-left"></i></span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active">
+                                    </li> -->
+                                    <?php
+                                    for ($i = 1; $i <= $no_of_pages; $i++) {
+
+                                    ?>
+                                        <li class="page-item <?php if ($i == $Pageid) {
+                                                                    echo 'active';
+                                                                } ?> "><a class="page-link" href="projects.php?page_id=<?php echo $i; ?>">
+                                                <?php echo $i; ?></a></li>
+
+                                    <?php
+                                    }
+                                    ?>
+                                    <!-- <li class="page-item active">
                                         <span class="page-link">
                                             2
                                             <span class="sr-only">(current)</span>
                                         </span>
                                     </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+                                    <!-- <li class="page-item">
                                         <a class="page-link" href="#"><i class="mdi mdi-chevron-right"></i></a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </nav>
                         </div>
@@ -226,23 +258,25 @@ $exce = mysqli_query($con, $query);
 
 
 
-    const hello = (a)=>{
+    const hello = (a) => {
         // console.log(a);
         $.ajax({
 
             url: "fetchdata_for_project.php",
-                type: 'POST',
-                data: {request_status:a},
-                // beforeSend: function() {
-                //     $(".testing").html("<h1>loading...</h1>");
-                // },
-                success: function(data) {
+            type: 'POST',
+            data: {
+                request_status: a
+            },
+            // beforeSend: function() {
+            //     $(".testing").html("<h1>loading...</h1>");
+            // },
+            success: function(data) {
 
-                    $(".testing").html(data);
-                    console.log(data);
-                    // $(".testing").html("<h1>loading...</h1>");
-                }
-            
+                $(".testing").html(data);
+                console.log(data);
+                // $(".testing").html("<h1>loading...</h1>");
+            }
+
         })
     }
 
@@ -265,11 +299,6 @@ $exce = mysqli_query($con, $query);
     //         });
     //     });
     // });
-
-
-
-
-
 </script>
 
 
