@@ -12,6 +12,7 @@ include("../../Helper/connect.php");
 	$ReadingTime = $_POST["ReadingTime"];
 	$BlogStatus = $_POST["BlogStatus"];
 	// $BlogImage = $_POST["BlogImage"];
+	$BlogDescription = $_POST['BlogDescription'];
   
     
 

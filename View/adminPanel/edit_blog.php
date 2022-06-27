@@ -96,15 +96,15 @@ if ($isUpdate == 1) {
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Title</label>
                                                     <input required type="hidden" name="pid" id="pid" value="<?php echo $id; ?> ">
-                                                    <input class="form-control" name="BlogTitle" type="text" value="<?php echo $BlogTitle; ?>" placeholder="Artisanal kale" id="BlogTitle">
+                                                    <input class="form-control" name="BlogTitle" type="text" value="<?php echo $BlogTitle; ?>"  id="BlogTitle">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Owner</label>
-                                                    <input class="form-control" name="BlogOwner" type="text" value="<?php echo $BlogOwner; ?>" placeholder="Artisanal kale" id="ProjectAlias">
+                                                    <input class="form-control" name="BlogOwner" type="text" value="<?php echo $BlogOwner; ?>"  id="ProjectAlias">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Blog Date</label>
-                                                    <input class="form-control" name="BlogDate" type="Date" value="<?php echo $BlogDate; ?>"  placeholder="Artisanal kale" id="ProjectAlias">
+                                                    <input class="form-control" name="BlogDate" type="Date" value="<?php echo $BlogDate; ?>"   id="ProjectAlias">
                                                 </div>
 
 
@@ -126,18 +126,18 @@ if ($isUpdate == 1) {
                                             <div class="mt-3 mt-lg-0">
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Alias</label>
-                                                    <input onkeyup="aliascheck(this.value)" required class="form-control" name="BlogAlias" type="text" value="<?php echo $BlogAlias; ?>" placeholder="Artisanal kale" id="BlogAlias">
+                                                    <input onkeyup="aliascheck(this.value)" required class="form-control" name="BlogAlias" type="text" value="<?php echo $BlogAlias; ?>"  id="BlogAlias">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Reading Time (in mins.)</label>
-                                                    <input class="form-control" name="ReadingTime" type="number" value="<?php echo $ReadingTime; ?>" placeholder="Artisanal kale" id="ReadingTime">
+                                                    <input class="form-control" name="ReadingTime" type="number" value="<?php echo $ReadingTime; ?>"  id="ReadingTime">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Blog Status</label>
                                                     <select required class="form-select" value="<?php echo $BlogStatus; ?>" id="BlogStatus" name="BlogStatus">
                                                         <option>Select</option>
-                                                        <option>Commercial</option>
-                                                        <option>Residential</option>
+                                                        <option <?php if($BlogStatus == 10){echo "selected";} ?> >Publised</option>
+                                                        <option <?php if($BlogStatus == 11){echo "selected";} ?> >Draft</option>
                                                     </select>
                                                 </div>
 
@@ -158,8 +158,7 @@ if ($isUpdate == 1) {
                                             <div class="col-lg-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h4 class="card-title">Ckeditor Classic editor</h4>
-                                                        <p class="card-title-desc">Example of Ckeditor Classic editor</p>
+                                                        <h4 class="card-title">Blog description</h4>
                                                     </div>
                                                     <div class="card-body">
                                                         <div id="ckeditor-classic"></div>

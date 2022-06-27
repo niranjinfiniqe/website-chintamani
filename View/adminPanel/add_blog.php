@@ -37,15 +37,15 @@ include("../../Helper/connect.php");
                                             <div>
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Title</label>
-                                                    <input class="form-control" required name="BlogTitle" type="text" placeholder="Artisanal kale" id="BlogTitle">
+                                                    <input class="form-control" required name="BlogTitle" type="text"  id="BlogTitle">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Owner</label>
-                                                    <input class="form-control" name="BlogOwner" type="text" placeholder="Artisanal kale" id="ProjectAlias">
+                                                    <input class="form-control" name="BlogOwner" type="text"  id="ProjectAlias">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Blog Date</label>
-                                                    <input class="form-control" name="BlogDate" type="Date" placeholder="Artisanal kale" id="ProjectAlias">
+                                                    <input class="form-control" name="BlogDate" type="Date"  id="ProjectAlias">
                                                 </div>
 
 
@@ -62,18 +62,18 @@ include("../../Helper/connect.php");
                                             <div class="mt-3 mt-lg-0">
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Alias</label>
-                                                    <input onkeyup="aliascheck(this.value)" class="form-control" name="BlogAlias" type="text" placeholder="Artisanal kale" id="BlogAlias">
+                                                    <input onkeyup="aliascheck(this.value)" class="form-control" name="BlogAlias" type="text"  id="BlogAlias">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Reading Time</label>
-                                                    <input class="form-control" name="ReadingTime" type="text" placeholder="Artisanal kale" id="ReadingTime">
+                                                    <input class="form-control" name="ReadingTime" type="number"  id="ReadingTime">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" required class="form-label">Blog Status</label>
                                                     <select class="form-select" id="BlogStatus" name="BlogStatus">
                                                         <option>Select</option>
-                                                        <option>Commercial</option>
-                                                        <option>Residential</option>
+                                                        <option value="10" >Published</option>
+                                                        <option value="11" >Draft</option>
                                                     </select>
                                                 </div>
 
@@ -89,11 +89,11 @@ include("../../Helper/connect.php");
                                             <div class="col-lg-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h4 class="card-title">Ckeditor Classic editor</h4>
-                                                        <p class="card-title-desc">Example of Ckeditor Classic editor</p>
+                                                        <h4 class="card-title">Blog description</h4>
+                                                        
                                                     </div>
                                                     <div class="card-body">
-                                                        <div id="ckeditor-classic"></div>
+                                                        <div id="ckeditor-classic"  name="BlogDescription"></div>
                                                     </div>
                                                 </div>
                                             </div>
