@@ -4,12 +4,41 @@
 <?php
 include("../../Helper/connect.php");
 
-// $id = $_POST['pid'];
+if(isset($_POST['submit'])){
+    // echo '<pre>';
+    // print_r($_POST);
+   
+    foreach($_POST as $key=>$value){
+        if(is_int($key) && $value != null){
+            echo "PK_amenity=" . $key . ", count=" . $value;
+            echo "<br>";
+            $test_query = "select * from amenities_master where Pk_amenities = $key ";
+            $exce = mysqli_query($con,$test_query);
+   echo '<pre>';
+while($row = mysqli_fetch_array($exce)){
+    print_r($row);
+}
+
+        }
+      
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
 $Lease_Name = $_POST['LeaseName'];
 $Lease_Alias = $_POST['LeaseAlias'];
 $ShortDescription = $_POST['ShortDescription'];
 $LongDescription = $_POST['LongDescription'];
-$CarpetArea = $_POST['CarpetArea'];
+// $CarpetArea = $_POST['CarpetArea'];
 $CompleteAddress = $_POST['CompleteAddress'];
 $Location = $_POST['Location'];
 $Price = $_POST['Price'];
@@ -19,19 +48,19 @@ $FloorPlanURL = $_POST['FloorPlanURL'];
 $ThumbnailURL = $_POST['ThumbnailURL'];
 $VideoURL = $_POST['VideoURL'];
 $Furnished_Unfurnished = $_POST['Furnished/Unfurnished'];
-$BuildUpArea = $_POST['BuildUpArea'];
-$CabinsCount = $_POST['CabinsCount'];
-$ReceptionArea = $_POST['ReceptionArea'];
-$W_S = $_POST['W/S'];
-$SR_Manage = $_POST['SRManage'];
-$ConferenceRoomCount = $_POST['ConferenceRoomCount'];
-$MeetingRoomCount = $_POST['MeetingRoomCount'];
-$ServerRoomCount = $_POST['ServerRoomCount'];
-$StoreroomCount = $_POST['StoreroomCount'];
-$GeneralWashroomCount = $_POST['GeneralWashroomCount'];
-$GentsWashroomCount = $_POST['GentsWashroomCount'];
-$ladiesWashroom = $_POST['ladiesWashroom'];
-$PantryCount = $_POST['PantryCount'];
+// $BuildUpArea = $_POST['BuildUpArea'];
+// $CabinsCount = $_POST['CabinsCount'];
+// $ReceptionArea = $_POST['ReceptionArea'];
+// $W_S = $_POST['W/S'];
+// $SR_Manage = $_POST['SRManage'];
+// $ConferenceRoomCount = $_POST['ConferenceRoomCount'];
+// $MeetingRoomCount = $_POST['MeetingRoomCount'];
+// $ServerRoomCount = $_POST['ServerRoomCount'];
+// $StoreroomCount = $_POST['StoreroomCount'];
+// $GeneralWashroomCount = $_POST['GeneralWashroomCount'];
+// $GentsWashroomCount = $_POST['GentsWashroomCount'];
+// $ladiesWashroom = $_POST['ladiesWashroom'];
+// $PantryCount = $_POST['PantryCount'];
 
 
 // Seo tools
@@ -71,11 +100,15 @@ $altTag = $_POST['altTag'];
     // } else
 
 
+    //     if($errMsg == ''){
+    //         $ad= $link->insert("leasing_master",array("Lease_Name"=>$Lease_Name,"Lease_Alias"=>$Lease_Alias,"ShortDescription"=>$ShortDescription,"LongDescription"=>$LongDescription,"CompleteAddress"=>$CompleteAddress,"Location"=>$Location,"Price"=>$Price,"Packs"=>$Packs,"ThumbnailURL"=>$ThumbnailURL,"FloorPlanURL"=>$FloorPlanURL,"VideoURL"=>$VideoURL,"Furnished/Unfurnished"=>$Furnished_Unfurnished,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords,"LeaseOgTag"=>$LeaseOgTag,"LeaseOgTitle"=>$LeaseOgTitle,"altTag"=>$altTag,"LeaseOgTitle"=>$LeaseOgTitle,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle,"DisplayOrder"=>$DisplayOrder,"FK_Status"=>$FK_Status));
+    // }
+
    
     
-    if($errMsg == ''){
-            $ad= $link->insert("leasing_master",array("Lease_Name"=>$Lease_Name,"Lease_Alias"=>$Lease_Alias,"ShortDescription"=>$ShortDescription,"LongDescription"=>$LongDescription,"CarpetArea"=>$CarpetArea,"CompleteAddress"=>$CompleteAddress,"Location"=>$Location,"Price"=>$Price,"Packs"=>$Packs,"ThumbnailURL"=>$ThumbnailURL,"FloorPlanURL"=>$FloorPlanURL,"VideoURL"=>$VideoURL,"Furnished/Unfurnished"=>$Furnished_Unfurnished,"BuildUpArea"=>$BuildUpArea,"CabinsCount"=>$CabinsCount,"ReceptionArea"=>$ReceptionArea,"W/S"=>$W_S,"SR_Manage"=>$SR_Manage,"ConferenceRoomCount"=>$ConferenceRoomCount,"MeetingRoomCount"=>$MeetingRoomCount,"ServerRoomCount"=>$ServerRoomCount,"GeneralWashroom"=>$GeneralWashroomCount,"GentsWashroomCount"=>$GentsWashroomCount,"ladiesWashroom"=>$ladiesWashroom,"PantryCount"=>$PantryCount,"StoreroomCount"=>$StoreroomCount,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords,"LeaseOgTag"=>$LeaseOgTag,"LeaseOgTitle"=>$LeaseOgTitle,"altTag"=>$altTag,"LeaseOgTitle"=>$LeaseOgTitle,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle,"DisplayOrder"=>$DisplayOrder,"FK_Status"=>$FK_Status));
-    }
+    // if($errMsg == ''){
+    //         $ad= $link->insert("leasing_master",array("Lease_Name"=>$Lease_Name,"Lease_Alias"=>$Lease_Alias,"ShortDescription"=>$ShortDescription,"LongDescription"=>$LongDescription,"CarpetArea"=>$CarpetArea,"CompleteAddress"=>$CompleteAddress,"Location"=>$Location,"Price"=>$Price,"Packs"=>$Packs,"ThumbnailURL"=>$ThumbnailURL,"FloorPlanURL"=>$FloorPlanURL,"VideoURL"=>$VideoURL,"Furnished/Unfurnished"=>$Furnished_Unfurnished,"BuildUpArea"=>$BuildUpArea,"CabinsCount"=>$CabinsCount,"ReceptionArea"=>$ReceptionArea,"W/S"=>$W_S,"SR_Manage"=>$SR_Manage,"ConferenceRoomCount"=>$ConferenceRoomCount,"MeetingRoomCount"=>$MeetingRoomCount,"ServerRoomCount"=>$ServerRoomCount,"GeneralWashroom"=>$GeneralWashroomCount,"GentsWashroomCount"=>$GentsWashroomCount,"ladiesWashroom"=>$ladiesWashroom,"PantryCount"=>$PantryCount,"StoreroomCount"=>$StoreroomCount,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords,"LeaseOgTag"=>$LeaseOgTag,"LeaseOgTitle"=>$LeaseOgTitle,"altTag"=>$altTag,"LeaseOgTitle"=>$LeaseOgTitle,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle,"DisplayOrder"=>$DisplayOrder,"FK_Status"=>$FK_Status));
+    // }
 
     if($ad) {
         if ($_FILES['Images']['size'] > 0) {
@@ -214,7 +247,7 @@ $altTag = $_POST['altTag'];
     //         }
             
     //     }
-        header('location:lease.php');
+        // header('location:lease.php');
     }
 
     function  addImage($imageName){
