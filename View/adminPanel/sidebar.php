@@ -41,6 +41,12 @@
                         <span data-key="t-apps">Blogs</span>
                     </a>
                 </li>
+                <li>
+                    <a href="aminities.php">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Aminities</span>
+                    </a>
+                </li>
                 
 
 

@@ -33,12 +33,12 @@ $exce = mysqli_query($con, $query);
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0 font-size-18">Add Interior</h4>
+                    <h4 class="mb-sm-0 font-size-18">Add Aminities</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Interiors</a></li>
-                            <li class="breadcrumb-item active">Interior</li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Aminities</a></li>
+                            <li class="breadcrumb-item active">Aminities</li>
                         </ol>
                     </div>
 
@@ -52,39 +52,36 @@ $exce = mysqli_query($con, $query);
                 <div class="card">
                     <div class="card-body">
                     <div class="card-body p-4">
-                    <form  action="addinterior.php " class="needs-validation" novalidate method="post" name="f1"  enctype="multipart/form-data">
+                    <form  action="addaminities.php " class="needs-validation" novalidate method="post" name="f1"  enctype="multipart/form-data">
         <div class="row">
             
             <div class="col-lg-6">
                 <div>
                     <div class="mb-3">
-                        <label for="example-text-input" class="form-label">Interior Title</label>
-                        <input name="InteriorTitle" required class="form-control" type="text" placeholder="" id="BlogTitle">
+                        <label for="example-text-input" class="form-label">Amenity name</label>
+                        <input name="amenity name" required class="form-control" type="text" placeholder="" id="BlogTitle">
                     </div>
-                    <div class="mb-3">
-                        <label for="example-text-input" class="form-label">Meta Title</label>
-                        <input name="MetaTitle" class="form-control" type="text" placeholder="" id="BlogTitle">
-                    </div>
-                    <div class="mb-3">
+                   
+                    <!-- <div class="mb-3">
                         <label for="example-text-input" class="form-label">Alt Tag</label>
                         <input name="altTag"  class="form-control" type="text" placeholder="" id="BlogTitle">
-                    </div>
+                    </div> -->
 
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="example-tel-input" class="form-label">Gallery Image1</label>
 						<input  type="file" name="GalleryImage1" id="GalleryImage1" class="form-control">
-                    </div>
+                    </div> -->
                     
-                    <div class="mb-3">
+                    <!-- <div class="mb-3">
                         <label for="example-tel-input" class="form-label">Gallery Image3</label>
 						<input type="file" name="GalleryImage3" id="GalleryImage3" class="form-control">
-                    </div>
+                    </div> -->
                    
                 </div>
             </div>
 
            <div class="col-lg-6">
-                <div class="mt-3 mt-lg-0">
+                <!-- <div class="mt-3 mt-lg-0">
                     <div class="mb-3">
                         <label for="example-text-input" class="form-label">Interior Alias</label>
                         <input onkeyup="aliascheck(this.value)" required class="form-control" name="InteriorAlias" type="text" placeholder="" id="ProjectAlias">
@@ -106,10 +103,10 @@ $exce = mysqli_query($con, $query);
                         <label for="example-tel-input" class="form-label">Gallery Image4</label>
 						<input type="file" name="GalleryImage4" id="GalleryImage4" class="form-control">
                     </div>
-                </div>
+                </div> -->
             </div>
 
-            <div class="card-body">
+            <!-- <div class="card-body">
                                             <div>
                                                 <h5 class="card-title mb-4">Project SEO Details</h5>
                                                 <input type="hidden" />
@@ -181,7 +178,7 @@ $exce = mysqli_query($con, $query);
             
 
 
-          <div>
+          <div> 
                 <button type="submit" class="btn btn-primary w-md">Submit</button>
             </div> 
         </div>
@@ -205,7 +202,7 @@ $exce = mysqli_query($con, $query);
         <script src="assets/js/app.js"></script>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <script>
+        <!-- <script>
     function aliascheck(val)
         {
             $.ajax({
@@ -230,7 +227,7 @@ $exce = mysqli_query($con, $query);
             });
           
         }
-</script>
+</script> -->
     
 <?php
 include("footer.php")
