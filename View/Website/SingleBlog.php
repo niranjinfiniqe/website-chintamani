@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <?php include("header.php"); ?>
+	<?php include("header.php"); ?>
 	<!-- <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 		<link rel="pingback" href="https://lasvegas.wpresidence.net/xmlrpc.php" />
 		<meta name="google-signin-client_id" content="13759604714-0t7p0dh546nvkefuvt58ojmj6dcr82ld.apps.googleusercontent.com">
 		<meta name="google-signin-scope" content="https://www.googleapis.com/auth/analytics.readonly">
-		<title>Blog List &#8211; WpResidence Real Estate Theme Demo</title>
+		<title>These were the most expensive Las Vegas condos &#8211; WpResidence Real Estate Theme Demo</title>
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Nunito%20Sans%3A300%2C400%2C600%2C700%2C800%2C900&amp;subset=latin%2Clatin-ext&amp;display=swap" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito%20Sans%3A300%2C400%2C600%2C700%2C800%2C900&amp;subset=latin%2Clatin-ext&amp;display=swap" media="print" onload="this.media='all'" />
 		<noscript>
@@ -21,6 +21,7 @@
 		<link href='http://las-vegas.b-cdn.net/' rel='preconnect' />
 		<link rel="alternate" type="application/rss+xml" title="WpResidence Real Estate Theme Demo &raquo; Feed" href="https://lasvegas.wpresidence.net/feed/" />
 		<link rel="alternate" type="application/rss+xml" title="WpResidence Real Estate Theme Demo &raquo; Comments Feed" href="https://lasvegas.wpresidence.net/comments/feed/" />
+		<link rel="alternate" type="application/rss+xml" title="WpResidence Real Estate Theme Demo &raquo; These were the most expensive Las Vegas condos Comments Feed" href="https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/feed/" />
 		<style type="text/css">
 			img.wp-smiley,
 			img.emoji {
@@ -42,8 +43,7 @@
 		<link rel='stylesheet' id='bootstrap.min-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/css/bootstrap.min.css?ver=4.4' type='text/css' media='all' />
 		<link rel='stylesheet' id='bootstrap-theme.min-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/css/bootstrap-theme.min.css?ver=4.4' type='text/css' media='all' />
 		<link rel='stylesheet' id='wpestate_style-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/style.css?ver=4.4' type='text/css' media='all' />
-		<style id='wpestate_style-inline-css' type='text/css'>
-		</style>
+		
 		<link rel='stylesheet' id='wpestate_media-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/css/my_media.css?ver=4.4' type='text/css' media='all' />
 		<link rel='stylesheet' id='font-awesome-5.min-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/css/fontawesome/css/all.css?ver=6.0' type='text/css' media='all' />
 		<link rel='stylesheet' id='fontello-css' href='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/css/fontello.min.css?ver=6.0' type='text/css' media='all' />
@@ -55,12 +55,14 @@
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/modernizr.custom.62456.js?ver=4.4' id='modernizr.custom.62456-js'></script>
 		<link rel="https://api.w.org/" href="https://lasvegas.wpresidence.net/wp-json/" />
-		<link rel="alternate" type="application/json" href="https://lasvegas.wpresidence.net/wp-json/wp/v2/pages/17988" />
+		<link rel="alternate" type="application/json" href="https://lasvegas.wpresidence.net/wp-json/wp/v2/posts/169" />
 		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://lasvegas.wpresidence.net/xmlrpc.php?rsd" />
 		<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://las-vegas.b-cdn.net/wp-includes/wlwmanifest.xml" />
 		<meta name="generator" content="WordPress 6.0" />
-		<link rel="canonical" href="https://lasvegas.wpresidence.net/blog-list-no-sidebar/" />
-		<link rel='shortlink' href='https://lasvegas.wpresidence.net/?p=17988' />
+		<link rel="canonical" href="https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/" />
+		<link rel='shortlink' href='https://lasvegas.wpresidence.net/?p=169' />
+		
+		<link rel="icon" href="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas-fav-36x36.png" sizes="32x32" />
 		<link rel="icon" href="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas-fav.png" sizes="192x192" />
 		<link rel="apple-touch-icon" href="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas-fav.png" />
 		<meta name="msapplication-TileImage" content="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas-fav.png" />
@@ -75,7 +77,7 @@
 			}		
 		</style>
 	</head> -->
-	<!-- <body class="page-template page-template-blog_list page-template-blog_list-php page page-id-17988 using-mobile-header-sticky elementor-default elementor-kit-22">
+	<!-- <body class="post-template-default single single-post postid-169 single-format-standard using-mobile-header-sticky elementor-default elementor-kit-22">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
 			<defs>
 				<filter id="wp-duotone-dark-grayscale">
@@ -237,7 +239,7 @@
 								<i class=" far fa-eye-slash show_hide_password"></i>
 							</div>
 							<input type="hidden" name="loginpop" id="loginpop_wd_mobile" value="0">
-							<input type="hidden" id="security-login-mobile" name="security-login-mobile" value="6a9006f4c6-1655733750">
+							<input type="hidden" id="security-login-mobile" name="security-login-mobile" value="6df7d5fc0b-1656426998">
 							<button class="wpresidence_button" id="wp-login-but-mobile">Login</button>
 							<div class="login-links">
 								<a href="#" id="widget_register_mobile">Need an account? Register here!</a>
@@ -253,7 +255,7 @@
 							<div class="password_holder"><input type="password" name="user_password_retype" id="user_password_mobile_retype" class="form-control" placeholder="Retype Password" /> <i class=" far fa-eye-slash show_hide_password"></i></div>
 							<input type="checkbox" name="terms" id="user_terms_register_mobile" />
 							<label id="user_terms_register_mobile_label" for="user_terms_register_mobile">I agree with <a href="https://lasvegas.wpresidence.net/" target="_blank" id="user_terms_register_mobile_link">terms &amp; conditions</a> </label>
-							<input type="hidden" id="security-register-mobile" name="security-register-mobile" value="dc12eceadd-1655733750">
+							<input type="hidden" id="security-register-mobile" name="security-register-mobile" value="de3b4989d5-1656426998">
 							<button class="wpresidence_button" id="wp-submit-register_mobile">Register</button>
 							<div class="login-links">
 								<a href="#" id="widget_login_mobile">Back to Login</a>
@@ -265,7 +267,7 @@
 							<div class="loginrow">
 								<input type="email" class="form-control" name="forgot_email" id="forgot_email_mobile" autofocus placeholder="Enter Your Email Address" size="20" />
 							</div>
-							<input type="hidden" id="security-forgot-mobile" name="security-forgot-mobile" value="c74cfef0e5" /><input type="hidden" name="_wp_http_referer" value="/blog-list-no-sidebar/" />
+							<input type="hidden" id="security-forgot-mobile" name="security-forgot-mobile" value="6a25fa81c6" /><input type="hidden" name="_wp_http_referer" value="/2014/05/27/these-were-the-most-expensive-las-vegas-condos/" />
 							<input type="hidden" id="postid-mobile" value="">
 							<button class="wpresidence_button" id="wp-forgot-but-mobile" name="forgot">Reset Password</button>
 							<div class="login-links shortlog">
@@ -278,24 +280,91 @@
 		</div> -->
 		<div class="website-wrapper" id="all_wrapper">
 			<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
-                <?php include("subheader.php"); ?>
-				<div class="pre_search_wrapper"></div>
+				<!-- <div class="master_header   wide   topbar_transparent  ">
+					<div class="mobile_header mobile_header_sticky_yes">
+						<div class="mobile-trigger"><i class="fas fa-bars"></i></div>
+						<div class="mobile-logo">
+							<a href="https://lasvegas.wpresidence.net/">
+							<img src="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png" class="img-responsive retina_ready " alt="image" /> </a>
+						</div>
+						<div class="mobile-trigger-user">
+							<i class="fas fa-user-circle"></i>
+						</div>
+					</div>
+					<div class="header_wrapper   header_type1 header_center hover_type_2 header_alignment_text_left  no_property_submit ">
+						<div class="header_wrapper_inside  " data-logo="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png" data-sticky-logo="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png">
+							<div class="logo">
+								<a href="https://lasvegas.wpresidence.net/"><img id="logo_image" style="margin-top:0px;" src="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png" class="img-responsive retina_ready" alt="company logo" /></a>
+							</div>
+							<div class="user_menu user_not_loged" id="user_menu_u">
+								<a class="menu_user_tools dropdown" id="user_menu_trigger" data-toggle="dropdown">
+								<a class="navicon-button nav-notlog x">
+									<div class="navicon"></div>
+								</a>
+								<div class="submit_action">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
+										<g>
+											<path d="M50,5C25.2,5,5,25.1,5,50s20.2,45,45,45s45-20.1,45-45S74.8,5,50,5z M50,26.5c7.2,0,13.1,5.9,13.1,13.1   c0,7.2-5.9,13.1-13.1,13.1s-13.1-5.9-13.1-13.1C36.9,32.4,42.8,26.5,50,26.5z M50,87.9c-12.2,0-23.1-5.8-30.1-14.8   c5.7-10.7,17.1-18,30.1-18s24.4,7.3,30.1,18C73.2,82.1,62.2,87.9,50,87.9z" />
+										</g>
+									</svg>
+								</div>
+								<div class="header_phone">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 295.64 369.5375" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd">
+										<defs></defs>
+										<g>
+											<path class="fil0" d="M231.99 189.12c18.12,10.07 36.25,20.14 54.37,30.21 7.8,4.33 11.22,13.52 8.15,21.9 -15.59,42.59 -61.25,65.07 -104.21,49.39 -87.97,-32.11 -153.18,-97.32 -185.29,-185.29 -15.68,-42.96 6.8,-88.62 49.39,-104.21 8.38,-3.07 17.57,0.35 21.91,8.15 10.06,18.12 20.13,36.25 30.2,54.37 4.72,8.5 3.61,18.59 -2.85,25.85 -8.46,9.52 -16.92,19.04 -25.38,28.55 18.06,43.98 55.33,81.25 99.31,99.31 9.51,-8.46 19.03,-16.92 28.55,-25.38 7.27,-6.46 17.35,-7.57 25.85,-2.85z" />
+										</g>
+									</svg>
+									<a href="tel: 800-555-6789"> 800-555-6789</a>
+								</div>
+							</div>
+							<nav id="access">
+								<div class="menu-main-menu-container">
+									<ul id="menu-main-menu" class="menu">
+										<li id="menu-item-19214" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home no-megamenu   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/">Home</a></li>
+										<li id="menu-item-20475" class="menu-item menu-item-type-custom menu-item-object-custom no-megamenu   "><a class="menu-item-link" target="_blank" href="https://demo.wpresidence.net/#demos">Demos</a></li>
+										<li id="menu-item-837" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu   ">
+											<a class="menu-item-link" href="#">Properties</a>
+											<ul style="" class="  sub-menu ">
+												<li id="menu-item-848" class="menu-item menu-item-type-post_type menu-item-object-estate_property   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/">Property Single Page</a></li>
+												<li id="menu-item-18161" class="menu-item menu-item-type-post_type menu-item-object-page   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/properties-standard-list/">Properties Standard List</a></li>
+												<li id="menu-item-18168" class="menu-item menu-item-type-post_type menu-item-object-page   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/half-map-properties-list/">Half Map Properties List</a></li>
+											</ul>
+										</li>
+										<li id="menu-item-836" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu   ">
+											<a class="menu-item-link" href="#">Agents</a>
+											<ul style="" class="  sub-menu ">
+												<li id="menu-item-20259" class="menu-item menu-item-type-post_type menu-item-object-page   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/about-us/">About us</a></li>
+												<li id="menu-item-853" class="menu-item menu-item-type-post_type menu-item-object-estate_agent   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/">Agent Profile Page</a></li>
+												<li id="menu-item-18162" class="menu-item menu-item-type-post_type menu-item-object-page   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/agent-list-sidebar-left/">Agents List Page</a></li>
+											</ul>
+										</li>
+										<li id="menu-item-838" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu   ">
+											<a class="menu-item-link" href="#">Blog</a>
+											<ul style="" class="  sub-menu ">
+												<li id="menu-item-18174" class="menu-item menu-item-type-post_type menu-item-object-page   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/blog-list-no-sidebar/">Blog List</a></li>
+												<li id="menu-item-18163" class="menu-item menu-item-type-post_type menu-item-object-post   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/">Blog Single Post</a></li>
+											</ul>
+										</li>
+										<li id="menu-item-18169" class="menu-item menu-item-type-post_type menu-item-object-page no-megamenu   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/contact-us-3/">Contact</a></li>
+										<li id="menu-item-20229" class="menu-item menu-item-type-post_type menu-item-object-page no-megamenu   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/favorite-properties/">Favorites</a></li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div> -->
+				<?php include("subheader.php"); ?>
 				<div class="container content_wrapper">
-                    <div class="wpestate_header_image full_screen_no parallax_effect_yes" style="background-image:url(https://madrid.wpresidence.net/wp-content/uploads/2021/11/interior_grey_bg-e1636449434931.jpeg); height:450px; ">
-                            <div class="wpestate_header_image_overlay" style="background-color:#382525;opacity:0.6;background-image:url();"></div>
-                            <div class="heading_over_image_wrapper">
-                                <h1 class="heading_over_image">Real Estate Blog</h1>
-                                <div class="subheading_over_image">Read about the latest industry news</div>
-                            </div>
-                    </div>
-					<div class="row">
+					<div id="post" class="row post-169 post type-post status-publish format-standard has-post-thumbnail hentry category-selling-properties category-real-estate tag-real-estate-2 tag-selling-your-home">
 						<div class="col-xs-12 col-md-12 breadcrumb_container">
 							<ol class="breadcrumb">
 								<li><a href="https://lasvegas.wpresidence.net/">Home</a></li>
-								<li class="active">Blog List</li>
+								<li><a href="https://lasvegas.wpresidence.net/category/selling-properties/">Buying Properties</a>, <a href="https://lasvegas.wpresidence.net/category/real-estate/">Real Estate</a></li>
+								<li class="active">These were the most expensive Las Vegas condos</li>
 							</ol>
 						</div>
-						<div class=" col-md-9 rightmargin ">
+						<div class=" col-md-9 rightmargin single_width_blog">
 							<span class="entry-title listing_loader_title">Your search results</span>
 							<div class="spinner" id="listing_loader">
 								<div class="rect1"></div>
@@ -305,24 +374,106 @@
 								<div class="rect5"></div>
 							</div>
 							<div id="listing_ajax_container"></div>
-							<h1 class="entry-title title_prop">Blog List</h1>
-							<div class="single-content"></div>
-							<div class="blog_list_wrapper">
-								<div class="col-md-6  listing_wrapper blog2v">
-									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/">
-										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2016/03/portrait__interior9-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2016/03/portrait__interior9-525x328.jpg" /></a></div>
-										<h4>
-											<a href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/" class="blog_unit_title">Top 10 best appreciating condos in Las Vegas</a>
-										</h4>
-										<div class="blog_unit_meta">
-											Mar 04, 2016
+							<div class="single-content single-blog">
+								<div id="carousel-example-generic" class="carousel slide post-carusel" data-ride="carousel" data-interval="false">
+									<ol class="carousel-indicators">
+										<li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+									</ol>
+									<div class="carousel-inner">
+										<div class="item  active ">
+											<a href="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38.jpg" rel="prettyPhoto" title="" class="prettygalery">
+											<img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38-800x467.jpg" alt="" class="img-responsive lightbox_trigger" />
+											</a>
+											<div class="carousel-caption"></div>
 										</div>
-										<div class="listing_details the_grid_view">
-											New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 <a href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/" class="unit_more_x">...</a> 
-										</div>
-										<a class="read_more" href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/"> Continue reading<i class="fas fa-angle-right"></i> </a>
 									</div>
+									<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+									<i class="demo-icon icon-left-open-big"></i>
+									</a>
+									<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+									<i class="demo-icon icon-right-open-big"></i>
+									</a>
 								</div>
+								<h1 class="entry-title single-title">These were the most expensive Las Vegas condos</h1>
+								<div class="meta-info">
+									<div class="meta-element"> <i class="far fa-calendar-alt meta_icon firsof"></i>Posted by demo on May 27, 2014</div>
+									<div class="meta-element"> <i class="far fa-file meta_icon"></i> <a href="https://lasvegas.wpresidence.net/category/selling-properties/">Buying Properties</a>, <a href="https://lasvegas.wpresidence.net/category/real-estate/">Real Estate</a></div>
+									<div class="meta-element"> <i class="far fa-comment meta_icon"></i> 0 </div>
+								</div>
+								<p>New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 km2) are land and 10.81 square miles (28.0 km2) are water.</p>
+								<blockquote class="wp-block-quote">
+									<p><em>A modern redrawing of the 1807 version of the Commissioner’s Grid plan for Manhattan, a few years before it was adopted in 1811. Central Park is absent.</em></p>
+								</blockquote>
+								<p>Duis mattis laoreet neque, et ornare neque sollicitudin at. Proin sagittis dolor sed mi elementum pretium. Donec et justo ante. Vivamus egestas sodales est, eu rhoncus urna semper eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique elit lobortis purus bibendum, quis dictum metus mattis.</p>
+								<h3>What you must know about the Madrid market</h3>
+								<p>Curabitur massa magna, tempor in blandit id, porta in ligula. Aliquam laoreet nisl massa, at interdum mauris sollicitudin et. Mauris risus lectus, tristique at nisl at, pharetra tristique enim.</p>
+								<p>Nullam this is a link nibh facilisis, at malesuada orci congue. Nullam tempus sollicitudin cursus. Nulla elit mauris, volutpat eu varius malesuada, pulvinar eu ligula. Ut et adipiscing erat. Curabitur adipiscing erat vel libero tempus congue. Nam pharetra interdum vestibulum. Aenean gravida mi non aliquet porttitor. Praesent dapibus, nisi a faucibus tincidunt, quam dolor condimentum metus, in convallis libero ligula ut eros.</p>
+								<ul>
+									<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+									<li>
+										Aliquam tincidunt mauris eu risus.
+										<ol>
+											<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+											<li>Aliquam tincidunt mauris eu risus.</li>
+											<li>Vestibulum auctor dapibus neque.</li>
+										</ol>
+									</li>
+									<li>Vestibulum auctor dapibus neque.</li>
+								</ul>
+								<p>Ut non gravida arcu. Vivamus non congue leo. Aliquam dapibus laoreet purus, vitae iaculis eros egestas ac. Mauris massa est, lobortis a viverra eget, elementum sit amet ligula. Maecenas venenatis eros quis porta laoreet.</p>
+								<h3>Top 10 Madrid apartments for sell now trending</h3>
+								<figure class="wp-container-2 wp-block-gallery-1 wp-block-gallery columns-1 is-cropped">
+									<ul class="blocks-gallery-grid">
+										<li class="blocks-gallery-item">
+											<figure><a href="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38.jpg"><img width="800" height="533" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38.jpg" alt="" data-id="19019" data-full-url="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38.jpg" data-link="https://miami.wpresidence.net/2014/05/27/selling-your-home/interior38-2/" class="wp-image-19019" srcset="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38.jpg 800w, https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38-300x200.jpg 300w, https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38-768x512.jpg 768w, https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38-105x70.jpg 105w" sizes="(max-width: 800px) 100vw, 800px" /></a></figure>
+										</li>
+									</ul>
+								</figure>
+								<p>One neighborhood of New York County is contiguous with The Bronx. Marble Hill at one time was part of Manhattan Island, but the Harlem River Ship Canal, dug in 1895 to improve navigation on the Harlem River, separated it from the remainder of Manhattan as an island between the Bronx and the remainder of Manhattan. Before World War I, the section of the original Harlem River channel separating Marble Hill from The Bronx was filled in, and Marble Hill became part of the mainland.</p>
+								<p>Vivamus varius vitae dolor ac hendrerit. Vestibulum nec dolor ac nunc blandit aliquam. Nam at metus non ligula egestas varius ac sed mauris. Fusce at mi metus. Nam elementum dui id nulla bibendum elementum.</p>
+								<ol>
+									<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+									<li>
+										Aliquam tincidunt mauris eu risus.
+										<ol>
+											<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+											<li>Aliquam tincidunt mauris eu risus.</li>
+											<li>Vestibulum auctor dapibus neque.</li>
+										</ol>
+									</li>
+									<li>Vestibulum auctor dapibus neque.</li>
+								</ol>
+								<p>Proin sagittis dolor sed mi elementum pretium. Donec et justo ante. Vivamus egestas sodales est, eu rhoncus urna semper eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique elit lobortis purus bibendum, quis dictum metus mattis. Phasellus posuere felis sed eros porttitor mattis. Curabitur massa magna, tempor in blandit id, porta in ligula. Aliquam laoreet nisl massa, at interdum mauris sollicitudin et.</p>
+								<p></p>
+								<div class="prop_social_single">
+									<a href="https://www.facebook.com/sharer.php?u=https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/&amp;t=These+were+the+most+expensive+Las+Vegas+condos" target="_blank" class="share_facebook" rel="noreferrer"><i class="fab fa-facebook-f"></i></a>
+									<a href="https://twitter.com/intent/tweet?text=These+were+the+most+expensive+Las+Vegas+condos+https%3A%2F%2Flasvegas.wpresidence.net%2F2014%2F05%2F27%2Fthese-were-the-most-expensive-las-vegas-condos%2F" class="share_tweet" target="_blank" rel="noreferrer"><i class="fab fa-twitter"></i></a>
+									<a href="https://pinterest.com/pin/create/button/?url=https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/&amp;media=https://lasvegas.wpresidence.net/wp-content/uploads/2021/11/house6.jpeg&amp;description=These+were+the+most+expensive+Las+Vegas+condos" target="_blank" class="share_pinterest" rel="noreferrer"> <i class="fab fa-pinterest-p"></i> </a>
+									<a href="https://api.whatsapp.com/send?text=These+were+the+most+expensive+Las+Vegas+condos+https%3A%2F%2Flasvegas.wpresidence.net%2F2014%2F05%2F27%2Fthese-were-the-most-expensive-las-vegas-condos%2F" class="" rel="noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+									<a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#9bfef6faf2f7dbfef6faf2f7b5f8f4f6a4e8eef9f1fef8efa6cff3fee8feb0ecfee9feb0eff3feb0f6f4e8efb0fee3ebfef5e8f2edfeb0d7fae8b0cdfefcfae8b0f8f4f5fff4e8bdfaf6eba0f9f4ffe2a6f3efefebe8bea8dabea9ddbea9ddf7fae8edfefcfae8b5ecebe9fee8f2fffef5f8feb5f5feefbea9dda9abaaafbea9ddabaebea9dda9acbea9ddeff3fee8feb6ecfee9feb6eff3feb6f6f4e8efb6fee3ebfef5e8f2edfeb6f7fae8b6edfefcfae8b6f8f4f5fff4e8bea9dd" class="social_email"> <i class="far fa-envelope"></i></a>
+								</div>
+							</div>
+							<div id="comments">
+								<div id="respond" class="comment-respond">
+									<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/#respond" style="display:none;">Cancel Reply</a></small></h3>
+									<form action="https://lasvegas.wpresidence.net/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+										<p class="comment-notes">Your email address will not be published. </p>
+										<p class="comment-form-comment"><label for="comment"></label><textarea id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
+										<p class="comment-form-author"><input id="author" name="author" type="text" class="form-control" value="" size="30" aria-required='true' placeholder="Name" /></p>
+										<p class="comment-form-email"><input id="email" name="email" type="text" class="form-control" value="" size="30" aria-required='true' placeholder="Email" /></p>
+										<p class="comment-form-url"><input id="url" name="url" type="text" class="form-control" value="" size="30" placeholder="Website" /></p>
+										<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+										<p class="form-submit"><input name="submit" type="submit" id="submit" class="wpresidence_button" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='169' id='comment_post_ID' />
+											<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+										</p>
+										<p style="display: none !important;">
+											<label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="5" /><script data-cfasync="false" src="https://lasvegas.wpresidence.net/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script>
+										</p>
+									</form>
+								</div>
+							</div>
+							<div class="related_posts">
+								<h3>Related Posts</h3>
 								<div class="col-md-6  listing_wrapper blog2v">
 									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/">
 										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/portrait_july2019-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/portrait_july2019-525x328.jpg" /></a></div>
@@ -336,21 +487,6 @@
 											New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 <a href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/" class="unit_more_x">...</a> 
 										</div>
 										<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/"> Continue reading<i class="fas fa-angle-right"></i> </a>
-									</div>
-								</div>
-								<div class="col-md-6  listing_wrapper blog2v">
-									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/">
-										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/house6-525x328.jpeg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/house6-525x328.jpeg" /></a></div>
-										<h4>
-											<a href="https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/" class="blog_unit_title">These were the most expensive Las Vegas cond...</a>
-										</h4>
-										<div class="blog_unit_meta">
-											May 27, 2014
-										</div>
-										<div class="listing_details the_grid_view">
-											New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 <a href="https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/" class="unit_more_x">...</a> 
-										</div>
-										<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/"> Continue reading<i class="fas fa-angle-right"></i> </a>
 									</div>
 								</div>
 								<div class="col-md-6  listing_wrapper blog2v">
@@ -369,21 +505,6 @@
 									</div>
 								</div>
 								<div class="col-md-6  listing_wrapper blog2v">
-									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/">
-										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior47-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior47-525x328.jpg" /></a></div>
-										<h4>
-											<a href="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/" class="blog_unit_title">Las Vegas neighbourhoods where it’s better t...</a>
-										</h4>
-										<div class="blog_unit_meta">
-											May 27, 2014
-										</div>
-										<div class="listing_details the_grid_view">
-											New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 <a href="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/" class="unit_more_x">...</a> 
-										</div>
-										<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/"> Continue reading<i class="fas fa-angle-right"></i> </a>
-									</div>
-								</div>
-								<div class="col-md-6  listing_wrapper blog2v">
 									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/find-the-most-attractive-townhouses-for-sale-in-las-vegas/">
 										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2014/05/27/find-the-most-attractive-townhouses-for-sale-in-las-vegas/"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/office-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/office-525x328.jpg" /></a></div>
 										<h4>
@@ -396,36 +517,6 @@
 											New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 <a href="https://lasvegas.wpresidence.net/2014/05/27/find-the-most-attractive-townhouses-for-sale-in-las-vegas/" class="unit_more_x">...</a> 
 										</div>
 										<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/find-the-most-attractive-townhouses-for-sale-in-las-vegas/"> Continue reading<i class="fas fa-angle-right"></i> </a>
-									</div>
-								</div>
-								<div class="col-md-6  listing_wrapper blog2v">
-									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/getting-a-house-for-rent-in-las-vegas-downtown/">
-										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2014/05/27/getting-a-house-for-rent-in-las-vegas-downtown/"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38-525x328.jpg" /></a></div>
-										<h4>
-											<a href="https://lasvegas.wpresidence.net/2014/05/27/getting-a-house-for-rent-in-las-vegas-downtown/" class="blog_unit_title">Getting a house for rent in Las Vegas downto...</a>
-										</h4>
-										<div class="blog_unit_meta">
-											May 27, 2014
-										</div>
-										<div class="listing_details the_grid_view">
-											New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 <a href="https://lasvegas.wpresidence.net/2014/05/27/getting-a-house-for-rent-in-las-vegas-downtown/" class="unit_more_x">...</a> 
-										</div>
-										<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/getting-a-house-for-rent-in-las-vegas-downtown/"> Continue reading<i class="fas fa-angle-right"></i> </a>
-									</div>
-								</div>
-								<div class="col-md-6  listing_wrapper blog2v">
-									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/buying-or-renting-a-house-in-las-vegas/">
-										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2014/05/27/buying-or-renting-a-house-in-las-vegas/"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-525x328.jpg" /></a></div>
-										<h4>
-											<a href="https://lasvegas.wpresidence.net/2014/05/27/buying-or-renting-a-house-in-las-vegas/" class="blog_unit_title">Buying or renting a house in Las Vegas</a>
-										</h4>
-										<div class="blog_unit_meta">
-											May 27, 2014
-										</div>
-										<div class="listing_details the_grid_view">
-											New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 <a href="https://lasvegas.wpresidence.net/2014/05/27/buying-or-renting-a-house-in-las-vegas/" class="unit_more_x">...</a> 
-										</div>
-										<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/buying-or-renting-a-house-in-las-vegas/"> Continue reading<i class="fas fa-angle-right"></i> </a>
 									</div>
 								</div>
 							</div>
@@ -446,7 +537,7 @@
 												<li role="presentation" data-curpos="before" data-coef="1.33" data-value="YEN" data-symbol="YEN" data-pos="2">YEN </li>
 											</ul>
 										</div>
-										<input type="hidden" id="wpestate_change_currency" value="35eaccc4d3" /> 
+										<input type="hidden" id="wpestate_change_currency" value="2c4ac2f45b" /> 
 									</li>
 									<li id="measurement_unit_widget-1" class="widget-container measurement_unit_widget">
 										<h3 class="widget-title-sidebar">Change Measurement</h3>
@@ -461,12 +552,12 @@
 												<li role="presentation" data-value="ha">hectares - ha</li>
 											</ul>
 										</div>
-										<input type="hidden" id="wpestate_change_measure" value="ceba72301a" /> 
+										<input type="hidden" id="wpestate_change_measure" value="e19e9dc139" /> 
 									</li>
 									<li id="advanced_search_widget-1" class="widget-container advanced_search_sidebar boxed_widget">
 										<h3 class="widget-title-sidebar">Advanced Search</h3>
 										<form role="search" method="get" action="https://lasvegas.wpresidence.net/advanced-search/">
-											<input type="hidden" id="wpestate_regular_search_nonce" name="wpestate_regular_search_nonce" value="d41c98e49d" /><input type="hidden" name="_wp_http_referer" value="/blog-list-no-sidebar/" /><input type="text" id="sidebar-adv_location_" class="form-control adv_locations_search" name="adv_location" placeholder="Enter an address, state, city, area or zip code" value=""><script type="text/javascript">
+											<input type="hidden" id="wpestate_regular_search_nonce" name="wpestate_regular_search_nonce" value="1a2276c63f" /><input type="hidden" name="_wp_http_referer" value="/2014/05/27/these-were-the-most-expensive-las-vegas-condos/" /><input type="text" id="sidebar-adv_location_" class="form-control adv_locations_search" name="adv_location" placeholder="Enter an address, state, city, area or zip code" value=""><script type="text/javascript">
 												//<![CDATA[
 												jQuery(document).ready(function(){
 												     var availableTags = ["Temse","Marcory","Las Vegas","Downtown","The Strip","Meadows Village","Downtown East","Winchester","België","Nevada",];
@@ -667,95 +758,85 @@
 			</div>
 			<?php include("subfooter.php"); ?>
 		</div>
-		<!-- <div id="modal_login_wrapper">
-			<div class="modal_login_back"></div>
-			<div class="modal_login_container " style='height:520px;'>
-				<div id="login-modal_close"></div>
-				<div class="login-register-modal-image" style="background-image: url('https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/couple-login-modal-3.jpeg')">
-					<div class="featured_gradient"></div>
-					<div class="login-register-modal-image_text">Welcome to Las Vegas Real Estate</div>
+			<!-- <div id="modal_login_wrapper">
+				<div class="modal_login_back"></div>
+				<div class="modal_login_container " style='height:520px;'>
+					<div id="login-modal_close"></div>
+					<div class="login-register-modal-image" style="background-image: url('https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/couple-login-modal-3.jpeg')">
+						<div class="featured_gradient"></div>
+						<div class="login-register-modal-image_text">Welcome to Las Vegas Real Estate</div>
+					</div>
+					<div class="login-register-modal-form-wrapper">
+						<div class="login_form" id="login-div_topbar">
+							<div id="login-div-title-topbar">Sign into your account </div>
+							<div class="loginalert" id="login_message_area_topbar"> </div>
+							<input type="text" class="form-control" name="log" id="login_user_topbar" autofocus placeholder="Username" />
+							<div class="password_holder">
+								<input type="password" class="form-control" name="pwd" id="login_pwd_topbar" placeholder="Password" />
+								<i class=" far fa-eye-slash show_hide_password"></i>
+							</div>
+							<input type="hidden" name="loginpop" id="loginpop_wd_topbar" value="0">
+							<input type="hidden" id="security-login-topbar" name="security-login-topbar" value="c70f189e17-1656426998">
+							<button class="wpresidence_button" id="wp-login-but-topbar">Login</button>
+							<div class="login-links"></div>
+						</div>
+						<div class="login_form" id="register-div-topbar">
+							<div id="register-div-title-topbar">Create an account</div>
+							<div class="loginalert" id="register_message_area_topbar"></div>
+							<input type="text" name="user_login_register" id="user_login_register_topbar" class="form-control" autofocus placeholder="Username" />
+							<input type="email" name="user_email_register" id="user_email_register_topbar" class="form-control" placeholder="Email" />
+							<div class="password_holder"><input type="password" name="user_password" id="user_password_topbar" class="form-control" placeholder="Password" /> <i class=" far fa-eye-slash show_hide_password"></i></div>
+							<div class="password_holder"><input type="password" name="user_password_retype" id="user_password_topbar_retype" class="form-control" placeholder="Retype Password" /> <i class=" far fa-eye-slash show_hide_password"></i></div>
+							<input type="checkbox" name="terms" id="user_terms_register_topbar" />
+							<label id="user_terms_register_topbar_label" for="user_terms_register_topbar">I agree with <a href="https://lasvegas.wpresidence.net/" target="_blank" id="user_terms_register_topbar_link">terms &amp; conditions</a> </label>
+							<input type="hidden" id="security-register-topbar" name="security-register-topbar" value="8acf1b727c-1656426998">
+							<button class="wpresidence_button" id="wp-submit-register_topbar">Register</button>
+						</div>
+						<div class="login_form" id="forgot-pass-div">
+							<div id="forgot-div-title-topbar">Reset Password</div>
+							<div class="loginalert" id="forgot_pass_area_topbar"></div>
+							<div class="loginrow">
+								<input type="email" class="form-control" name="forgot_email" id="forgot_email_topbar" autofocus placeholder="Enter Your Email Address" size="20" />
+							</div>
+							<input type="hidden" id="security-forgot-topbar" name="security-forgot-topbar" value="facd656da0" /><input type="hidden" name="_wp_http_referer" value="/2014/05/27/these-were-the-most-expensive-las-vegas-condos/" /> <input type="hidden" id="postid" value="
+								169">
+							<button class="wpresidence_button" id="wp-forgot-but-topbar" name="forgot">Reset Password</button>
+						</div>
+						<div class="login_modal_control">
+							<a href="#" id="widget_register_topbar">Register here!</a>
+							<a href="#" id="forgot_pass_topbar">Forgot password?</a>
+							<a href="#" id="widget_login_topbar">Back to login</a>
+							<a href="#" id="return_login_topbar">Back to login</a>
+							<input type="hidden" name="loginpop" id="loginpop" value="0">
+						</div>
+					</div>
 				</div>
-				<div class="login-register-modal-form-wrapper">
-					<div class="login_form" id="login-div_topbar">
-						<div id="login-div-title-topbar">Sign into your account </div>
-						<div class="loginalert" id="login_message_area_topbar"> </div>
-						<input type="text" class="form-control" name="log" id="login_user_topbar" autofocus placeholder="Username" />
-						<div class="password_holder">
-							<input type="password" class="form-control" name="pwd" id="login_pwd_topbar" placeholder="Password" />
-							<i class=" far fa-eye-slash show_hide_password"></i>
-						</div>
-						<input type="hidden" name="loginpop" id="loginpop_wd_topbar" value="0">
-						<input type="hidden" id="security-login-topbar" name="security-login-topbar" value="b614749955-1655733750">
-						<button class="wpresidence_button" id="wp-login-but-topbar">Login</button>
-						<div class="login-links"></div>
+			</div> -->
+			<div class="navigational_links">
+				<div class="nav-prev-wrapper">
+					<div class="nav-prev">
+						<a href="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/" rel="prev">In Las Vegas home prices have doubled in the past 5 years</a> <i class="fas fa-angle-left"></i>
 					</div>
-					<div class="login_form" id="register-div-topbar">
-						<div id="register-div-title-topbar">Create an account</div>
-						<div class="loginalert" id="register_message_area_topbar"></div>
-						<input type="text" name="user_login_register" id="user_login_register_topbar" class="form-control" autofocus placeholder="Username" />
-						<input type="email" name="user_email_register" id="user_email_register_topbar" class="form-control" placeholder="Email" />
-						<div class="password_holder"><input type="password" name="user_password" id="user_password_topbar" class="form-control" placeholder="Password" /> <i class=" far fa-eye-slash show_hide_password"></i></div>
-						<div class="password_holder"><input type="password" name="user_password_retype" id="user_password_topbar_retype" class="form-control" placeholder="Retype Password" /> <i class=" far fa-eye-slash show_hide_password"></i></div>
-						<input type="checkbox" name="terms" id="user_terms_register_topbar" />
-						<label id="user_terms_register_topbar_label" for="user_terms_register_topbar">I agree with <a href="https://lasvegas.wpresidence.net/" target="_blank" id="user_terms_register_topbar_link">terms &amp; conditions</a> </label>
-						<input type="hidden" id="security-register-topbar" name="security-register-topbar" value="cbf3108fe2-1655733750">
-						<button class="wpresidence_button" id="wp-submit-register_topbar">Register</button>
-					</div>
-					<div class="login_form" id="forgot-pass-div">
-						<div id="forgot-div-title-topbar">Reset Password</div>
-						<div class="loginalert" id="forgot_pass_area_topbar"></div>
-						<div class="loginrow">
-							<input type="email" class="form-control" name="forgot_email" id="forgot_email_topbar" autofocus placeholder="Enter Your Email Address" size="20" />
-						</div>
-						<input type="hidden" id="security-forgot-topbar" name="security-forgot-topbar" value="9d1bf80adf" /><input type="hidden" name="_wp_http_referer" value="/blog-list-no-sidebar/" /> <input type="hidden" id="postid" value="
-							17988">
-						<button class="wpresidence_button" id="wp-forgot-but-topbar" name="forgot">Reset Password</button>
-					</div>
-					<div class="login_modal_control">
-						<a href="#" id="widget_register_topbar">Register here!</a>
-						<a href="#" id="forgot_pass_topbar">Forgot password?</a>
-						<a href="#" id="widget_login_topbar">Back to login</a>
-						<a href="#" id="return_login_topbar">Back to login</a>
-						<input type="hidden" name="loginpop" id="loginpop" value="0">
+				</div>
+				<div class="nav-next-wrapper">
+					<div class="nav-next">
+						<i class="fas fa-angle-right"></i>
+						<a href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/" rel="next"> The top 5 most livable Las Vegas neighbourhoods</a> 
 					</div>
 				</div>
 			</div>
-		</div>
-		<input type="hidden" id="wpestate_ajax_log_reg" value="62a043389b" /> <a href="#" class="backtop "><i class="fas fa-chevron-up"></i></a>
-		<a href="#" class="contact-box "><i class="fas fa-envelope"></i></a>
-		<div class="contactformwrapper hidden">
-			<div id="footer-contact-form">
-				<div class="contact_close_button">
-					<i class="fas fa-times" aria-hidden="true"></i>
-				</div>
-				<h4>Contact Us</h4>
-				<p>Use the form below to contact us!</p>
-				<div class="alert-box error">
-					<div class="alert-message" id="footer_alert-agent-contact"></div>
-				</div>
-				<input type="text" placeholder="Your Name" required="required" id="foot_contact_name" name="contact_name" class="form-control" value="" tabindex="373">
-				<input type="email" required="required" placeholder="Your Email" id="foot_contact_email" name="contact_email" class="form-control" value="" tabindex="374">
-				<input type="email" required="required" placeholder="Your Phone" id="foot_contact_phone" name="contact_phone" class="form-control" value="" tabindex="374">
-				<textarea placeholder="Type your message..." required="required" id="foot_contact_content" name="contact_content" class="form-control" tabindex="375"></textarea>
-				<input type="hidden" name="contact_footer_ajax_nonce" id="contact_footer_ajax_nonce" value="1b2ff0d39f" />
-				<div class="gpr_wrapper"><input type="checkbox" role="checkbox" aria-checked="false" id="wpestate_agree_gdprfooter" class="wpestate_agree_gdpr" name="wpestate_agree_gdpr" />
-					<label for="wpestate_agree_gdpr">I consent to the <a target="_blank" href="https://lasvegas.wpresidence.net/">GDPR Terms</a></label>
-				</div>
-				<div class="btn-cont">
-					<button type="submit" id="btn-cont-submit" class="wpresidence_button">Send</button>
-					<input type="hidden" value="" name="contact_to">
-					<div class="bottom-arrow"></div>
-				</div>
-			</div>
-		</div>
-		<div class="prop-compare ">
+		<?php include("footer.php"); ?>
+		<!-- <div class="prop-compare ">
 			<div id="compare_close"><i class="fas fa-times" aria-hidden="true"></i></div>
 			<form method="post" id="form_compare" action="https://lasvegas.wpresidence.net/compare-listings/">
 				<h4 class="title_compare">Compare Listings</h4>
 				<button id="submit_compare" class="wpresidence_button"> Compare </button>
 			</form>
 		</div>
-		<input type="hidden" id="wpestate_ajax_filtering" value="671996d27e" /> <input type="hidden" id="wpestate_payments_nonce" value="d833b4331c" /> <script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js'></script>
+		<input type="hidden" id="wpestate_ajax_filtering" value="59fa78032e" /> <input type="hidden" id="wpestate_payments_nonce" value="11981c5b94" /> 
+		<style> .wp-block-gallery-1{ --wp--style--unstable-gallery-gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) ); gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) )}</style>
+		<style>.wp-container-2 {display: flex;gap: 0.5em;flex-wrap: wrap;align-items: center;}.wp-container-2 > * { margin: 0; }</style>
+		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js'></script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.1' id='jquery-ui-mouse-js'></script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-includes/js/jquery/ui/draggable.min.js?ver=1.13.1' id='jquery-ui-draggable-js'></script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-includes/js/jquery/ui/menu.min.js?ver=1.13.1' id='jquery-ui-menu-js'></script>
@@ -791,7 +872,7 @@
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/openstreet/leaflet.markercluster.js?ver=4.4' id='wpestate_leaflet_cluster-js'></script>
 		<script type='text/javascript' id='mapfunctions-js-extra'>
 			/* <![CDATA[ */
-			var mapfunctions_vars = {"path":"https:\/\/lasvegas.wpresidence.net\/wp-content\/themes\/wpresidence\/css\/css-images","pin_images":"{\"rentals\":\"\",\"sales\":\"\",\"apartments\":\"\",\"condos\":\"\",\"duplexes\":\"\",\"houses\":\"\",\"villas\":\"\",\"apartmentsrentals\":\"\",\"condosrentals\":\"\",\"duplexesrentals\":\"\",\"housesrentals\":\"\",\"villasrentals\":\"\",\"apartmentssales\":\"\",\"condossales\":\"\",\"duplexessales\":\"\",\"housessales\":\"\",\"villassales\":\"\",\"idxpin\":\"https:\\\/\\\/lasvegas.wpresidence.net\\\/wp-content\\\/themes\\\/wpresidence\\\/css\\\/css-images\\\/sale.png\",\"single_pin\":\"https:\\\/\\\/lasvegas.wpresidence.net\\\/wp-content\\\/themes\\\/wpresidence\\\/css\\\/css-images\\\/single.png\",\"cloud_pin\":\"https:\\\/\\\/lasvegas.wpresidence.net\\\/wp-content\\\/themes\\\/wpresidence\\\/css\\\/css-images\\\/cloud.png\",\"userpin\":\"https:\\\/\\\/lasvegas.wpresidence.net\\\/wp-content\\\/themes\\\/wpresidence\\\/css\\\/css-images\\\/userpin.png\"}","geolocation_radius":"1000","adv_search":"1","in_text":" in ","zoom_cluster":"15","user_cluster":"yes","open_close_status":"0","open_height":"550","closed_height":"450","generated_pins":"0","geo_no_pos":"The browser couldn't detect your position!","geo_no_brow":"Geolocation is not supported by this browser.","geo_message":"m radius","show_adv_search":"","custom_search":"yes","listing_map":"internal","slugs":["adv_location","bedrooms","rooms","adv_categ","adv_actions","min-property-size","property_price"],"hows":["like","greater","greater","like","like","greater","greater"],"measure_sys":"ft","close_map":"close map","show_g_search_status":"no","slider_price":"yes","slider_price_position":"7","adv_search_type":"1","is_half":"0","map_style":"[\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"weight\": \"2.00\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#9c9c9c\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"on\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#f2f2f2\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape.man_made\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"poi\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"saturation\": -100\r\n            },\r\n            {\r\n                \"lightness\": 45\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#eeeeee\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road\",\r\n        \"elementType\": \"labels.text.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#7b7b7b\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road\",\r\n        \"elementType\": \"labels.text.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"simplified\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"labels.icon\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"transit\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#46bcec\"\r\n            },\r\n            {\r\n                \"visibility\": \"on\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#c8d7d4\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"labels.text.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#070707\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"labels.text.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            }\r\n        ]\r\n    }\r\n]","shortcode_map_style":"","small_slider_t":"","is_prop_list":"0","is_tax":"0","half_no_results":"No results found!","fields_no":"7","type":"ROADMAP","useprice":"yes","use_price_pins_full_price":"no","use_single_image_pin":"no","loading_results":"loading results...","geolocation_type":"2","is_half_map_list":"0","is_normal_map_list":"0","is_adv_search":"0","ba":"BA","bd":"BD"};
+			var mapfunctions_vars = {"path":"https:\/\/lasvegas.wpresidence.net\/wp-content\/themes\/wpresidence\/css\/css-images","pin_images":"{\"rentals\":\"\",\"sales\":\"\",\"apartments\":\"\",\"condos\":\"\",\"duplexes\":\"\",\"houses\":\"\",\"villas\":\"\",\"apartmentsrentals\":\"\",\"condosrentals\":\"\",\"duplexesrentals\":\"\",\"housesrentals\":\"\",\"villasrentals\":\"\",\"apartmentssales\":\"\",\"condossales\":\"\",\"duplexessales\":\"\",\"housessales\":\"\",\"villassales\":\"\",\"idxpin\":\"https:\\\/\\\/lasvegas.wpresidence.net\\\/wp-content\\\/themes\\\/wpresidence\\\/css\\\/css-images\\\/sale.png\",\"single_pin\":\"https:\\\/\\\/lasvegas.wpresidence.net\\\/wp-content\\\/themes\\\/wpresidence\\\/css\\\/css-images\\\/single.png\",\"cloud_pin\":\"https:\\\/\\\/lasvegas.wpresidence.net\\\/wp-content\\\/themes\\\/wpresidence\\\/css\\\/css-images\\\/cloud.png\",\"userpin\":\"https:\\\/\\\/lasvegas.wpresidence.net\\\/wp-content\\\/themes\\\/wpresidence\\\/css\\\/css-images\\\/userpin.png\"}","geolocation_radius":"1000","adv_search":"1","in_text":" in ","zoom_cluster":"15","user_cluster":"yes","open_close_status":"1","open_height":"550","closed_height":"450","generated_pins":"0","geo_no_pos":"The browser couldn't detect your position!","geo_no_brow":"Geolocation is not supported by this browser.","geo_message":"m radius","show_adv_search":"","custom_search":"yes","listing_map":"internal","slugs":["adv_location","bedrooms","rooms","adv_categ","adv_actions","min-property-size","property_price"],"hows":["like","greater","greater","like","like","greater","greater"],"measure_sys":"ft","close_map":"close map","show_g_search_status":"no","slider_price":"yes","slider_price_position":"7","adv_search_type":"1","is_half":"0","map_style":"[\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"weight\": \"2.00\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"geometry.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#9c9c9c\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"all\",\r\n        \"elementType\": \"labels.text\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"on\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#f2f2f2\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"landscape.man_made\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"poi\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"saturation\": -100\r\n            },\r\n            {\r\n                \"lightness\": 45\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#eeeeee\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road\",\r\n        \"elementType\": \"labels.text.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#7b7b7b\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road\",\r\n        \"elementType\": \"labels.text.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.highway\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"simplified\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"road.arterial\",\r\n        \"elementType\": \"labels.icon\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"transit\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"visibility\": \"off\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"all\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#46bcec\"\r\n            },\r\n            {\r\n                \"visibility\": \"on\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"geometry.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#c8d7d4\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"labels.text.fill\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#070707\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"featureType\": \"water\",\r\n        \"elementType\": \"labels.text.stroke\",\r\n        \"stylers\": [\r\n            {\r\n                \"color\": \"#ffffff\"\r\n            }\r\n        ]\r\n    }\r\n]","shortcode_map_style":"","small_slider_t":"","is_prop_list":"0","is_tax":"0","half_no_results":"No results found!","fields_no":"7","type":"ROADMAP","useprice":"yes","use_price_pins_full_price":"no","use_single_image_pin":"no","loading_results":"loading results...","geolocation_type":"2","is_half_map_list":"0","is_normal_map_list":"0","is_adv_search":"0","ba":"BA","bd":"BD"};
 			/* ]]> */
 		</script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/google_js/mapfunctions.js?ver=4.4' id='mapfunctions-js'></script>
@@ -820,8 +901,7 @@
 			/* ]]> */
 		</script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/ajaxcalls.js?ver=4.4' id='ajaxcalls-js'></script>
+		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-includes/js/comment-reply.min.js?ver=6.0' id='comment-reply-js'></script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/owl.carousel.min.js?ver=4.4' id='owl_carousel-js'></script>
 	</body> -->
-	<!-- Mirrored from lasvegas.wpresidence.net/blog-list-no-sidebar/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Jun 2022 14:02:31 GMT -->
-    <?php include("footer.php"); ?>
 </html>

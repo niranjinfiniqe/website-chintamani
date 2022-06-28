@@ -291,92 +291,10 @@
 			</div>
 		</div> -->
 		<div class="website-wrapper" id="all_wrapper" style="background:pink">
-			<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center " style="background:pink">
+			<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
             <?php include("subheader.php"); ?>
-				<div class="master_header   wide   topbar_transparent  ">
-					<div class="mobile_header mobile_header_sticky_yes">
-						<div class="mobile-trigger"><i class="fas fa-bars"></i></div>
-						<div class="mobile-logo">
-							<a href="https://lasvegas.wpresidence.net/">
-							<img src="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png" class="img-responsive retina_ready " alt="image" /> </a>
-						</div>
-						<div class="mobile-trigger-user">
-							<i class="fas fa-user-circle"></i>
-						</div>
-					</div>
-					<div class="header_wrapper   header_type1 header_center hover_type_2 header_alignment_text_left  no_property_submit ">
-						<div class="header_wrapper_inside  " data-logo="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png" data-sticky-logo="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png">
-							<div class="logo">
-								<a href="https://lasvegas.wpresidence.net/"><img id="logo_image" style="margin-top:0px;" src="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png" class="img-responsive retina_ready" alt="company logo" /></a>
-							</div>
-							<div class="user_menu user_not_loged" id="user_menu_u">
-								<a class="menu_user_tools dropdown" id="user_menu_trigger" data-toggle="dropdown">
-								<a class="navicon-button nav-notlog x">
-									<div class="navicon"></div>
-								</a>
-								<div class="submit_action">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve">
-										<g>
-											<path d="M50,5C25.2,5,5,25.1,5,50s20.2,45,45,45s45-20.1,45-45S74.8,5,50,5z M50,26.5c7.2,0,13.1,5.9,13.1,13.1   c0,7.2-5.9,13.1-13.1,13.1s-13.1-5.9-13.1-13.1C36.9,32.4,42.8,26.5,50,26.5z M50,87.9c-12.2,0-23.1-5.8-30.1-14.8   c5.7-10.7,17.1-18,30.1-18s24.4,7.3,30.1,18C73.2,82.1,62.2,87.9,50,87.9z" />
-										</g>
-									</svg>
-								</div>
-								<div class="header_phone">
-									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 295.64 369.5375" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd">
-										<defs></defs>
-										<g>
-											<path class="fil0" d="M231.99 189.12c18.12,10.07 36.25,20.14 54.37,30.21 7.8,4.33 11.22,13.52 8.15,21.9 -15.59,42.59 -61.25,65.07 -104.21,49.39 -87.97,-32.11 -153.18,-97.32 -185.29,-185.29 -15.68,-42.96 6.8,-88.62 49.39,-104.21 8.38,-3.07 17.57,0.35 21.91,8.15 10.06,18.12 20.13,36.25 30.2,54.37 4.72,8.5 3.61,18.59 -2.85,25.85 -8.46,9.52 -16.92,19.04 -25.38,28.55 18.06,43.98 55.33,81.25 99.31,99.31 9.51,-8.46 19.03,-16.92 28.55,-25.38 7.27,-6.46 17.35,-7.57 25.85,-2.85z" />
-										</g>
-									</svg>
-									<a href="tel: 800-555-6789"> 800-555-6789</a>
-								</div>
-							</div>
-							<nav id="access">
-								<div class="menu-main-menu-container">
-									<ul id="menu-main-menu" class="menu">
-										<li id="menu-item-19214" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home no-megamenu   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/">Home</a></li>
-										<li id="menu-item-20475" class="menu-item menu-item-type-custom menu-item-object-custom no-megamenu   "><a class="menu-item-link" target="_blank" href="https://demo.wpresidence.net/#demos">Demos</a></li>
-										<li id="menu-item-837" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children no-megamenu   ">
-											<a class="menu-item-link" href="#">Properties</a>
-											<ul style="" class="  sub-menu ">
-												<li id="menu-item-848" class="menu-item menu-item-type-post_type menu-item-object-estate_property   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/">Property Single Page</a></li>
-												<li id="menu-item-18161" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-93 current_page_item   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/properties-standard-list/">Properties Standard List</a></li>
-												<li id="menu-item-18168" class="menu-item menu-item-type-post_type menu-item-object-page   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/half-map-properties-list/">Half Map Properties List</a></li>
-											</ul>
-										</li>
-										<li id="menu-item-836" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu   ">
-											<a class="menu-item-link" href="#">Agents</a>
-											<ul style="" class="  sub-menu ">
-												<li id="menu-item-20259" class="menu-item menu-item-type-post_type menu-item-object-page   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/about-us/">About us</a></li>
-												<li id="menu-item-853" class="menu-item menu-item-type-post_type menu-item-object-estate_agent   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/">Agent Profile Page</a></li>
-												<li id="menu-item-18162" class="menu-item menu-item-type-post_type menu-item-object-page   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/agent-list-sidebar-left/">Agents List Page</a></li>
-											</ul>
-										</li>
-										<li id="menu-item-838" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu   ">
-											<a class="menu-item-link" href="#">Blog</a>
-											<ul style="" class="  sub-menu ">
-												<li id="menu-item-18174" class="menu-item menu-item-type-post_type menu-item-object-page   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/blog-list-no-sidebar/">Blog List</a></li>
-												<li id="menu-item-18163" class="menu-item menu-item-type-post_type menu-item-object-post   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/">Blog Single Post</a></li>
-											</ul>
-										</li>
-										<li id="menu-item-18169" class="menu-item menu-item-type-post_type menu-item-object-page no-megamenu   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/contact-us-3/">Contact</a></li>
-										<li id="menu-item-20229" class="menu-item menu-item-type-post_type menu-item-object-page no-megamenu   "><a class="menu-item-link" href="https://lasvegas.wpresidence.net/favorite-properties/">Favorites</a></li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div> 
-				<div class="header_media  mobile_header_media_sticky_yes header_mediatype_1 with_search_1 header_media_non_elementor" style="background:yellow"></div>
-               <div class="pre_search_wrapper"></div>
                <div class="container content_wrapper">
-                  <div class="row" style="background:green">
-                     <div class="col-xs-12 col-md-12 breadcrumb_container" style="background:blue">
-                        <ol class="breadcrumb">
-                           <li><a href="https://lasvegas.wpresidence.net/">Home</a></li>
-                           <li class="active">Properties Standard List</li>
-                        </ol>
-                     </div>
+                  <div class="row" >
                      <div class=" col-md-9 rightmargin ">
                         <h1 class="entry-title title_prop">Properties Standard List</h1>
                         <div class="single-content"></div>
@@ -488,7 +406,7 @@ foreach ($sql as $lease)
             </div>
          </div>
       </div>
-      <div class="property-unit-information-wrapper" style ="background:pink">
+      <div class="property-unit-information-wrapper" >
          <h4>
             <a href="estate_property.php?leaseID=<?php echo $lease["PK_lease"]; ?>">
             <?php echo $lease['Lease_Name'] ?></a>
@@ -502,7 +420,7 @@ foreach ($sql as $lease)
          <div class="listing_details the_list_view">
          <?php echo $lease['ShortDescription'] ?> <a href=estate_property.php?leaseID=<?php echo $lease["PK_lease"]; ?>" class="unit_more_x"> ...</a> 
          </div>
-         <div class="property_listing_details" style="background:yellow">
+         <div class="property_listing_details" >
             <span class="inforoom">
                <svg viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M17.6702 6.14728V1.12908C17.6699 0.829675 17.5496 0.542695 17.3354 0.33099C17.1213 0.119457 16.831 0.000335493 16.5282 0H2.47158C2.16874 0.000336053 1.87846 0.119457 1.66432 0.33099C1.45018 0.542691 1.32986 0.829671 1.32952 1.12908V6.14728C0.945097 6.26691 0.60909 6.50432 0.369977 6.82507C0.131029 7.14598 0.00152709 7.5336 0 7.93211V12.0755C0.000339918 12.2751 0.080557 12.4665 0.223311 12.6076C0.366066 12.7486 0.55964 12.8281 0.76136 12.8282H1.22057V14.2473C1.22074 14.4469 1.30113 14.6383 1.44388 14.7794C1.58664 14.9204 1.78004 14.9998 1.98193 15H3.12177C3.32349 14.9998 3.51706 14.9204 3.65981 14.7794C3.80257 14.6383 3.88279 14.4469 3.88313 14.2473V12.8282H15.1166V14.2473C15.1169 14.4469 15.1971 14.6383 15.3399 14.7794C15.4826 14.9204 15.6762 14.9998 15.8779 15H17.0178C17.2197 14.9998 17.4132 14.9204 17.5558 14.7792C17.6986 14.6383 17.779 14.4469 17.7791 14.2473V12.8282H18.2386C18.4405 12.8281 18.6339 12.7486 18.7767 12.6076C18.9194 12.4665 18.9997 12.2751 19 12.0755V7.93211C18.9985 7.53358 18.869 7.14581 18.6299 6.8249C18.3909 6.50416 18.0547 6.26673 17.6701 6.14712L17.6702 6.14728ZM2.09091 1.12908C2.09108 0.921244 2.26137 0.75289 2.4716 0.752722H16.5282H16.528C16.7382 0.75289 16.9085 0.921244 16.9087 1.12908V6.05051H15.8486C15.8938 5.92987 15.9174 5.80252 15.9188 5.67415V4.56457C15.9184 4.26517 15.7979 3.97819 15.584 3.76649C15.3698 3.55478 15.0796 3.43566 14.7767 3.4355H10.8716C10.5689 3.43566 10.2787 3.55478 10.0645 3.76649C9.85039 3.97819 9.7299 4.26517 9.72956 4.56457V5.67415C9.73092 5.80252 9.75472 5.92987 9.79975 6.05051H9.20001C9.24522 5.92987 9.26884 5.80252 9.2702 5.67415V4.56457C9.26986 4.26517 9.14937 3.97819 8.93523 3.76649C8.72127 3.55478 8.43082 3.43566 8.12814 3.4355H4.22271C3.91987 3.43566 3.62959 3.55478 3.41562 3.76649C3.20148 3.97819 3.08099 4.26517 3.08065 4.56457V5.67415C3.08201 5.80252 3.10563 5.92987 3.15084 6.05051H2.09071L2.09091 1.12908ZM10.4912 5.67415V4.56457C10.4914 4.35674 10.6618 4.18822 10.8719 4.18822H14.777C14.9872 4.18822 15.1575 4.35674 15.1576 4.56457V5.67415C15.1575 5.88182 14.9872 6.05034 14.777 6.05051H10.8719C10.6618 6.05034 10.4914 5.88182 10.4912 5.67415ZM3.84249 5.67415V4.56457C3.84266 4.35674 4.01295 4.18822 4.22318 4.18822H8.12861C8.33883 4.18822 8.50912 4.35674 8.50929 4.56457V5.67415C8.50912 5.88182 8.33883 6.05034 8.12861 6.05051H4.22318C4.01295 6.05034 3.84266 5.88182 3.84249 5.67415ZM3.12276 14.2473H1.98223V12.8282H3.12207L3.12276 14.2473ZM17.0188 14.2473H15.8781V12.8282H17.0179L17.0188 14.2473ZM18.2394 12.0755H0.761433V10.4636H18.2385L18.2394 12.0755ZM0.761433 9.71087V7.93211C0.761773 7.63271 0.882265 7.34573 1.0964 7.13402C1.31037 6.92232 1.60082 6.8032 1.90349 6.80303H17.0965C17.3993 6.8032 17.6896 6.92232 17.9038 7.13402C18.1177 7.34572 18.2382 7.6327 18.2386 7.93211V9.71087H0.761433Z" fill="black" />

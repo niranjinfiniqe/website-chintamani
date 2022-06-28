@@ -77,7 +77,8 @@
 		</style>
 	</head>
 	<body class="home page-template page-template-elementor_header_footer page page-id-18618 using-mobile-header-sticky elementor-default elementor-template-full-width elementor-kit-22 elementor-page elementor-page-18618 page-template-property_list page-template-property_list-php
-   page-id-93  page-template-property_list-php page page-id-93"> 
+   page-id-93  page-template-property_list-php page page-id-93">  
+   <!-- <body class="page-template page-template-elementor_header_footer page page-id-20237 using-mobile-header-sticky elementor-default elementor-template-full-width elementor-kit-22 elementor-page elementor-page-20237"> -->
    <!-- <body class="page-template page-template-property_list page-template-property_list-php page page-id-93 using-mobile-header-sticky elementor-default elementor-kit-22"> -->
 		<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
 			<defs>
