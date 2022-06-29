@@ -79,12 +79,9 @@ $exce = mysqli_query($con, $query);
                                     ?>
                                     <tr>
                                         <th scope="row"><?php echo $count ++; ?></th>
-                                        <td><?php echo $row['amenity name'] ?></td>
-                                   
-                                       
-                                        <td>
-                                            <a href="edit_aminities.php?pid=<?php echo $row['PK_aminities']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
-                                        </td>
+                                        <td><?php echo $row['amenity_name'] ?></td>
+                                      <td>
+                                            <a href="edit_aminities.php?pid=<?php echo $row['PK_aminities']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a> </td>
                                         <td>
                                             <a a onClick='javascript:confirmationDelete($(this));return false;'  href="deleteaminities.php?pid=<?php echo $row['PK_aminities']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
                                         </td>

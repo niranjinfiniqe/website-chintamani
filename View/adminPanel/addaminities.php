@@ -37,7 +37,7 @@ $errMsg = '';
    
     
     if($errMsg == ''){
-            $ad= $link->insert("amenities_master",array("amenity name"=>$amenity_name));
+            $ad= $link->insert("amenities_master",array("amenity_name"=>$amenity_name));
     }
 
     // if($ad) {
