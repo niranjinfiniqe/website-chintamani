@@ -85,12 +85,12 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                         <td><img src="<?php echo $row['BlogThumbImage'] ?>" width="70px" height="70px" /></td>
                                                         <td><img src="<?php echo $row['BlogImage'] ?>" width="70px" height="70px" /></td>
                                                         <td><?php echo $row['BlogDescription'] ?></td>
-                                                        <td><?php if($row['BlogStatus'] == "10"){echo "Published";}elseif($row['BlogStatus'] == "11"){echo "Draft"; }?></td>
+                                                        <td><?php if($row['BlogStatus'] == 10){echo "Published";}elseif($row['BlogStatus'] == 11){echo "Draft"; }?></td>
                                                         <td>
-                                                            <a href="edit_blog.php?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                                            <a  href="edit_blog.php?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                                                         </td>
                                                         <td>
-                                                            <a a onClick='javascript:confirmationDelete($(this));return false;' href="deleteblog.php?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                                            <a a onclick='javascript:confirmationDelete($(this));return false;' href="deleteblog.php?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
                                                         </td>
                                                     </tr>
                                             <?php

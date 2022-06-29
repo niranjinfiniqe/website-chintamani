@@ -67,52 +67,55 @@ $exce = mysqli_query($con, $query);
             <form action="addlease.php" class="needs-validation" novalidate method="post" name="leaseForm" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-7">
-                        <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                        <div class="card">
                             <div class="card-body">
                                 <div class="card-body p-2">
 
-                                    <div class="row">
+                                    <div class="row ">
 
+                                    <h3 class=" mb-4">Details</h3>
+                                    <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
+                                        <div class="row">
 
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-text-input" class="form-label">Lease Name</label>
                                             <input class="form-control" type="text" placeholder="Lease Name" required id="Lease_Name" name="LeaseName" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                     echo $ad['Lease_Name'];
                                                                                                                                                                 } ?>">
                                         </div>
 
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-text-input" class="form-label">Lease Alias</label>
                                             <input onkeyup="aliascheck(this.value)" required class="form-control" type="text" placeholder="Lease Alias" id="Lease_Alias" name="LeaseAlias" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                                         echo $ad['Lease_Alias'];
                                                                                                                                                                                                     } ?>">
                                         </div>
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-text-input" class="form-label">Carpet Area</label>
                                             <input class="form-control" type="text" placeholder="CarpetArea" required id="CarpetArea" name="CarpetArea" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                     echo $ad['CarpetArea'];
                                                                                                                                                                 } ?>">
                                         </div>
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-tel-input" class="form-label">Reception Area</label>
                                             <input placeholder="Reception Area " type="number" name="ReceptionArea" id="ReceptionArea" class="form-control">
                                         </div>
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-tel-input" class="form-label">BuildUp Area</label>
                                             <input placeholder="BuildUp Area" type="number" name="BuildUpArea" id="BuildUpArea" class="form-control">
                                         </div>
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-text-input" class="form-label">Price</label>
                                             <input class="form-control" type="number" placeholder="Price" required id="Price" name="Price" value="<?php if ($isUpdate == 1) {
                                                                                                                                                         echo $ad['Price'];
                                                                                                                                                     } ?>">
                                         </div>
 
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-tel-input" class="form-label">Display Order</label>
                                             <input placeholder="Display order" type="text" name="DisplayOrder" id="DisplayOrder" class="form-control">
                                         </div>
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label class="form-label">Location</label>
                                             <select required class="form-select" id="Location" name="Location">
                                                 <option>Select</option>
@@ -124,18 +127,18 @@ $exce = mysqli_query($con, $query);
                                                         } ?>>Delhi</option>
                                             </select>
                                         </div>
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-text-input" class="form-label">Packs</label>
                                             <input class="form-control" type="number" placeholder="Packs" required id="packs" name="Packs" value="">
                                         </div>
 
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-search-input" class="form-label">Short Description</label>
                                             <textarea class="form-control" type="search" placeholder="Short Description" rows="2" id="ShortDescription" name="ShortDescription" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                             echo $ad['ShortDescription'];
                                                                                                                                                                                         } ?>"></textarea>
                                         </div>
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-search-input" class="form-label">Long Description</label>
                                             <textarea class="form-control" type="search" placeholder="Long Description" rows="2" id="ShortDescription" name="LongDescription" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                             echo $ad['LongDescription'];
@@ -147,43 +150,47 @@ $exce = mysqli_query($con, $query);
 
 
 
-                                        <div class="col-xl-4 col-md-6 mb-3">
+                                        <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-search-input" class="form-label">Complete Address</label>
                                             <textarea required class="form-control" type="search" placeholder="CompleteAddress" rows="2" id="CompleteAddress" name="CompleteAddress" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                                 echo $ad['CompleteAddress'];
                                                                                                                                                                                             } ?>"></textarea>
                                         </div>
 
+                                        </div> 
+                                        </div>
 
 
-                                        <div class="card-body">
+                                        <h3 class=" mb-4">Gallery </h3>
+                                        
+                                        <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
                                             <div>
-                                                <h5 class="card-title mb-4">Gallery </h5>
+                                                
                                                 <input type="hidden" />
                                                 <div class="row">
-                                                    <div class="col-xl-4 col-md-6 mb-3">
+                                                    <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-tel-input" class="form-label">Images</label>
                                                         <input type="file" name="Images" id="ProductImage" class="form-control">
                                                     </div>
 
-                                                    <div class="col-xl-4 col-md-6 mb-3">
+                                                    <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-tel-input" class="form-label">Video URL</label>
                                                         <input placeholder="Video URL" type="text" name="VideoURL" id="VideoURL" class="form-control">
                                                     </div>
 
-                                                    <div class="col-xl-4 col-md-6 mb-3">
+                                                    <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-tel-input" class="form-label">Furnished/Unfurnished</label>
                                                         <input required placeholder="Furnished/Unfurnished" type="text" name="Furnished/Unfurnished" id="Furnished/Unfurnished" class="form-control">
                                                     </div>
 
-                                                    <div class="col-xl-4 col-md-6 mb-3">
+                                                    <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-text-input" class="form-label">Thumbnail URL</label>
                                                         <input class="form-control" type="text" placeholder="ThumbnailURL" required id="ThumbnailURL" name="ThumbnailURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                         echo $ad['ThumbnailURL'];
                                                                                                                                                                                     } ?>">
                                                     </div>
 
-                                                    <div class="col-xl-4 col-md-6 mb-3">
+                                                    <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-text-input" class="form-label">FloorPlan URL</label>
                                                         <input class="form-control" type="text" placeholder="FloorPlanURL" id="FloorPlanURL" name="FloorPlanURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                             echo $ad['FloorPlanURL'];
@@ -196,12 +203,17 @@ $exce = mysqli_query($con, $query);
                                                 <!-- end row -->
                                             </div>
                                         </div>
+  
+                                        <h3 class=" mb-4">Project SEO Details</h3>
+                                        
+                            <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
+                            
 
-
-
-                                        <div class="card-body">
+                                    <div class="row">
+                         
+                                    
                                             <div>
-                                                <h5 class="card-title mb-4">Project SEO Details</h5>
+                                               
                                                 <input type="hidden" />
                                                 <div class="row">
                                                     <div class="col-xl-4 col-md-6 mb-3">
@@ -258,9 +270,12 @@ $exce = mysqli_query($con, $query);
                                                     </div>
 
                                                 </div>
+                                                </div>
+                                </div>
+                          
                                                 <!-- end row -->
                                             </div>
-                                        </div>
+                                    
 
                                     </div>
                                 </div>
@@ -270,7 +285,9 @@ $exce = mysqli_query($con, $query);
                     </div>
 
                     <div class="col-5 ">
+                        
                         <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                        <h3 class="my-3" >Amenities</h3>
                             <div class="card-body">
                                 <div class="card-body p-2">
                                     <div class="row">

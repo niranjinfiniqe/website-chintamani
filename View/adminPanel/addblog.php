@@ -84,7 +84,7 @@ if ($ad) {
 		}
 	}
 
-	header('location:blogs.php');
+
 }
 	
 
@@ -126,7 +126,7 @@ function  addImage($imageName){
 		}
 }
 
-
+header('location:blogs.php');
 
 	
 

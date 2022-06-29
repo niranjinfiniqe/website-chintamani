@@ -4,26 +4,7 @@
 <?php
 include("../../Helper/connect.php");
 
-if(isset($_POST['submit'])){
-    // echo '<pre>';
-    // print_r($_POST);
-   
-    foreach($_POST as $key=>$value){
-        if(is_int($key) && $value != null){
-            echo "PK_amenity=" . $key . ", count=" . $value;
-            echo "<br>";
-            $test_query = "select * from amenities_master where Pk_amenities = $key ";
-            $exce = mysqli_query($con,$test_query);
-   echo '<pre>';
-while($row = mysqli_fetch_array($exce)){
-    print_r($row);
-}
 
-        }
-      
-    }
-
-}
 
 
 
@@ -100,9 +81,9 @@ $altTag = $_POST['altTag'];
     // } else
 
 
-    //     if($errMsg == ''){
-    //         $ad= $link->insert("leasing_master",array("Lease_Name"=>$Lease_Name,"Lease_Alias"=>$Lease_Alias,"ShortDescription"=>$ShortDescription,"LongDescription"=>$LongDescription,"CompleteAddress"=>$CompleteAddress,"Location"=>$Location,"Price"=>$Price,"Packs"=>$Packs,"ThumbnailURL"=>$ThumbnailURL,"FloorPlanURL"=>$FloorPlanURL,"VideoURL"=>$VideoURL,"Furnished/Unfurnished"=>$Furnished_Unfurnished,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords,"LeaseOgTag"=>$LeaseOgTag,"LeaseOgTitle"=>$LeaseOgTitle,"altTag"=>$altTag,"LeaseOgTitle"=>$LeaseOgTitle,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle,"DisplayOrder"=>$DisplayOrder,"FK_Status"=>$FK_Status));
-    // }
+        if($errMsg == ''){
+            $ad= $link->insert("leasing_master",array("Lease_Name"=>$Lease_Name,"Lease_Alias"=>$Lease_Alias,"ShortDescription"=>$ShortDescription,"LongDescription"=>$LongDescription,"CompleteAddress"=>$CompleteAddress,"Location"=>$Location,"Price"=>$Price,"Packs"=>$Packs,"ThumbnailURL"=>$ThumbnailURL,"FloorPlanURL"=>$FloorPlanURL,"VideoURL"=>$VideoURL,"Furnished/Unfurnished"=>$Furnished_Unfurnished,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords,"LeaseOgTag"=>$LeaseOgTag,"LeaseOgTitle"=>$LeaseOgTitle,"altTag"=>$altTag,"LeaseOgTitle"=>$LeaseOgTitle,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle,"DisplayOrder"=>$DisplayOrder,"FK_Status"=>$FK_Status));
+    }
 
    
     
@@ -247,7 +228,7 @@ $altTag = $_POST['altTag'];
     //         }
             
     //     }
-        // header('location:lease.php');
+        header('location:lease.php');
     }
 
     function  addImage($imageName){
@@ -285,6 +266,49 @@ $altTag = $_POST['altTag'];
 			}
 		}
     }
+
+
+
+
+    $query1 = "select * from leasing_master";
+$exce1 = mysqli_query($con,$query1);
+foreach($exce1 as $a){
+    $row_number =  $a['PK_lease'];
+}
+
+
+
+if(isset($_POST['submit'])){
+    echo '<pre>';
+    // print_r($_POST);
+   
+    foreach($_POST as $key=>$value){
+        
+        if(is_int($key) && $value != null){
+            // echo $value;
+            echo "PK_amenity=" . $key . ", count=" . $value;
+            echo "<br>";
+            $test_query = "select * from amenities_master where Pk_amenities = $key ";
+
+            $query = "insert into lease_amenities (FK_Lease,FK_amenities,Count) values ($row_number,$key,$value)";
+            $run = mysqli_query($con,$query);
+
+            $exce = mysqli_query($con,$test_query);
+            echo '<pre>';
+            while($row = mysqli_fetch_array($exce)){
+                print_r($row['amenity_name']);
+            }
+           
+
+
+        }
+      
+    }
+   
+
+    
+
+}
 
 
 

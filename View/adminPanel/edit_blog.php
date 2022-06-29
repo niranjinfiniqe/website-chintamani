@@ -134,10 +134,10 @@ if ($isUpdate == 1) {
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Blog Status</label>
-                                                    <select required class="form-select" value="<?php echo $BlogStatus; ?>" id="BlogStatus" name="BlogStatus">
-                                                        <option>Select</option>
-                                                        <option <?php if($BlogStatus == 10){echo "selected";} ?> >Publised</option>
-                                                        <option <?php if($BlogStatus == 11){echo "selected";} ?> >Draft</option>
+                                                    <select required class="form-select" id="BlogStatus" name="BlogStatus">
+                                                        <option>select</option>
+                                                        <option value="10" <?php if($BlogStatus == 10){echo "selected";} ?> >Publised</option>
+                                                        <option value="11" <?php if($BlogStatus == 11){echo "selected";} ?> >Draft</option>
                                                     </select>
                                                 </div>
 

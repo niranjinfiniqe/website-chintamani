@@ -4,14 +4,25 @@ include("../../Helper/connect.php");
 
 
 
+
 $id = $_POST['pid'];
 $BlogTitle = $_POST['BlogTitle'];
 $BlogOwner = $_POST['BlogOwner'];
 // $BlogImage = $_POST['BlogImage'];
 // $BlogDescription = $_POST['BlogDescription'];
+// if($_POST['BlogStatus'] == "Published"){
+//     $BlogStatus = 10;
+
+// }elseif($_POST['BlogStatus'] == "draft"){
+//     $BlogStatus = 11
+
+// }
 $BlogStatus = $_POST['BlogStatus'];
+echo $BlogStatus;
+
 $BlogDate = $_POST['BlogDate'];
 $ReadingTime = $_POST['ReadingTime'];
+
 
 // Seo tools
 $BlogOgTag = $_POST['BlogOgTag'];
@@ -71,9 +82,10 @@ if($errMsg == ''){
       }
   }
 
-//   header('location:blogs.php');
+ 
 }
   
+
 
 function  addImage($imageName){
       $target_dir = "./uploads/blog";
@@ -114,7 +126,7 @@ function  addImage($imageName){
 }
 
 
-
+header('location:blogs.php');
 
 
     
