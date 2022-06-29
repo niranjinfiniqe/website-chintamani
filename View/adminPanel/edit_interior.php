@@ -4,7 +4,7 @@ include("../../Helper/connect.php");
 
 // Mridul's code
 $id =  $_GET['pid'];
-$query = "SELECT * FROM `chintamani_db_updated`.`interior_master` WHERE `interior_master`.`PK_interior` = $id";
+$query = "SELECT * FROM `interior_master` WHERE `interior_master`.`PK_interior` = $id";
 $exce = mysqli_query($con, $query);
 
 if ($row = mysqli_fetch_array($exce)) {
@@ -19,32 +19,7 @@ if ($row = mysqli_fetch_array($exce)) {
     $GalleryImage2 = $row['GalleryImage2'];
     $GalleryImage3 = $row['GalleryImage3'];
     $GalleryImage4 = $row['GalleryImage4'];
-}
-
-
-//check for edit
-if (isset($_REQUEST['pid']) && $_REQUEST['pid'] > 0) {
-    $pid = $_REQUEST['pid'];
-    $isUpdate = 1;
-} else {
-    $isUpdate = 0;
-}
-
-if ($isUpdate == 1) {
-    $ad = $link->rawQueryOne("select * from interior_master where PK_interior=?", array($_REQUEST['pid']));
-    if ($link->count > 0) {
-        $project_id = $ad['PK_interior'];
-    }
-}
-
-
-
-
-
-
-
-
-?>
+}?>
 <div class="main-content">
 
     <div class="page-content">

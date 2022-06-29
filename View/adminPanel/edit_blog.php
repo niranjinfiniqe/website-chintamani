@@ -4,7 +4,7 @@ include("../../Helper/connect.php");
 
 // Mridul's code
 $id =  $_GET['pid'];
-$query = "SELECT * FROM `chintamani_db_updated`.`blog_master` WHERE `blog_master`.`PK_BlogID` = $id";
+$query = "SELECT * FROM `blog_master` WHERE `PK_BlogID` = $id";
 $exce = mysqli_query($con, $query);
 echo $id;
 if ($row = mysqli_fetch_array($exce)) {
