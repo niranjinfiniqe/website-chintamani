@@ -1941,7 +1941,7 @@
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/slideout.min.js?ver=4.4' id='slideout.min-js'></script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/i18n/datepicker-en-GB.js?ver=4.4' id='datepicker-en-GB-js'></script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/jquery.ui.touch-punch.min.js?ver=4.4' id='touch-punch-js'></script>
-		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/openstreet/leaflet.js?ver=4.4' id='wpestate_leaflet-js'></script>
+		<script type='text/javascript' src='./js/leaflet.js' id='wpestate_leaflet-js'></script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/openstreet/leaflet.markercluster.js?ver=4.4' id='wpestate_leaflet_cluster-js'></script>
 		<script type='text/javascript' id='mapfunctions-js-extra'>
 			/* <![CDATA[ */

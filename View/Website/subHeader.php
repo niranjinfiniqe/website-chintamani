@@ -3,16 +3,16 @@
         <div class="mobile-trigger"><i class="fas fa-bars"></i></div>
         <div class="mobile-logo">
             <a href="https://lasvegas.wpresidence.net/">
-            <img src="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png" class="img-responsive retina_ready " alt="image" /> </a>
+            <img src="./images/las-vegas.png" class="img-responsive retina_ready " alt="image" /> </a>
         </div>
         <div class="mobile-trigger-user">
             <i class="fas fa-user-circle"></i>
         </div>
     </div>
     <div class="header_wrapper   header_type1 header_center hover_type_2 header_alignment_text_left  no_property_submit ">
-        <div class="header_wrapper_inside  " data-logo="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png" data-sticky-logo="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png">
+        <div class="header_wrapper_inside  " data-logo="./images/las-vegas.png" data-sticky-logo="./images/las-vegas.png">
             <div class="logo">
-                <a href="https://lasvegas.wpresidence.net/"><img id="logo_image" style="margin-top:0px;" src="https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/las-vegas.png" class="img-responsive retina_ready" alt="company logo" /></a>
+                <a href="https://lasvegas.wpresidence.net/"><img id="logo_image" style="margin-top:0px;" src="./images/las-vegas.png" class="img-responsive retina_ready" alt="company logo" /></a>
             </div>
             <div class="user_menu user_not_loged" id="user_menu_u">
                 <a class="menu_user_tools dropdown" id="user_menu_trigger" data-toggle="dropdown">

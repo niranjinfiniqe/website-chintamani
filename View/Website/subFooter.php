@@ -30,7 +30,7 @@
 						<ul class="xoxo">
 							<li id="footer_latest_widget-3" class="widget-container latest_listings">
 								<h4 class="widget-title-footer">Latest Properties</h4>
-								<script data-cfasync="false" src="https://lasvegas.wpresidence.net/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+								<script data-cfasync="false" src="./js/email-decode.min.js"></script><script type="text/javascript">
 									//<![CDATA[
 									jQuery(document).ready(function(){
 									   estate_sidebar_slider_carousel();
@@ -43,7 +43,7 @@
 										<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">Villa with Amazing View</a></span> <span class=widget_latest_price>5.500.000 $ <span class="price_label"></span></span> </div>
 									</div>
 									<div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/">
-										<div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/"><img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/home2-105x70.jpg" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/home2-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
+										<div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/"><img src="./images/home2-105x70.jpg" alt="slider-thumb" data-original="./images/home2-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
 										<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/">Townhouse for Sale</a></span> <span class=widget_latest_price>210.000 $ <span class="price_label"></span></span> </div>
 									</div>
 								</div>
