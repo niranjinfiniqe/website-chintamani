@@ -4,8 +4,6 @@ include("../../Helper/connect.php");
 $query="select * from amenities_master where isDeleted = 0";
 $exce = mysqli_query($con, $query);
 
-
-
 ?>
 <div class="main-content">
 
@@ -35,38 +33,14 @@ $exce = mysqli_query($con, $query);
                         </div>
                     </div>
                     <div class="card-body">
-
-                    <!-- Mridul removebtn -->
-                    <!-- <div class="d-flex flex-wrap gap-2 ">
-                            <button type="button" class="btn btn-secondary waves-effect waves-light" >All Projects</button>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                   Type of Project <i class="mdi mdi-chevron-down"></i>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Commercial</a>
-                                    <a class="dropdown-item" href="#">Residential</a>
-                                </div>
-                            </div>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                   Status<i class="mdi mdi-chevron-down"></i>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Compelete</a>
-                                    <a class="dropdown-item" href="#">In-Progress</a>
-                                </div>
-                            </div>
-                        </div> -->
-                        <br/>
                         <div class="table-responsive">
                             <table class="table mb-0">
                                 <thead>
                                     <tr>
                                         <th>#</th>
                                         <th>Aminities name</th>
-                                       
-                                        
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -81,9 +55,9 @@ $exce = mysqli_query($con, $query);
                                         <th scope="row"><?php echo $count ++; ?></th>
                                         <td><?php echo $row['amenity_name'] ?></td>
                                       <td>
-                                            <a href="edit_aminities.php?pid=<?php echo $row['PK_aminities']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a> </td>
+                                            <a href="edit_aminities.php?pid=<?php echo $row['PK_amenities']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a> </td>
                                         <td>
-                                            <a a onClick='javascript:confirmationDelete($(this));return false;'  href="deleteaminities.php?pid=<?php echo $row['PK_aminities']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                            <a a onClick='javascript:confirmationDelete($(this));return false;'  href="deleteaminities.php?pid=<?php echo $row['PK_amenities']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php
