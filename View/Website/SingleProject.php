@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <?php include("header.php"); ?>
+    <?php include("header.php"); 
+	include ("../../Helper/connect.php");
+	$pid = $_GET['pid'] ;
+	$pro=$link->rawQueryOne("select * from project_master where PK_Project=?",array($_REQUEST['pid']));
+	if($link->count > 0) {
+		$project_id=$pro['PK_Project'];
+	}
+	
+	?>
+	
+	?>
 	<!-- <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -438,7 +448,9 @@
 								<div class="rect4"></div>
 								<div class="rect5"></div>
 							</div>
-							<div id="listing_ajax_container"></div>
+							<div id="listing_ajax_container">
+							
+							</div>
 							<div id="content_container">
 								<div class="container_agent">
 									<div class="single-content single-agent">
@@ -452,8 +464,8 @@
 												</div>
 											</div>
 											<div class="col-md-7 agent_details">
-												<h3><a href="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/">Michaela Finney</a></h3>
-												<div class="agent_position">real estate broker</div>
+												<h3><a href=""><?php echo $pro['ProjectName'] ?></a></h3>
+												<div class="agent_position"><?php echo $pro['ProjectType'] ?></div>
 												<div class="agent_detail agent_phone_class"><i class="fas fa-phone"></i><a href="tel:(305) 555-4555">(305) 555-4555</a></div>
 												<div class="agent_detail agent_mobile_class"><i class="fas fa-mobile"></i></i><a href="tel:(305) 555-4555">(305) 555-4555</a></div>
 												<div class="agent_detail agent_email_class"><i class="far fa-envelope"></i><a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#016c68626960646d41766463726875642f6f6475"><span class="__cf_email__" data-cfemail="e08d89838881858ca097858293899485ce8e8594">[email&#160;protected]</span></a></div>
@@ -472,13 +484,13 @@
 												<div class="custom_parameter_wrapper">
 													<div class="col-md-4">
 														<span class="custom_parameter_label">
-														Experience </span>
+														Location </span>
 														<span class="custom_parameter_value">
 														18 years as Expert Realtor at Madrid Realty </span>
 													</div>
 													<div class="col-md-4">
 														<span class="custom_parameter_label">
-														Realtor Awards </span>
+														 Office Address</span>
 														<span class="custom_parameter_value">
 														Best Realtor in Madrid from 2000-2018 </span>
 													</div>
@@ -488,38 +500,39 @@
 														<span class="custom_parameter_value">
 														9 AM - 5 PM, Monday - Saturday </span>
 													</div>
-													<div class="col-md-4">
+													<!-- <div class="col-md-4">
 														<span class="custom_parameter_label">
 														MLS Number </span>
 														<span class="custom_parameter_value">
 														12345 MYID - Until 12/12/2025 </span>
-													</div>
-													<div class="col-md-4">
+													</div> -->
+													<!-- <div class="col-md-4">
 														<span class="custom_parameter_label">
 														Languages Spoken </span>
 														<span class="custom_parameter_value">
 														French, Spanish, English </span>
-													</div>
-													<div class="col-md-4">
+													</div> -->
+													<!-- <div class="col-md-4">
 														<span class="custom_parameter_label">
 														Office Address </span>
 														<span class="custom_parameter_value">
 														Calle de Toledo, 28005 Madrid, Spain </span>
-													</div>
+													</div> -->
 												</div>
-												<div class="developer_taxonomy agent_taxonomy">
+												<!-- <div class="developer_taxonomy agent_taxonomy">
 													<h4>Specialties &amp; Service Areas</h4>
 													<a href="https://lasvegas.wpresidence.net/property_county_state_agent/comunidad-de-madrid/" rel="tag">Comunidad de Madrid</a><a href="https://lasvegas.wpresidence.net/property_city_agent/madrid/" rel="tag">Madrid</a><a href="https://lasvegas.wpresidence.net/property_area_agent/malasana/" rel="tag">Malasaña</a><a href="https://lasvegas.wpresidence.net/property_category_agent/residential/" rel="tag">Residential</a><a href="https://lasvegas.wpresidence.net/property_action_category_agent/commercial/" rel="tag">Commercial</a>
-												</div>
+												</div> -->
 											</div>
 										</div>
 										<div class="agent_content col-md-12">
 											<h4>About Me </h4>
-											<p>Michaela’s sociability, independent spirit, and incredible customer service set him apart as a top agent in the New York real estate market. He works with a range of clients – national and international, as well as investors and local residents.</p>
-											<p>Whether a client is in the market for a single-family home or a luxury penthouse, Michael is there to help out. Between his time in the hospitality and real estate industries, he knows what good service is all about.</p>
+											<p><?php echo $pro['LongDescription'] ?></p>
+											
 										</div>
+										
 									</div>
-									<div class="agent_contanct_form ">
+									<!-- <div class="agent_contanct_form ">
 										<h4 id="show_contact">Contact Me</h4>
 										<div class="schedule_meeting">Schedule a showing?</div>
 										<div class="alert-box error">
@@ -596,9 +609,9 @@
 										<input name="prop_id" type="hidden" id="agent_property_id" value="0">
 										<input name="prop_id" type="hidden" id="agent_id" value="57">
 										<input type="hidden" name="contact_ajax_nonce" id="agent_property_ajax_nonce" value="66dc2680ca" />
-									</div>
+									</div> -->
 								</div>
-								<div class="mylistings agent_listing agency_listings_title single_listing_block">
+								<!-- <div class="mylistings agent_listing agency_listings_title single_listing_block">
 									<h3 class="agent_listings_title">My Listings</h3>
 									<input type="hidden" id="wpestate_agent_listings_nonce" value="8b4cdabddc" />
 									<div class="term_bar_wrapper" data-agent_id="-1" data-post_id="57">
@@ -928,11 +941,11 @@
 									<div class="load_more_ajax_cont">
 										<input type="button" class="wpresidence_button listing_load_more" value="Load More Properties">
 									</div>
-								</div>
-								<div class="property_reviews_wrapper agent_reviews_wrapper">
+								</div> -->
+								<!-- <div class="property_reviews_wrapper agent_reviews_wrapper">
 									<h4>Agent Reviews </h4>
 									<h5 class="review_notice">You need to <span id="login_trigger_modal">login</span> in order to post a review </h5>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						<div class="clearfix visible-xs"></div>

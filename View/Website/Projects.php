@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<?php include("header.php"); ?>
+	<?php include ("header.php");
+	include ("../../Helper/connect.php"); ?>
 	<!-- <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -279,7 +280,7 @@
 		</div> -->
 		<div class="website-wrapper" id="all_wrapper">
 			<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
-				<?php include("subheader.php"); ?>
+				<?php include ("subheader.php"); ?>
 				<!-- <div class="master_header   wide   topbar_transparent  ">
 					<div class="mobile_header mobile_header_sticky_yes">
 						<div class="mobile-trigger"><i class="fas fa-bars"></i></div>
@@ -395,22 +396,38 @@
 								<p>Whether you’re looking for property for sale in New York area or property for rent, WP Residence makes searching easy. Use our unique geolocation mapping feature to root-out your ideal villa, townhouse or apartment and contact the owners direct. We will help you find your dream house in just a few seconds.</p>
 							</div>
 							<div id="listing_ajax_container_agent">
+							<?php
+								$sql = $link->rawQuery("select * from project_master where isDeleted=0 and PK_Project");
+									foreach ($sql as $pro)
+									{
+										?>
+								
 								<div class="col-md-6 listing_wrapper">
-									<div class="agent_unit" data-link="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/">
+									<div class="agent_unit" data-link="SingleProject.php?pid=<?php echo $pro["PK_Project"]; ?>">
 										<div class="agent-unit-img-wrapper">
-											<img width="500" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person7-21-500x328.png" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person7-21-500x328.png 500w, https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person7-21-105x70.png 105w" sizes="(max-width: 500px) 100vw, 500px" /> 
+											<img width="500" height="328" src="<?php echo $pro['ThumbnailImageURL'] ?>" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="" sizes="(max-width: 500px) 100vw, 500px" /> 
 										</div>
-										<h4> <a href="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/">Michaela Finney</a></h4>
-										<div class="agent_position">real estate broker</div>
-										<div class="agent_card_content">Michaela’s sociability, independent spirit, and incredible customer service set him apart <a href="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/" class="unit_more_x">...</a></div>
-										<div class="agent_unit_social agent_list">
+										<h4> <a href="SingleProject.php?pid=<?php echo $pro["PK_Project"]; ?>">
+										<?php echo $pro['ProjectName'] ?></a></h4>
+										<div class="agent_position">
+										<?php echo $pro['ProjectType'] ?>
+										</div>
+										<div class="agent_card_content"><?php echo $pro['ShortDescription'] ?><a href="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/" class="unit_more_x">...</a></div>
+										<!-- <div class="agent_unit_social agent_list">
 											<a class="agent_unit_facebook" href="#" rel="noopener"><i class="fab fa-facebook-f"></i></a> <a class="agent_unit_twitter" href="#" rel="noopener"><i class="fab fa-twitter"></i></a> <a class="agent_unit_linkedin" href="#" rel="noopener"><i class="fab fa-linkedin-in"></i></a> <a class="agent_unit_pinterest" href="#" rel="noopener"><i class="fab fa-pinterest-p"></i></a> <a class="agent_unit_instagram" href="#" rel="noopener"><i class="fab fa-instagram"></i></a>
 											<div class="agent_unit_phone"><a href="tel:(305) 555-4555" rel="noopener"><i class="fas fa-phone"></i></a></div>
 											<div class="agent_unit_email"><a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#97fafef4fff6f2fbd7e0f2f5e4fee3f2b9f9f2e3" rel="noopener"><i class="fas fa-envelope"></i></a></div>
-										</div>
+										</div> -->
 									</div>
+									</div>
+									<?php
+									}
+									?>
+									
+									
 								</div>
-								<div class="col-md-6 listing_wrapper">
+								
+								<!-- <div class="col-md-6 listing_wrapper">
 									<div class="agent_unit" data-link="https://lasvegas.wpresidence.net/estate_agent/elena-pernia/">
 										<div class="agent-unit-img-wrapper">
 											<img width="500" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person8-1-1-500x328.png" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person8-1-1-500x328.png 500w, https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person8-1-1-105x70.png 105w" sizes="(max-width: 500px) 100vw, 500px" /> 
@@ -424,8 +441,8 @@
 											<div class="agent_unit_email"><a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#c9aca5aca7a889aca4a8a0a5e7a7acbd" rel="noopener"><i class="fas fa-envelope"></i></a></div>
 										</div>
 									</div>
-								</div>
-								<div class="col-md-6 listing_wrapper">
+								</div> -->
+								<!-- <div class="col-md-6 listing_wrapper">
 									<div class="agent_unit" data-link="https://lasvegas.wpresidence.net/estate_agent/alessandra-tortella/">
 										<div class="agent-unit-img-wrapper">
 											<img width="500" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person3-27-500x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person3-27-500x328.jpg 500w, https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person3-27-105x70.jpg 105w" sizes="(max-width: 500px) 100vw, 500px" /> 
@@ -439,8 +456,8 @@
 											<div class="agent_unit_email"><a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#02636e677171636c66706342676f636b6e2c6c6776" rel="noopener"><i class="fas fa-envelope"></i></a></div>
 										</div>
 									</div>
-								</div>
-								<div class="col-md-6 listing_wrapper">
+								</div> -->
+								<!-- <div class="col-md-6 listing_wrapper">
 									<div class="agent_unit" data-link="https://lasvegas.wpresidence.net/estate_agent/carlos-dobarro/">
 										<div class="agent-unit-img-wrapper">
 											<img width="500" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person-21-500x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person-21-500x328.jpg 500w, https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person-21-105x70.jpg 105w" sizes="(max-width: 500px) 100vw, 500px" /> 
@@ -454,8 +471,10 @@
 											<div class="agent_unit_email"><a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#ceadafbca2a1bd8eb9abacbda7baabe0a0abba" rel="noopener"><i class="fas fa-envelope"></i></a></div>
 										</div>
 									</div>
-								</div>
-							</div>
+								</div> -->
+								
+							
+							
 						</div>
 						<div class="clearfix visible-xs"></div>
 						<div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
@@ -634,7 +653,7 @@
 					</div>
 				</div>
 			</div>
-			<?php include("subfooter.php"); ?>
+			<?php include ("subfooter.php"); ?>
 			<!-- <footer id="colophon" class="  footer_back_repeat  ">
 				<div id="footer-widget-area" class="row ">
 					<div id="first" class="widget-area col-md-4 ">
@@ -697,7 +716,7 @@
 				</div>
 			</footer> -->
 		</div>
-		<?php include("footer.php"); ?>
+		<?php include ("footer.php"); ?>
 		<!-- <div id="modal_login_wrapper">
 			<div class="modal_login_back"></div>
 			<div class="modal_login_container " style='height:520px;'>
