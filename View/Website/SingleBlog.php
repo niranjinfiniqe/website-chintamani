@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<?php include("header.php"); ?>
+	<?php include("header.php"); 
+	include ("../../Helper/connect.php");
+	$pid = $_GET['pid'] ;
+    $pro=$link->rawQueryOne("select * from blog_master where PK_BlogID=?",array($_REQUEST['pid']));
+    if($link->count > 0) {
+        $blog_id=$pro['PK_BlogID'];
+    }
+	?>
 	<!-- <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -356,12 +363,13 @@
 				</div> -->
 				<?php include("subheader.php"); ?>
 				<div class="container content_wrapper">
+
 					<div id="post" class="row post-169 post type-post status-publish format-standard has-post-thumbnail hentry category-selling-properties category-real-estate tag-real-estate-2 tag-selling-your-home">
 						<div class="col-xs-12 col-md-12 breadcrumb_container">
 							<ol class="breadcrumb">
 								<li><a href="https://lasvegas.wpresidence.net/">Home</a></li>
 								<li><a href="https://lasvegas.wpresidence.net/category/selling-properties/">Buying Properties</a>, <a href="https://lasvegas.wpresidence.net/category/real-estate/">Real Estate</a></li>
-								<li class="active">These were the most expensive Las Vegas condos</li>
+					
 							</ol>
 						</div>
 						<div class=" col-md-9 rightmargin single_width_blog">
@@ -375,6 +383,7 @@
 							</div>
 							<div id="listing_ajax_container"></div>
 							<div class="single-content single-blog">
+													
 								<div id="carousel-example-generic" class="carousel slide post-carusel" data-ride="carousel" data-interval="false">
 									<ol class="carousel-indicators">
 										<li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
@@ -382,7 +391,7 @@
 									<div class="carousel-inner">
 										<div class="item  active ">
 											<a href="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38.jpg" rel="prettyPhoto" title="" class="prettygalery">
-											<img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38-800x467.jpg" alt="" class="img-responsive lightbox_trigger" />
+											<img width="800" height="533" src="<?php echo $pro['BlogThumbImage']?>" alt="" class="img-responsive lightbox_trigger" />
 											</a>
 											<div class="carousel-caption"></div>
 										</div>
@@ -394,13 +403,13 @@
 									<i class="demo-icon icon-right-open-big"></i>
 									</a>
 								</div>
-								<h1 class="entry-title single-title">These were the most expensive Las Vegas condos</h1>
+								<h1 class="entry-title single-title"><?php echo $pro['BlogTitle']?></h1>
 								<div class="meta-info">
-									<div class="meta-element"> <i class="far fa-calendar-alt meta_icon firsof"></i>Posted by demo on May 27, 2014</div>
+									<div class="meta-element"> <i class="far fa-calendar-alt meta_icon firsof"></i>Posted by <?php echo $pro['BlogOwner']?> on <?php echo $pro['BlogDate']?> </div>
 									<div class="meta-element"> <i class="far fa-file meta_icon"></i> <a href="https://lasvegas.wpresidence.net/category/selling-properties/">Buying Properties</a>, <a href="https://lasvegas.wpresidence.net/category/real-estate/">Real Estate</a></div>
-									<div class="meta-element"> <i class="far fa-comment meta_icon"></i> 0 </div>
+									<!-- <div class="meta-element"> <i class="far fa-comment meta_icon"></i> 0 </div> -->
 								</div>
-								<p>New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 km2) are land and 10.81 square miles (28.0 km2) are water.</p>
+								<!-- <p>New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 km2) are land and 10.81 square miles (28.0 km2) are water.</p>
 								<blockquote class="wp-block-quote">
 									<p><em>A modern redrawing of the 1807 version of the Commissioner’s Grid plan for Manhattan, a few years before it was adopted in 1811. Central Park is absent.</em></p>
 								</blockquote>
@@ -444,7 +453,18 @@
 									<li>Vestibulum auctor dapibus neque.</li>
 								</ol>
 								<p>Proin sagittis dolor sed mi elementum pretium. Donec et justo ante. Vivamus egestas sodales est, eu rhoncus urna semper eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer tristique elit lobortis purus bibendum, quis dictum metus mattis. Phasellus posuere felis sed eros porttitor mattis. Curabitur massa magna, tempor in blandit id, porta in ligula. Aliquam laoreet nisl massa, at interdum mauris sollicitudin et.</p>
-								<p></p>
+								<p></p> -->
+									
+								<!--block image portion-->
+
+								<div>
+								<a href="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior38.jpg"><img width="800" height="533" src="<?php echo $pro['BlogImage']?>" alt=""  sizes="(max-width: 800px) 100vw, 800px" /></a>
+
+							</div>
+
+									<p><?php echo $pro['BlogDescription']?> </p>
+
+
 								<div class="prop_social_single">
 									<a href="https://www.facebook.com/sharer.php?u=https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/&amp;t=These+were+the+most+expensive+Las+Vegas+condos" target="_blank" class="share_facebook" rel="noreferrer"><i class="fab fa-facebook-f"></i></a>
 									<a href="https://twitter.com/intent/tweet?text=These+were+the+most+expensive+Las+Vegas+condos+https%3A%2F%2Flasvegas.wpresidence.net%2F2014%2F05%2F27%2Fthese-were-the-most-expensive-las-vegas-condos%2F" class="share_tweet" target="_blank" rel="noreferrer"><i class="fab fa-twitter"></i></a>
@@ -453,9 +473,9 @@
 									<a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#9bfef6faf2f7dbfef6faf2f7b5f8f4f6a4e8eef9f1fef8efa6cff3fee8feb0ecfee9feb0eff3feb0f6f4e8efb0fee3ebfef5e8f2edfeb0d7fae8b0cdfefcfae8b0f8f4f5fff4e8bdfaf6eba0f9f4ffe2a6f3efefebe8bea8dabea9ddbea9ddf7fae8edfefcfae8b5ecebe9fee8f2fffef5f8feb5f5feefbea9dda9abaaafbea9ddabaebea9dda9acbea9ddeff3fee8feb6ecfee9feb6eff3feb6f6f4e8efb6fee3ebfef5e8f2edfeb6f7fae8b6edfefcfae8b6f8f4f5fff4e8bea9dd" class="social_email"> <i class="far fa-envelope"></i></a>
 								</div>
 							</div>
-							<div id="comments">
+							 <div id="comments">
 								<div id="respond" class="comment-respond">
-									<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/#respond" style="display:none;">Cancel Reply</a></small></h3>
+									<!-- <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://lasvegas.wpresidence.net/2014/05/27/these-were-the-most-expensive-las-vegas-condos/#respond" style="display:none;">Cancel Reply</a></small></h3>
 									<form action="https://lasvegas.wpresidence.net/wp-comments-post.php" method="post" id="commentform" class="comment-form">
 										<p class="comment-notes">Your email address will not be published. </p>
 										<p class="comment-form-comment"><label for="comment"></label><textarea id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment"></textarea></p>
@@ -469,13 +489,13 @@
 										<p style="display: none !important;">
 											<label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="5" /><script data-cfasync="false" src="https://lasvegas.wpresidence.net/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script>
 										</p>
-									</form>
+									</form> -->
 								</div>
-							</div>
+							</div> 
 							<div class="related_posts">
-								<h3>Related Posts</h3>
+								<!-- <h3>Related Posts</h3> -->
 								<div class="col-md-6  listing_wrapper blog2v">
-									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/">
+									<!-- <div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/">
 										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/portrait_july2019-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/portrait_july2019-525x328.jpg" /></a></div>
 										<h4>
 											<a href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/" class="blog_unit_title">The top 5 most livable Las Vegas neighbourho...</a>
@@ -518,9 +538,13 @@
 										</div>
 										<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/find-the-most-attractive-townhouses-for-sale-in-las-vegas/"> Continue reading<i class="fas fa-angle-right"></i> </a>
 									</div>
+									 -->
 								</div>
+									
 							</div>
+						
 						</div>
+						
 						<div class="clearfix visible-xs"></div>
 						<div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
 							<div id="primary_sidebar_wrapper">

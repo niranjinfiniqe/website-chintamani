@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <?php include("header.php"); ?>
+    <?php include("header.php"); 
+	include ("../../Helper/connect.php");?>
 	<!-- <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -305,25 +306,41 @@
 								<div class="rect5"></div>
 							</div>
 							<div id="listing_ajax_container"></div>
+						
 							<h1 class="entry-title title_prop">Blog List</h1>
 							<div class="single-content"></div>
+							
+							
 							<div class="blog_list_wrapper">
-								<div class="col-md-6  listing_wrapper blog2v">
+							<?php
+$sql = mysqli_query($con, "select * from blog_master where isDeleted=0 and PK_BlogID ")  ;
+
+foreach ($sql as $blog)
+{
+
+?>						
+							
+									<div class="col-md-6  listing_wrapper blog2v">
 									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/">
-										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2016/03/portrait__interior9-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2016/03/portrait__interior9-525x328.jpg" /></a></div>
-										<h4>
-											<a href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/" class="blog_unit_title">Top 10 best appreciating condos in Las Vegas</a>
-										</h4>
+										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/"><img width="525" height="328" src="<?php echo $blog['BlogThumbImage']?>" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2016/03/portrait__interior9-525x328.jpg" /></div>
+										<div><h4><a href="SingleBlog.php?pid=<?php echo $blog["PK_BlogID"]; ?>">
+												<?php echo $blog['BlogTitle'] ;?></a>
+										</h4></div>
 										<div class="blog_unit_meta">
-											Mar 04, 2016
+										<a href="SingleBlog.php?pid=<?php echo $blog["PK_BlogID"]; ?>">								
+										<?php echo $blog['BlogDate'] ?></a>
 										</div>
 										<div class="listing_details the_grid_view">
-											New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 <a href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/" class="unit_more_x">...</a> 
-										</div>
-										<a class="read_more" href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/"> Continue reading<i class="fas fa-angle-right"></i> </a>
+											<!-- New York County as a whole covers a total area of 33.77 square miles (87.5 km2), of which 22.96 square miles (59.5 <a href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/" class="unit_more_x">...</a>  -->
+											<a href="SingleBlog.php?pid=<?php echo $blog["PK_BlogID"]; ?>">				
+											<span style="display:inline-block;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 49ch;"><?php echo $blog['BlogDescription'] ;?></span></a>
+											</div>
+										<a class="read_more" href="SingleBlog.php?pid=<?php echo $blog["PK_BlogID"]; ?>"> Continue reading<i class="fas fa-angle-right"></i> </a>
+										
 									</div>
-								</div>
-								<div class="col-md-6  listing_wrapper blog2v">
+</div>
+															<?php } ?>				
+								<!-- <div class="col-md-6  listing_wrapper blog2v">
 									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/">
 										<div class="blog_unit_image"><a href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/portrait_july2019-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/portrait_july2019-525x328.jpg" /></a></div>
 										<h4>
@@ -427,7 +444,7 @@
 										</div>
 										<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/buying-or-renting-a-house-in-las-vegas/"> Continue reading<i class="fas fa-angle-right"></i> </a>
 									</div>
-								</div>
+								</div>-->
 							</div>
 						</div>
 						<div class="clearfix visible-xs"></div>
