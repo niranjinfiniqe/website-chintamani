@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<?php include ("header.php");
-	include ("../../Helper/connect.php"); ?>
+	<?php 
+	include ("header.php");
+	include ("../../Helper/connect.php"); 
+
+	
+			?>
 	<!-- <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -380,7 +384,7 @@
 								<li class="active">Agents List</li>
 							</ol>
 						</div>
-						<div class=" col-md-9 rightmargin ">
+						<div class=" col-md-12 rightmargin ">
 							<span class="entry-title listing_loader_title">Your search results</span>
 							<div class="spinner" id="listing_loader">
 								<div class="rect1"></div>
@@ -390,11 +394,11 @@
 								<div class="rect5"></div>
 							</div>
 							<div id="listing_ajax_container"></div>
-							<h1 class="entry-title">Agents List</h1>
-							<div class="single-content">
+							<h1 class="entry-title">Project Details</h1>
+							<!-- <div class="single-content">
 								<p>We like to think of ourselves as a small but perfectly formed lettings &amp; management agency. Working you get the exposure, knowledge and expertise you would expect from a large agent, but the service you will only receive from a smaller business built around 100% client and tenant focus.</p>
 								<p>Whether you’re looking for property for sale in New York area or property for rent, WP Residence makes searching easy. Use our unique geolocation mapping feature to root-out your ideal villa, townhouse or apartment and contact the owners direct. We will help you find your dream house in just a few seconds.</p>
-							</div>
+							</div> -->
 							<div id="listing_ajax_container_agent">
 							<?php
 								$sql = $link->rawQuery("select * from project_master where isDeleted=0 and PK_Project");
@@ -402,10 +406,10 @@
 									{
 										?>
 								
-								<div class="col-md-6 listing_wrapper">
+								<div class="col-md-4 listing_wrapper">
 									<div class="agent_unit" data-link="SingleProject.php?pid=<?php echo $pro["PK_Project"]; ?>">
 										<div class="agent-unit-img-wrapper">
-											<img width="500" height="328" src="<?php echo $pro['ThumbnailImageURL'] ?>" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="" sizes="(max-width: 500px) 100vw, 500px" /> 
+											<img width="500" height="328" src="<?php echo $pro['ThumbnailImageURL']; ?>" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="" sizes="(max-width: 500px) 100vw, 500px" /> 
 										</div>
 										<h4> <a href="SingleProject.php?pid=<?php echo $pro["PK_Project"]; ?>">
 										<?php echo $pro['ProjectName'] ?></a></h4>
@@ -476,182 +480,9 @@
 							
 							
 						</div>
-						<div class="clearfix visible-xs"></div>
-						<div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
-							<div id="primary_sidebar_wrapper">
-								<ul class="xoxo">
-									<li id="ag_ag_dev_search_widget-1" class="widget-container advanced_search_sidebar ag_ag_dev_search_widget boxed_widget">
-										<h3 class="widget-title-sidebar">Agents Search</h3>
-										<form role="search" method="get" action="https://lasvegas.wpresidence.net/agents-agencies-developers-search-results/">
-											<input type="text" id="keyword_search" class="form-control" name="_keyword_search" placeholder="Name" value="">
-											<div class="dropdown form-control ">
-												<div data-toggle="dropdown" id="sidebar-search_post_type" class="sidebar_filter_menu" data-value="estate_agent">
-													Agent
-													<span class="caret caret_sidebar"></span>
-												</div>
-												<input type="hidden" name="_search_post_type" value="estate_agent">
-												<ul class="dropdown-menu filter_menu aag_picker" role="menu" aria-labelledby="sidebar-search_post_type">
-													<li role="presentation" data-value="estate_agent">Agent</li>
-													<li role="presentation" data-value="estate_agency">Agency</li>
-													<li role="presentation" data-value="estate_developer">Developer</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_agent">
-												<div data-toggle="dropdown" id="sidebar-property_city_agent" class="sidebar_filter_menu" data-value="all">
-													Select City
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_property_city_agent" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-property_city_agent">
-													<li role="presentation" data-value="all">Select City</li>
-													<li role="presentation" data-value="madrid">Madrid (4)</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_agent">
-												<div data-toggle="dropdown" id="sidebar-property_area_agent" class="sidebar_filter_menu" data-value="all">
-													Select Area
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_property_area_agent" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-property_area_agent">
-													<li role="presentation" data-value="all">Select Area</li>
-													<li role="presentation" data-value="malasana">Malasaña (4)</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_agent">
-												<div data-toggle="dropdown" id="sidebar-property_category_agent" class="sidebar_filter_menu" data-value="all">
-													Select Category
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_property_category_agent" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-property_category_agent">
-													<li role="presentation" data-value="all">Select Category</li>
-													<li role="presentation" data-value="residential">Residential (4)</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_agent">
-												<div data-toggle="dropdown" id="sidebar-property_action_category_agent" class="sidebar_filter_menu" data-value="all">
-													Select Action Category
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_property_action_category_agent" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-property_action_category_agent">
-													<li role="presentation" data-value="all">Select Action Category</li>
-													<li role="presentation" data-value="commercial">Commercial (4)</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_agency" style="display:none;">
-												<div data-toggle="dropdown" id="sidebar-city_agency" class="sidebar_filter_menu" data-value="all">
-													Select City
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_city_agency" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-city_agency">
-													<li role="presentation" data-value="all">Select City</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_agency" style="display:none;">
-												<div data-toggle="dropdown" id="sidebar-area_agency" class="sidebar_filter_menu" data-value="all">
-													Select Area
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_area_agency" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-area_agency">
-													<li role="presentation" data-value="all">Select Area</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_agency" style="display:none;">
-												<div data-toggle="dropdown" id="sidebar-category_agency" class="sidebar_filter_menu" data-value="all">
-													Select Agency Category
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_category_agency" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-category_agency">
-													<li role="presentation" data-value="all">Select Agency Category</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_agency" style="display:none;">
-												<div data-toggle="dropdown" id="sidebar-action_category_agency" class="sidebar_filter_menu" data-value="all">
-													Select Action Category
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_action_category_agency" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-action_category_agency">
-													<li role="presentation" data-value="all">Select Action Category</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_developer" style="display:none;">
-												<div data-toggle="dropdown" id="sidebar-property_city_developer" class="sidebar_filter_menu" data-value="all">
-													Select City
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_property_city_developer" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-property_city_developer">
-													<li role="presentation" data-value="all">Select City</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_developer" style="display:none;">
-												<div data-toggle="dropdown" id="sidebar-property_area_developer" class="sidebar_filter_menu" data-value="all">
-													Select Area
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_property_area_developer" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-property_area_developer">
-													<li role="presentation" data-value="all">Select Area</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_developer" style="display:none;">
-												<div data-toggle="dropdown" id="sidebar-property_category_developer" class="sidebar_filter_menu" data-value="all">
-													Select Category
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_property_category_developer" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-property_category_developer">
-													<li role="presentation" data-value="all">Select Category</li>
-												</ul>
-											</div>
-											<div class="dropdown form-control ag_ag_dev_search_selector  selector_for_estate_developer" style="display:none;">
-												<div data-toggle="dropdown" id="sidebar-property_action_developer" class="sidebar_filter_menu" data-value="all">
-													Select Action Category
-													<span class="caret caret_sidebar"></span> 
-												</div>
-												<input type="hidden" name="_property_action_developer" value="all">
-												<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="sidebar-property_action_developer">
-													<li role="presentation" data-value="all">Select Action Category</li>
-												</ul>
-											</div>
-											<button class="wpresidence_button" id="advanced_submit_widget">Search</button>
-										</form>
-									</li>
-									<li id="footer_latest_widget-2" class="widget-container latest_listings">
-										<h3 class="widget-title-sidebar">Latest Listings</h3>
-										<script data-cfasync="false" src="https://lasvegas.wpresidence.net/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
-											//<![CDATA[
-											jQuery(document).ready(function(){
-											   estate_sidebar_slider_carousel();
-											});
-											//]]>
-										</script>
-										<div class="latest_listings list_type">
-											<div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">
-												<div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/"><img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-105x70.jpg" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
-												<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">Villa with Amazing View</a></span> <span class=widget_latest_price>5.500.000 $ <span class="price_label"></span></span> </div>
-											</div>
-											<div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/">
-												<div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/"><img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/home2-105x70.jpg" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/home2-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
-												<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/">Townhouse for Sale</a></span> <span class=widget_latest_price>210.000 $ <span class="price_label"></span></span> </div>
-											</div>
-											<div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">
-												<div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/"><img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-105x70.jpg" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
-												<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">Townhouse for Rent</a></span> <span class=widget_latest_price>100 $ <span class="price_label">/ sq. ft.</span></span> </div>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+						
 				</div>
+				
 			</div>
 			<?php include ("subfooter.php"); ?>
 			<!-- <footer id="colophon" class="  footer_back_repeat  ">

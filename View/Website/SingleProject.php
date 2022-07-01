@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <?php include("header.php"); 
+    <?php 
+	include("header.php");  
 	include ("../../Helper/connect.php");
+	//form 
+	if(isset($_POST['name']) && isset($_POST['EmailId']) &&  isset($_POST['phone_number']) &&  isset($_POST['message'])){
+
+
+	    $name = $_POST['name'];
+		$EmailId = $_POST['EmailId'];
+		$phone_number= $_POST['phone_number'];
+	
+
+		
+        $message= $_POST['message'];
+		// echo $message;
+
+		
+		// Performing insert query execution
+		$sql =mysqli_query( $con,"INSERT INTO inquiry (first_name,EmailId,phone_number,project_message) VALUES ('$name',
+		'$EmailId','$phone_number','$message')" ) ;
+		}
+		?>
+
+   <?php
 	$pid = $_GET['pid'] ;
 	$pro=$link->rawQueryOne("select * from project_master where PK_Project=?",array($_REQUEST['pid']));
-	if($link->count > 0) {
-		$project_id=$pro['PK_Project'];
-	}
+	echo $pro;
+	// if($link->count > 0) {
+	// 	$project_id=$pro['PK_Project'];
+	// }
 	
 	?>
-	
-	?>
+
 	<!-- <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -948,7 +970,7 @@
 								</div> -->
 							</div>
 						</div>
-						<div class="clearfix visible-xs"></div>
+						<!-- <div class="clearfix visible-xs"></div>
 						<div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
 							<div id="primary_sidebar_wrapper">
 								<ul class="xoxo">
@@ -1180,7 +1202,56 @@
 								</ul>
 							</div>
 						</div>
+					</div> -->
+					<div class="clearfix visible-xs"></div>
+						<div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
+							<div id="primary_sidebar_wrapper">
+								<ul class="xoxo">
+									<li id="ag_ag_dev_search_widget-1" class="widget-container advanced_search_sidebar ag_ag_dev_search_widget boxed_widget">
+										<h3 class="widget-title-sidebar">For More Inquiry</h3>
+										<form  method="post" action="">
+											<input type="text"   name="name" class="form-control" placeholder="Name" required/>
+											<input type="email"   name="EmailId" class="form-control" placeholder="email id" required/>
+											<input type="tel"  name="phone_number" class="form-control" placeholder="Phone number" required/>
+											<textarea type="text"  name="message" class="form-control" placeholder="Message" rows="3" cols="50" required>  </textarea>
+											<button type="submit" class="wpresidence_button" id="advanced_submit_widget" name="submit">Submit</button>
+										</form>
+									</li>
+									<li id="footer_latest_widget-2" class="widget-container latest_listings">
+										
+
+										<h3 class="widget-title-sidebar">Latest Listings</h3>
+										<script data-cfasync="false" src="https://lasvegas.wpresidence.net/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+											//<![CDATA[
+											jQuery(document).ready(function(){
+											   estate_sidebar_slider_carousel();
+											});
+											//]]>
+										</script>
+										<div class="latest_listings list_type">
+										<?php
+											$sql = $link->rawQuery("SELECT * from leasing_master WHERE isDeleted = 0 ORDER BY Lease_Name ASC LIMIT 3");
+											foreach ($sql as $pr)
+											{
+											?>
+											<div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">
+												<div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/"><img src="<?php echo $pr['ThumbnailURL'] ?>" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
+												<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/"><?php echo $pr['Lease_Name'] ?>"</a></span> <span class=widget_latest_price><?php echo $pr['Price'] ?><span class="price_label"></span></span> </div>
+											</div>
+											<?php
+											}
+											?>
+											
+										</div>
+										
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
+				</div>
+				
+			</div>
 				</div>
 			</div>
 			<?php include("subfooter.php"); ?>
