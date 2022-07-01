@@ -7,35 +7,300 @@
 		$project_id=$lease['PK_lease'];
 	}
 	
+
+
+
 	?>
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<?php include("header.php"); ?>
-		<div class="website-wrapper" id="all_wrapper">
-			<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
-				<?php include("subheader.php"); ?>
+	<div class="website-wrapper" id="all_wrapper">
+		
+	<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
+
+
+		<?php include("subheader.php"); ?>
+
+
+
+
+		
 				<div class="container content_wrapper">
 					<div class="row">
 						<div class="gallery_wrapper property_header_gallery_wrapper">
 							<div class="status-wrapper"></div>
 							<div class="col-md-6 image_gallery lightbox_trigger special_border" data-slider-no="1" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/interior35.jpg)  ">
-								<div class="img_listings_overlay"></div>
+								<div class="img_listings_overlay "></div>
 							</div>
-							<div class="col-md-3 image_gallery lightbox_trigger  special_border_top  " data-slider-no="2" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/house4-800x467.jpg)">
+							<div  class="col-md-3 image_gallery lightbox_trigger  special_border_top  myBtn " data-slider-no="2" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/house4-800x467.jpg);opacity: 0.2; filter: brightness(90%);">
 								<div class="img_listings_overlay"></div>
+								<span class="img_listings_mes" style='color:black'; ><i class="fas fa-lock fa-lg"></i></span>
 							</div>
-							<div class="col-md-3 image_gallery lightbox_trigger  special_border_top  " data-slider-no="3" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/house6-800x467.jpg)">
+							<div  class="col-md-3 image_gallery lightbox_trigger  special_border_top  myBtn " data-slider-no="3" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/house6-800x467.jpg);opacity: 0.2; filter: brightness(90%);">
 								<div class="img_listings_overlay"></div>
+								<span class="img_listings_mes" style='color:black'; ><i class="fas fa-lock fa-lg"></i></span>
 							</div>
-							<div class="col-md-3 image_gallery lightbox_trigger" data-slider-no="4" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/house8-800x467.jpg)">
+							<div class="col-md-3 image_gallery lightbox_trigger  myBtn" data-slider-no="4" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/house8-800x467.jpg);opacity: 0.2; filter: brightness(90%);">
 								<div class="img_listings_overlay"></div>
+								<span class="img_listings_mes" style='color:black'; ><i class="fas fa-lock fa-lg"></i></span>
 							</div>
-							<div class="col-md-3 image_gallery last_gallery_item lightbox_trigger" data-slider-no="5" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/house11-800x467.jpg)  ">
-								<div class="img_listings_overlay img_listings_overlay_last"></div>
-								<span class="img_listings_mes">See all 4 photos</span>
+							<div  class="col-md-3 image_gallery last_gallery_item lightbox_trigger  myBtn" data-slider-no="5" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/house11-800x467.jpg);opacity: 0.2; filter: brightness(90%);  ">
+								<div class="myBtn" class="img_listings_overlay img_listings_overlay_last"></div>
+								<span class="img_listings_mes" style='color:black'; ><i class="fas fa-lock fa-lg"></i></span>
+								
+								
+								
 							</div>
 						</div>
+
+						<div >
+
+						<style>
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+
+
+<!-- 
+
+						 <div style="display:none ;" >
+				<div class="modal_login_back"></div>
+				<div class="modal_login_container " style='height:520px;'>
+					<div id="login-modal_close"></div>
+					<div class="login-register-modal-image" style="background-image: url('https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/couple-login-modal-3.jpeg')">
+						<div class="featured_gradient"></div>
+						<div class="login-register-modal-image_text">Welcome to Las Vegas Real Estate</div>
+					</div>
+					<div class="login-register-modal-form-wrapper">
+						<div class="login_form" id="login-div_topbar">
+							<div id="login-div-title-topbar">Sign into your account </div>
+							<div class="loginalert" id="login_message_area_topbar"> </div>
+							<input type="text" class="form-control" name="log" id="login_user_topbar" autofocus placeholder="Username" />
+							<div class="password_holder">
+								<input type="password" class="form-control" name="pwd" id="login_pwd_topbar" placeholder="Password" />
+								<i class=" far fa-eye-slash show_hide_password"></i>
+							</div>
+							<input type="hidden" name="loginpop" id="loginpop_wd_topbar" value="0">
+							<input type="hidden" id="security-login-topbar" name="security-login-topbar" value="c70f189e17-1656426998">
+							<button class="wpresidence_button" id="wp-login-but-topbar">Login</button>
+							<div class="login-links"></div>
+						</div>
+						<div class="login_form" id="register-div-topbar">
+							<div id="register-div-title-topbar">Create an account</div>
+							<div class="loginalert" id="register_message_area_topbar"></div>
+							<input type="text" name="user_login_register" id="user_login_register_topbar" class="form-control" autofocus placeholder="Username" />
+							<input type="email" name="user_email_register" id="user_email_register_topbar" class="form-control" placeholder="Email" />
+							<div class="password_holder"><input type="password" name="user_password" id="user_password_topbar" class="form-control" placeholder="Password" /> <i class=" far fa-eye-slash show_hide_password"></i></div>
+							<div class="password_holder"><input type="password" name="user_password_retype" id="user_password_topbar_retype" class="form-control" placeholder="Retype Password" /> <i class=" far fa-eye-slash show_hide_password"></i></div>
+							<input type="checkbox" name="terms" id="user_terms_register_topbar" />
+							<label id="user_terms_register_topbar_label" for="user_terms_register_topbar">I agree with <a href="https://lasvegas.wpresidence.net/" target="_blank" id="user_terms_register_topbar_link">terms &amp; conditions</a> </label>
+							<input type="hidden" id="security-register-topbar" name="security-register-topbar" value="8acf1b727c-1656426998">
+							<button class="wpresidence_button" id="wp-submit-register_topbar">Register</button>
+						</div>
+						<div class="login_form" id="forgot-pass-div">
+							<div id="forgot-div-title-topbar">Reset Password</div>
+							<div class="loginalert" id="forgot_pass_area_topbar"></div>
+							<div class="loginrow">
+								<input type="email" class="form-control" name="forgot_email" id="forgot_email_topbar" autofocus placeholder="Enter Your Email Address" size="20" />
+							</div>
+							<input type="hidden" id="security-forgot-topbar" name="security-forgot-topbar" value="facd656da0" /><input type="hidden" name="_wp_http_referer" value="/2014/05/27/these-were-the-most-expensive-las-vegas-condos/" /> <input type="hidden" id="postid" value="
+								169">
+							<button class="wpresidence_button" id="wp-forgot-but-topbar" name="forgot">Reset Password</button>
+						</div>
+						<div class="login_modal_control">
+							<a href="#" id="widget_register_topbar">Register here!</a>
+							<a href="#" id="forgot_pass_topbar">Forgot password?</a>
+							<a href="#" id="widget_login_topbar">Back to login</a>
+							<a href="#" id="return_login_topbar">Back to login</a>
+							<input type="hidden" name="loginpop" id="loginpop" value="0">
+						</div>
+					</div>
+				</div>
+			</div>     -->
+
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+<div class="modal_login_back"></div>
+
+<div class="modal_login_container " style='height:520px;'>
+<div id="login-modal_close "></div>
+<div class="login-register-modal-image" style="background-image: url('https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/couple-login-modal-3.jpeg')">
+						<div class="featured_gradient"></div>
+						<div class="login-register-modal-image_text">Welcome to Las Vegas Real Estate</div>
+					</div>
+					<div class="login-register-modal-form-wrapper">
+					<div class="login_form" id="login-div_topbar">
+							<div id="login-div-title-topbar">Sign into your account </div>
+							<div class="loginalert" id="login_message_area_topbar"> </div>
+							<input type="text" class="form-control" name="log" id="login_user_topbar" autofocus placeholder="Username" />
+							<div class="password_holder">
+								<input type="password" class="form-control" name="pwd" id="login_pwd_topbar" placeholder="Password" />
+								<i class=" far fa-eye-slash show_hide_password"></i>
+							</div>
+							<input type="hidden" name="loginpop" id="loginpop_wd_topbar" value="0">
+							<input type="hidden" id="security-login-topbar" name="security-login-topbar" value="c70f189e17-1656426998">
+							<button class="wpresidence_button" id="wp-login-but-topbar">Login</button>
+							<div class="login-links"></div>
+						</div>
+
+						<div class="login_form" id="register-div-topbar">
+							<div id="register-div-title-topbar">Create an account</div>
+							<div class="loginalert" id="register_message_area_topbar"></div>
+							<input type="text" name="user_login_register" id="user_login_register_topbar" class="form-control" autofocus placeholder="Username" />
+							<input type="email" name="user_email_register" id="user_email_register_topbar" class="form-control" placeholder="Email" />
+							<div class="password_holder"><input type="password" name="user_password" id="user_password_topbar" class="form-control" placeholder="Password" /> <i class=" far fa-eye-slash show_hide_password"></i></div>
+							<div class="password_holder"><input type="password" name="user_password_retype" id="user_password_topbar_retype" class="form-control" placeholder="Retype Password" /> <i class=" far fa-eye-slash show_hide_password"></i></div>
+							<input type="checkbox" name="terms" id="user_terms_register_topbar" />
+							<label id="user_terms_register_topbar_label" for="user_terms_register_topbar">I agree with <a href="https://lasvegas.wpresidence.net/" target="_blank" id="user_terms_register_topbar_link">terms &amp; conditions</a> </label>
+							<input type="hidden" id="security-register-topbar" name="security-register-topbar" value="8acf1b727c-1656426998">
+							<button class="wpresidence_button" id="wp-submit-register_topbar">Register</button>
+						</div>
+
+						<div class="login_form" id="forgot-pass-div">
+							<div id="forgot-div-title-topbar">Reset Password</div>
+							<div class="loginalert" id="forgot_pass_area_topbar"></div>
+							<div class="loginrow">
+								<input type="email" class="form-control" name="forgot_email" id="forgot_email_topbar" autofocus placeholder="Enter Your Email Address" size="20" />
+							</div>
+							<input type="hidden" id="security-forgot-topbar" name="security-forgot-topbar" value="facd656da0" /><input type="hidden" name="_wp_http_referer" value="/2014/05/27/these-were-the-most-expensive-las-vegas-condos/" /> <input type="hidden" id="postid" value="
+								169">
+							<button class="wpresidence_button" id="wp-forgot-but-topbar" name="forgot">Reset Password</button>
+						</div>
+						<div class="login_modal_control">
+							<a href="#" id="widget_register_topbar">Register here!</a>
+							<a href="#" id="forgot_pass_topbar">Forgot password?</a>
+							<a href="#" id="widget_login_topbar">Back to login</a>
+							<a href="#" id="return_login_topbar">Back to login</a>
+							<input type="hidden" name="loginpop" id="loginpop" value="0">
+						</div>
+
+
+
+
+
+					</div>
+
+</div>
+
+  <!-- Modal content -->
+  <!-- <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+	
+  </div> -->
+
+</div>
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementsByClassName("myBtn");
+for (let index = 0; index < btn.length; index++) {
+	const element = btn[index];
+	element.addEventListener('click',function(){
+		modal.style.display = "block";
+		// console.log("clicked");
+
+	})
+	
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementById("close");
+
+// When the user clicks the button, open the modal 
+// btn.onclick = function() {
+//   modal.style.display = "block";
+// }
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 						<div class="notice_area col-md-12 ">
 							<div class="single_property_labels">
 								<div class="property_title_label"><a href="https://lasvegas.wpresidence.net/property_action_category/sales/" rel="tag">
@@ -133,14 +398,14 @@
 								</li>
 								<li>190 ft<sup>2</sup></li>
 							</ul>
-							<ul class="overview_element">
+							<!-- <ul class="overview_element">
 								<li class="first_overview">
 									<svg width="406" height="424" viewBox="0 0 406 424" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M290.204 0C297.84 0 304.03 6.19017 304.03 13.8261V66.9701C320.062 72.7236 331.682 88.0982 331.682 106C331.682 128.744 312.948 147.478 290.204 147.478C267.46 147.478 248.725 128.744 248.725 106C248.725 88.0982 260.345 72.7236 276.378 66.9701V13.8261C276.378 6.19017 282.568 0 290.204 0ZM115.073 0C122.709 0 128.899 6.19017 128.899 13.8261V66.9701C144.932 72.7236 156.552 88.0982 156.552 106C156.552 128.744 137.817 147.478 115.073 147.478C92.3294 147.478 73.5951 128.744 73.5951 106C73.5951 88.0982 85.2148 72.7236 101.247 66.9701V13.8261C101.247 6.19017 107.438 0 115.073 0ZM354.725 27.6522C382.648 27.6522 405.565 50.5689 405.565 78.4918V373.16C405.565 401.084 382.648 424 354.725 424H50.8396C22.917 424 0 401.084 0 373.16V78.4918C0 50.5689 22.917 27.6522 50.8396 27.6522H78.3478C85.6521 27.5489 92.3179 34.173 92.3179 41.4782C92.3179 48.7835 85.6521 55.4076 78.3478 55.3043H50.8396C37.7841 55.3043 27.6522 65.4359 27.6522 78.4918V156.695H377.913V78.4918C377.913 65.4359 367.781 55.3043 354.725 55.3043H327.217C319.913 55.4075 313.247 48.7835 313.247 41.4782C313.247 34.173 319.913 27.5489 327.217 27.6522H354.725ZM253.478 27.6522C261.114 27.6522 267.304 33.8421 267.304 41.4782C267.304 49.1139 261.114 55.3043 253.478 55.3043H152.087C144.451 55.3043 138.261 49.1139 138.261 41.4782C138.261 33.8421 144.451 27.6522 152.087 27.6522H253.478ZM377.913 184.348H27.6522V373.16C27.6522 386.216 37.7841 396.348 50.8396 396.348H354.725C367.781 396.348 377.913 386.216 377.913 373.16V184.348Z" fill="#222222" />
 									</svg>
 								</li>
 								<li><?php echo $lease["CabinsCount"]; ?> Cabin Counts</li>
-							</ul>
+							</ul> -->
 						</div>
 						<div class="wpestate_property_description" id="wpestate_property_description_section">
 							<h4 class="panel-title"> Description</h4>
@@ -177,20 +442,28 @@
 										</h4>
 									</a>
 								</div>
+
+								<?php 
+								
+								$query = "SELECT lease_amenities.Count, amenities_master.amenity_name FROM lease_amenities INNER JOIN amenities_master ON amenities_master.PK_amenities = lease_amenities.FK_amenities WHERE lease_amenities.FK_Lease = $pid; ";
+								$exce = mysqli_query($con,$query);
+								
+								?>
 								<div id="collapseOne" class="panel-collapse collapse in">
 									<div class="panel-body">
 										<div class="listing_detail col-md-6" id="propertyid_display"><strong>Lease Id :</strong> <?php echo  $lease['PK_lease']; ?></div>
 										<div class="listing_detail col-md-6"><strong>Price:</strong><?php echo $lease["Price"]; ?><span class="price_label"></span></div>
 										<div class="listing_detail col-md-6"><strong>Property Size:</strong> <?php echo $lease["BuildUpArea"]; ?> ft<sup>2</sup></div>
-										<div class="listing_detail col-md-6"><strong>Cabins Count:&nbsp;</strong><?php echo $lease["Price"]; ?><span class="price_label"></span></div>
-										<div class="listing_detail col-md-6"><strong>Reception Area:&nbsp;</strong><?php echo $lease["ReceptionArea"]; ?> ft<sup>2</sup><span class="price_label"></span></div>
-										<div class="listing_detail col-md-6"><strong>Conference Room Count:&nbsp;</strong><?php echo $lease["ConferenceRoomCount"]; ?><span class="price_label"></span></div>
-										<div class="listing_detail col-md-6"><strong>Meeting Room Count:&nbsp;</strong><?php echo $lease["MeetingRoomCount"]; ?><span class="price_label"></span></div>
-										<div class="listing_detail col-md-6"><strong>Server Room Count:&nbsp;</strong><?php echo $lease["ServerRoomCount"]; ?><span class="price_label"></span></div>
-										<div class="listing_detail col-md-6"><strong>GentsWashroom Count:&nbsp;</strong><?php echo $lease["GentsWashroomCount"]; ?><span class="price_label"></span></div>
-										<div class="listing_detail col-md-6"><strong>LadiesWashroom Count:&nbsp;</strong><?php echo $lease["ladiesWashroom"]; ?><span class="price_label"></span></div>
-										<div class="listing_detail col-md-6"><strong>Pantry Count:&nbsp;</strong><?php echo $lease["PantryCount"]; ?><span class="price_label"></span></div>
-										<div class="listing_detail col-md-6"><strong>Store Room Count:&nbsp;</strong><?php echo $lease["StoreroomCount"]; ?><span class="price_label"></span></div>
+                                     <?php 
+										while($row = mysqli_fetch_array($exce)){
+
+									
+										?>
+										<div class="listing_detail col-md-6"><strong><?php echo $row['amenity_name']; ?>:&nbsp;</strong><?php echo $row['Count']; ?><span class="price_label"></span></div>
+
+										<?php 
+										}?>
+										
 									</div>
 								</div>
 							</div>
@@ -1071,6 +1344,8 @@
 					</ul>
 				</div>
 			</div>
+
+
 					
 				
 					</div>
@@ -1079,4 +1354,29 @@
 			<?php include("subfooter.php"); ?>
 		</div>
 		<?php include("footer.php"); ?>
+
+
+
+
+
+
 </html>
+
+<script>
+	// document.getElementById("popup").addEventListener('click',function(){
+		// console.log("hello");
+
+	// });
+	var array = document.getElementsByClassName("popup");
+	
+	for (let index = 0; index < array.length; index++) {
+		const element = array[index];
+			element.addEventListener('click',function(){
+		console.log("hello");
+
+	});
+		
+	}
+	
+	
+</script>
