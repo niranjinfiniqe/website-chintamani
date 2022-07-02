@@ -465,7 +465,7 @@ foreach ($sql as $lease)
                      <div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
                         <div id="primary_sidebar_wrapper">
                            <ul class="xoxo">
-                              <li id="multiple_currency_widget-1" class="widget-container multiple_currency_widget">
+                              <!-- <li id="multiple_currency_widget-1" class="widget-container multiple_currency_widget">
                                  <h3 class="widget-title-sidebar">Change Currency</h3>
                                  <div class="dropdown form-control">
                                     <div data-toggle="dropdown" id="sidebar_currency_list" class="sidebar_filter_menu">USD <span class="caret caret_sidebar"></span></div>
@@ -478,8 +478,8 @@ foreach ($sql as $lease)
                                     </ul>
                                  </div>
                                  <input type="hidden" id="wpestate_change_currency" value="3406526ee8" /> 
-                              </li>
-                              <li id="measurement_unit_widget-1" class="widget-container measurement_unit_widget">
+                              </li> -->
+                              <!-- <li id="measurement_unit_widget-1" class="widget-container measurement_unit_widget">
                                  <h3 class="widget-title-sidebar">Change Measurement</h3>
                                  <div class="dropdown form-control">
                                     <div data-toggle="dropdown" id="sidebar_measure_unit_list" class="sidebar_filter_menu">square feet - ft<sup>2</sup> <span class="caret caret_sidebar"></span></div>
@@ -493,8 +493,8 @@ foreach ($sql as $lease)
                                     </ul>
                                  </div>
                                  <input type="hidden" id="wpestate_change_measure" value="4eb37b4917" /> 
-                              </li>
-                              <li id="advanced_search_widget-1" class="widget-container advanced_search_sidebar boxed_widget">
+                              </li> -->
+                              <!-- <li id="advanced_search_widget-1" class="widget-container advanced_search_sidebar boxed_widget">
                                  <h3 class="widget-title-sidebar">Advanced Search</h3>
                                  <form role="search" method="get" action="https://lasvegas.wpresidence.net/advanced-search/">
                                     <input type="hidden" id="wpestate_regular_search_nonce" name="wpestate_regular_search_nonce" value="9f03c42894" /><input type="hidden" name="_wp_http_referer" value="/properties-standard-list/" /><input type="text" id="sidebar-adv_location_" class="form-control adv_locations_search" name="adv_location" placeholder="Enter an address, state, city, area or zip code" value=""><script data-cfasync="false" src="https://lasvegas.wpresidence.net/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
@@ -653,8 +653,8 @@ foreach ($sql as $lease)
                                     </div>
                                     <button class="wpresidence_button" id="advanced_submit_widget">Search</button>
                                  </form>
-                              </li>
-                              <li id="property_categories-1" class="widget-container property_categories">
+                              </li> -->
+                              <!-- <li id="property_categories-1" class="widget-container property_categories">
                                  <h3 class="widget-title-sidebar">Our Listings</h3>
                                  <div class="category_list_widget">
                                     <ul>
@@ -665,30 +665,33 @@ foreach ($sql as $lease)
                                        <li><a href="https://lasvegas.wpresidence.net/property_category/villas/">Villas</a><span class="category_no">(6)</span></li>
                                     </ul>
                                  </div>
-                              </li>
+                              </li> -->
                               <li id="footer_latest_widget-1" class="widget-container latest_listings">
-                                 <h3 class="widget-title-sidebar">Latest Listings</h3>
+								<?php include("latestlisting.php") ?>
+                                 <!-- <h3 class="widget-title-sidebar">Latest Listings</h3>
                                  <script type="text/javascript">
-                                    //<![CDATA[
+                                    
                                     jQuery(document).ready(function(){
                                        estate_sidebar_slider_carousel();
                                     });
-                                    //]]>
                                  </script>
                                  <div class="latest_listings list_type">
                                     <div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">
                                        <div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/"><img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-105x70.jpg" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
-                                       <div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">Villa with Amazing View</a></span> <span class=widget_latest_price>5.500.000 $ <span class="price_label"></span></span> </div>
+                                       <div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">Villa with Amazing View</a></span> <span class=widget_latest_price>5.500.000 $ <span class="price_label"></span></span> 
+									</div>
                                     </div>
                                     <div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/">
                                        <div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/"><img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/home2-105x70.jpg" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/home2-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
-                                       <div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/">Townhouse for Sale</a></span> <span class=widget_latest_price>210.000 $ <span class="price_label"></span></span> </div>
+                                       <div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/">Townhouse for Sale</a></span> <span class=widget_latest_price>210.000 $ <span class="price_label"></span></span> 
+									</div>
                                     </div>
                                     <div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">
                                        <div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/"><img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-105x70.jpg" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
-                                       <div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">Townhouse for Rent</a></span> <span class=widget_latest_price>100 $ <span class="price_label">/ sq. ft.</span></span> </div>
+                                       <div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">Townhouse for Rent</a></span> <span class=widget_latest_price>100 $ <span class="price_label">/ sq. ft.</span></span> 
+									</div>
                                     </div>
-                                 </div>
+                                 </div> -->
                               </li>
                            </ul>
                         </div>

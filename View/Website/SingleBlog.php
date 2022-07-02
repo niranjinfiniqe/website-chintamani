@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<?php include("header.php"); 
+	<?php 
+	include("header.php"); 
 	include ("../../Helper/connect.php");
 	$pid = $_GET['pid'] ;
     $pro=$link->rawQueryOne("select * from blog_master where PK_BlogID=?",array($_REQUEST['pid']));
     if($link->count > 0) {
         $blog_id=$pro['PK_BlogID'];
     }
+	?>
+	
+	<?php
+	// $pid=$_GET['pid'];
+	// $result=mysqli_query($con,"SELECT * FROM  blog_master WHERE PK_BlogID=$pid");
+	// while($row=mysqli_fetch_array($result)){
+						   
+	//    echo $row['BlogTitle'];
+	// 	echo'</hr>';
+ 
+	// }
+	//   $result=mysqli_query($con,"SELECT * FROM  blog_master");
+						 
+	//   while($row=mysqli_fetch_array($result)){
+		 
+	// 	 echo '<li><a href="SingleBlog.php?pid='.$row['PK_BlogID'].'">'.$row['BlogTitle'].'</a></li>';
+	// 	  echo'</hr>';
+
+	//   }
 	?>
 	<!-- <head>
 		<meta charset="UTF-8" />
@@ -549,7 +569,7 @@
 						<div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
 							<div id="primary_sidebar_wrapper">
 								<ul class="xoxo">
-									<li id="multiple_currency_widget-1" class="widget-container multiple_currency_widget">
+									<!-- <li id="multiple_currency_widget-1" class="widget-container multiple_currency_widget">
 										<h3 class="widget-title-sidebar">Change Currency</h3>
 										<div class="dropdown form-control">
 											<div data-toggle="dropdown" id="sidebar_currency_list" class="sidebar_filter_menu">USD <span class="caret caret_sidebar"></span></div>
@@ -562,8 +582,8 @@
 											</ul>
 										</div>
 										<input type="hidden" id="wpestate_change_currency" value="2c4ac2f45b" /> 
-									</li>
-									<li id="measurement_unit_widget-1" class="widget-container measurement_unit_widget">
+									</li> -->
+									<!-- <li id="measurement_unit_widget-1" class="widget-container measurement_unit_widget">
 										<h3 class="widget-title-sidebar">Change Measurement</h3>
 										<div class="dropdown form-control">
 											<div data-toggle="dropdown" id="sidebar_measure_unit_list" class="sidebar_filter_menu">square feet - ft<sup>2</sup> <span class="caret caret_sidebar"></span></div>
@@ -577,8 +597,8 @@
 											</ul>
 										</div>
 										<input type="hidden" id="wpestate_change_measure" value="e19e9dc139" /> 
-									</li>
-									<li id="advanced_search_widget-1" class="widget-container advanced_search_sidebar boxed_widget">
+									</li> -->
+									<!-- <li id="advanced_search_widget-1" class="widget-container advanced_search_sidebar boxed_widget">
 										<h3 class="widget-title-sidebar">Advanced Search</h3>
 										<form role="search" method="get" action="https://lasvegas.wpresidence.net/advanced-search/">
 											<input type="hidden" id="wpestate_regular_search_nonce" name="wpestate_regular_search_nonce" value="1a2276c63f" /><input type="hidden" name="_wp_http_referer" value="/2014/05/27/these-were-the-most-expensive-las-vegas-condos/" /><input type="text" id="sidebar-adv_location_" class="form-control adv_locations_search" name="adv_location" placeholder="Enter an address, state, city, area or zip code" value=""><script type="text/javascript">
@@ -737,8 +757,8 @@
 											</div>
 											<button class="wpresidence_button" id="advanced_submit_widget">Search</button>
 										</form>
-									</li>
-									<li id="property_categories-1" class="widget-container property_categories">
+									</li> -->
+									<!-- <li id="property_categories-1" class="widget-container property_categories">
 										<h3 class="widget-title-sidebar">Our Listings</h3>
 										<div class="category_list_widget">
 											<ul>
@@ -749,15 +769,16 @@
 												<li><a href="https://lasvegas.wpresidence.net/property_category/villas/">Villas</a><span class="category_no">(6)</span></li>
 											</ul>
 										</div>
-									</li>
+									</li> -->
 									<li id="footer_latest_widget-1" class="widget-container latest_listings">
-										<h3 class="widget-title-sidebar">Latest Listings</h3>
+									<?php include("latestlisting.php");  ?>	
+									<!-- <h3 class="widget-title-sidebar">Latest Listings</h3>
 										<script type="text/javascript">
-											//<![CDATA[
+											//
 											jQuery(document).ready(function(){
 											   estate_sidebar_slider_carousel();
 											});
-											//]]>
+										
 										</script>
 										<div class="latest_listings list_type">
 											<div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">
@@ -770,9 +791,10 @@
 											</div>
 											<div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">
 												<div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/"><img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-105x70.jpg" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
-												<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">Townhouse for Rent</a></span> <span class=widget_latest_price>100 $ <span class="price_label">/ sq. ft.</span></span> </div>
+												<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">Townhouse for Rent</a></span> <span class=widget_latest_price>100 $ <span class="price_label">/ sq. ft.</span></span> 
 											</div>
-										</div>
+											</div>
+										</div> -->
 									</li>
 								</ul>
 							</div>
@@ -839,13 +861,32 @@
 			<div class="navigational_links">
 				<div class="nav-prev-wrapper">
 					<div class="nav-prev">
-						<a href="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/" rel="prev">In Las Vegas home prices have doubled in the past 5 years</a> <i class="fas fa-angle-left"></i>
-					</div>
+					<?php
+					    $prev=mysqli_query($con,"SELECT * FROM blog_master  WHERE pid<$pid ORDER BY pid ASC");
+								 
+						while($row=mysqli_fetch_array($prev)){
+							
+						 echo '<a href="SingleBlog.php?pid='.$row['PK_BlogID'].'" rel="next">Next</a>';
+						}
+						?>
+							
+				
+						<a href="" rel="prev">Previous</a> <i class="fas fa-angle-left"></i>
+					    
+					
+						</div>
 				</div>
 				<div class="nav-next-wrapper">
 					<div class="nav-next">
 						<i class="fas fa-angle-right"></i>
-						<a href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/" rel="next"> The top 5 most livable Las Vegas neighbourhoods</a> 
+						<?php
+       							 $next=mysqli_query($con,"SELECT * FROM blog_master  WHERE pid>$pid ORDER BY pid ASC");
+								 
+        						while($row=mysqli_fetch_array($next)){
+									
+		 					    echo '<a href="SingleBlog.php?pid='.$row['PK_BlogID'].'" rel="next">Next</a>';
+								}
+								?>
 					</div>
 				</div>
 			</div>

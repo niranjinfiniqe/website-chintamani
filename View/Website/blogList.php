@@ -313,12 +313,10 @@
 							
 							<div class="blog_list_wrapper">
 							<?php
-$sql = mysqli_query($con, "select * from blog_master where isDeleted=0 and PK_BlogID ")  ;
-
-foreach ($sql as $blog)
-{
-
-?>						
+								$sql = mysqli_query($con, "select * from blog_master where isDeleted=0 and PK_BlogID ")  ;
+								foreach ($sql as $blog)
+								{
+							?>						
 							
 									<div class="col-md-6  listing_wrapper blog2v">
 									<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/">
@@ -448,10 +446,11 @@ foreach ($sql as $blog)
 							</div>
 						</div>
 						<div class="clearfix visible-xs"></div>
-						<div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
+						<div class="col-xs-12  widget-area-sidebar" id="primary">
 							<div id="primary_sidebar_wrapper">
 								<ul class="xoxo">
-									<li id="multiple_currency_widget-1" class="widget-container multiple_currency_widget">
+										
+									<!-- <li id="multiple_currency_widget-1" class="widget-container multiple_currency_widget">
 										<h3 class="widget-title-sidebar">Change Currency</h3>
 										<div class="dropdown form-control">
 											<div data-toggle="dropdown" id="sidebar_currency_list" class="sidebar_filter_menu">USD <span class="caret caret_sidebar"></span></div>
@@ -464,8 +463,8 @@ foreach ($sql as $blog)
 											</ul>
 										</div>
 										<input type="hidden" id="wpestate_change_currency" value="35eaccc4d3" /> 
-									</li>
-									<li id="measurement_unit_widget-1" class="widget-container measurement_unit_widget">
+									</li> -->
+									<!-- <li id="measurement_unit_widget-1" class="widget-container measurement_unit_widget">
 										<h3 class="widget-title-sidebar">Change Measurement</h3>
 										<div class="dropdown form-control">
 											<div data-toggle="dropdown" id="sidebar_measure_unit_list" class="sidebar_filter_menu">square feet - ft<sup>2</sup> <span class="caret caret_sidebar"></span></div>
@@ -479,8 +478,8 @@ foreach ($sql as $blog)
 											</ul>
 										</div>
 										<input type="hidden" id="wpestate_change_measure" value="ceba72301a" /> 
-									</li>
-									<li id="advanced_search_widget-1" class="widget-container advanced_search_sidebar boxed_widget">
+									</li> -->
+									<!-- <li id="advanced_search_widget-1" class="widget-container advanced_search_sidebar boxed_widget">
 										<h3 class="widget-title-sidebar">Advanced Search</h3>
 										<form role="search" method="get" action="https://lasvegas.wpresidence.net/advanced-search/">
 											<input type="hidden" id="wpestate_regular_search_nonce" name="wpestate_regular_search_nonce" value="d41c98e49d" /><input type="hidden" name="_wp_http_referer" value="/blog-list-no-sidebar/" /><input type="text" id="sidebar-adv_location_" class="form-control adv_locations_search" name="adv_location" placeholder="Enter an address, state, city, area or zip code" value=""><script type="text/javascript">
@@ -639,8 +638,8 @@ foreach ($sql as $blog)
 											</div>
 											<button class="wpresidence_button" id="advanced_submit_widget">Search</button>
 										</form>
-									</li>
-									<li id="property_categories-1" class="widget-container property_categories">
+									</li> -->
+									<!-- <li id="property_categories-1" class="widget-container property_categories">
 										<h3 class="widget-title-sidebar">Our Listings</h3>
 										<div class="category_list_widget">
 											<ul>
@@ -651,15 +650,16 @@ foreach ($sql as $blog)
 												<li><a href="https://lasvegas.wpresidence.net/property_category/villas/">Villas</a><span class="category_no">(6)</span></li>
 											</ul>
 										</div>
-									</li>
+									</li> -->
 									<li id="footer_latest_widget-1" class="widget-container latest_listings">
-										<h3 class="widget-title-sidebar">Latest Listings</h3>
+									<?php include("latestlisting.php"); ?>	
+									<!-- <h3 class="widget-title-sidebar">Latest Listings</h3>
 										<script type="text/javascript">
-											//<![CDATA[
+										
 											jQuery(document).ready(function(){
 											   estate_sidebar_slider_carousel();
 											});
-											//]]>
+											
 										</script>
 										<div class="latest_listings list_type">
 											<div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">
@@ -672,9 +672,10 @@ foreach ($sql as $blog)
 											</div>
 											<div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">
 												<div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/"><img src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-105x70.jpg" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
-												<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">Townhouse for Rent</a></span> <span class=widget_latest_price>100 $ <span class="price_label">/ sq. ft.</span></span> </div>
+												<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">Townhouse for Rent</a></span> <span class=widget_latest_price>100 $ <span class="price_label">/ sq. ft.</span></span> 
 											</div>
-										</div>
+											</div>
+										</div> -->
 									</li>
 								</ul>
 							</div>
