@@ -7,12 +7,12 @@
 					<?php include("subheader.php"); ?>
                 	<div class="header_media  mobile_header_media_sticky_yes header_mediatype_1 with_search_1 header_media_non_elementor"></div>
 					<div class="pre_search_wrapper"></div>
-					<div class="container content_wrapper">
+					<div  class="container content_wrapper">
 						<div data-elementor-type="wp-page" data-elementor-id="18618" class="elementor elementor-18618">
-							<section class="elementor-section elementor-top-section elementor-element elementor-element-5c20f880 elementor-section-content-middle elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="5c20f880" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<section  class="elementor-section elementor-top-section elementor-element elementor-element-5c20f880 elementor-section-content-middle elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="5c20f880" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 								<div class="elementor-container elementor-column-gap-no">
 									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7fe0a5e4" data-id="7fe0a5e4" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-										<div class="elementor-widget-wrap elementor-element-populated">
+										<div    class="elementor-widget-wrap elementor-element-populated">
 											<section class="elementor-section elementor-inner-section elementor-element elementor-element-7d1ac38 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="7d1ac38" data-element_type="section">
 												<div class="elementor-container elementor-column-gap-no">
 													<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-3556b69" data-id="3556b69" data-element_type="column">
@@ -42,18 +42,39 @@
 													</div>
 												</div>
 											</section>
-											<section class="elementor-section elementor-inner-section elementor-element elementor-element-22ec8b6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="22ec8b6" data-element_type="section">
+											<section    class="elementor-section elementor-inner-section elementor-element elementor-element-22ec8b6 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="22ec8b6" data-element_type="section">
 												<div class="elementor-container elementor-column-gap-no">
-													<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-7b3e991" data-id="7b3e991" data-element_type="column">
-														<div class="elementor-widget-wrap elementor-element-populated">
-															<div class="elementor-element elementor-element-3ebcc151 elementor-absolute elementor-widget elementor-widget-WpResidence_Search_Form_Builder" data-id="3ebcc151" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="WpResidence_Search_Form_Builder.default">
-																<div class="elementor-widget-container">
-																	<div class="search_wrapper search_wr_elementor search_wr_elementor_shadow_ ">
+													<div  class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-7b3e991" data-id="7b3e991" data-element_type="column">
+														<div  class="elementor-widget-wrap elementor-element-populated">
+															<div  class="elementor-element elementor-element-3ebcc151 elementor-absolute elementor-widget elementor-widget-WpResidence_Search_Form_Builder" data-id="3ebcc151" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="WpResidence_Search_Form_Builder.default">
+																<div  class="elementor-widget-container">
+																	<div   class="search_wrapper search_wr_elementor search_wr_elementor_shadow_ ">
 																		<div class="search_wrapper_color"></div>
 																		<div class="wpestate-adv-holder">
-																			<form role="search" method="get" action="https://lasvegas.wpresidence.net/advanced-search/">
-																				<div class="elementor-field-group elementor-column form-group elementor-field-group-5a21b1d elementor-col-40">
-																					<label for="form-field-5a21b1d" class="elementor-field-label">Location</label><input type="text" id="adv_location_0" class="form-control adv_locations_search" name="adv_location" placeholder="Enter an address, state, city, area or zip code" value=""><script type="text/javascript">
+																			<form role="search" method="post" action="leasing.php">
+
+																		
+
+																				 <div class="elementor-field-group elementor-column form-group elementor-field-group-a5cfa26 elementor-col-15">
+																					<label for="form-field-a5cfa26" class="elementor-field-label">Location</label>
+																					<div class="dropdown form-control ">
+																						<div data-toggle="dropdown" id="adv_actions" class=" filter_menu_trigger  " xxmaca cacaall Property type data-value=">Choose location">Choose location
+																							<span class="caret  caret_filter "></span>
+																						</div>
+																						<input type="hidden" name="Location" value=""/>
+																						<ul id="actionslist" class="dropdown-menu filter_menu" role="menu" aria-labelledby="adv_actions">
+																							<li role="presentation" data-value="Andheri">Andheri</li>
+																						
+																							<li role="presentation" data-value="Goregaon">Goregaon</li>
+																							<li role="presentation" data-value="Goregaon">Goregaon</li>
+																						
+																						</ul>
+																					</div>
+																				</div>
+																				<!-- <div class="elementor-field-group elementor-column form-group elementor-field-group-5a21b1d elementor-col-40">
+																					<label for="form-field-5a21b1d" class="elementor-field-label">Location</label><input type="text" id="adv_location_0" class="form-control adv_locations_search" name="adv_location" placeholder="Enter an address, state, city, area or zip code" value="">
+																					
+																					<script type="text/javascript">
 																						//<![CDATA[
 																						jQuery(document).ready(function(){
 																							var availableTags = ["Las Vegas","Downtown","The Strip","Meadows Village","Downtown East","Winchester","Nevada",];
@@ -66,42 +87,60 @@
 																						});
 																						//]]&gt;
 																					</script>
-																				</div>
-																				<div class="elementor-field-group elementor-column form-group elementor-field-group-a5cfa26 elementor-col-20">
-																					<label for="form-field-a5cfa26" class="elementor-field-label">Type</label>
+																				</div> -->
+																				<div class="elementor-field-group elementor-column form-group elementor-field-group-a5cfa26 elementor-col-15">
+																					<label for="form-field-a5cfa26" class="elementor-field-label">Price Range</label>
 																					<div class="dropdown form-control ">
-																						<div data-toggle="dropdown" id="adv_actions" class=" filter_menu_trigger  " xxmaca cacaall Property type data-value="all">Property type
+																						<div data-toggle="dropdown" id="adv_actions" class=" filter_menu_trigger  " xxmaca cacaall Property type data-value="all">choose price range
 																							<span class="caret  caret_filter "></span>
 																						</div>
-																						<input type="hidden" name="filter_search_action[]" value="">
-																						<ul id="actionslist" class="dropdown-menu filter_menu" role="menu" aria-labelledby="adv_actions">
-																							<li role="presentation" data-value="all">Property type</li>
-																							<li role="presentation" data-value="all">Types</li>
-																							<li role="presentation" data-value="rentals">Rentals</li>
-																							<li role="presentation" data-value="sales">Sales</li>
+																						<input type="hidden" name="Price" value="">
+																						<ul id="actionslist" class="dropdown-menu filter_menu" role="menu" aria-labelledby="adv_categ">
+																							<li role="presentation" data-value="100000-200000">100k-200k</li>
+																							<li role="presentation" data-value="200000-300000">200k-300k</li>
+																							<li role="presentation" data-value="200000-300000">200k-300k</li>
+																							<li role="presentation" data-value="300000-400000">300k-400k</li>
 																						</ul>
 																					</div>
 																				</div>
-																				<div class="elementor-field-group elementor-column form-group elementor-field-group-356a11b elementor-col-20">
-																					<label for="form-field-356a11b" class="elementor-field-label">Category</label>
+																				<div class="elementor-field-group elementor-column form-group elementor-field-group-356a11b elementor-col-15">
+																					<label for="form-field-356a11b" class="elementor-field-label">Capacity</label>
 																					<div class="dropdown form-control ">
-																						<div data-toggle="dropdown" id="adv_categ" class=" filter_menu_trigger  " xxmaca cacaall Property category data-value="all">Property category
+																						<div data-toggle="dropdown" id="adv_categ" class=" filter_menu_trigger  " xxmaca cacaall Property category data-value="all">choose capacity
 																							<span class="caret  caret_filter "></span>
 																						</div>
-																						<input type="hidden" name="filter_search_type[]" value="">
+																						<input type="hidden" name="Packs" value="">
 																						<ul id="categlist" class="dropdown-menu filter_menu" role="menu" aria-labelledby="adv_categ">
-																							<li role="presentation" data-value="all">Property category</li>
-																							<li role="presentation" data-value="all">Categories</li>
-																							<li role="presentation" data-value="apartments">Apartments</li>
-																							<li role="presentation" data-value="condos">Condos</li>
-																							<li role="presentation" data-value="duplexes">Duplexes</li>
-																							<li role="presentation" data-value="houses">Houses</li>
-																							<li role="presentation" data-value="villas">Villas</li>
+																							<li role="presentation" data-value="5-10">5-10</li>
+																							<li role="presentation" data-value="10-15">10-15</li>
+																							<li role="presentation" data-value="15-20">15-20</li>
+																							<li role="presentation" data-value="20-25">20-25</li>
+																							<li role="presentation" data-value="25-30">25-30</li>
+																							<li role="presentation" data-value="30-35">30-35</li>
+																							<li role="presentation" data-value="35-40">35-40</li>
 																						</ul>
 																					</div>
 																				</div>
-																				<div class="elemenentor_submit_wrapper elementor-field-group form-group  form_field_show_labels_true  elementor-column elementor-col-20">
-																					<button name="submit" type="submit" class="wpresidence_button  search_button_use_hover_effect_no" value="Search">
+																				<div class="elementor-field-group elementor-column form-group elementor-field-group-356a11b elementor-col-15">
+																					<label for="form-field-356a11b" class="elementor-field-label">Square feet</label>
+																					<div class="dropdown form-control ">
+																						<div data-toggle="dropdown" id="adv_categ" class=" filter_menu_trigger  " xxmaca cacaall Property category data-value="all">choose sq ft
+																							<span class="caret  caret_filter "></span>
+																						</div>
+																						<input type="hidden" name="BuildUpArea" value="">
+																						<ul id="categlist" class="dropdown-menu filter_menu" role="menu" aria-labelledby="adv_categ">
+																							<li role="presentation" data-value="5-10">5-10</li>
+																							<li role="presentation" data-value="10-15">10-15</li>
+																							<li role="presentation" data-value="15-20">15-20</li>
+																							<li role="presentation" data-value="20-25">20-25</li>
+																							<li role="presentation" data-value="25-30">25-30</li>
+																							<li role="presentation" data-value="30-35">30-35</li>
+																							<li role="presentation" data-value="35-40">35-40</li>
+																						</ul>
+																					</div>
+																				</div>
+																				<div class=" elemenentor_submit_wrapper elementor-field-group form-group  form_field_show_labels_true  elementor-column elementor-col-25">
+																					<button   type="submit" class="wpresidence_button  search_button_use_hover_effect_no" >
 																						<div class="elementor-icon">
 																							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Capa_1" x="0px" y="0px" viewBox="0 0 52.966 52.966" style="enable-background:new 0 0 52.966 52.966;" xml:space="preserve">
 																								<path d="M51.704,51.273L36.845,35.82c3.79-3.801,6.138-9.041,6.138-14.82c0-11.58-9.42-21-21-21s-21,9.42-21,21s9.42,21,21,21  c5.083,0,9.748-1.817,13.384-4.832l14.895,15.491c0.196,0.205,0.458,0.307,0.721,0.307c0.25,0,0.499-0.093,0.693-0.279  C52.074,52.304,52.086,51.671,51.704,51.273z M21.983,40c-10.477,0-19-8.523-19-19s8.523-19,19-19s19,8.523,19,19  S32.459,40,21.983,40z"></path>
@@ -122,10 +161,10 @@
 																								<g></g>
 																							</svg>
 																						</div>
-																						Search
+																						<a style="text-decoration:none;color:white;" href="leasing.php">	Search</a>
 																					</button>
 																				</div>
-																				<input type="hidden" name="elementor_form_id" value="18618">
+																			
 																			</form>
 																		</div>
 																	</div>

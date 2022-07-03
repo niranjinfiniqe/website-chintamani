@@ -14,7 +14,7 @@ $exce = mysqli_query($con, $query);
 
 if ($row = mysqli_fetch_array($exce)) {
 
-   
+
 
     $Lease_Name = $row['Lease_Name'];
     $Lease_Alias = $row['Lease_Alias'];
@@ -31,19 +31,7 @@ if ($row = mysqli_fetch_array($exce)) {
     $VideoURL = $row['VideoURL'];
     $Furnished_Unfurnished = $row['Furnished/Unfurnished'];
     $BuildUpArea = $row['BuildUpArea'];
-    $CabinsCount = $row['CabinsCount'];
-    $ReceptionArea = $row['ReceptionArea'];
-    $W_S = $row['W/S'];
-    $SR_Manage = $row['SR_Manage'];
-    $ConferenceRoomCount = $row['ConferenceRoomCount'];
-    $MeetingRoomCount = $row['MeetingRoomCount'];
-    $ServerRoomCount = $row['ServerRoomCount'];
-    $StoreroomCount = $row['StoreroomCount'];
-    $GeneralWashroom = $row['GeneralWashroom'];
-    $GentsWashroomCount = $row['GentsWashroomCount'];
-    $ladiesWashroom = $row['ladiesWashroom'];
-    $PantryCount = $row['PantryCount'];
-    $SR_Manage = $row['SR_Manage'];
+
     $Keywords = $row['Keywords'];
     $MetaTitle = $row['MetaTitle'];
     $DisplayOrder = $row['DisplayOrder'];
@@ -111,14 +99,14 @@ if ($isUpdate == 1) {
             </div>
             <!-- end page title -->
 
+            <form action="editlease.php" class="needs-validation" novalidate method="post" name="leaseForm" enctype="multipart/form-data">
 
+                <div class="row">
+                    <div class="col-7">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-body p-4">
 
-            <div class="row">
-                <div class="col-7">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="card-body p-4">
-                                <form action="editlease.php" class="needs-validation" novalidate method="post" name="leaseForm" enctype="multipart/form-data">
                                     <div class="row">
                                         <h3 class="mb-3">Details</h3>
                                         <div class="div shadow-lg p-3 mb-5 bg-body rounded">
@@ -203,6 +191,16 @@ if ($isUpdate == 1) {
                                                     <label for="example-tel-input" class="form-label">Furnished/Unfurnished</label>
                                                     <input required value="<?php echo $Furnished_Unfurnished ?>" placeholder="Furnished/Unfurnished" type="text" name="Furnished/Unfurnished" id="Furnished/Unfurnished" class="form-control">
                                                 </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-tel-input" class="form-label">Display Order</label>
+                                                    <input required value="<?php echo $DisplayOrder ?>" placeholder="Display Order" type="text" name="DisplayOrder" id="DisplayOrder" class="form-control">
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-tel-input" class="form-label">BuildUp Area</label>
+                                                    <input required value="<?php echo $BuildUpArea ?>" placeholder="BuildUp Area" type="text" name="BuildUpArea" id="BuildUpAread" class="form-control">
+                                                </div>
+                                           
+                                               
                                             </div>
                                         </div>
 
@@ -316,91 +314,91 @@ if ($isUpdate == 1) {
                                                 <!-- end row -->
                                             </div>
                                         </div>
-                                        <div>
-                                            <button type="submit" class="btn btn-primary w-md">Submit</button>
-                                        </div>
+
                                     </div>
+                                </div>
+
                             </div>
-                            </form>
                         </div>
                     </div>
-                </div>
 
 
 
-                <div class="col-5 ">
+                    <div class="col-5 ">
 
-                    <div class="card shadow-lg p-3 mb-5 bg-body rounded">
-                        <h3 class="my-3">Amenities</h3>
-                        <div class="card-body">
-                            <div class="card-body p-2">
-                                <div class="row">
+                        <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                            <h3 class="my-3">Amenities</h3>
+                            <div class="card-body">
+                                <div class="card-body p-2">
+                                    <div class="row">
 
-                                    <?php
-
-
-
-                                    $item_not_selected_query = "SELECT * FROM amenities_master WHERE PK_amenities NOT IN ( SELECT FK_amenities FROM lease_amenities where isDeleted=0 and FK_Lease = $id)";
-                                    $item_not_selected_exce = mysqli_query($con, $item_not_selected_query);
-
-                                    $fetch_name = mysqli_query($con, "SELECT amenities_master.amenity_name,amenities_master.PK_amenities,lease_amenities.Count
-FROM amenities_master
-INNER JOIN lease_amenities ON amenities_master.PK_amenities=lease_amenities.FK_amenities where FK_Lease = $id ");
-
-                                    $selected_item_exce = mysqli_query($con, "select * from lease_amenities where FK_Lease = $id");
-
-                                    foreach ($fetch_name as $item) {
+                                        <?php
 
 
-                                    ?>
-                                        <div class="col-xl-12 col-md-6  d-flex p-2 bd-highlight">
 
-                                            <div class="form-check mx-2 my-2">
-                                                <input checked value="<?php echo $item['PK_amenities']; ?>" class="form-check-input" type="checkbox" id="inv-<?php echo $item['PK_amenities'] ?>" onclick="inventory(this.value)">
+                                        $item_not_selected_query = "SELECT * FROM amenities_master WHERE PK_amenities NOT IN ( SELECT FK_amenities FROM lease_amenities where isDeleted=0 and FK_Lease = $id)";
+                                        $item_not_selected_exce = mysqli_query($con, $item_not_selected_query);
 
+                                        $fetch_name = mysqli_query($con, "SELECT amenities_master.amenity_name,amenities_master.PK_amenities,lease_amenities.Count FROM amenities_master INNER JOIN lease_amenities ON amenities_master.PK_amenities=lease_amenities.FK_amenities where FK_Lease = $id ");
+
+                                        $selected_item_exce = mysqli_query($con, "select * from lease_amenities where FK_Lease = $id");
+
+                                        foreach ($fetch_name as $item) {
+
+
+                                        ?>
+                                            <div class="col-xl-12 col-md-6  d-flex p-2 bd-highlight">
+
+                                                <div class="form-check mx-2 my-2">
+                                                    <input checked value="<?php echo $item['PK_amenities']; ?>" class="form-check-input" type="checkbox" id="inv-<?php echo $item['PK_amenities'] ?>" onclick="inventory(this.value)">
+
+                                                </div>
+                                                <label for="myCheck" class="form-label mx-1 my-2"><?php echo $item['amenity_name']; ?> </label>
+
+                                                <input value="<?php echo $item['Count']; ?>" id="amenities_qty_div<?php echo $item['PK_amenities']; ?>" class="form-control mx-4" min="0" type="number" placeholder="quantity" name="<?php echo $item['PK_amenities']; ?>" />
                                             </div>
-                                            <label for="myCheck" class="form-label mx-1 my-2"><?php echo $item['amenity_name']; ?> </label>
+                                        <?php } ?>
 
-                                            <input value="<?php echo $item['Count']; ?>" id="amenities_qty_div<?php echo $item['PK_amenities']; ?>" class="form-control mx-4" min="0" type="number" placeholder="quantity" name="<?php echo $item['PK_amenities']; ?>" />
-                                        </div>
-                                    <?php } ?>
+                                        <?php
+                                        foreach ($item_not_selected_exce as $not_selected) {
+                                        ?>
 
-                                    <?php
-                                    foreach ($item_not_selected_exce as $not_selected) {
-                                    ?>
+                                            <div class="col-xl-12 col-md-6  d-flex p-2 bd-highlight">
 
-                                        <div class="col-xl-12 col-md-6  d-flex p-2 bd-highlight">
+                                                <div class="form-check mx-2 my-2">
+                                                    <input value="<?php echo $not_selected['PK_amenities']; ?>" class="form-check-input" type="checkbox" id="inv-<?php echo $not_selected['PK_amenities'] ?>" onclick="inventory(this.value)">
 
-                                            <div class="form-check mx-2 my-2">
-                                                <input value="<?php echo $not_selected['PK_amenities']; ?>" class="form-check-input" type="checkbox" id="inv-<?php echo $not_selected['PK_amenities'] ?>" onclick="inventory(this.value)">
+                                                </div>
+                                                <label for="myCheck" class="form-label mx-1 my-2"><?php echo $not_selected['amenity_name']; ?> </label>
 
+                                                <input id="amenities_qty_div<?php echo $not_selected['PK_amenities']; ?>" style="display: none;" class="form-control mx-4" min="0" type="number" placeholder="quantity" name="<?php echo $not_selected['PK_amenities']; ?>" />
                                             </div>
-                                            <label for="myCheck" class="form-label mx-1 my-2"><?php echo $not_selected['amenity_name']; ?> </label>
-
-                                            <input id="amenities_qty_div<?php echo $not_selected['PK_amenities']; ?>" style="display: none;" class="form-control mx-4" min="0" type="number" placeholder="quantity" name="<?php echo $not_selected['PK_amenities']; ?>" />
-                                        </div>
 
 
-                                    <?php  } ?>
+                                        <?php  } ?>
 
 
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
                 </div>
-
-
-
-
-
-
-
-
-
-
-            </div>
+                <div>
+                    <button type="submit" name="submit" class="btn btn-primary w-md">Submit</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -432,27 +430,17 @@ INNER JOIN lease_amenities ON amenities_master.PK_amenities=lease_amenities.FK_a
 <script>
     function inventory(val) {
 
-        //alert(val);
-        //to check checkbox checked
-        //var val2=$("#inv-"+val).is(":checked");
-        //alert(val2);
         if ($("#inv-" + val.trim()).is(":checked")) {
-            // console.log("#amenities_qty_div"+val.trim());
+
 
             $("#amenities_qty_div" + val.trim()).css("display", "block");
-            // $("#amenities_qty_div" + val.trim()).css("display", "block");
-            // $("#product_price" + val.trim()).removeAttr("disabled");
-            // $("#inventory_qty" + val.trim()).removeAttr("disabled");
-            // $("#inventory" + val.trim()).css("display", "block");
-            // $("#product_gallery_thumb" + val.trim()).removeAttr("disabled");
+            // console.log($("#amenities_qty_div" + val.trim()).val());
         } else {
-            // console.log("bad"+val);
+
             $("#amenities_qty_div" + val.trim()).css("display", "none");
-            // $("#amenities_qty_div" + val.trim()).css("display", "none");
-            // $("#product_price" + val.trim()).attr("disabled", "disabled");
-            // $("#inventory_qty" + val.trim()).attr("disabled", "disabled");
-            // $("#inventory" + val.trim()).css("display", "none");
-            // $("#product_gallery_thumb" + val.trim()).attr("disabled", "disabled");
+           $("#amenities_qty_div" + val.trim()).val(null);
+            
+
         }
     }
 </script>
