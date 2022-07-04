@@ -11,16 +11,13 @@
 	    $name = $_POST['name'];
 		$EmailId = $_POST['EmailId'];
 		$phone_number= $_POST['phone_number'];
-	
+		$message= $_POST['message'];
 
-		
-        $message= $_POST['message'];
-		// echo $message;
 
 		
 		// Performing insert query execution
-		$sql =mysqli_query( $con,"INSERT INTO inquiry (first_name,EmailId,phone_number,project_message) VALUES ('$name',
-		'$EmailId','$phone_number','$message')" ) ;
+		$sql =mysqli_query( $con,"INSERT INTO inquiry (first_name,EmailId,phone_number,project_message,FK_Status) VALUES ('$name',
+		'$EmailId','$phone_number','$message','1')" ) ;
 		}
 		?>
 

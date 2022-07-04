@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-		<?php include("header.php"); ?>
+		<?php
+		 include("header.php"); 
+		include("../../Helper/connect.php");
+		//form 
+	    if(isset($_POST['name']) && isset($_POST['EmailId']) &&  isset($_POST['phone_number']) &&  isset($_POST['message'])){
+
+
+	    $name = $_POST['name'];
+		$EmailId = $_POST['EmailId'];
+		$phone_number= $_POST['phone_number'];
+		$message= $_POST['message'];
+		
+
+		
+		// Performing insert query execution
+		$sql =mysqli_query($con,"INSERT INTO inquiry (first_name,EmailId,phone_number,project_message,FK_Status) VALUES ('$name','$EmailId','$phone_number','$message','1')" ) ;
+		}
+		?>
+
         	<div class="website-wrapper" id="all_wrapper">
 				<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
 					<?php include("subheader.php"); ?>
@@ -207,7 +225,7 @@
 															<div class="elementor-element elementor-element-27d20a7 elementor-mobile-align-center elementor-invisible elementor-widget elementor-widget-button" data-id="27d20a7" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="button.default">
 																<div class="elementor-widget-container">
 																	<div class="elementor-button-wrapper">
-																		<a href="https://lasvegas.wpresidence.net/about-us/" target="_blank" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+																		<a href="aboutUs.php" class="elementor-button-link elementor-button elementor-size-sm" role="button">
 																		<span class="elementor-button-content-wrapper">
 																		<span class="elementor-button-text">More about us</span>
 																		</span>
@@ -248,7 +266,7 @@
 															<div class="elementor-element elementor-element-73c61b00 elementor-invisible elementor-widget elementor-widget-Wpresidence_Grids" data-id="73c61b00" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:65}" data-widget_type="Wpresidence_Grids.default">
 																<div class="elementor-widget-container">
 																	<div class="row elementor_wpresidece_grid">
-																		<div class="col-md-4 col-sm-12 elementor_residence_grid">
+																		<div class="col-md-6 col-sm-12 elementor_residence_grid">
 																			<div class="listing_wrapper elementor_places_wrapper">
 																				<div class="property_listing places_wrapper_type_1 places_listing" data-link="https://lasvegas.wpresidence.net/property_area/winchester/" style="background-image: url(https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/city_category3.jpeg);">
 																					<div class="places_cover" data-link="https://lasvegas.wpresidence.net/property_area/winchester/"></div>
@@ -261,7 +279,7 @@
 																				</div>
 																			</div>
 																		</div>
-																		<div class="col-md-4 col-sm-12 elementor_residence_grid">
+																		<div class="col-md-6 col-sm-12 elementor_residence_grid">
 																			<div class="listing_wrapper elementor_places_wrapper">
 																				<div class="property_listing places_wrapper_type_1 places_listing" data-link="https://lasvegas.wpresidence.net/property_area/meadows-village/" style="background-image: url(https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/city_category2.jpeg);">
 																					<div class="places_cover" data-link="https://lasvegas.wpresidence.net/property_area/meadows-village/"></div>
@@ -274,7 +292,7 @@
 																				</div>
 																			</div>
 																		</div>
-																		<div class="col-md-4 col-sm-12 elementor_residence_grid">
+																		<!-- <div class="col-md-4 col-sm-12 elementor_residence_grid">
 																			<div class="listing_wrapper elementor_places_wrapper">
 																				<div class="property_listing places_wrapper_type_1 places_listing" data-link="https://lasvegas.wpresidence.net/property_area/downtown/" style="background-image: url(https://las-vegas.b-cdn.net/wp-content/uploads/2022/03/city_category.jpeg);">
 																					<div class="places_cover" data-link="https://lasvegas.wpresidence.net/property_area/downtown/"></div>
@@ -286,7 +304,7 @@
 																					</div>
 																				</div>
 																			</div>
-																		</div>
+																		</div> -->
 																	</div>
 																</div>
 															</div>
@@ -397,8 +415,14 @@
 															<div class="elementor-element elementor-element-7bdb98af elementor-invisible elementor-widget elementor-widget-WpResidence_Items_List" data-id="7bdb98af" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="WpResidence_Items_List.default">
 																<div class="elementor-widget-container">
 																	<div id="wpestate_sh_anime_557" class="article_container wpestate_anime wpestate_latest_listings_sh bottom-estate_property " data-type="estate_property" data-category_ids="" data-action_ids="" data-city_ids="" data-area_ids="" data-state_ids="" data-status_ids="" data-number="6" data-row-number="3" data-card-version="" data-align="vertical" data-show_featured_only="no" data-random_pick="no" data-featured_first="no" data-sort-by="0" data-page="1">
-																		<div class="col-md-4 shortcode-col listing_wrapper " data-org="6" data-main-modal="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-800x467.jpg" data-modal-title="Villa with Amazing View" data-modal-link="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/" data-listid="139">
-																			<div class="property_listing property_card_default " data-link="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">
+																	<?php
+																	   $sql = $link->rawQuery("select * from leasing_master where isDeleted=0 and PK_lease limit 6");
+																		
+																		 foreach ($sql as $pro)
+																		  {
+																	?>
+																		<div   class="col-md-4 shortcode-col listing_wrapper " data-org="6" data-main-modal="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-800x467.jpg" data-modal-title="Villa with Amazing View" data-modal-link="" data-listid="139">
+																			<div class="property_listing property_card_default " data-link="">
 																				<div class="listing-unit-img-wrapper">
 																					<div class="prop_new_details">
 																						<div class="prop_new_details_back"></div>
@@ -406,7 +430,7 @@
 																						<div class="property_location_image"> <span class="property_marker"></span><a href="https://lasvegas.wpresidence.net/property_area/downtown/" rel="tag">Downtown</a>, <a href="https://lasvegas.wpresidence.net/property_city/las-vegas/" rel="tag">Las Vegas</a></div>
 																						<div class="featured_gradient"></div>
 																					</div>
-																					<a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/" target="_self"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" /></a> 
+																					<a href="" target="_self"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" /></a> 
 																					<div class="tag-wrapper">
 																						<div class="featured_div">Featured</div>
 																						<div class="status-wrapper">
@@ -415,32 +439,38 @@
 																					</div>
 																				</div>
 																				<div class="property-unit-information-wrapper">
-																					<h4> <a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">Villa with Amazing View </a> </h4>
-																					<div class="listing_unit_price_wrapper"> 5.500.000 $ <span class="price_label"></span></div>
-																					<div class="listing_details the_grid_view"> Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood <a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/" class="unit_more_x"> ...</a> </div>
-																					<div class="listing_details the_list_view"> Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood. This home features hard <a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/" class="unit_more_x"> ...</a> </div>
+																					<h4>
+																					<a href="estate_property.php?leaseID=<?php echo $pro["PK_lease"]; ?>">
+																					<?php echo $pro['Lease_Name']; ?></a>
+																						
+																						</h4>
+																					<div class="listing_unit_price_wrapper"> <?php echo $pro["Price"]; ?> <span class="price_label"></span></div>
+																					<div class="listing_details the_grid_view"> <?php echo $pro["ShortDescription"]; ?> <a href="" class="unit_more_x"> ...</a> </div>
+																					<div class="listing_details the_list_view"> Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood. This home features hard <a href="" class="unit_more_x"> ...</a> </div>
 																					<div class="property_listing_details">
 																						<span class="inforoom">
-																							<svg viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+																						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"/></svg>
+																							<!-- <svg viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 																								<path d="M17.6702 6.14728V1.12908C17.6699 0.829675 17.5496 0.542695 17.3354 0.33099C17.1213 0.119457 16.831 0.000335493 16.5282 0H2.47158C2.16874 0.000336053 1.87846 0.119457 1.66432 0.33099C1.45018 0.542691 1.32986 0.829671 1.32952 1.12908V6.14728C0.945097 6.26691 0.60909 6.50432 0.369977 6.82507C0.131029 7.14598 0.00152709 7.5336 0 7.93211V12.0755C0.000339918 12.2751 0.080557 12.4665 0.223311 12.6076C0.366066 12.7486 0.55964 12.8281 0.76136 12.8282H1.22057V14.2473C1.22074 14.4469 1.30113 14.6383 1.44388 14.7794C1.58664 14.9204 1.78004 14.9998 1.98193 15H3.12177C3.32349 14.9998 3.51706 14.9204 3.65981 14.7794C3.80257 14.6383 3.88279 14.4469 3.88313 14.2473V12.8282H15.1166V14.2473C15.1169 14.4469 15.1971 14.6383 15.3399 14.7794C15.4826 14.9204 15.6762 14.9998 15.8779 15H17.0178C17.2197 14.9998 17.4132 14.9204 17.5558 14.7792C17.6986 14.6383 17.779 14.4469 17.7791 14.2473V12.8282H18.2386C18.4405 12.8281 18.6339 12.7486 18.7767 12.6076C18.9194 12.4665 18.9997 12.2751 19 12.0755V7.93211C18.9985 7.53358 18.869 7.14581 18.6299 6.8249C18.3909 6.50416 18.0547 6.26673 17.6701 6.14712L17.6702 6.14728ZM2.09091 1.12908C2.09108 0.921244 2.26137 0.75289 2.4716 0.752722H16.5282H16.528C16.7382 0.75289 16.9085 0.921244 16.9087 1.12908V6.05051H15.8486C15.8938 5.92987 15.9174 5.80252 15.9188 5.67415V4.56457C15.9184 4.26517 15.7979 3.97819 15.584 3.76649C15.3698 3.55478 15.0796 3.43566 14.7767 3.4355H10.8716C10.5689 3.43566 10.2787 3.55478 10.0645 3.76649C9.85039 3.97819 9.7299 4.26517 9.72956 4.56457V5.67415C9.73092 5.80252 9.75472 5.92987 9.79975 6.05051H9.20001C9.24522 5.92987 9.26884 5.80252 9.2702 5.67415V4.56457C9.26986 4.26517 9.14937 3.97819 8.93523 3.76649C8.72127 3.55478 8.43082 3.43566 8.12814 3.4355H4.22271C3.91987 3.43566 3.62959 3.55478 3.41562 3.76649C3.20148 3.97819 3.08099 4.26517 3.08065 4.56457V5.67415C3.08201 5.80252 3.10563 5.92987 3.15084 6.05051H2.09071L2.09091 1.12908ZM10.4912 5.67415V4.56457C10.4914 4.35674 10.6618 4.18822 10.8719 4.18822H14.777C14.9872 4.18822 15.1575 4.35674 15.1576 4.56457V5.67415C15.1575 5.88182 14.9872 6.05034 14.777 6.05051H10.8719C10.6618 6.05034 10.4914 5.88182 10.4912 5.67415ZM3.84249 5.67415V4.56457C3.84266 4.35674 4.01295 4.18822 4.22318 4.18822H8.12861C8.33883 4.18822 8.50912 4.35674 8.50929 4.56457V5.67415C8.50912 5.88182 8.33883 6.05034 8.12861 6.05051H4.22318C4.01295 6.05034 3.84266 5.88182 3.84249 5.67415ZM3.12276 14.2473H1.98223V12.8282H3.12207L3.12276 14.2473ZM17.0188 14.2473H15.8781V12.8282H17.0179L17.0188 14.2473ZM18.2394 12.0755H0.761433V10.4636H18.2385L18.2394 12.0755ZM0.761433 9.71087V7.93211C0.761773 7.63271 0.882265 7.34573 1.0964 7.13402C1.31037 6.92232 1.60082 6.8032 1.90349 6.80303H17.0965C17.3993 6.8032 17.6896 6.92232 17.9038 7.13402C18.1177 7.34572 18.2382 7.6327 18.2386 7.93211V9.71087H0.761433Z" fill="black" />
-																							</svg>
-																							5
+																							</svg> -->
+																							<?php echo $pro["Location"]; ?>
 																						</span>
 																						<span class="infobath">
 																							<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 																								<path d="M16.372 6.77159H2.53438V1.63184C2.53354 1.37184 2.63335 1.12199 2.81207 0.936247C2.99079 0.750676 3.23399 0.644246 3.48909 0.640102C3.74421 0.635959 3.99065 0.734387 4.17509 0.91396C3.89895 1.3071 3.76845 1.78725 3.80671 2.26912C3.84511 2.75098 4.0499 3.20341 4.38476 3.54597L4.40691 3.56697V3.56683C4.58353 3.72469 4.85001 3.71597 5.01637 3.54683L7.22045 1.30054C7.38683 1.13111 7.39538 0.858973 7.23979 0.678968L7.21961 0.656825C6.88039 0.312537 6.43155 0.103389 5.95426 0.0669636C5.47696 0.0306777 5.00261 0.169536 4.617 0.458534C4.31422 0.159961 3.90814 -0.00489934 3.48693 0.000110949C3.06558 0.00496801 2.66328 0.17911 2.36738 0.484683C2.07134 0.790256 1.90566 1.20254 1.90634 1.63182V6.77158H0.627967C0.461442 6.77172 0.301926 6.83929 0.184187 6.95929C0.0664469 7.07929 0.000279897 7.24186 0 7.41157V8.14285C0.000280363 8.31242 0.0664434 8.47514 0.184187 8.59513C0.30193 8.71513 0.46145 8.78256 0.627967 8.78284H0.650394V10.9773V10.9771C0.650955 11.6177 0.822947 12.2458 1.14786 12.7942C1.47278 13.3426 1.93828 13.7901 2.49409 14.0889C2.49381 14.0956 2.491 14.102 2.491 14.1087V15.36C2.49128 15.5297 2.55745 15.6923 2.67519 15.8123C2.79293 15.9323 2.95259 15.9997 3.11897 16H3.95733C4.12386 15.9997 4.28337 15.9323 4.40111 15.8123C4.51885 15.6923 4.58502 15.5297 4.5853 15.36V14.4971H12.3725V15.36C12.3727 15.5297 12.439 15.6923 12.5566 15.8123C12.6743 15.9323 12.834 15.9997 13.0005 16H13.8389H13.8387C14.0052 15.9997 14.1648 15.9323 14.2825 15.8123C14.4002 15.6923 14.4665 15.5297 14.4667 15.36V14.1087L14.4665 14.1081H14.4667C15.0328 13.8134 15.5082 13.3652 15.8404 12.8127C16.1726 12.2603 16.3489 11.6251 16.3497 10.9771V8.78286H16.3722H16.372C16.5386 8.78258 16.6982 8.71515 16.8158 8.59515C16.9336 8.47515 16.9999 8.31243 17 8.14287V7.41158C16.9999 7.24187 16.9336 7.0793 16.8158 6.95931C16.6982 6.83931 16.5386 6.77173 16.372 6.77159H16.372ZM5.80343 0.699629C6.10565 0.699058 6.39958 0.800344 6.63957 0.987773L4.70968 2.95462C4.50055 2.67605 4.40145 2.32775 4.43186 1.97849C4.46228 1.62921 4.61983 1.30419 4.87381 1.0675C5.12766 0.83064 5.4593 0.699516 5.80343 0.699626L5.80343 0.699629ZM3.11912 15.36L3.12332 14.3505C3.3947 14.4316 3.6749 14.4785 3.95749 14.4896V15.3601L3.11912 15.36ZM13.8388 15.36H13.0006V14.4919C13.2842 14.4835 13.5658 14.4395 13.8388 14.3605V15.36ZM15.7218 10.9773H15.7219C15.7211 11.7409 15.423 12.473 14.8932 13.0129C14.3635 13.5529 13.6452 13.8564 12.896 13.8573H12.6926C12.6905 13.8573 12.6887 13.856 12.6866 13.856C12.6845 13.856 12.6827 13.8572 12.6806 13.8573H4.27757C4.27546 13.8573 4.27364 13.856 4.27154 13.856C4.26944 13.856 4.26761 13.8572 4.26551 13.8573H4.10431C3.35509 13.8565 2.63672 13.5529 2.107 13.0129C1.57713 12.473 1.27915 11.7409 1.27843 10.9773V8.78302H15.7218L15.7218 10.9773ZM16.3497 8.14288L0.628144 8.14302V7.41173H16.3723L16.3726 8.14302L16.3497 8.14288Z" fill="black" />
 																							</svg>
-																							3
+																							<?php echo $pro["Packs"]; ?>
 																						</span>
 																						<span class="infosize">
 																							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
 																								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500145 0H0.000160627V5.50004H1.0001V1.70713L5.14654 5.85362L5.85368 5.14647L1.70724 0.999979H5.50011V3.21257e-05L0.500145 0ZM14.5 0H15V5.50004H14.0001V1.70713L9.85362 5.85362L9.14648 5.14647L13.2929 0.999979H9.50005V3.21257e-05L14.5 0ZM15 15H9.50002V14.0001H13.2929L9.14644 9.85357L9.85359 9.14641L14 13.2929V9.49999H15L15 15ZM0.499984 15H0V9.49996H0.999935V13.2929L5.14638 9.14638L5.85352 9.85353L1.70708 14H5.49995V15L0.499984 15Z" fill="black" />
 																							</svg>
-																							250 ft<sup>2</sup>
+																							<?php echo $pro["CarpetArea"]; ?> ft<sup>2</sup>
 																						</span>
-																						<a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/" target="_self" class="unit_details_x">details</a>
+																						<!-- 
+																						<a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/" target="_self" class="unit_details_x">details</a> -->
 																					</div>
-																					<div class="property_location">
+																					<!-- <div class="property_location">
 																						<div class="property_agent_wrapper">
 																							<div class="property_agent_image" style="background-image:url('https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person8-1-1-120x120.png')"></div>
 																							<div class="property_agent_image_sign"><i class="far fa-user-circle"></i></div>
@@ -450,298 +480,23 @@
 																							<div class="share_unit"> <a href="https://www.facebook.com/sharer.php?u=https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/&amp;t=Villa+with+Amazing+View" target="_blank" rel="noreferrer" class="social_facebook"></a> <a href="https://twitter.com/intent/tweet?text=Villa+with+Amazing+View+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2Fvilla-with-amazing-panoramic-view%2F" class="social_tweet" rel="noreferrer" target="_blank"></a> <a href="https://pinterest.com/pin/create/button/?url=https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/&amp;media=https://lasvegas.wpresidence.net/wp-content/uploads/2021/10/house8.jpg&amp;description=Villa+with+Amazing+View" target="_blank" rel="noreferrer" class="social_pinterest"></a> <a href="https://api.whatsapp.com/send?text=Villa+with+Amazing+View+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2Fvilla-with-amazing-panoramic-view%2F" class="social_whatsup" rel="noreferrer" target="_blank"></a> <a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#b8ddd5d9d1d4f8ddd5d9d1d496dbd7d587cbcddad2dddbcc85eed1d4d4d993cfd1ccd093f9d5d9c2d1d6df93eed1ddcf9ed9d5c883dad7dcc185d0ccccc8cb9d8bf99d8afe9d8afed4d9cbcedddfd9cb96cfc8caddcbd1dcddd6dbdd96d6ddcc9d8afeddcbccd9ccdde7c8cad7c8ddcaccc19d8afeced1d4d4d995cfd1ccd095d9d5d9c2d1d6df95c8d9d6d7cad9d5d1db95ced1ddcf9d8afe" data-action="share email" class="social_email"></a> </div>
 																							<span class="share_list" data-original-title="share"></span> <span class="icon-fav icon-fav-off" data-original-title="add to favorites" data-postid="139"></span> <span class="compare-action" data-original-title="compare" data-pimage="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-143x83.jpg" data-pid="139"></span>
 																						</div>
-																					</div>
+																					</div> -->
 																				</div>
 																			</div>
 																		</div>
-																		<div class="col-md-4 shortcode-col listing_wrapper " data-org="6" data-main-modal="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/home2-800x467.jpg" data-modal-title="Townhouse for Sale" data-modal-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/" data-listid="132">
-																			<div class="property_listing property_card_default " data-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/">
-																				<div class="listing-unit-img-wrapper">
-																					<div class="prop_new_details">
-																						<div class="prop_new_details_back"></div>
-																						<div class="property_media"> <i class="fas fa-video"></i> <i class="fas fa-camera"></i> 5</div>
-																						<div class="property_location_image"> <span class="property_marker"></span><a href="https://lasvegas.wpresidence.net/property_area/meadows-village/" rel="tag">Meadows Village</a>, <a href="https://lasvegas.wpresidence.net/property_city/las-vegas/" rel="tag">Las Vegas</a></div>
-																						<div class="featured_gradient"></div>
-																					</div>
-																					<a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/" target="_self"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/home2-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/home2-525x328.jpg" /></a> 
-																					<div class="tag-wrapper">
-																						<div class="featured_div">Featured</div>
-																						<div class="status-wrapper">
-																							<div class="action_tag_wrapper Sales ">Sales</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="property-unit-information-wrapper">
-																					<h4> <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/">Townhouse for Sale </a> </h4>
-																					<div class="listing_unit_price_wrapper"> 210.000 $ <span class="price_label"></span></div>
-																					<div class="listing_details the_grid_view"> Just steps away from QM2 express bus to Manhattan and local buses; only minutes from the L <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/" class="unit_more_x"> ...</a> </div>
-																					<div class="listing_details the_list_view"> Just steps away from QM2 express bus to Manhattan and local buses; only minutes from the LIRR. Walking distance to <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/" class="unit_more_x"> ...</a> </div>
-																					<div class="property_listing_details">
-																						<span class="inforoom">
-																							<svg viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path d="M17.6702 6.14728V1.12908C17.6699 0.829675 17.5496 0.542695 17.3354 0.33099C17.1213 0.119457 16.831 0.000335493 16.5282 0H2.47158C2.16874 0.000336053 1.87846 0.119457 1.66432 0.33099C1.45018 0.542691 1.32986 0.829671 1.32952 1.12908V6.14728C0.945097 6.26691 0.60909 6.50432 0.369977 6.82507C0.131029 7.14598 0.00152709 7.5336 0 7.93211V12.0755C0.000339918 12.2751 0.080557 12.4665 0.223311 12.6076C0.366066 12.7486 0.55964 12.8281 0.76136 12.8282H1.22057V14.2473C1.22074 14.4469 1.30113 14.6383 1.44388 14.7794C1.58664 14.9204 1.78004 14.9998 1.98193 15H3.12177C3.32349 14.9998 3.51706 14.9204 3.65981 14.7794C3.80257 14.6383 3.88279 14.4469 3.88313 14.2473V12.8282H15.1166V14.2473C15.1169 14.4469 15.1971 14.6383 15.3399 14.7794C15.4826 14.9204 15.6762 14.9998 15.8779 15H17.0178C17.2197 14.9998 17.4132 14.9204 17.5558 14.7792C17.6986 14.6383 17.779 14.4469 17.7791 14.2473V12.8282H18.2386C18.4405 12.8281 18.6339 12.7486 18.7767 12.6076C18.9194 12.4665 18.9997 12.2751 19 12.0755V7.93211C18.9985 7.53358 18.869 7.14581 18.6299 6.8249C18.3909 6.50416 18.0547 6.26673 17.6701 6.14712L17.6702 6.14728ZM2.09091 1.12908C2.09108 0.921244 2.26137 0.75289 2.4716 0.752722H16.5282H16.528C16.7382 0.75289 16.9085 0.921244 16.9087 1.12908V6.05051H15.8486C15.8938 5.92987 15.9174 5.80252 15.9188 5.67415V4.56457C15.9184 4.26517 15.7979 3.97819 15.584 3.76649C15.3698 3.55478 15.0796 3.43566 14.7767 3.4355H10.8716C10.5689 3.43566 10.2787 3.55478 10.0645 3.76649C9.85039 3.97819 9.7299 4.26517 9.72956 4.56457V5.67415C9.73092 5.80252 9.75472 5.92987 9.79975 6.05051H9.20001C9.24522 5.92987 9.26884 5.80252 9.2702 5.67415V4.56457C9.26986 4.26517 9.14937 3.97819 8.93523 3.76649C8.72127 3.55478 8.43082 3.43566 8.12814 3.4355H4.22271C3.91987 3.43566 3.62959 3.55478 3.41562 3.76649C3.20148 3.97819 3.08099 4.26517 3.08065 4.56457V5.67415C3.08201 5.80252 3.10563 5.92987 3.15084 6.05051H2.09071L2.09091 1.12908ZM10.4912 5.67415V4.56457C10.4914 4.35674 10.6618 4.18822 10.8719 4.18822H14.777C14.9872 4.18822 15.1575 4.35674 15.1576 4.56457V5.67415C15.1575 5.88182 14.9872 6.05034 14.777 6.05051H10.8719C10.6618 6.05034 10.4914 5.88182 10.4912 5.67415ZM3.84249 5.67415V4.56457C3.84266 4.35674 4.01295 4.18822 4.22318 4.18822H8.12861C8.33883 4.18822 8.50912 4.35674 8.50929 4.56457V5.67415C8.50912 5.88182 8.33883 6.05034 8.12861 6.05051H4.22318C4.01295 6.05034 3.84266 5.88182 3.84249 5.67415ZM3.12276 14.2473H1.98223V12.8282H3.12207L3.12276 14.2473ZM17.0188 14.2473H15.8781V12.8282H17.0179L17.0188 14.2473ZM18.2394 12.0755H0.761433V10.4636H18.2385L18.2394 12.0755ZM0.761433 9.71087V7.93211C0.761773 7.63271 0.882265 7.34573 1.0964 7.13402C1.31037 6.92232 1.60082 6.8032 1.90349 6.80303H17.0965C17.3993 6.8032 17.6896 6.92232 17.9038 7.13402C18.1177 7.34572 18.2382 7.6327 18.2386 7.93211V9.71087H0.761433Z" fill="black" />
-																							</svg>
-																							3
-																						</span>
-																						<span class="infobath">
-																							<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path d="M16.372 6.77159H2.53438V1.63184C2.53354 1.37184 2.63335 1.12199 2.81207 0.936247C2.99079 0.750676 3.23399 0.644246 3.48909 0.640102C3.74421 0.635959 3.99065 0.734387 4.17509 0.91396C3.89895 1.3071 3.76845 1.78725 3.80671 2.26912C3.84511 2.75098 4.0499 3.20341 4.38476 3.54597L4.40691 3.56697V3.56683C4.58353 3.72469 4.85001 3.71597 5.01637 3.54683L7.22045 1.30054C7.38683 1.13111 7.39538 0.858973 7.23979 0.678968L7.21961 0.656825C6.88039 0.312537 6.43155 0.103389 5.95426 0.0669636C5.47696 0.0306777 5.00261 0.169536 4.617 0.458534C4.31422 0.159961 3.90814 -0.00489934 3.48693 0.000110949C3.06558 0.00496801 2.66328 0.17911 2.36738 0.484683C2.07134 0.790256 1.90566 1.20254 1.90634 1.63182V6.77158H0.627967C0.461442 6.77172 0.301926 6.83929 0.184187 6.95929C0.0664469 7.07929 0.000279897 7.24186 0 7.41157V8.14285C0.000280363 8.31242 0.0664434 8.47514 0.184187 8.59513C0.30193 8.71513 0.46145 8.78256 0.627967 8.78284H0.650394V10.9773V10.9771C0.650955 11.6177 0.822947 12.2458 1.14786 12.7942C1.47278 13.3426 1.93828 13.7901 2.49409 14.0889C2.49381 14.0956 2.491 14.102 2.491 14.1087V15.36C2.49128 15.5297 2.55745 15.6923 2.67519 15.8123C2.79293 15.9323 2.95259 15.9997 3.11897 16H3.95733C4.12386 15.9997 4.28337 15.9323 4.40111 15.8123C4.51885 15.6923 4.58502 15.5297 4.5853 15.36V14.4971H12.3725V15.36C12.3727 15.5297 12.439 15.6923 12.5566 15.8123C12.6743 15.9323 12.834 15.9997 13.0005 16H13.8389H13.8387C14.0052 15.9997 14.1648 15.9323 14.2825 15.8123C14.4002 15.6923 14.4665 15.5297 14.4667 15.36V14.1087L14.4665 14.1081H14.4667C15.0328 13.8134 15.5082 13.3652 15.8404 12.8127C16.1726 12.2603 16.3489 11.6251 16.3497 10.9771V8.78286H16.3722H16.372C16.5386 8.78258 16.6982 8.71515 16.8158 8.59515C16.9336 8.47515 16.9999 8.31243 17 8.14287V7.41158C16.9999 7.24187 16.9336 7.0793 16.8158 6.95931C16.6982 6.83931 16.5386 6.77173 16.372 6.77159H16.372ZM5.80343 0.699629C6.10565 0.699058 6.39958 0.800344 6.63957 0.987773L4.70968 2.95462C4.50055 2.67605 4.40145 2.32775 4.43186 1.97849C4.46228 1.62921 4.61983 1.30419 4.87381 1.0675C5.12766 0.83064 5.4593 0.699516 5.80343 0.699626L5.80343 0.699629ZM3.11912 15.36L3.12332 14.3505C3.3947 14.4316 3.6749 14.4785 3.95749 14.4896V15.3601L3.11912 15.36ZM13.8388 15.36H13.0006V14.4919C13.2842 14.4835 13.5658 14.4395 13.8388 14.3605V15.36ZM15.7218 10.9773H15.7219C15.7211 11.7409 15.423 12.473 14.8932 13.0129C14.3635 13.5529 13.6452 13.8564 12.896 13.8573H12.6926C12.6905 13.8573 12.6887 13.856 12.6866 13.856C12.6845 13.856 12.6827 13.8572 12.6806 13.8573H4.27757C4.27546 13.8573 4.27364 13.856 4.27154 13.856C4.26944 13.856 4.26761 13.8572 4.26551 13.8573H4.10431C3.35509 13.8565 2.63672 13.5529 2.107 13.0129C1.57713 12.473 1.27915 11.7409 1.27843 10.9773V8.78302H15.7218L15.7218 10.9773ZM16.3497 8.14288L0.628144 8.14302V7.41173H16.3723L16.3726 8.14302L16.3497 8.14288Z" fill="black" />
-																							</svg>
-																							2
-																						</span>
-																						<span class="infosize">
-																							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500145 0H0.000160627V5.50004H1.0001V1.70713L5.14654 5.85362L5.85368 5.14647L1.70724 0.999979H5.50011V3.21257e-05L0.500145 0ZM14.5 0H15V5.50004H14.0001V1.70713L9.85362 5.85362L9.14648 5.14647L13.2929 0.999979H9.50005V3.21257e-05L14.5 0ZM15 15H9.50002V14.0001H13.2929L9.14644 9.85357L9.85359 9.14641L14 13.2929V9.49999H15L15 15ZM0.499984 15H0V9.49996H0.999935V13.2929L5.14638 9.14638L5.85352 9.85353L1.70708 14H5.49995V15L0.499984 15Z" fill="black" />
-																							</svg>
-																							150 ft<sup>2</sup>
-																						</span>
-																						<a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/" target="_self" class="unit_details_x">details</a>
-																					</div>
-																					<div class="property_location">
-																						<div class="property_agent_wrapper">
-																							<div class="property_agent_image" style="background-image:url('https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person3-27-120x120.jpg')"></div>
-																							<div class="property_agent_image_sign"><i class="far fa-user-circle"></i></div>
-																							<a href="https://lasvegas.wpresidence.net/estate_agent/alessandra-tortella/">Alessandra Rosales</a>
-																						</div>
-																						<div class="listing_actions">
-																							<div class="share_unit"> <a href="https://www.facebook.com/sharer.php?u=https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/&amp;t=Townhouse+for+Sale" target="_blank" rel="noreferrer" class="social_facebook"></a> <a href="https://twitter.com/intent/tweet?text=Townhouse+for+Sale+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2Ftownhouse-for-sale%2F" class="social_tweet" rel="noreferrer" target="_blank"></a> <a href="https://pinterest.com/pin/create/button/?url=https://lasvegas.wpresidence.net/estate_property/townhouse-for-sale/&amp;media=https://lasvegas.wpresidence.net/wp-content/uploads/2021/11/home2.jpg&amp;description=Townhouse+for+Sale" target="_blank" rel="noreferrer" class="social_pinterest"></a> <a href="https://api.whatsapp.com/send?text=Townhouse+for+Sale+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2Ftownhouse-for-sale%2F" class="social_whatsup" rel="noreferrer" target="_blank"></a> <a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#046169656d68446169656d682a676b693b7771666e61677039506b736a6c6b7177612f626b762f57656861226569743f666b607d396c7070747721374521364221364268657772616365772a73747661776d60616a67612a6a61702136426177706570615b74766b746176707d213642706b736a6c6b71776129626b762977656861213642" data-action="share email" class="social_email"></a> </div>
-																							<span class="share_list" data-original-title="share"></span> <span class="icon-fav icon-fav-off" data-original-title="add to favorites" data-postid="132"></span> <span class="compare-action" data-original-title="compare" data-pimage="https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/home2-143x83.jpg" data-pid="132"></span>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-md-4 shortcode-col listing_wrapper " data-org="6" data-main-modal="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-800x467.jpg" data-modal-title="Townhouse for Rent" data-modal-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/" data-listid="111">
-																			<div class="property_listing property_card_default " data-link="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">
-																				<div class="listing-unit-img-wrapper">
-																					<div class="prop_new_details">
-																						<div class="prop_new_details_back"></div>
-																						<div class="property_media"> <i class="fas fa-video"></i> <i class="fas fa-camera"></i> 5</div>
-																						<div class="property_location_image"> <span class="property_marker"></span><a href="https://lasvegas.wpresidence.net/property_area/winchester/" rel="tag">Winchester</a>, <a href="https://lasvegas.wpresidence.net/property_city/las-vegas/" rel="tag">Las Vegas</a></div>
-																						<div class="featured_gradient"></div>
-																					</div>
-																					<a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/" target="_self"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-525x328.jpg" /></a> 
-																					<div class="tag-wrapper">
-																						<div class="featured_div">Featured</div>
-																						<div class="status-wrapper">
-																							<div class="action_tag_wrapper Rentals ">Rentals</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="property-unit-information-wrapper">
-																					<h4> <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/">Townhouse for Rent </a> </h4>
-																					<div class="listing_unit_price_wrapper"> 100 $ <span class="price_label">/ sq. ft.</span></div>
-																					<div class="listing_details the_grid_view"> Mineral Reserves: 2008 core drilling and testing (on just 60 of the 1,100 acres) proved 30 <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/" class="unit_more_x"> ...</a> </div>
-																					<div class="listing_details the_list_view"> Mineral Reserves: 2008 core drilling and testing (on just 60 of the 1,100 acres) proved 30-60 million tons of high- <a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/" class="unit_more_x"> ...</a> </div>
-																					<div class="property_listing_details">
-																						<span class="inforoom">
-																							<svg viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path d="M17.6702 6.14728V1.12908C17.6699 0.829675 17.5496 0.542695 17.3354 0.33099C17.1213 0.119457 16.831 0.000335493 16.5282 0H2.47158C2.16874 0.000336053 1.87846 0.119457 1.66432 0.33099C1.45018 0.542691 1.32986 0.829671 1.32952 1.12908V6.14728C0.945097 6.26691 0.60909 6.50432 0.369977 6.82507C0.131029 7.14598 0.00152709 7.5336 0 7.93211V12.0755C0.000339918 12.2751 0.080557 12.4665 0.223311 12.6076C0.366066 12.7486 0.55964 12.8281 0.76136 12.8282H1.22057V14.2473C1.22074 14.4469 1.30113 14.6383 1.44388 14.7794C1.58664 14.9204 1.78004 14.9998 1.98193 15H3.12177C3.32349 14.9998 3.51706 14.9204 3.65981 14.7794C3.80257 14.6383 3.88279 14.4469 3.88313 14.2473V12.8282H15.1166V14.2473C15.1169 14.4469 15.1971 14.6383 15.3399 14.7794C15.4826 14.9204 15.6762 14.9998 15.8779 15H17.0178C17.2197 14.9998 17.4132 14.9204 17.5558 14.7792C17.6986 14.6383 17.779 14.4469 17.7791 14.2473V12.8282H18.2386C18.4405 12.8281 18.6339 12.7486 18.7767 12.6076C18.9194 12.4665 18.9997 12.2751 19 12.0755V7.93211C18.9985 7.53358 18.869 7.14581 18.6299 6.8249C18.3909 6.50416 18.0547 6.26673 17.6701 6.14712L17.6702 6.14728ZM2.09091 1.12908C2.09108 0.921244 2.26137 0.75289 2.4716 0.752722H16.5282H16.528C16.7382 0.75289 16.9085 0.921244 16.9087 1.12908V6.05051H15.8486C15.8938 5.92987 15.9174 5.80252 15.9188 5.67415V4.56457C15.9184 4.26517 15.7979 3.97819 15.584 3.76649C15.3698 3.55478 15.0796 3.43566 14.7767 3.4355H10.8716C10.5689 3.43566 10.2787 3.55478 10.0645 3.76649C9.85039 3.97819 9.7299 4.26517 9.72956 4.56457V5.67415C9.73092 5.80252 9.75472 5.92987 9.79975 6.05051H9.20001C9.24522 5.92987 9.26884 5.80252 9.2702 5.67415V4.56457C9.26986 4.26517 9.14937 3.97819 8.93523 3.76649C8.72127 3.55478 8.43082 3.43566 8.12814 3.4355H4.22271C3.91987 3.43566 3.62959 3.55478 3.41562 3.76649C3.20148 3.97819 3.08099 4.26517 3.08065 4.56457V5.67415C3.08201 5.80252 3.10563 5.92987 3.15084 6.05051H2.09071L2.09091 1.12908ZM10.4912 5.67415V4.56457C10.4914 4.35674 10.6618 4.18822 10.8719 4.18822H14.777C14.9872 4.18822 15.1575 4.35674 15.1576 4.56457V5.67415C15.1575 5.88182 14.9872 6.05034 14.777 6.05051H10.8719C10.6618 6.05034 10.4914 5.88182 10.4912 5.67415ZM3.84249 5.67415V4.56457C3.84266 4.35674 4.01295 4.18822 4.22318 4.18822H8.12861C8.33883 4.18822 8.50912 4.35674 8.50929 4.56457V5.67415C8.50912 5.88182 8.33883 6.05034 8.12861 6.05051H4.22318C4.01295 6.05034 3.84266 5.88182 3.84249 5.67415ZM3.12276 14.2473H1.98223V12.8282H3.12207L3.12276 14.2473ZM17.0188 14.2473H15.8781V12.8282H17.0179L17.0188 14.2473ZM18.2394 12.0755H0.761433V10.4636H18.2385L18.2394 12.0755ZM0.761433 9.71087V7.93211C0.761773 7.63271 0.882265 7.34573 1.0964 7.13402C1.31037 6.92232 1.60082 6.8032 1.90349 6.80303H17.0965C17.3993 6.8032 17.6896 6.92232 17.9038 7.13402C18.1177 7.34572 18.2382 7.6327 18.2386 7.93211V9.71087H0.761433Z" fill="black" />
-																							</svg>
-																							2
-																						</span>
-																						<span class="infobath">
-																							<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path d="M16.372 6.77159H2.53438V1.63184C2.53354 1.37184 2.63335 1.12199 2.81207 0.936247C2.99079 0.750676 3.23399 0.644246 3.48909 0.640102C3.74421 0.635959 3.99065 0.734387 4.17509 0.91396C3.89895 1.3071 3.76845 1.78725 3.80671 2.26912C3.84511 2.75098 4.0499 3.20341 4.38476 3.54597L4.40691 3.56697V3.56683C4.58353 3.72469 4.85001 3.71597 5.01637 3.54683L7.22045 1.30054C7.38683 1.13111 7.39538 0.858973 7.23979 0.678968L7.21961 0.656825C6.88039 0.312537 6.43155 0.103389 5.95426 0.0669636C5.47696 0.0306777 5.00261 0.169536 4.617 0.458534C4.31422 0.159961 3.90814 -0.00489934 3.48693 0.000110949C3.06558 0.00496801 2.66328 0.17911 2.36738 0.484683C2.07134 0.790256 1.90566 1.20254 1.90634 1.63182V6.77158H0.627967C0.461442 6.77172 0.301926 6.83929 0.184187 6.95929C0.0664469 7.07929 0.000279897 7.24186 0 7.41157V8.14285C0.000280363 8.31242 0.0664434 8.47514 0.184187 8.59513C0.30193 8.71513 0.46145 8.78256 0.627967 8.78284H0.650394V10.9773V10.9771C0.650955 11.6177 0.822947 12.2458 1.14786 12.7942C1.47278 13.3426 1.93828 13.7901 2.49409 14.0889C2.49381 14.0956 2.491 14.102 2.491 14.1087V15.36C2.49128 15.5297 2.55745 15.6923 2.67519 15.8123C2.79293 15.9323 2.95259 15.9997 3.11897 16H3.95733C4.12386 15.9997 4.28337 15.9323 4.40111 15.8123C4.51885 15.6923 4.58502 15.5297 4.5853 15.36V14.4971H12.3725V15.36C12.3727 15.5297 12.439 15.6923 12.5566 15.8123C12.6743 15.9323 12.834 15.9997 13.0005 16H13.8389H13.8387C14.0052 15.9997 14.1648 15.9323 14.2825 15.8123C14.4002 15.6923 14.4665 15.5297 14.4667 15.36V14.1087L14.4665 14.1081H14.4667C15.0328 13.8134 15.5082 13.3652 15.8404 12.8127C16.1726 12.2603 16.3489 11.6251 16.3497 10.9771V8.78286H16.3722H16.372C16.5386 8.78258 16.6982 8.71515 16.8158 8.59515C16.9336 8.47515 16.9999 8.31243 17 8.14287V7.41158C16.9999 7.24187 16.9336 7.0793 16.8158 6.95931C16.6982 6.83931 16.5386 6.77173 16.372 6.77159H16.372ZM5.80343 0.699629C6.10565 0.699058 6.39958 0.800344 6.63957 0.987773L4.70968 2.95462C4.50055 2.67605 4.40145 2.32775 4.43186 1.97849C4.46228 1.62921 4.61983 1.30419 4.87381 1.0675C5.12766 0.83064 5.4593 0.699516 5.80343 0.699626L5.80343 0.699629ZM3.11912 15.36L3.12332 14.3505C3.3947 14.4316 3.6749 14.4785 3.95749 14.4896V15.3601L3.11912 15.36ZM13.8388 15.36H13.0006V14.4919C13.2842 14.4835 13.5658 14.4395 13.8388 14.3605V15.36ZM15.7218 10.9773H15.7219C15.7211 11.7409 15.423 12.473 14.8932 13.0129C14.3635 13.5529 13.6452 13.8564 12.896 13.8573H12.6926C12.6905 13.8573 12.6887 13.856 12.6866 13.856C12.6845 13.856 12.6827 13.8572 12.6806 13.8573H4.27757C4.27546 13.8573 4.27364 13.856 4.27154 13.856C4.26944 13.856 4.26761 13.8572 4.26551 13.8573H4.10431C3.35509 13.8565 2.63672 13.5529 2.107 13.0129C1.57713 12.473 1.27915 11.7409 1.27843 10.9773V8.78302H15.7218L15.7218 10.9773ZM16.3497 8.14288L0.628144 8.14302V7.41173H16.3723L16.3726 8.14302L16.3497 8.14288Z" fill="black" />
-																							</svg>
-																							5
-																						</span>
-																						<span class="infosize">
-																							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500145 0H0.000160627V5.50004H1.0001V1.70713L5.14654 5.85362L5.85368 5.14647L1.70724 0.999979H5.50011V3.21257e-05L0.500145 0ZM14.5 0H15V5.50004H14.0001V1.70713L9.85362 5.85362L9.14648 5.14647L13.2929 0.999979H9.50005V3.21257e-05L14.5 0ZM15 15H9.50002V14.0001H13.2929L9.14644 9.85357L9.85359 9.14641L14 13.2929V9.49999H15L15 15ZM0.499984 15H0V9.49996H0.999935V13.2929L5.14638 9.14638L5.85352 9.85353L1.70708 14H5.49995V15L0.499984 15Z" fill="black" />
-																							</svg>
-																							29,000 ft<sup>2</sup>
-																						</span>
-																						<a href="https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/" target="_self" class="unit_details_x">details</a>
-																					</div>
-																					<div class="property_location">
-																						<div class="property_agent_wrapper">
-																							<div class="property_agent_image" style="background-image:url('https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person7-21-120x120.png')"></div>
-																							<div class="property_agent_image_sign"><i class="far fa-user-circle"></i></div>
-																							<a href="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/">Michaela Finney</a>
-																						</div>
-																						<div class="listing_actions">
-																							<div class="share_unit"> <a href="https://www.facebook.com/sharer.php?u=https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/&amp;t=Townhouse+for+Rent" target="_blank" rel="noreferrer" class="social_facebook"></a> <a href="https://twitter.com/intent/tweet?text=Townhouse+for+Rent+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2Ftownhouse-for-rent-2%2F" class="social_tweet" rel="noreferrer" target="_blank"></a> <a href="https://pinterest.com/pin/create/button/?url=https://lasvegas.wpresidence.net/estate_property/townhouse-for-rent-2/&amp;media=https://lasvegas.wpresidence.net/wp-content/uploads/2021/09/interior-4-800x790.jpg&amp;description=Townhouse+for+Rent" target="_blank" rel="noreferrer" class="social_pinterest"></a> <a href="https://api.whatsapp.com/send?text=Townhouse+for+Rent+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2Ftownhouse-for-rent-2%2F" class="social_whatsup" rel="noreferrer" target="_blank"></a> <a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#385d55595154785d55595154165b5755074b4d5a525d5b4c056c574f5650574d4b5d135e574a136a5d564c1e595548035a575c4105504c4c484b1d0b791d0a7e1d0a7e54594b4e5d5f594b164f484a5d4b515c5d565b5d16565d4c1d0a7e5d4b4c594c5d67484a57485d4a4c411d0a7e4c574f5650574d4b5d155e574a154a5d564c150a1d0a7e" data-action="share email" class="social_email"></a> </div>
-																							<span class="share_list" data-original-title="share"></span> <span class="icon-fav icon-fav-off" data-original-title="add to favorites" data-postid="111"></span> <span class="compare-action" data-original-title="compare" data-pimage="https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior-4-143x83.jpg" data-pid="111"></span>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-md-4 shortcode-col listing_wrapper " data-org="6" data-main-modal="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/interior35-800x467.jpg" data-modal-title="Gorgeous Studio for Rent" data-modal-link="https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/" data-listid="59">
-																			<div class="property_listing property_card_default " data-link="https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/">
-																				<div class="listing-unit-img-wrapper">
-																					<div class="prop_new_details">
-																						<div class="prop_new_details_back"></div>
-																						<div class="property_media"> <i class="fas fa-video"></i> <i class="fas fa-camera"></i> 5</div>
-																						<div class="property_location_image"> <span class="property_marker"></span><a href="https://lasvegas.wpresidence.net/property_area/downtown/" rel="tag">Downtown</a>, <a href="https://lasvegas.wpresidence.net/property_city/las-vegas/" rel="tag">Las Vegas</a></div>
-																						<div class="featured_gradient"></div>
-																					</div>
-																					<a href="https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/" target="_self"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/interior35-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/interior35-525x328.jpg" /></a> 
-																					<div class="tag-wrapper">
-																						<div class="featured_div">Featured</div>
-																						<div class="status-wrapper">
-																							<div class="action_tag_wrapper Sales ">Sales</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="property-unit-information-wrapper">
-																					<h4> <a href="https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/">Gorgeous Studio for Rent </a> </h4>
-																					<div class="listing_unit_price_wrapper"> 770.000 $ <span class="price_label"></span></div>
-																					<div class="listing_details the_grid_view"> This property is mostly wooded and sits high on a hilltop overlooking the Mohawk River Val <a href="https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/" class="unit_more_x"> ...</a> </div>
-																					<div class="listing_details the_list_view"> This property is mostly wooded and sits high on a hilltop overlooking the Mohawk River Valley. Located right in the <a href="https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/" class="unit_more_x"> ...</a> </div>
-																					<div class="property_listing_details">
-																						<span class="inforoom">
-																							<svg viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path d="M17.6702 6.14728V1.12908C17.6699 0.829675 17.5496 0.542695 17.3354 0.33099C17.1213 0.119457 16.831 0.000335493 16.5282 0H2.47158C2.16874 0.000336053 1.87846 0.119457 1.66432 0.33099C1.45018 0.542691 1.32986 0.829671 1.32952 1.12908V6.14728C0.945097 6.26691 0.60909 6.50432 0.369977 6.82507C0.131029 7.14598 0.00152709 7.5336 0 7.93211V12.0755C0.000339918 12.2751 0.080557 12.4665 0.223311 12.6076C0.366066 12.7486 0.55964 12.8281 0.76136 12.8282H1.22057V14.2473C1.22074 14.4469 1.30113 14.6383 1.44388 14.7794C1.58664 14.9204 1.78004 14.9998 1.98193 15H3.12177C3.32349 14.9998 3.51706 14.9204 3.65981 14.7794C3.80257 14.6383 3.88279 14.4469 3.88313 14.2473V12.8282H15.1166V14.2473C15.1169 14.4469 15.1971 14.6383 15.3399 14.7794C15.4826 14.9204 15.6762 14.9998 15.8779 15H17.0178C17.2197 14.9998 17.4132 14.9204 17.5558 14.7792C17.6986 14.6383 17.779 14.4469 17.7791 14.2473V12.8282H18.2386C18.4405 12.8281 18.6339 12.7486 18.7767 12.6076C18.9194 12.4665 18.9997 12.2751 19 12.0755V7.93211C18.9985 7.53358 18.869 7.14581 18.6299 6.8249C18.3909 6.50416 18.0547 6.26673 17.6701 6.14712L17.6702 6.14728ZM2.09091 1.12908C2.09108 0.921244 2.26137 0.75289 2.4716 0.752722H16.5282H16.528C16.7382 0.75289 16.9085 0.921244 16.9087 1.12908V6.05051H15.8486C15.8938 5.92987 15.9174 5.80252 15.9188 5.67415V4.56457C15.9184 4.26517 15.7979 3.97819 15.584 3.76649C15.3698 3.55478 15.0796 3.43566 14.7767 3.4355H10.8716C10.5689 3.43566 10.2787 3.55478 10.0645 3.76649C9.85039 3.97819 9.7299 4.26517 9.72956 4.56457V5.67415C9.73092 5.80252 9.75472 5.92987 9.79975 6.05051H9.20001C9.24522 5.92987 9.26884 5.80252 9.2702 5.67415V4.56457C9.26986 4.26517 9.14937 3.97819 8.93523 3.76649C8.72127 3.55478 8.43082 3.43566 8.12814 3.4355H4.22271C3.91987 3.43566 3.62959 3.55478 3.41562 3.76649C3.20148 3.97819 3.08099 4.26517 3.08065 4.56457V5.67415C3.08201 5.80252 3.10563 5.92987 3.15084 6.05051H2.09071L2.09091 1.12908ZM10.4912 5.67415V4.56457C10.4914 4.35674 10.6618 4.18822 10.8719 4.18822H14.777C14.9872 4.18822 15.1575 4.35674 15.1576 4.56457V5.67415C15.1575 5.88182 14.9872 6.05034 14.777 6.05051H10.8719C10.6618 6.05034 10.4914 5.88182 10.4912 5.67415ZM3.84249 5.67415V4.56457C3.84266 4.35674 4.01295 4.18822 4.22318 4.18822H8.12861C8.33883 4.18822 8.50912 4.35674 8.50929 4.56457V5.67415C8.50912 5.88182 8.33883 6.05034 8.12861 6.05051H4.22318C4.01295 6.05034 3.84266 5.88182 3.84249 5.67415ZM3.12276 14.2473H1.98223V12.8282H3.12207L3.12276 14.2473ZM17.0188 14.2473H15.8781V12.8282H17.0179L17.0188 14.2473ZM18.2394 12.0755H0.761433V10.4636H18.2385L18.2394 12.0755ZM0.761433 9.71087V7.93211C0.761773 7.63271 0.882265 7.34573 1.0964 7.13402C1.31037 6.92232 1.60082 6.8032 1.90349 6.80303H17.0965C17.3993 6.8032 17.6896 6.92232 17.9038 7.13402C18.1177 7.34572 18.2382 7.6327 18.2386 7.93211V9.71087H0.761433Z" fill="black" />
-																							</svg>
-																							5
-																						</span>
-																						<span class="infobath">
-																							<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path d="M16.372 6.77159H2.53438V1.63184C2.53354 1.37184 2.63335 1.12199 2.81207 0.936247C2.99079 0.750676 3.23399 0.644246 3.48909 0.640102C3.74421 0.635959 3.99065 0.734387 4.17509 0.91396C3.89895 1.3071 3.76845 1.78725 3.80671 2.26912C3.84511 2.75098 4.0499 3.20341 4.38476 3.54597L4.40691 3.56697V3.56683C4.58353 3.72469 4.85001 3.71597 5.01637 3.54683L7.22045 1.30054C7.38683 1.13111 7.39538 0.858973 7.23979 0.678968L7.21961 0.656825C6.88039 0.312537 6.43155 0.103389 5.95426 0.0669636C5.47696 0.0306777 5.00261 0.169536 4.617 0.458534C4.31422 0.159961 3.90814 -0.00489934 3.48693 0.000110949C3.06558 0.00496801 2.66328 0.17911 2.36738 0.484683C2.07134 0.790256 1.90566 1.20254 1.90634 1.63182V6.77158H0.627967C0.461442 6.77172 0.301926 6.83929 0.184187 6.95929C0.0664469 7.07929 0.000279897 7.24186 0 7.41157V8.14285C0.000280363 8.31242 0.0664434 8.47514 0.184187 8.59513C0.30193 8.71513 0.46145 8.78256 0.627967 8.78284H0.650394V10.9773V10.9771C0.650955 11.6177 0.822947 12.2458 1.14786 12.7942C1.47278 13.3426 1.93828 13.7901 2.49409 14.0889C2.49381 14.0956 2.491 14.102 2.491 14.1087V15.36C2.49128 15.5297 2.55745 15.6923 2.67519 15.8123C2.79293 15.9323 2.95259 15.9997 3.11897 16H3.95733C4.12386 15.9997 4.28337 15.9323 4.40111 15.8123C4.51885 15.6923 4.58502 15.5297 4.5853 15.36V14.4971H12.3725V15.36C12.3727 15.5297 12.439 15.6923 12.5566 15.8123C12.6743 15.9323 12.834 15.9997 13.0005 16H13.8389H13.8387C14.0052 15.9997 14.1648 15.9323 14.2825 15.8123C14.4002 15.6923 14.4665 15.5297 14.4667 15.36V14.1087L14.4665 14.1081H14.4667C15.0328 13.8134 15.5082 13.3652 15.8404 12.8127C16.1726 12.2603 16.3489 11.6251 16.3497 10.9771V8.78286H16.3722H16.372C16.5386 8.78258 16.6982 8.71515 16.8158 8.59515C16.9336 8.47515 16.9999 8.31243 17 8.14287V7.41158C16.9999 7.24187 16.9336 7.0793 16.8158 6.95931C16.6982 6.83931 16.5386 6.77173 16.372 6.77159H16.372ZM5.80343 0.699629C6.10565 0.699058 6.39958 0.800344 6.63957 0.987773L4.70968 2.95462C4.50055 2.67605 4.40145 2.32775 4.43186 1.97849C4.46228 1.62921 4.61983 1.30419 4.87381 1.0675C5.12766 0.83064 5.4593 0.699516 5.80343 0.699626L5.80343 0.699629ZM3.11912 15.36L3.12332 14.3505C3.3947 14.4316 3.6749 14.4785 3.95749 14.4896V15.3601L3.11912 15.36ZM13.8388 15.36H13.0006V14.4919C13.2842 14.4835 13.5658 14.4395 13.8388 14.3605V15.36ZM15.7218 10.9773H15.7219C15.7211 11.7409 15.423 12.473 14.8932 13.0129C14.3635 13.5529 13.6452 13.8564 12.896 13.8573H12.6926C12.6905 13.8573 12.6887 13.856 12.6866 13.856C12.6845 13.856 12.6827 13.8572 12.6806 13.8573H4.27757C4.27546 13.8573 4.27364 13.856 4.27154 13.856C4.26944 13.856 4.26761 13.8572 4.26551 13.8573H4.10431C3.35509 13.8565 2.63672 13.5529 2.107 13.0129C1.57713 12.473 1.27915 11.7409 1.27843 10.9773V8.78302H15.7218L15.7218 10.9773ZM16.3497 8.14288L0.628144 8.14302V7.41173H16.3723L16.3726 8.14302L16.3497 8.14288Z" fill="black" />
-																							</svg>
-																							6
-																						</span>
-																						<span class="infosize">
-																							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500145 0H0.000160627V5.50004H1.0001V1.70713L5.14654 5.85362L5.85368 5.14647L1.70724 0.999979H5.50011V3.21257e-05L0.500145 0ZM14.5 0H15V5.50004H14.0001V1.70713L9.85362 5.85362L9.14648 5.14647L13.2929 0.999979H9.50005V3.21257e-05L14.5 0ZM15 15H9.50002V14.0001H13.2929L9.14644 9.85357L9.85359 9.14641L14 13.2929V9.49999H15L15 15ZM0.499984 15H0V9.49996H0.999935V13.2929L5.14638 9.14638L5.85352 9.85353L1.70708 14H5.49995V15L0.499984 15Z" fill="black" />
-																							</svg>
-																							190 ft<sup>2</sup>
-																						</span>
-																						<a href="https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/" target="_self" class="unit_details_x">details</a>
-																					</div>
-																					<div class="property_location">
-																						<div class="property_agent_wrapper">
-																							<div class="property_agent_image" style="background-image:url('https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person3-27-120x120.jpg')"></div>
-																							<div class="property_agent_image_sign"><i class="far fa-user-circle"></i></div>
-																							<a href="https://lasvegas.wpresidence.net/estate_agent/alessandra-tortella/">Alessandra Rosales</a>
-																						</div>
-																						<div class="listing_actions">
-																							<div class="share_unit"> <a href="https://www.facebook.com/sharer.php?u=https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/&amp;t=Gorgeous+Studio+for+Rent" target="_blank" rel="noreferrer" class="social_facebook"></a> <a href="https://twitter.com/intent/tweet?text=Gorgeous+Studio+for+Rent+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2Fgorgeous-studio-for-rent%2F" class="social_tweet" rel="noreferrer" target="_blank"></a> <a href="https://pinterest.com/pin/create/button/?url=https://lasvegas.wpresidence.net/estate_property/gorgeous-studio-for-rent/&amp;media=https://lasvegas.wpresidence.net/wp-content/uploads/2021/10/interior35.jpg&amp;description=Gorgeous+Studio+for+Rent" target="_blank" rel="noreferrer" class="social_pinterest"></a> <a href="https://api.whatsapp.com/send?text=Gorgeous+Studio+for+Rent+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2Fgorgeous-studio-for-rent%2F" class="social_whatsup" rel="noreferrer" target="_blank"></a> <a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#ed88808c8481ad88808c8481c38e8280d29e988f87888e99d0aa829f8a8882989ec6be9998898482c68b829fc6bf888399cb8c809dd68f828994d08599999d9ec8deacc8dfabc8dfab818c9e9b888a8c9ec39a9d9f889e848988838e88c3838899c8dfab889e998c9988b29d9f829d889f9994c8dfab8a829f8a8882989ec09e9998898482c08b829fc09f888399c8dfab" data-action="share email" class="social_email"></a> </div>
-																							<span class="share_list" data-original-title="share"></span> <span class="icon-fav icon-fav-off" data-original-title="add to favorites" data-postid="59"></span> <span class="compare-action" data-original-title="compare" data-pimage="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/interior35-143x83.jpg" data-pid="59"></span>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-md-4 shortcode-col listing_wrapper " data-org="6" data-main-modal="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/interior35-800x467.jpg" data-modal-title="Awesome Family Apartment" data-modal-link="https://lasvegas.wpresidence.net/estate_property/awesome-family-apartment/" data-listid="19386">
-																			<div class="property_listing property_card_default " data-link="https://lasvegas.wpresidence.net/estate_property/awesome-family-apartment/">
-																				<div class="listing-unit-img-wrapper">
-																					<div class="prop_new_details">
-																						<div class="prop_new_details_back"></div>
-																						<div class="property_media"> <i class="fas fa-video"></i> <i class="fas fa-camera"></i> 6</div>
-																						<div class="property_location_image"> <span class="property_marker"></span><a href="https://lasvegas.wpresidence.net/property_area/winchester/" rel="tag">Winchester</a>, <a href="https://lasvegas.wpresidence.net/property_city/las-vegas/" rel="tag">Las Vegas</a></div>
-																						<div class="featured_gradient"></div>
-																					</div>
-																					<a href="https://lasvegas.wpresidence.net/estate_property/awesome-family-apartment/" target="_self"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/interior35-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/interior35-525x328.jpg" /></a> 
-																					<div class="tag-wrapper">
-																						<div class="status-wrapper">
-																							<div class="action_tag_wrapper Rentals ">Rentals</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="property-unit-information-wrapper">
-																					<h4> <a href="https://lasvegas.wpresidence.net/estate_property/awesome-family-apartment/">Awesome Family Apartment </a> </h4>
-																					<div class="listing_unit_price_wrapper"> 550 $ <span class="price_label">/ month</span></div>
-																					<div class="listing_details the_grid_view"> Mckinley Hill is situated inside Fort Bonifacio which is a 50 hectares owned by Megaworld. <a href="https://lasvegas.wpresidence.net/estate_property/awesome-family-apartment/" class="unit_more_x"> ...</a> </div>
-																					<div class="listing_details the_list_view"> Mckinley Hill is situated inside Fort Bonifacio which is a 50 hectares owned by Megaworld. Mckinley Hill is Said to <a href="https://lasvegas.wpresidence.net/estate_property/awesome-family-apartment/" class="unit_more_x"> ...</a> </div>
-																					<div class="property_listing_details">
-																						<span class="inforoom">
-																							<svg viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path d="M17.6702 6.14728V1.12908C17.6699 0.829675 17.5496 0.542695 17.3354 0.33099C17.1213 0.119457 16.831 0.000335493 16.5282 0H2.47158C2.16874 0.000336053 1.87846 0.119457 1.66432 0.33099C1.45018 0.542691 1.32986 0.829671 1.32952 1.12908V6.14728C0.945097 6.26691 0.60909 6.50432 0.369977 6.82507C0.131029 7.14598 0.00152709 7.5336 0 7.93211V12.0755C0.000339918 12.2751 0.080557 12.4665 0.223311 12.6076C0.366066 12.7486 0.55964 12.8281 0.76136 12.8282H1.22057V14.2473C1.22074 14.4469 1.30113 14.6383 1.44388 14.7794C1.58664 14.9204 1.78004 14.9998 1.98193 15H3.12177C3.32349 14.9998 3.51706 14.9204 3.65981 14.7794C3.80257 14.6383 3.88279 14.4469 3.88313 14.2473V12.8282H15.1166V14.2473C15.1169 14.4469 15.1971 14.6383 15.3399 14.7794C15.4826 14.9204 15.6762 14.9998 15.8779 15H17.0178C17.2197 14.9998 17.4132 14.9204 17.5558 14.7792C17.6986 14.6383 17.779 14.4469 17.7791 14.2473V12.8282H18.2386C18.4405 12.8281 18.6339 12.7486 18.7767 12.6076C18.9194 12.4665 18.9997 12.2751 19 12.0755V7.93211C18.9985 7.53358 18.869 7.14581 18.6299 6.8249C18.3909 6.50416 18.0547 6.26673 17.6701 6.14712L17.6702 6.14728ZM2.09091 1.12908C2.09108 0.921244 2.26137 0.75289 2.4716 0.752722H16.5282H16.528C16.7382 0.75289 16.9085 0.921244 16.9087 1.12908V6.05051H15.8486C15.8938 5.92987 15.9174 5.80252 15.9188 5.67415V4.56457C15.9184 4.26517 15.7979 3.97819 15.584 3.76649C15.3698 3.55478 15.0796 3.43566 14.7767 3.4355H10.8716C10.5689 3.43566 10.2787 3.55478 10.0645 3.76649C9.85039 3.97819 9.7299 4.26517 9.72956 4.56457V5.67415C9.73092 5.80252 9.75472 5.92987 9.79975 6.05051H9.20001C9.24522 5.92987 9.26884 5.80252 9.2702 5.67415V4.56457C9.26986 4.26517 9.14937 3.97819 8.93523 3.76649C8.72127 3.55478 8.43082 3.43566 8.12814 3.4355H4.22271C3.91987 3.43566 3.62959 3.55478 3.41562 3.76649C3.20148 3.97819 3.08099 4.26517 3.08065 4.56457V5.67415C3.08201 5.80252 3.10563 5.92987 3.15084 6.05051H2.09071L2.09091 1.12908ZM10.4912 5.67415V4.56457C10.4914 4.35674 10.6618 4.18822 10.8719 4.18822H14.777C14.9872 4.18822 15.1575 4.35674 15.1576 4.56457V5.67415C15.1575 5.88182 14.9872 6.05034 14.777 6.05051H10.8719C10.6618 6.05034 10.4914 5.88182 10.4912 5.67415ZM3.84249 5.67415V4.56457C3.84266 4.35674 4.01295 4.18822 4.22318 4.18822H8.12861C8.33883 4.18822 8.50912 4.35674 8.50929 4.56457V5.67415C8.50912 5.88182 8.33883 6.05034 8.12861 6.05051H4.22318C4.01295 6.05034 3.84266 5.88182 3.84249 5.67415ZM3.12276 14.2473H1.98223V12.8282H3.12207L3.12276 14.2473ZM17.0188 14.2473H15.8781V12.8282H17.0179L17.0188 14.2473ZM18.2394 12.0755H0.761433V10.4636H18.2385L18.2394 12.0755ZM0.761433 9.71087V7.93211C0.761773 7.63271 0.882265 7.34573 1.0964 7.13402C1.31037 6.92232 1.60082 6.8032 1.90349 6.80303H17.0965C17.3993 6.8032 17.6896 6.92232 17.9038 7.13402C18.1177 7.34572 18.2382 7.6327 18.2386 7.93211V9.71087H0.761433Z" fill="black" />
-																							</svg>
-																							3
-																						</span>
-																						<span class="infobath">
-																							<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path d="M16.372 6.77159H2.53438V1.63184C2.53354 1.37184 2.63335 1.12199 2.81207 0.936247C2.99079 0.750676 3.23399 0.644246 3.48909 0.640102C3.74421 0.635959 3.99065 0.734387 4.17509 0.91396C3.89895 1.3071 3.76845 1.78725 3.80671 2.26912C3.84511 2.75098 4.0499 3.20341 4.38476 3.54597L4.40691 3.56697V3.56683C4.58353 3.72469 4.85001 3.71597 5.01637 3.54683L7.22045 1.30054C7.38683 1.13111 7.39538 0.858973 7.23979 0.678968L7.21961 0.656825C6.88039 0.312537 6.43155 0.103389 5.95426 0.0669636C5.47696 0.0306777 5.00261 0.169536 4.617 0.458534C4.31422 0.159961 3.90814 -0.00489934 3.48693 0.000110949C3.06558 0.00496801 2.66328 0.17911 2.36738 0.484683C2.07134 0.790256 1.90566 1.20254 1.90634 1.63182V6.77158H0.627967C0.461442 6.77172 0.301926 6.83929 0.184187 6.95929C0.0664469 7.07929 0.000279897 7.24186 0 7.41157V8.14285C0.000280363 8.31242 0.0664434 8.47514 0.184187 8.59513C0.30193 8.71513 0.46145 8.78256 0.627967 8.78284H0.650394V10.9773V10.9771C0.650955 11.6177 0.822947 12.2458 1.14786 12.7942C1.47278 13.3426 1.93828 13.7901 2.49409 14.0889C2.49381 14.0956 2.491 14.102 2.491 14.1087V15.36C2.49128 15.5297 2.55745 15.6923 2.67519 15.8123C2.79293 15.9323 2.95259 15.9997 3.11897 16H3.95733C4.12386 15.9997 4.28337 15.9323 4.40111 15.8123C4.51885 15.6923 4.58502 15.5297 4.5853 15.36V14.4971H12.3725V15.36C12.3727 15.5297 12.439 15.6923 12.5566 15.8123C12.6743 15.9323 12.834 15.9997 13.0005 16H13.8389H13.8387C14.0052 15.9997 14.1648 15.9323 14.2825 15.8123C14.4002 15.6923 14.4665 15.5297 14.4667 15.36V14.1087L14.4665 14.1081H14.4667C15.0328 13.8134 15.5082 13.3652 15.8404 12.8127C16.1726 12.2603 16.3489 11.6251 16.3497 10.9771V8.78286H16.3722H16.372C16.5386 8.78258 16.6982 8.71515 16.8158 8.59515C16.9336 8.47515 16.9999 8.31243 17 8.14287V7.41158C16.9999 7.24187 16.9336 7.0793 16.8158 6.95931C16.6982 6.83931 16.5386 6.77173 16.372 6.77159H16.372ZM5.80343 0.699629C6.10565 0.699058 6.39958 0.800344 6.63957 0.987773L4.70968 2.95462C4.50055 2.67605 4.40145 2.32775 4.43186 1.97849C4.46228 1.62921 4.61983 1.30419 4.87381 1.0675C5.12766 0.83064 5.4593 0.699516 5.80343 0.699626L5.80343 0.699629ZM3.11912 15.36L3.12332 14.3505C3.3947 14.4316 3.6749 14.4785 3.95749 14.4896V15.3601L3.11912 15.36ZM13.8388 15.36H13.0006V14.4919C13.2842 14.4835 13.5658 14.4395 13.8388 14.3605V15.36ZM15.7218 10.9773H15.7219C15.7211 11.7409 15.423 12.473 14.8932 13.0129C14.3635 13.5529 13.6452 13.8564 12.896 13.8573H12.6926C12.6905 13.8573 12.6887 13.856 12.6866 13.856C12.6845 13.856 12.6827 13.8572 12.6806 13.8573H4.27757C4.27546 13.8573 4.27364 13.856 4.27154 13.856C4.26944 13.856 4.26761 13.8572 4.26551 13.8573H4.10431C3.35509 13.8565 2.63672 13.5529 2.107 13.0129C1.57713 12.473 1.27915 11.7409 1.27843 10.9773V8.78302H15.7218L15.7218 10.9773ZM16.3497 8.14288L0.628144 8.14302V7.41173H16.3723L16.3726 8.14302L16.3497 8.14288Z" fill="black" />
-																							</svg>
-																							2.5
-																						</span>
-																						<span class="infosize">
-																							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500145 0H0.000160627V5.50004H1.0001V1.70713L5.14654 5.85362L5.85368 5.14647L1.70724 0.999979H5.50011V3.21257e-05L0.500145 0ZM14.5 0H15V5.50004H14.0001V1.70713L9.85362 5.85362L9.14648 5.14647L13.2929 0.999979H9.50005V3.21257e-05L14.5 0ZM15 15H9.50002V14.0001H13.2929L9.14644 9.85357L9.85359 9.14641L14 13.2929V9.49999H15L15 15ZM0.499984 15H0V9.49996H0.999935V13.2929L5.14638 9.14638L5.85352 9.85353L1.70708 14H5.49995V15L0.499984 15Z" fill="black" />
-																							</svg>
-																							1,300 ft<sup>2</sup>
-																						</span>
-																						<a href="https://lasvegas.wpresidence.net/estate_property/awesome-family-apartment/" target="_self" class="unit_details_x">details</a>
-																					</div>
-																					<div class="property_location">
-																						<div class="property_agent_wrapper">
-																							<div class="property_agent_image" style="background-image:url('https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person-21-120x120.jpg')"></div>
-																							<div class="property_agent_image_sign"><i class="far fa-user-circle"></i></div>
-																							<a href="https://lasvegas.wpresidence.net/estate_agent/carlos-dobarro/">Carlos Dobarro</a>
-																						</div>
-																						<div class="listing_actions">
-																							<div class="share_unit"> <a href="https://www.facebook.com/sharer.php?u=https://lasvegas.wpresidence.net/estate_property/awesome-family-apartment/&amp;t=Awesome+Family+Apartment" target="_blank" rel="noreferrer" class="social_facebook"></a> <a href="https://twitter.com/intent/tweet?text=Awesome+Family+Apartment+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2Fawesome-family-apartment%2F" class="social_tweet" rel="noreferrer" target="_blank"></a> <a href="https://pinterest.com/pin/create/button/?url=https://lasvegas.wpresidence.net/estate_property/awesome-family-apartment/&amp;media=https://lasvegas.wpresidence.net/wp-content/uploads/2021/10/interior35.jpg&amp;description=Awesome+Family+Apartment" target="_blank" rel="noreferrer" class="social_pinterest"></a> <a href="https://api.whatsapp.com/send?text=Awesome+Family+Apartment+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2Fawesome-family-apartment%2F" class="social_whatsup" rel="noreferrer" target="_blank"></a> <a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#06636b676f6a46636b676f6a2865696b397573646c6365723b47716375696b632d40676b6f6a7f2d47766774726b63687220676b763d6469627f3b6e727276752335472334402334406a677570636167752871767463756f62636865632868637223344063757267726359767469766374727f23344067716375696b632b60676b6f6a7f2b67766774726b636872233440" data-action="share email" class="social_email"></a> </div>
-																							<span class="share_list" data-original-title="share"></span> <span class="icon-fav icon-fav-off" data-original-title="add to favorites" data-postid="19386"></span> <span class="compare-action" data-original-title="compare" data-pimage="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/interior35-143x83.jpg" data-pid="19386"></span>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
-																		<div class="col-md-4 shortcode-col listing_wrapper " data-org="6" data-main-modal="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/8-800x467.jpg" data-modal-title="2 Rooms Apartment for Rent" data-modal-link="https://lasvegas.wpresidence.net/estate_property/2-rooms-apartment-for-rent/" data-listid="19371">
-																			<div class="property_listing property_card_default " data-link="https://lasvegas.wpresidence.net/estate_property/2-rooms-apartment-for-rent/">
-																				<div class="listing-unit-img-wrapper">
-																					<div class="prop_new_details">
-																						<div class="prop_new_details_back"></div>
-																						<div class="property_media"> <i class="fas fa-video"></i> <i class="fas fa-camera"></i> 5</div>
-																						<div class="property_location_image"> <span class="property_marker"></span><a href="https://lasvegas.wpresidence.net/property_area/meadows-village/" rel="tag">Meadows Village</a>, <a href="https://lasvegas.wpresidence.net/property_city/las-vegas/" rel="tag">Las Vegas</a></div>
-																						<div class="featured_gradient"></div>
-																					</div>
-																					<a href="https://lasvegas.wpresidence.net/estate_property/2-rooms-apartment-for-rent/" target="_self"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/8-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/8-525x328.jpg" /></a> 
-																					<div class="tag-wrapper">
-																						<div class="status-wrapper">
-																							<div class="action_tag_wrapper Sales ">Sales</div>
-																						</div>
-																					</div>
-																				</div>
-																				<div class="property-unit-information-wrapper">
-																					<h4> <a href="https://lasvegas.wpresidence.net/estate_property/2-rooms-apartment-for-rent/">2 Rooms Apartment for Rent </a> </h4>
-																					<div class="listing_unit_price_wrapper"> 775.000 $ <span class="price_label"></span></div>
-																					<div class="listing_details the_grid_view"> This property is mostly wooded and sits high on a hilltop overlooking the Mohawk River Val <a href="https://lasvegas.wpresidence.net/estate_property/2-rooms-apartment-for-rent/" class="unit_more_x"> ...</a> </div>
-																					<div class="listing_details the_list_view"> This property is mostly wooded and sits high on a hilltop overlooking the Mohawk River Valley. Located right in the <a href="https://lasvegas.wpresidence.net/estate_property/2-rooms-apartment-for-rent/" class="unit_more_x"> ...</a> </div>
-																					<div class="property_listing_details">
-																						<span class="inforoom">
-																							<svg viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path d="M17.6702 6.14728V1.12908C17.6699 0.829675 17.5496 0.542695 17.3354 0.33099C17.1213 0.119457 16.831 0.000335493 16.5282 0H2.47158C2.16874 0.000336053 1.87846 0.119457 1.66432 0.33099C1.45018 0.542691 1.32986 0.829671 1.32952 1.12908V6.14728C0.945097 6.26691 0.60909 6.50432 0.369977 6.82507C0.131029 7.14598 0.00152709 7.5336 0 7.93211V12.0755C0.000339918 12.2751 0.080557 12.4665 0.223311 12.6076C0.366066 12.7486 0.55964 12.8281 0.76136 12.8282H1.22057V14.2473C1.22074 14.4469 1.30113 14.6383 1.44388 14.7794C1.58664 14.9204 1.78004 14.9998 1.98193 15H3.12177C3.32349 14.9998 3.51706 14.9204 3.65981 14.7794C3.80257 14.6383 3.88279 14.4469 3.88313 14.2473V12.8282H15.1166V14.2473C15.1169 14.4469 15.1971 14.6383 15.3399 14.7794C15.4826 14.9204 15.6762 14.9998 15.8779 15H17.0178C17.2197 14.9998 17.4132 14.9204 17.5558 14.7792C17.6986 14.6383 17.779 14.4469 17.7791 14.2473V12.8282H18.2386C18.4405 12.8281 18.6339 12.7486 18.7767 12.6076C18.9194 12.4665 18.9997 12.2751 19 12.0755V7.93211C18.9985 7.53358 18.869 7.14581 18.6299 6.8249C18.3909 6.50416 18.0547 6.26673 17.6701 6.14712L17.6702 6.14728ZM2.09091 1.12908C2.09108 0.921244 2.26137 0.75289 2.4716 0.752722H16.5282H16.528C16.7382 0.75289 16.9085 0.921244 16.9087 1.12908V6.05051H15.8486C15.8938 5.92987 15.9174 5.80252 15.9188 5.67415V4.56457C15.9184 4.26517 15.7979 3.97819 15.584 3.76649C15.3698 3.55478 15.0796 3.43566 14.7767 3.4355H10.8716C10.5689 3.43566 10.2787 3.55478 10.0645 3.76649C9.85039 3.97819 9.7299 4.26517 9.72956 4.56457V5.67415C9.73092 5.80252 9.75472 5.92987 9.79975 6.05051H9.20001C9.24522 5.92987 9.26884 5.80252 9.2702 5.67415V4.56457C9.26986 4.26517 9.14937 3.97819 8.93523 3.76649C8.72127 3.55478 8.43082 3.43566 8.12814 3.4355H4.22271C3.91987 3.43566 3.62959 3.55478 3.41562 3.76649C3.20148 3.97819 3.08099 4.26517 3.08065 4.56457V5.67415C3.08201 5.80252 3.10563 5.92987 3.15084 6.05051H2.09071L2.09091 1.12908ZM10.4912 5.67415V4.56457C10.4914 4.35674 10.6618 4.18822 10.8719 4.18822H14.777C14.9872 4.18822 15.1575 4.35674 15.1576 4.56457V5.67415C15.1575 5.88182 14.9872 6.05034 14.777 6.05051H10.8719C10.6618 6.05034 10.4914 5.88182 10.4912 5.67415ZM3.84249 5.67415V4.56457C3.84266 4.35674 4.01295 4.18822 4.22318 4.18822H8.12861C8.33883 4.18822 8.50912 4.35674 8.50929 4.56457V5.67415C8.50912 5.88182 8.33883 6.05034 8.12861 6.05051H4.22318C4.01295 6.05034 3.84266 5.88182 3.84249 5.67415ZM3.12276 14.2473H1.98223V12.8282H3.12207L3.12276 14.2473ZM17.0188 14.2473H15.8781V12.8282H17.0179L17.0188 14.2473ZM18.2394 12.0755H0.761433V10.4636H18.2385L18.2394 12.0755ZM0.761433 9.71087V7.93211C0.761773 7.63271 0.882265 7.34573 1.0964 7.13402C1.31037 6.92232 1.60082 6.8032 1.90349 6.80303H17.0965C17.3993 6.8032 17.6896 6.92232 17.9038 7.13402C18.1177 7.34572 18.2382 7.6327 18.2386 7.93211V9.71087H0.761433Z" fill="black" />
-																							</svg>
-																							5
-																						</span>
-																						<span class="infobath">
-																							<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path d="M16.372 6.77159H2.53438V1.63184C2.53354 1.37184 2.63335 1.12199 2.81207 0.936247C2.99079 0.750676 3.23399 0.644246 3.48909 0.640102C3.74421 0.635959 3.99065 0.734387 4.17509 0.91396C3.89895 1.3071 3.76845 1.78725 3.80671 2.26912C3.84511 2.75098 4.0499 3.20341 4.38476 3.54597L4.40691 3.56697V3.56683C4.58353 3.72469 4.85001 3.71597 5.01637 3.54683L7.22045 1.30054C7.38683 1.13111 7.39538 0.858973 7.23979 0.678968L7.21961 0.656825C6.88039 0.312537 6.43155 0.103389 5.95426 0.0669636C5.47696 0.0306777 5.00261 0.169536 4.617 0.458534C4.31422 0.159961 3.90814 -0.00489934 3.48693 0.000110949C3.06558 0.00496801 2.66328 0.17911 2.36738 0.484683C2.07134 0.790256 1.90566 1.20254 1.90634 1.63182V6.77158H0.627967C0.461442 6.77172 0.301926 6.83929 0.184187 6.95929C0.0664469 7.07929 0.000279897 7.24186 0 7.41157V8.14285C0.000280363 8.31242 0.0664434 8.47514 0.184187 8.59513C0.30193 8.71513 0.46145 8.78256 0.627967 8.78284H0.650394V10.9773V10.9771C0.650955 11.6177 0.822947 12.2458 1.14786 12.7942C1.47278 13.3426 1.93828 13.7901 2.49409 14.0889C2.49381 14.0956 2.491 14.102 2.491 14.1087V15.36C2.49128 15.5297 2.55745 15.6923 2.67519 15.8123C2.79293 15.9323 2.95259 15.9997 3.11897 16H3.95733C4.12386 15.9997 4.28337 15.9323 4.40111 15.8123C4.51885 15.6923 4.58502 15.5297 4.5853 15.36V14.4971H12.3725V15.36C12.3727 15.5297 12.439 15.6923 12.5566 15.8123C12.6743 15.9323 12.834 15.9997 13.0005 16H13.8389H13.8387C14.0052 15.9997 14.1648 15.9323 14.2825 15.8123C14.4002 15.6923 14.4665 15.5297 14.4667 15.36V14.1087L14.4665 14.1081H14.4667C15.0328 13.8134 15.5082 13.3652 15.8404 12.8127C16.1726 12.2603 16.3489 11.6251 16.3497 10.9771V8.78286H16.3722H16.372C16.5386 8.78258 16.6982 8.71515 16.8158 8.59515C16.9336 8.47515 16.9999 8.31243 17 8.14287V7.41158C16.9999 7.24187 16.9336 7.0793 16.8158 6.95931C16.6982 6.83931 16.5386 6.77173 16.372 6.77159H16.372ZM5.80343 0.699629C6.10565 0.699058 6.39958 0.800344 6.63957 0.987773L4.70968 2.95462C4.50055 2.67605 4.40145 2.32775 4.43186 1.97849C4.46228 1.62921 4.61983 1.30419 4.87381 1.0675C5.12766 0.83064 5.4593 0.699516 5.80343 0.699626L5.80343 0.699629ZM3.11912 15.36L3.12332 14.3505C3.3947 14.4316 3.6749 14.4785 3.95749 14.4896V15.3601L3.11912 15.36ZM13.8388 15.36H13.0006V14.4919C13.2842 14.4835 13.5658 14.4395 13.8388 14.3605V15.36ZM15.7218 10.9773H15.7219C15.7211 11.7409 15.423 12.473 14.8932 13.0129C14.3635 13.5529 13.6452 13.8564 12.896 13.8573H12.6926C12.6905 13.8573 12.6887 13.856 12.6866 13.856C12.6845 13.856 12.6827 13.8572 12.6806 13.8573H4.27757C4.27546 13.8573 4.27364 13.856 4.27154 13.856C4.26944 13.856 4.26761 13.8572 4.26551 13.8573H4.10431C3.35509 13.8565 2.63672 13.5529 2.107 13.0129C1.57713 12.473 1.27915 11.7409 1.27843 10.9773V8.78302H15.7218L15.7218 10.9773ZM16.3497 8.14288L0.628144 8.14302V7.41173H16.3723L16.3726 8.14302L16.3497 8.14288Z" fill="black" />
-																							</svg>
-																							6
-																						</span>
-																						<span class="infosize">
-																							<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-																								<path fill-rule="evenodd" clip-rule="evenodd" d="M0.500145 0H0.000160627V5.50004H1.0001V1.70713L5.14654 5.85362L5.85368 5.14647L1.70724 0.999979H5.50011V3.21257e-05L0.500145 0ZM14.5 0H15V5.50004H14.0001V1.70713L9.85362 5.85362L9.14648 5.14647L13.2929 0.999979H9.50005V3.21257e-05L14.5 0ZM15 15H9.50002V14.0001H13.2929L9.14644 9.85357L9.85359 9.14641L14 13.2929V9.49999H15L15 15ZM0.499984 15H0V9.49996H0.999935V13.2929L5.14638 9.14638L5.85352 9.85353L1.70708 14H5.49995V15L0.499984 15Z" fill="black" />
-																							</svg>
-																							190 ft<sup>2</sup>
-																						</span>
-																						<a href="https://lasvegas.wpresidence.net/estate_property/2-rooms-apartment-for-rent/" target="_self" class="unit_details_x">details</a>
-																					</div>
-																					<div class="property_location">
-																						<div class="property_agent_wrapper">
-																							<div class="property_agent_image" style="background-image:url('https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person3-27-120x120.jpg')"></div>
-																							<div class="property_agent_image_sign"><i class="far fa-user-circle"></i></div>
-																							<a href="https://lasvegas.wpresidence.net/estate_agent/alessandra-tortella/">Alessandra Rosales</a>
-																						</div>
-																						<div class="listing_actions">
-																							<div class="share_unit"> <a href="https://www.facebook.com/sharer.php?u=https://lasvegas.wpresidence.net/estate_property/2-rooms-apartment-for-rent/&amp;t=2+Rooms+Apartment+for+Rent" target="_blank" rel="noreferrer" class="social_facebook"></a> <a href="https://twitter.com/intent/tweet?text=2+Rooms+Apartment+for+Rent+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2F2-rooms-apartment-for-rent%2F" class="social_tweet" rel="noreferrer" target="_blank"></a> <a href="https://pinterest.com/pin/create/button/?url=https://lasvegas.wpresidence.net/estate_property/2-rooms-apartment-for-rent/&amp;media=https://lasvegas.wpresidence.net/wp-content/uploads/2021/10/8.jpg&amp;description=2+Rooms+Apartment+for+Rent" target="_blank" rel="noreferrer" class="social_pinterest"></a> <a href="https://api.whatsapp.com/send?text=2+Rooms+Apartment+for+Rent+https%3A%2F%2Flasvegas.wpresidence.net%2Festate_property%2F2-rooms-apartment-for-rent%2F" class="social_whatsup" rel="noreferrer" target="_blank"></a> <a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#23464e424a4f63464e424a4f0d404c4e1c505641494640571e1108714c4c4e500862534251574e464d5708454c510871464d5705424e5318414c475a1e4b575753500610620611650611654f425055464442500d54535146504a47464d40460d4d46570611654650574257467c53514c534651575a061165110e514c4c4e500e42534251574e464d570e454c510e51464d57061165" data-action="share email" class="social_email"></a> </div>
-																							<span class="share_list" data-original-title="share"></span> <span class="icon-fav icon-fav-off" data-original-title="add to favorites" data-postid="19371"></span> <span class="compare-action" data-original-title="compare" data-pimage="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/8-143x83.jpg" data-pid="19371"></span>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</div>
+
+																		<?php }
+																		?>
+																
+															
+															
+															
+																	
 																		<div class="wpestate_listing_sh_loader">
 																			<div class="new_prelader"></div>
 																		</div>
 																		<div class="listinglink-wrapper_sh_listings">
-																			<span class="wpresidence_button wpestate_item_list_sh">load more listings </span>
+																			<a href="leasing.php"><span class="wpresidence_button wpestate_item_list_sh">load more listings </span></a>
 																		</div>
 																	</div>
 																</div>
@@ -957,7 +712,7 @@
 													</div>
 												</div>
 											</section>
-											<section class="elementor-section elementor-inner-section elementor-element elementor-element-b76765b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b76765b" data-element_type="section">
+											<!-- <section class="elementor-section elementor-inner-section elementor-element elementor-element-b76765b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b76765b" data-element_type="section">
 												<div class="elementor-container elementor-column-gap-default">
 													<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-f84e409 elementor-invisible" data-id="f84e409" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:100,&quot;background_background&quot;:&quot;classic&quot;}">
 														<div class="elementor-widget-wrap elementor-element-populated">
@@ -1118,12 +873,12 @@
 														</div>
 													</div>
 												</div>
-											</section>
+											</section> -->
 										</div>
 									</div>
 								</div>
 							</section>
-							<section class="elementor-section elementor-top-section elementor-element elementor-element-6a9ab524 elementor-section-height-min-height elementor-section-stretched animated-fast elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="6a9ab524" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;none&quot;}">
+							<!-- <section class="elementor-section elementor-top-section elementor-element elementor-element-6a9ab524 elementor-section-height-min-height elementor-section-stretched animated-fast elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="6a9ab524" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;none&quot;}">
 								<div class="elementor-container elementor-column-gap-default">
 									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5133bb5" data-id="5133bb5" data-element_type="column">
 										<div class="elementor-widget-wrap elementor-element-populated">
@@ -1233,7 +988,7 @@
 										</div>
 									</div>
 								</div>
-							</section>
+							</section> -->
 							<section class="elementor-section elementor-top-section elementor-element elementor-element-c8121bb elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default" data-id="c8121bb" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 								<div class="elementor-container elementor-column-gap-no">
 									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-532a272" data-id="532a272" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -1249,24 +1004,32 @@
 															</div>
 															<div class="elementor-element elementor-element-2324c00 elementor-button-align-stretch elementor-invisible elementor-widget elementor-widget-WpResidence_Contact_Form_Builder" data-id="2324c00" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="WpResidence_Contact_Form_Builder.default">
 																<div class="elementor-widget-container">
-																	<form class="elementor-form wpresidence_elementor_form" id="wpresidence-elementor-form-2324c00" method="post">
-																		<div class="alert-box error">
+																	
+																<form class="elementor-form" method="post" action="">
+																		<!-- <div class="alert-box error">
 																			<div class="alert-message" id="alert-agent-contact"></div>
-																		</div>
-																		<input name="prop_id" type="hidden" id="agent_property_id" value="">
+																		</div> -->
+																		<!-- <input name="prop_id" type="hidden" id="agent_property_id" value="">
 																		<input name="prop_id" type="hidden" id="agent_id" value="">
 																		<input name="prop_id" type="hidden" id="contact_form_elementor" value="1">
 																		<input type="hidden" name="contact_ajax_nonce" id="agent_property_ajax_nonce" value="ef123dddee" />
 																		<input type="hidden" id="wpresidence_form_id" name="wpresidence_form_id" value="wpresidence_form_2450" />
-																		<input type="hidden" id="elementor_email_subject" name="email_suject" value="New email from &quot;WpResidence Real Estate Theme Demo&quot; " />
+																		<input type="hidden" id="elementor_email_subject" name="email_suject" value="New email from &quot;WpResidence Real Estate Theme Demo&quot; " /> -->
+
 																		<div class="elementor-form-fields-wrapper elementor-labels-above">
 																			<div class="elementor-field-group elementor-column form-group elementor-field-group-name elementor-col-100"><label for="form-field-name" class="elementor-field-label">Name</label><input type="text" name="name" id="form-field-name" class="elementor-field form-control elementor-size-sm elementor-field-textual" placeholder="Name"></div>
-																			<div class="elementor-field-group elementor-column form-group elementor-field-group-email elementor-field-required elementor-col-100"><label for="form-field-email" class="elementor-field-label">Email*</label><input type="email" name="email" id="form-field-email" class="elementor-field form-control elementor-size-sm elementor-field-textual" required="required" placeholder="Email"></div>
+
+																			<div class="elementor-field-group elementor-column form-group elementor-field-group-email elementor-field-required elementor-col-100"><label for="form-field-email" class="elementor-field-label">Email*</label><input type="email" name="EmailId" id="form-field-email" class="elementor-field form-control elementor-size-sm elementor-field-textual" required="required" placeholder="Email"></div>
+																			
+																			<div class="elementor-field-group elementor-column form-group elementor-field-group-321f593 elementor-col-100"><label for="form-field-321f593" class="elementor-field-label">Phone Number</label><input type="tel" class="form-control elementor-field-textual elementor-field elementor-size-sm" name="phone_number" id="form-field-321f593" rows="4" placeholder="Phone Number"/></div>
+
 																			<div class="elementor-field-group elementor-column form-group elementor-field-group-message elementor-col-100"><label for="form-field-message" class="elementor-field-label">Message</label><textarea class="form-control elementor-field-textual elementor-field elementor-size-sm" name="message" id="form-field-message" rows="4" placeholder="Message"></textarea></div>
-																			<div class="elementor-field-group elementor-column form-group elementor-field-group-321f593 elementor-col-100"><label for="form-field-321f593" class="elementor-field-label">Message</label><textarea class="form-control elementor-field-textual elementor-field elementor-size-sm" name="message" id="form-field-321f593" rows="4" placeholder="Message"></textarea></div>
-																			<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100">
-																				<button type="submit" class="agent_submit_class_elementor wpresidence_button wpresidence_button_elementor elementor-button elementor-size-md">
-																				Send Email </button>
+
+																			
+																			
+																			<div class="elementor-column elementor-col-100">
+																				<button type="submit" class="wpresidence_button wpresidence_button_elementor elementor-button elementor-size-md" name="submit">
+																				Submit </button>
 																			</div>
 																		</div>
 																	</form>
@@ -1298,7 +1061,7 @@
 																			<div class="elementor-element elementor-element-51b5e88 elementor-mobile-align-center elementor-invisible elementor-widget elementor-widget-button" data-id="51b5e88" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="button.default">
 																				<div class="elementor-widget-container">
 																					<div class="elementor-button-wrapper">
-																						<a href="https://lasvegas.wpresidence.net/contact-us-3/" class="elementor-button-link elementor-button elementor-size-sm" role="button">
+																						<a href="contactUs.php" class="elementor-button-link elementor-button elementor-size-sm" role="button">
 																						<span class="elementor-button-content-wrapper">
 																						<span class="elementor-button-text">Contact us</span>
 																						</span>
@@ -1343,6 +1106,7 @@
 													</div>
 												</div>
 											</section>
+
 											<section class="elementor-section elementor-inner-section elementor-element elementor-element-0994559 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0994559" data-element_type="section">
 												<div class="elementor-container elementor-column-gap-default">
 													<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-1e6eefe" data-id="1e6eefe" data-element_type="column">
@@ -1350,8 +1114,17 @@
 															<div class="elementor-element elementor-element-880f14b elementor-invisible elementor-widget elementor-widget-Wpresidence_Blog_Post_List" data-id="880f14b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="Wpresidence_Blog_Post_List.default">
 																<div class="elementor-widget-container">
 																	<div class="article_container  wpestate_latest_listings_sh bottom-post blogs_wrapper" data-category_ids="" data-number="4" data-row-number="4" data-card-version="3" data-sort-by="0" data-page="1">
-																		<div class="col-md-3 shortcode-col  listing_wrapper blog3v">
-																			<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/">
+																	<?php
+																	   $sql = $link->rawQuery("select * from blog_master where isDeleted=0");
+																		
+																		 foreach ($sql as $blog)	
+																		{
+																		
+																		?>
+																		<div  class="col-md-3 shortcode-col  listing_wrapper blog3v">
+																			<div class="property_listing_blog" data-link="">
+
+
 																				<div class="featured_gradient"></div>
 																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2016/03/portrait__interior9-525x328.jpg);"></div>
 																				<div class="blog_unit_content_v3">
@@ -1359,13 +1132,19 @@
 																						Mar 04, 2016 
 																					</div>
 																					<h4>
-																						<a href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/" class="blog_unit_title">Top 10 best appreciating condos in Las Vegas</a>
+																						<a href="" class="blog_unit_title"><?php echo $blog['BlogTitle'] ?></a>
 																					</h4>
-																					<a class="read_more" href="https://lasvegas.wpresidence.net/2016/03/04/top-10-best-appreciating-condos-in-las-vegas/"> Continue reading<i class="fas fa-angle-right"></i> </a>
+																					<a class="read_more" href="Singleblog.php?pid=<?php echo $blog["PK_BlogID"]; ?>"> Continue reading<i class="fas fa-angle-right"></i> </a>
 																				</div>
+																			
+																			
 																			</div>
-																		</div>
-																		<div class="col-md-3 shortcode-col  listing_wrapper blog3v">
+																		
+																			</div>
+																			<?php
+																			}
+																			?>
+																		<!-- <div class="col-md-3 shortcode-col  listing_wrapper blog3v">
 																			<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/">
 																				<div class="featured_gradient"></div>
 																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/portrait_july2019-525x328.jpg);"></div>
@@ -1379,8 +1158,8 @@
 																					<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/"> Continue reading<i class="fas fa-angle-right"></i> </a>
 																				</div>
 																			</div>
-																		</div>
-																		<div class="col-md-3 shortcode-col  listing_wrapper blog3v">
+																		</div> -->
+																		<!-- <div class="col-md-3 shortcode-col  listing_wrapper blog3v">
 																			<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/">
 																				<div class="featured_gradient"></div>
 																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/house_4-525x328.jpeg);"></div>
@@ -1394,8 +1173,8 @@
 																					<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/"> Continue reading<i class="fas fa-angle-right"></i> </a>
 																				</div>
 																			</div>
-																		</div>
-																		<div class="col-md-3 shortcode-col  listing_wrapper blog3v">
+																		</div> -->
+																		<!-- <div class="col-md-3 shortcode-col  listing_wrapper blog3v">
 																			<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/">
 																				<div class="featured_gradient"></div>
 																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior47-525x328.jpg);"></div>
@@ -1409,12 +1188,12 @@
 																					<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/"> Continue reading<i class="fas fa-angle-right"></i> </a>
 																				</div>
 																			</div>
-																		</div>
+																		</div> -->
 																		<div class="wpestate_listing_sh_loader">
 																			<div class="new_prelader"></div>
 																		</div>
 																		<div class="listinglink-wrapper_sh_listings">
-																			<span class="wpresidence_button wpestate_item_list_sh blog_list_loader"> load articles </span>
+																			<a href="blogList.php"><span class="wpresidence_button wpestate_item_list_sh blog_list_loader"> load articles </span></a>
 																		</div>
 																	</div>
 																</div>
