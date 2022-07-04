@@ -8,9 +8,9 @@
 									<p>WpResidence is committed to delivering a high level of expertise, customer service, and attention to detail to the marketing and sales of luxury real estate, and rental properties.</p>
 								</div>
 							</li>
-							<li id="social_widget-1" class="widget-container social_sidebar">
+							<!-- <li id="social_widget-1" class="widget-container social_sidebar">
 								<div class="social_sidebar_internal"><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="#" target="_blank"><i class="fab fa-twitter"></i></a><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="#" target="_blank"><i class="fab fa-tumblr"></i></a><a href="#" target="_blank"><i class="fab fa-youtube"></i></a><a href="#" target="_blank"><i class="fab fa-vimeo-v"></i></a></div>
-							</li>
+							</li> -->
 						</ul>
 					</div>
 					<div id="second" class="widget-area col-md-4">
@@ -26,7 +26,11 @@
 							</li>
 						</ul>
 					</div>
-					<div id="third" class="widget-area col-md-4">
+					<h4 style="margin-top: 50px;" class="widget-title-footer">Latest Properties</h4>
+					<li id="social_widget-1" class="widget-container social_sidebar">
+								<div class="social_sidebar_internal"><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="#" target="_blank"><i class="fab fa-twitter"></i></a><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="#" target="_blank"><i class="fab fa-tumblr"></i></a><a href="#" target="_blank"><i class="fab fa-youtube"></i></a><a href="#" target="_blank"><i class="fab fa-vimeo-v"></i></a></div>
+							</li>
+					<!-- <div id="third" class="widget-area col-md-4">
 						<ul class="xoxo">
 							<li id="footer_latest_widget-3" class="widget-container latest_listings">
 								<h4 class="widget-title-footer">Latest Properties</h4>
@@ -49,7 +53,7 @@
 								</div>
 							</li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 				<div class="sub_footer">
 					<div class="sub_footer_content ">
