@@ -94,6 +94,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                             <th>Short Description</th>
                                             <th>Long Description</th>
                                             <th>Location</th>
+                                            <th>Office Number</th>
                                             <th>Price</th>
                                             <th>Images</th>
                                             <th>Status</th>
@@ -113,6 +114,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                     <td><?php echo $row['ShortDescription'] ?></td>
                                                     <td><?php echo $row['LongDescription'] ?></td>
                                                     <td><?php echo $row['Location'] ?></td>
+                                                    <td><?php echo $row['office_number'] ?></td>
                                                     <td><?php echo $row['Price'] ?></td>
                                                     <td><img src="<?php echo $row['Images'] ?>" width="70px" height="70px" /></td>
                                                     <!-- <td><?php echo $row['FK_Status'] ?></td> -->

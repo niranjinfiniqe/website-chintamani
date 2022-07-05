@@ -409,7 +409,7 @@
 								<div class="col-md-4 listing_wrapper">
 									<div class="agent_unit" data-link="SingleProject.php?pid=<?php echo $pro["PK_Project"]; ?>">
 										<div class="agent-unit-img-wrapper">
-											<img width="500" height="328" src="<?php echo $pro['ThumbnailImageURL']; ?>" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="" sizes="(max-width: 500px) 100vw, 500px" /> 
+											<img width="500" height="328"  alt="<?php echo $pro['ThumbnailImageURL']; ?>" src="<?php echo $pro['ThumbnailImageURL']; ?>" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="" sizes="(max-width: 500px) 100vw, 500px" /> 
 										</div>
 										<h4> <a href="SingleProject.php?pid=<?php echo $pro["PK_Project"]; ?>">
 										<?php echo $pro['ProjectName'] ?></a></h4>

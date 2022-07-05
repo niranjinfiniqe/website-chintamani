@@ -184,7 +184,7 @@ $altTag = $_POST['altTag'];
     }
 
     function  addImage($imageName){
-		$target_dir = "./uploads/interior";
+		$target_dir = "../../uploads/interior";
 		$target_file = $target_dir . basename($_FILES[$imageName]["name"]);
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

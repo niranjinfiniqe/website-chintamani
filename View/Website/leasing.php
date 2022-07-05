@@ -472,7 +472,7 @@ echo $query1;
 											</div>
 											<div class="featured_gradient"></div>
 										</div>
-										<a href="estate_property.php?leaseID=<?php echo $lease["PK_lease"]; ?>" target="_self"><img width="525" height="328" src="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" /></a>
+										<a href="estate_property.php?leaseID=<?php echo $lease["PK_lease"]; ?>" target="_self"><img style="width:525px ;height:328px" src="<?php echo $lease['Images'] ?>" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-525x328.jpg" /></a>
 										<div class="tag-wrapper">
 											<div class="featured_div">Featured</div>
 											<div class="status-wrapper">

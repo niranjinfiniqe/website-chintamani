@@ -89,7 +89,7 @@ if ($ad) {
 	
 
 function  addImage($imageName){
-		$target_dir = "./uploads/blog";
+		$target_dir = "../../uploads/blog";
 		$target_file = $target_dir . basename($_FILES[$imageName]["name"]);
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION)); // to check whether the image is png,jpeg 
