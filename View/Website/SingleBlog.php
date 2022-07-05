@@ -381,7 +381,7 @@
 						</div>
 					</div>
 				</div> -->
-				<?php include("subheader.php"); ?>
+				<?php include("subHeader.php"); ?>
 				<div class="container content_wrapper">
 
 					<div id="post" class="row post-169 post type-post status-publish format-standard has-post-thumbnail hentry category-selling-properties category-real-estate tag-real-estate-2 tag-selling-your-home">
@@ -802,7 +802,7 @@
 					</div>
 				</div>
 			</div>
-			<?php include("subfooter.php"); ?>
+			<?php include("subFooter.php"); ?>
 		</div>
 			<!-- <div id="modal_login_wrapper">
 				<div class="modal_login_back"></div>

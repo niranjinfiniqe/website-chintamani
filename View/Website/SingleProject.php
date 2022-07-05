@@ -421,7 +421,7 @@
 						</div>
 					</div>
 				</div> -->
-                <?php include("subheader.php"); ?>
+                <?php include("subHeader.php"); ?>
 				<div class="pre_search_wrapper"></div>
 				<div class="container content_wrapper">
 					<div class="row">
@@ -1251,7 +1251,7 @@
 			</div>
 				</div>
 			</div>
-			<?php include("subfooter.php"); ?>
+			<?php include("subFooter.php"); ?>
 		</div>
         <?php include("footer.php"); ?>
 		<!-- <div id="modal_login_wrapper">

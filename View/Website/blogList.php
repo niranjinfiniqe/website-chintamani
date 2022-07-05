@@ -279,7 +279,7 @@
 		</div> -->
 		<div class="website-wrapper" id="all_wrapper">
 			<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
-                <?php include("subheader.php"); ?>
+                <?php include("subHeader.php"); ?>
 				<div class="pre_search_wrapper"></div>
 				<div class="container content_wrapper">
                     <div class="wpestate_header_image full_screen_no parallax_effect_yes" style="background-image:url(https://madrid.wpresidence.net/wp-content/uploads/2021/11/interior_grey_bg-e1636449434931.jpeg); height:450px; ">
@@ -683,7 +683,7 @@
 					</div>
 				</div>
 			</div>
-			<?php include("subfooter.php"); ?>
+			<?php include("subFooter.php"); ?>
 		</div>
 		<!-- <div id="modal_login_wrapper">
 			<div class="modal_login_back"></div>

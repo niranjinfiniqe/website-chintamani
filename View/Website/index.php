@@ -2,26 +2,24 @@
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 		<?php
-		 include("header.php"); 
-		include("../../Helper/connect.php");
-		//form 
-	    if(isset($_POST['name']) && isset($_POST['EmailId']) &&  isset($_POST['phone_number']) &&  isset($_POST['message'])){
+include ("header.php");
+include ("../../Helper/connect.php");
+//form
+if (isset($_POST['name']) && isset($_POST['EmailId']) && isset($_POST['phone_number']) && isset($_POST['message']))
+{
 
+    $name = $_POST['name'];
+    $EmailId = $_POST['EmailId'];
+    $phone_number = $_POST['phone_number'];
+    $message = $_POST['message'];
 
-	    $name = $_POST['name'];
-		$EmailId = $_POST['EmailId'];
-		$phone_number= $_POST['phone_number'];
-		$message= $_POST['message'];
-		
-
-		
-		// Performing insert query execution
-		$sql =mysqli_query($con,"INSERT INTO inquiry (first_name,EmailId,phone_number,project_message,FK_Status) VALUES ('$name','$EmailId','$phone_number','$message','1')" ) ;
-		}
-		?>
+    // Performing insert query execution
+    $sql = mysqli_query($con, "INSERT INTO inquiry (first_name,EmailId,phone_number,project_message,FK_Status) VALUES ('$name','$EmailId','$phone_number','$message','1')");
+}
+?>
         	<div class="website-wrapper" id="all_wrapper">
 				<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
-					<?php include("subheader.php"); ?>
+					<?php include ("subHeader.php"); ?>
                 	<div class="header_media  mobile_header_media_sticky_yes header_mediatype_1 with_search_1 header_media_non_elementor"></div>
 					<div class="pre_search_wrapper"></div>
 					<div  class="container content_wrapper">
@@ -415,11 +413,11 @@
 																<div class="elementor-widget-container">
 																	<div id="wpestate_sh_anime_557" class="article_container wpestate_anime wpestate_latest_listings_sh bottom-estate_property " data-type="estate_property" data-category_ids="" data-action_ids="" data-city_ids="" data-area_ids="" data-state_ids="" data-status_ids="" data-number="6" data-row-number="3" data-card-version="" data-align="vertical" data-show_featured_only="no" data-random_pick="no" data-featured_first="no" data-sort-by="0" data-page="1">
 																	<?php
-																	   $sql = $link->rawQuery("select * from leasing_master where isDeleted=0 and PK_lease limit 6");
-																		
-																		 foreach ($sql as $pro)
-																		  {
-																	?>
+$sql = $link->rawQuery("select * from leasing_master where isDeleted=0 and PK_lease limit 6");
+
+foreach ($sql as $pro)
+{
+?>
 																		<div   class="col-md-4 shortcode-col listing_wrapper " data-org="6" data-main-modal="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-800x467.jpg" data-modal-title="Villa with Amazing View" data-modal-link="" data-listid="139">
 																			<div class="property_listing property_card_default " data-link="">
 																				<div class="listing-unit-img-wrapper">
@@ -484,8 +482,9 @@
 																			</div>
 																		</div>
 
-																		<?php }
-																		?>
+																		<?php
+}
+?>
 																
 															
 															
@@ -711,283 +710,10 @@
 													</div>
 												</div>
 											</section>
-											<!-- <section class="elementor-section elementor-inner-section elementor-element elementor-element-b76765b elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="b76765b" data-element_type="section">
-												<div class="elementor-container elementor-column-gap-default">
-													<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-f84e409 elementor-invisible" data-id="f84e409" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:100,&quot;background_background&quot;:&quot;classic&quot;}">
-														<div class="elementor-widget-wrap elementor-element-populated">
-															<div class="elementor-element elementor-element-d22b633 elementor-view-stacked elementor-shape-square elementor-widget elementor-widget-icon" data-id="d22b633" data-element_type="widget" data-widget_type="icon.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-icon-wrapper">
-																		<div class="elementor-icon">
-																			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Capa_1" x="0px" y="0px" viewBox="0 0 52.966 52.966" style="enable-background:new 0 0 52.966 52.966;" xml:space="preserve">
-																				<path d="M51.704,51.273L36.845,35.82c3.79-3.801,6.138-9.041,6.138-14.82c0-11.58-9.42-21-21-21s-21,9.42-21,21s9.42,21,21,21  c5.083,0,9.748-1.817,13.384-4.832l14.895,15.491c0.196,0.205,0.458,0.307,0.721,0.307c0.25,0,0.499-0.093,0.693-0.279  C52.074,52.304,52.086,51.671,51.704,51.273z M21.983,40c-10.477,0-19-8.523-19-19s8.523-19,19-19s19,8.523,19,19  S32.459,40,21.983,40z"></path>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																				<g></g>
-																			</svg>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-94ebc17 elementor-widget elementor-widget-spacer" data-id="94ebc17" data-element_type="widget" data-widget_type="spacer.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-spacer">
-																		<div class="elementor-spacer-inner"></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-aa612fd elementor-widget elementor-widget-heading" data-id="aa612fd" data-element_type="widget" data-widget_type="heading.default">
-																<div class="elementor-widget-container">
-																	<h2 class="elementor-heading-title elementor-size-default">Home inspection</h2>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-d4d6ffd elementor-widget elementor-widget-spacer" data-id="d4d6ffd" data-element_type="widget" data-widget_type="spacer.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-spacer">
-																		<div class="elementor-spacer-inner"></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-45fa8d4 elementor-widget elementor-widget-spacer" data-id="45fa8d4" data-element_type="widget" data-widget_type="spacer.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-spacer">
-																		<div class="elementor-spacer-inner"></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-375a089 elementor-widget elementor-widget-text-editor" data-id="375a089" data-element_type="widget" data-widget_type="text-editor.default">
-																<div class="elementor-widget-container">
-																	<p>We make sure you get what you were promised.</p>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-9cd455d elementor-invisible" data-id="9cd455d" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:100,&quot;background_background&quot;:&quot;classic&quot;}">
-														<div class="elementor-widget-wrap elementor-element-populated">
-															<div class="elementor-element elementor-element-b360483 elementor-view-stacked elementor-shape-square elementor-widget elementor-widget-icon" data-id="b360483" data-element_type="widget" data-widget_type="icon.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-icon-wrapper">
-																		<div class="elementor-icon">
-																			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-61 0 488 488">
-																				<path d="M321.742 67H274V36.984a5.673 5.673 0 0 0-1.543-4.195A5.672 5.672 0 0 0 268.359 31h-40.968c-6.196-18-24.223-31-44.645-31h-.144c-20 0-37.625 13-44.391 31H97.64a5.672 5.672 0 0 0-4.098 1.79A5.673 5.673 0 0 0 92 36.983V67H44.258C20.028 67 0 86.043 0 109.285v336.567C0 469.094 20.027 488 44.258 488h277.484c24.23 0 44.258-18.906 44.258-42.148V109.285C366 86.043 345.973 67 321.742 67zM104 43h38.621a6.009 6.009 0 0 0 5.813-4.512c4.007-15.597 18.078-26.5 34.183-26.488h.113c16.551 0 30.954 11.047 34.243 26.262A6.003 6.003 0 0 0 222.836 43H262v58H104zm250 402.852C354 462.477 339.355 476 321.742 476H44.258C26.645 476 12 462.477 12 445.852V109.285C12 92.66 26.645 79 44.258 79H92v27.7c0 3.316 2.324 6.3 5.64 6.3h170.72c3.316 0 5.64-2.984 5.64-6.3V79h47.742C339.355 79 354 92.66 354 109.285zm0 0"></path>
-																				<path d="M256.742 415c3.317 0 6-2.688 6-6s-2.683-6-6-6H109.258c-3.317 0-6 2.688-6 6s2.683 6 6 6zm0 0M286.742 429H79.258c-3.317 0-6 2.688-6 6s2.683 6 6 6h207.484c3.317 0 6-2.688 6-6s-2.683-6-6-6zm0 0M297.672 231.285l-20.457-1.93a98.036 98.036 0 0 0-9.977-24.636l12.989-15.781a6.001 6.001 0 0 0-.387-8.051l-23.73-23.735a5.998 5.998 0 0 0-8.055-.386l-15.989 13.172a96.34 96.34 0 0 0-24.64-10.04L205.5 139.43a5.903 5.903 0 0 0-5.938-5.328L166.302 134h-.04a5.906 5.906 0 0 0-5.972 5.328l-1.93 20.457a98.085 98.085 0 0 0-24.632 9.973l-15.993-13.192a5.998 5.998 0 0 0-8.054.383l-23.735 23.73a5.998 5.998 0 0 0-.386 8.055L98.73 204.72a96.293 96.293 0 0 0-10.043 24.644l-20.355 1.922A5.904 5.904 0 0 0 63 237.258v33.484a5.906 5.906 0 0 0 5.328 5.973l20.457 1.93a98.144 98.144 0 0 0 9.973 24.632L85.566 319.27a5.998 5.998 0 0 0 .383 8.054l23.73 23.735a5.998 5.998 0 0 0 8.055.386l15.985-13.172a96.293 96.293 0 0 0 24.644 10.043l1.922 20.356a5.906 5.906 0 0 0 5.973 5.328h33.484a5.906 5.906 0 0 0 5.973-5.328l1.93-20.457a98.144 98.144 0 0 0 24.632-9.973l15.993 13.192a6.002 6.002 0 0 0 8.054-.38l23.735-23.73a5.995 5.995 0 0 0 .386-8.058l-13.172-15.985a96.293 96.293 0 0 0 10.043-24.644l20.356-1.922a5.906 5.906 0 0 0 5.328-5.973v-33.484a5.906 5.906 0 0 0-5.328-5.973zM291 265.277l-19.246 1.82a5.948 5.948 0 0 0-5.266 4.801 83.719 83.719 0 0 1-11.636 28.653 6.002 6.002 0 0 0 .43 7.066l12.433 15.078-16.024 16.028-15.078-12.43a5.995 5.995 0 0 0-7.066-.41 86.483 86.483 0 0 1-28.738 11.68 5.882 5.882 0 0 0-4.711 5.19L194.278 362h-22.555l-1.82-19.246a5.948 5.948 0 0 0-4.801-5.266 83.719 83.719 0 0 1-28.653-11.636 6.002 6.002 0 0 0-7.066.43l-15.078 12.433-16.028-16.024 12.43-15.078a6 6 0 0 0 .41-7.066 86.483 86.483 0 0 1-11.68-28.738 5.882 5.882 0 0 0-5.19-4.711L75 265.278v-22.555l19.246-1.82a5.948 5.948 0 0 0 5.266-4.801 83.719 83.719 0 0 1 11.636-28.653 6.002 6.002 0 0 0-.43-7.066l-12.433-15.078 16.024-16.028 15.078 12.426a6.001 6.001 0 0 0 7.066.414 86.409 86.409 0 0 1 28.738-11.683 5.999 5.999 0 0 0 4.711-5.297l1.817-19.32 22.344.14 1.824 19.39a5.995 5.995 0 0 0 4.8 5.321 83.852 83.852 0 0 1 28.653 11.664 6.001 6.001 0 0 0 7.066-.414l15.078-12.426 16.032 16.031-12.223 14.868a6.001 6.001 0 0 0-.41 7.058 86.429 86.429 0 0 1 11.683 28.742 5.874 5.874 0 0 0 5.192 4.711l19.242 1.82zm0 0"></path>
-																				<path d="M129.688 200.688c-29.442 29.445-29.446 77.18 0 106.625s77.18 29.445 106.625 0 29.44-77.18 0-106.625c-29.461-29.399-77.165-29.399-106.625 0zm98.14 98.14c-24.754 24.727-64.863 24.715-89.598-.027-24.738-24.746-24.738-64.856 0-89.602 24.735-24.742 64.844-24.754 89.598-.027 24.719 24.773 24.719 64.883 0 89.656zm0 0"></path>
-																				<path d="M183 224.453c6.387.008 11.559 5.18 11.566 11.567 0 3.312 2.688 6 6 6s6-2.688 6-6A23.6 23.6 0 0 0 189 213.23V209c0-3.313-2.688-6-6-6s-6 2.688-6 6v4.23c-11.457 3.016-18.89 14.067-17.371 25.813 1.52 11.75 11.527 20.543 23.371 20.543 6.39 0 11.57 5.18 11.57 11.566 0 6.391-5.18 11.57-11.57 11.57-6.387 0-11.566-5.179-11.566-11.57 0-3.312-2.688-6-6-6s-6 2.688-6 6A23.608 23.608 0 0 0 177 293.945V299c0 3.312 2.688 6 6 6s6-2.688 6-6v-5.055c11.457-3.015 18.895-14.066 17.375-25.816S194.848 247.586 183 247.586c-6.387 0-11.566-5.18-11.566-11.566 0-6.391 5.18-11.567 11.566-11.567zm0 0"></path>
-																			</svg>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-38b5ec2 elementor-widget elementor-widget-spacer" data-id="38b5ec2" data-element_type="widget" data-widget_type="spacer.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-spacer">
-																		<div class="elementor-spacer-inner"></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-8d602a0 elementor-widget elementor-widget-heading" data-id="8d602a0" data-element_type="widget" data-widget_type="heading.default">
-																<div class="elementor-widget-container">
-																	<h2 class="elementor-heading-title elementor-size-default">Evaluation</h2>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-dadcced elementor-widget elementor-widget-spacer" data-id="dadcced" data-element_type="widget" data-widget_type="spacer.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-spacer">
-																		<div class="elementor-spacer-inner"></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-b4f1b1b elementor-widget elementor-widget-spacer" data-id="b4f1b1b" data-element_type="widget" data-widget_type="spacer.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-spacer">
-																		<div class="elementor-spacer-inner"></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-b75d41c elementor-widget elementor-widget-text-editor" data-id="b75d41c" data-element_type="widget" data-widget_type="text-editor.default">
-																<div class="elementor-widget-container">
-																	<p>We offer you free evaluation to get a mortgage loan.</p>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-0069387 elementor-invisible" data-id="0069387" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:100,&quot;background_background&quot;:&quot;classic&quot;}">
-														<div class="elementor-widget-wrap elementor-element-populated">
-															<div class="elementor-element elementor-element-29a2a54 elementor-view-stacked elementor-shape-square elementor-widget elementor-widget-icon" data-id="29a2a54" data-element_type="widget" data-widget_type="icon.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-icon-wrapper">
-																		<div class="elementor-icon">
-																			<svg xmlns="http://www.w3.org/2000/svg" id="OutlineExpand" height="512" viewBox="0 0 64 64" width="512">
-																				<path d="m57 25.59 1.315.893c.167.113.362.173.562.173.062 0 .126-.006.188-.018.26-.05.49-.201.639-.421l2.246-3.311c.311-.457.191-1.079-.266-1.389l-29.122-19.761c-.34-.23-.783-.23-1.123 0l-29.124 19.762c-.457.31-.576.932-.266 1.389l2.246 3.311c.148.22.379.371.639.421.262.05.531-.007.75-.155l1.316-.894v10.005c-.586.256-1.065.729-1.316 1.351-1.681 4.156-3.684 9.618-3.684 12.054 0 3.59 2.09 6.378 5 6.903v4.097h-5v2h60v-2h-5zm-51.611-1.323-1.123-1.657 27.734-18.819 27.734 18.819-1.123 1.656-26.049-17.676c-.17-.115-.366-.173-.562-.173s-.392.058-.562.173zm-1.389 24.733c0-1.625 1.289-5.745 3.537-11.304.115-.283.362-.313.463-.313s.348.03.463.313c2.248 5.559 3.537 9.679 3.537 11.304 0 2.897-1.683 5-4 5s-4-2.103-4-5zm5 6.903c2.91-.525 5-3.313 5-6.903 0-2.436-2.003-7.898-3.684-12.054-.251-.622-.73-1.095-1.316-1.351v-11.362l23-15.607 23 15.607v19.465l-.168-.252c-.371-.557-1.293-.557-1.664 0l-2 3c-.109.163-.168.357-.168.554v2h-2v-2c0-.197-.059-.391-.168-.555l-2-3c-.371-.557-1.293-.557-1.664 0l-2 3c-.109.164-.168.358-.168.555v2h-2v-2c0-.197-.059-.391-.168-.555l-2-3c-.371-.557-1.293-.557-1.664 0l-2 3c-.109.164-.168.358-.168.555v13h-6v-19c0-.553-.447-1-1-1h-11c-.553 0-1 .447-1 1v19h-7zm30 4.097h-2v-12.697l1-1.5 1 1.5zm2-9h2v2h-2zm0 4h2v5h-2zm6 5h-2v-12.697l1-1.5 1 1.5zm2-9h2v2h-2zm0 4h2v5h-2zm-22 5h-9v-18h9zm26 0v-12.697l1-1.5 1 1.5v12.697z"></path>
-																				<path d="m29 33h6c2.206 0 4-1.794 4-4v-6c0-2.206-1.794-4-4-4h-6c-2.206 0-4 1.794-4 4v6c0 2.206 1.794 4 4 4zm-2-4v-2h4v4h-2c-1.103 0-2-.897-2-2zm8 2h-2v-4h4v2c0 1.103-.897 2-2 2zm2-8v2h-4v-4h2c1.103 0 2 .897 2 2zm-8-2h2v4h-4v-2c0-1.103.897-2 2-2z"></path>
-																				<path d="m23 50h2v2h-2z"></path>
-																			</svg>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-7cc3a6a elementor-widget elementor-widget-spacer" data-id="7cc3a6a" data-element_type="widget" data-widget_type="spacer.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-spacer">
-																		<div class="elementor-spacer-inner"></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-eb85597 elementor-widget elementor-widget-heading" data-id="eb85597" data-element_type="widget" data-widget_type="heading.default">
-																<div class="elementor-widget-container">
-																	<h2 class="elementor-heading-title elementor-size-default">Photoshoot</h2>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-239e416 elementor-widget elementor-widget-spacer" data-id="239e416" data-element_type="widget" data-widget_type="spacer.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-spacer">
-																		<div class="elementor-spacer-inner"></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-4cc713b elementor-widget elementor-widget-spacer" data-id="4cc713b" data-element_type="widget" data-widget_type="spacer.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-spacer">
-																		<div class="elementor-spacer-inner"></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-dabbb2f elementor-widget elementor-widget-text-editor" data-id="dabbb2f" data-element_type="widget" data-widget_type="text-editor.default">
-																<div class="elementor-widget-container">
-																	<p>We prepare your home visual presentation.</p>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</section> -->
 										</div>
 									</div>
 								</div>
 							</section>
-							<!-- <section class="elementor-section elementor-top-section elementor-element elementor-element-6a9ab524 elementor-section-height-min-height elementor-section-stretched animated-fast elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="6a9ab524" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;none&quot;}">
-								<div class="elementor-container elementor-column-gap-default">
-									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5133bb5" data-id="5133bb5" data-element_type="column">
-										<div class="elementor-widget-wrap elementor-element-populated">
-											<section class="elementor-section elementor-inner-section elementor-element elementor-element-4a6e66f4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4a6e66f4" data-element_type="section">
-												<div class="elementor-container elementor-column-gap-default">
-													<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-797afd69" data-id="797afd69" data-element_type="column">
-														<div class="elementor-widget-wrap elementor-element-populated">
-															<div class="elementor-element elementor-element-28e9c2b elementor-invisible elementor-widget elementor-widget-heading" data-id="28e9c2b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="heading.default">
-																<div class="elementor-widget-container">
-																	<p class="elementor-heading-title elementor-size-default">OUR CLIENTS</p>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-5d362c30 elementor-invisible elementor-widget elementor-widget-heading" data-id="5d362c30" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="heading.default">
-																<div class="elementor-widget-container">
-																	<h2 class="elementor-heading-title elementor-size-default">What are our clients saying about us</h2>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-544908e8" data-id="544908e8" data-element_type="column">
-														<div class="elementor-widget-wrap"></div>
-													</div>
-												</div>
-											</section>
-											<section class="elementor-section elementor-inner-section elementor-element elementor-element-2659f457 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="2659f457" data-element_type="section">
-												<div class="elementor-container elementor-column-gap-default">
-													<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5e242126 elementor-invisible" data-id="5e242126" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:100}">
-														<div class="elementor-widget-wrap elementor-element-populated">
-															<div class="elementor-element elementor-element-67eb6162 elementor-widget elementor-widget-WpResidence_Testimonial" data-id="67eb6162" data-element_type="widget" data-widget_type="WpResidence_Testimonial.default">
-																<div class="elementor-widget-container">
-																	<div class="testimonial-container type_class_4 ">
-																		<div class="testimonial-image" style="background-image:url(https://madrid.wpresidence.net/wp-content/uploads/2021/11/testimonial1.jpeg)"></div>
-																		<div class="testimonial-author-line">Dana Gilmore </div>
-																		<div class="testimonial-location-line"> Excellent team! 🏆 </div>
-																		<div class="testimonial-text">The WP Estate team did an outstanding job helping me buy my first home. The high level of service and dedication.</div>
-																		<div class="testimmonials_starts"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-44e6cd14 elementor-widget elementor-widget-WpResidence_Testimonial" data-id="44e6cd14" data-element_type="widget" data-widget_type="WpResidence_Testimonial.default">
-																<div class="elementor-widget-container">
-																	<div class="testimonial-container type_class_4 ">
-																		<div class="testimonial-image" style="background-image:url(https://madrid.wpresidence.net/wp-content/uploads/2021/11/testimonial5.jpg)"></div>
-																		<div class="testimonial-author-line">Anna McKenzie </div>
-																		<div class="testimonial-location-line"> developer </div>
-																		<div class="testimonial-text">As I move forward to now BUY my next house, I am extremely certain Residence will be the right partner to help me.</div>
-																		<div class="testimmonials_starts"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-628c8fcd elementor-invisible" data-id="628c8fcd" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:150}">
-														<div class="elementor-widget-wrap elementor-element-populated">
-															<div class="elementor-element elementor-element-8d6180b elementor-widget elementor-widget-WpResidence_Testimonial" data-id="8d6180b" data-element_type="widget" data-widget_type="WpResidence_Testimonial.default">
-																<div class="elementor-widget-container">
-																	<div class="testimonial-container type_class_4 ">
-																		<div class="testimonial-image" style="background-image:url(https://madrid.wpresidence.net/wp-content/uploads/2021/11/testimonial2.jpeg)"></div>
-																		<div class="testimonial-author-line">Susan Barkley </div>
-																		<div class="testimonial-location-line"> happy seller </div>
-																		<div class="testimonial-text">The WP Estate team did an outstanding job helping me buy my first home. The high level of service and dedication.</div>
-																		<div class="testimmonials_starts"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-c4bb1e9 elementor-widget elementor-widget-WpResidence_Testimonial" data-id="c4bb1e9" data-element_type="widget" data-widget_type="WpResidence_Testimonial.default">
-																<div class="elementor-widget-container">
-																	<div class="testimonial-container type_class_4 ">
-																		<div class="testimonial-image" style="background-image:url(https://madrid.wpresidence.net/wp-content/uploads/2021/11/testimonial4.jpg)"></div>
-																		<div class="testimonial-author-line">Stephanie Barkley </div>
-																		<div class="testimonial-location-line"> happy seller </div>
-																		<div class="testimonial-text">The sale went smoothly, and we just closed on an ideal new place we're excited to call home. </div>
-																		<div class="testimmonials_starts"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-78ff659d elementor-invisible" data-id="78ff659d" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeIn&quot;,&quot;animation_delay&quot;:200}">
-														<div class="elementor-widget-wrap elementor-element-populated">
-															<div class="elementor-element elementor-element-3fed980c elementor-widget elementor-widget-WpResidence_Testimonial" data-id="3fed980c" data-element_type="widget" data-widget_type="WpResidence_Testimonial.default">
-																<div class="elementor-widget-container">
-																	<div class="testimonial-container type_class_4 ">
-																		<div class="testimonial-image" style="background-image:url(https://madrid.wpresidence.net/wp-content/uploads/2021/11/testimonial3.jpeg)"></div>
-																		<div class="testimonial-author-line">Lisa Simpson </div>
-																		<div class="testimonial-location-line"> happy buyer </div>
-																		<div class="testimonial-text">We hired the WP Estate team as our buyer agent because they are specifically trained in Short Sale & Foreclosure.</div>
-																		<div class="testimmonials_starts"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-																	</div>
-																</div>
-															</div>
-															<div class="elementor-element elementor-element-7daf2b94 elementor-widget elementor-widget-WpResidence_Testimonial" data-id="7daf2b94" data-element_type="widget" data-widget_type="WpResidence_Testimonial.default">
-																<div class="elementor-widget-container">
-																	<div class="testimonial-container type_class_4 ">
-																		<div class="testimonial-image" style="background-image:url(https://madrid.wpresidence.net/wp-content/uploads/2021/11/testimonials6.jpg)"></div>
-																		<div class="testimonial-author-line">Janine Royce </div>
-																		<div class="testimonial-location-line"> happy buyer </div>
-																		<div class="testimonial-text">His professionalism, personality, attention to detail, responsiveness and his ability to close the deal was Outstanding</div>
-																		<div class="testimmonials_starts"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</section>
-										</div>
-									</div>
-								</div>
-							</section> -->
 							<section class="elementor-section elementor-top-section elementor-element elementor-element-c8121bb elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default" data-id="c8121bb" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 								<div class="elementor-container elementor-column-gap-no">
 									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-532a272" data-id="532a272" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -1005,16 +731,6 @@
 																<div class="elementor-widget-container">
 																	
 																<form class="elementor-form" method="post" action="">
-																		<!-- <div class="alert-box error">
-																			<div class="alert-message" id="alert-agent-contact"></div>
-																		</div> -->
-																		<!-- <input name="prop_id" type="hidden" id="agent_property_id" value="">
-																		<input name="prop_id" type="hidden" id="agent_id" value="">
-																		<input name="prop_id" type="hidden" id="contact_form_elementor" value="1">
-																		<input type="hidden" name="contact_ajax_nonce" id="agent_property_ajax_nonce" value="ef123dddee" />
-																		<input type="hidden" id="wpresidence_form_id" name="wpresidence_form_id" value="wpresidence_form_2450" />
-																		<input type="hidden" id="elementor_email_subject" name="email_suject" value="New email from &quot;WpResidence Real Estate Theme Demo&quot; " /> -->
-
 																		<div class="elementor-form-fields-wrapper elementor-labels-above">
 																			<div class="elementor-field-group elementor-column form-group elementor-field-group-name elementor-col-100"><label for="form-field-name" class="elementor-field-label">Name</label><input type="text" name="name" id="form-field-name" class="elementor-field form-control elementor-size-sm elementor-field-textual" placeholder="Name"></div>
 
@@ -1024,8 +740,6 @@
 
 																			<div class="elementor-field-group elementor-column form-group elementor-field-group-message elementor-col-100"><label for="form-field-message" class="elementor-field-label">Message</label><textarea class="form-control elementor-field-textual elementor-field elementor-size-sm" name="message" id="form-field-message" rows="4" placeholder="Message"></textarea></div>
 
-																			
-																			
 																			<div class="elementor-column elementor-col-100">
 																				<button type="submit" class="wpresidence_button wpresidence_button_elementor elementor-button elementor-size-md" name="submit">
 																				Submit </button>
@@ -1080,6 +794,7 @@
 									</div>
 								</div>
 							</section>
+<!--======================================================================Blog Section Starts=======================-->
 							<section class="elementor-section elementor-top-section elementor-element elementor-element-3613e20 elementor-section-height-min-height elementor-section-stretched animated-fast elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="3613e20" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;none&quot;}">
 								<div class="elementor-container elementor-column-gap-default">
 									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8311871" data-id="8311871" data-element_type="column">
@@ -1113,87 +828,37 @@
 															<div class="elementor-element elementor-element-880f14b elementor-invisible elementor-widget elementor-widget-Wpresidence_Blog_Post_List" data-id="880f14b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="Wpresidence_Blog_Post_List.default">
 																<div class="elementor-widget-container">
 																	<div class="article_container  wpestate_latest_listings_sh bottom-post blogs_wrapper" data-category_ids="" data-number="4" data-row-number="4" data-card-version="3" data-sort-by="0" data-page="1">
-																	<?php
-																	   $sql = $link->rawQuery("select * from blog_master where isDeleted=0");
-																		
-																		 foreach ($sql as $blog)	
-																		{
-																		
+																		<?php
+																			$sql = $link->rawQuery("select * FROM blog_master WHERE isDeleted=0 AND FK_Status in(Select PK_status from status_master where STATUS='Published') LIMIT 4");
+																			foreach ($sql as $blog)
+																			{
+
 																		?>
-																		<div  class="col-md-3 shortcode-col  listing_wrapper blog3v">
-																			<div class="property_listing_blog" data-link="">
-
-
-																				<div class="featured_gradient"></div>
-																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2016/03/portrait__interior9-525x328.jpg);"></div>
-																				<div class="blog_unit_content_v3">
-																					<div class="blog_unit_meta">
-																						Mar 04, 2016 
+																			<div  class="col-md-3 shortcode-col  listing_wrapper blog3v">
+																				<div class="property_listing_blog" data-link="">
+																					<div class="featured_gradient"></div>
+																					<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2016/03/portrait__interior9-525x328.jpg);"></div>
+																					<div class="blog_unit_content_v3">
+																						<div class="blog_unit_meta">
+																							Mar 04, 2016 
+																						</div>
+																						<h4>
+																							<a href="" class="blog_unit_title"><?php echo $blog['BlogTitle'] ?></a>
+																						</h4>
+																						<a class="read_more" href="Singleblog.php?pid=<?php echo $blog["PK_BlogID"]; ?>"> Continue reading<i class="fas fa-angle-right"></i> </a>
 																					</div>
-																					<h4>
-																						<a href="" class="blog_unit_title"><?php echo $blog['BlogTitle'] ?></a>
-																					</h4>
-																					<a class="read_more" href="Singleblog.php?pid=<?php echo $blog["PK_BlogID"]; ?>"> Continue reading<i class="fas fa-angle-right"></i> </a>
 																				</div>
-																			
-																			
 																			</div>
-																		
-																			</div>
-																			<?php
+																		<?php
 																			}
-																			?>
-																		<!-- <div class="col-md-3 shortcode-col  listing_wrapper blog3v">
-																			<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/">
-																				<div class="featured_gradient"></div>
-																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/portrait_july2019-525x328.jpg);"></div>
-																				<div class="blog_unit_content_v3">
-																					<div class="blog_unit_meta">
-																						May 28, 2014 
-																					</div>
-																					<h4>
-																						<a href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/" class="blog_unit_title">The top 5 most livable Las Vegas neighbourho...</a>
-																					</h4>
-																					<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/"> Continue reading<i class="fas fa-angle-right"></i> </a>
-																				</div>
-																			</div>
-																		</div> -->
-																		<!-- <div class="col-md-3 shortcode-col  listing_wrapper blog3v">
-																			<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/">
-																				<div class="featured_gradient"></div>
-																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/house_4-525x328.jpeg);"></div>
-																				<div class="blog_unit_content_v3">
-																					<div class="blog_unit_meta">
-																						May 27, 2014 
-																					</div>
-																					<h4>
-																						<a href="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/" class="blog_unit_title">In Las Vegas home prices have doubled in the...</a>
-																					</h4>
-																					<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/"> Continue reading<i class="fas fa-angle-right"></i> </a>
-																				</div>
-																			</div>
-																		</div> -->
-																		<!-- <div class="col-md-3 shortcode-col  listing_wrapper blog3v">
-																			<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/">
-																				<div class="featured_gradient"></div>
-																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior47-525x328.jpg);"></div>
-																				<div class="blog_unit_content_v3">
-																					<div class="blog_unit_meta">
-																						May 27, 2014 
-																					</div>
-																					<h4>
-																						<a href="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/" class="blog_unit_title">Las Vegas neighbourhoods where it’s better t...</a>
-																					</h4>
-																					<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/"> Continue reading<i class="fas fa-angle-right"></i> </a>
-																				</div>
-																			</div>
-																		</div> -->
-																		<div class="wpestate_listing_sh_loader">
-																			<div class="new_prelader"></div>
-																		</div>
-																		<div class="listinglink-wrapper_sh_listings">
-																			<a href="blogList.php"><span class="wpresidence_button wpestate_item_list_sh blog_list_loader"> load articles </span></a>
-																		</div>
+																		?>
+																	</div> 
+																	<div class="wpestate_listing_sh_loader">
+																		<div class="new_prelader"></div>
+																	</div>
+																	<div class="listinglink-wrapper_sh_listings">
+																		<a href="blogList.php"><span class="wpresidence_button wpestate_item_list_sh blog_list_loader"> load articles </span></a>
+																	</div>
 																	</div>
 																</div>
 															</div>
@@ -1205,10 +870,11 @@
 									</div>
 								</div>
 							</section>
+<!--=======================================Blog Section End===========================================================-->
 						</div>
 					</div>
 				</div>
-            	<?php include("subfooter.php"); ?>
+            	<?php include ("subFooter.php"); ?>
 			</div>
-        <?php include("footer.php"); ?>
+        <?php include ("footer.php"); ?>
 </html>

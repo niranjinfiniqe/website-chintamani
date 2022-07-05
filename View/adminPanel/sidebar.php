@@ -12,7 +12,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Lease.php">
+                    <a href="lease.php">
                         <i data-feather="grid"></i>
                         <span data-key="t-apps">Leasing</span>
                     </a>
@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="Projects.php">
+                    <a href="inquiry.php">
                         <i data-feather="grid"></i>
                         <span data-key="t-apps">inquiry</span>
                     </a>

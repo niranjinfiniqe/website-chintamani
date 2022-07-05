@@ -20,7 +20,7 @@
 	<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
 
 
-		<?php include("subheader.php"); ?>
+		<?php include("subHeader.php"); ?>
 
 
 
@@ -1355,7 +1355,7 @@ window.onclick = function(event) {
 					</div>
 				</div>
 			</div>
-			<?php include("subfooter.php"); ?>
+			<?php include("subFooter.php"); ?>
 		</div>
 		<?php include("footer.php"); ?>
 

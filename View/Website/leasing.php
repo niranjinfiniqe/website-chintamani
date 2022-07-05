@@ -350,7 +350,7 @@ echo $query1;
 
 <div class="website-wrapper" id="all_wrapper" style="background:pink">
 	<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
-		<?php include("subheader.php"); ?>
+		<?php include("subHeader.php"); ?>
 		<div class="container content_wrapper">
 			<div  class="row">
 				<div  class=" col-md-12 rightmargin ">
@@ -849,7 +849,7 @@ echo $query1;
 					</div>
 				</div>
 			</footer> -->
-	<?php include("subfooter.php"); ?>
+	<?php include("subFooter.php"); ?>
 </div>
 <?php include("footer.php"); ?>
 <!-- <div id="modal_login_wrapper">

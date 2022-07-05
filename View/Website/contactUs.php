@@ -766,7 +766,7 @@
 					</div>
 				</div>
 			</div>
-			<?php include("subfooter.php"); ?>
+			<?php include("subFooter.php"); ?>
 		</div>
         <?php include("footer.php"); ?>
 		<!-- <div id="modal_login_wrapper">

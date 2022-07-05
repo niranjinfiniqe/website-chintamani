@@ -494,7 +494,7 @@
 				</div>
 				
 			</div>
-			<?php include ("subfooter.php"); ?>
+			<?php include ("subFooter.php"); ?>
 			<!-- <footer id="colophon" class="  footer_back_repeat  ">
 				<div id="footer-widget-area" class="row ">
 					<div id="first" class="widget-area col-md-4 ">
