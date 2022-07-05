@@ -401,27 +401,37 @@
 							</div> -->
 							<div id="listing_ajax_container_agent">
 							<?php
-								$sql = $link->rawQuery("select * from project_master where isDeleted=0 and PK_Project");
+								$sql = mysqli_query($con,"select * from project_master where isDeleted=0 ");
 									foreach ($sql as $pro)
 									{
 										?>
 								
 								<div class="col-md-4 listing_wrapper">
-									<div class="agent_unit" data-link="SingleProject.php?pid=<?php echo $pro["PK_Project"]; ?>">
-										<div class="agent-unit-img-wrapper">
-											<img width="500" height="328"  alt="<?php echo $pro['ThumbnailImageURL']; ?>" src="<?php echo $pro['ThumbnailImageURL']; ?>" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="" sizes="(max-width: 500px) 100vw, 500px" /> 
+									<div class="agent_unit" >
+									
+										<div class="agent-unit-img-wrapper"  data-link="SingleProject.php?pid=<?php echo $pro["PK_Project"]; ?>" >
+											<img style="width:525px;height:380px" alt="<?php echo $pro['ThumbnailImageURL']; ?>" src="<?php echo $pro['ThumbnailImageURL']; ?>" class="lazyload img-responsive wp-post-image" alt="" loading="lazy" srcset="" sizes="(max-width: 500px) 100vw, 500px" /> 
+											
 										</div>
-										<h4> <a href="SingleProject.php?pid=<?php echo $pro["PK_Project"]; ?>">
-										<?php echo $pro['ProjectName'] ?></a></h4>
+										<a style="position:relative;left:425px;top:40px"  href="<?php echo $pro['BrochureURL']; ?>" target="_blank" ><i class="fas fa-download" ></i></a>
+									
+										 
+
+										
+											<h4> <a href="SingleProject.php?pid=<?php echo $pro["PK_Project"]; ?>">
+										<?php echo $pro['ProjectName'] ?></a> 
+									</h4>
+
+										
+									
+										
+										
 										<div class="agent_position">
 										<?php echo $pro['ProjectType'] ?>
 										</div>
+										
 										<div class="agent_card_content"><?php echo $pro['ShortDescription'] ?><a href="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/" class="unit_more_x">...</a></div>
-										<!-- <div class="agent_unit_social agent_list">
-											<a class="agent_unit_facebook" href="#" rel="noopener"><i class="fab fa-facebook-f"></i></a> <a class="agent_unit_twitter" href="#" rel="noopener"><i class="fab fa-twitter"></i></a> <a class="agent_unit_linkedin" href="#" rel="noopener"><i class="fab fa-linkedin-in"></i></a> <a class="agent_unit_pinterest" href="#" rel="noopener"><i class="fab fa-pinterest-p"></i></a> <a class="agent_unit_instagram" href="#" rel="noopener"><i class="fab fa-instagram"></i></a>
-											<div class="agent_unit_phone"><a href="tel:(305) 555-4555" rel="noopener"><i class="fas fa-phone"></i></a></div>
-											<div class="agent_unit_email"><a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#97fafef4fff6f2fbd7e0f2f5e4fee3f2b9f9f2e3" rel="noopener"><i class="fas fa-envelope"></i></a></div>
-										</div> -->
+							
 									</div>
 									</div>
 									<?php
