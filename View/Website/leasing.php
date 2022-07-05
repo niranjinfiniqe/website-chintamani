@@ -5,24 +5,341 @@
 include("../../Helper/connect.php");
 
 
+
 //    Pagination
 
-$query = "select * from leasing_master WHERE isDeleted = 0 and FK_Status = 8";
-$exce = mysqli_query($con, $query);
+// $query = "select * from leasing_master WHERE isDeleted = 0 and FK_Status = 8";
+// $exce = mysqli_query($con, $query);
+// $query = "select * from leasing_master WHERE isDeleted = 0 and FK_Status = 8";
+// $exce = mysqli_query($con, $query);
 
-$Total_no_of_lease_available = mysqli_num_rows($exce);
-$lease_to_be_displayed = "6";
-$no_of_pages = ceil($Total_no_of_lease_available / $lease_to_be_displayed);
+// $Total_no_of_lease_available = mysqli_num_rows($exce);
+// $lease_to_be_displayed = "6";
+// $no_of_pages = ceil($Total_no_of_lease_available / $lease_to_be_displayed);
 
-if (isset($_GET["page_id"])) {
-	$Pageid = $_GET["page_id"];
-} else {
-	$Pageid = 1;
+// if (isset($_GET["page_id"])) {
+// 	$Pageid = $_GET["page_id"];
+// } else {
+// 	$Pageid = 1;
+// }
+
+if(isset($_GET['query'])){
+	$query1 = $_GET['query'];
+	$count = $_GET['count'];
+	echo $query1,$count;
+	// $exce_for_pagination = mysqli_query($con, $query1);
+	$Total_no_of_lease_available = $count;
+
+	$lease_to_be_displayed = "6";
+	$no_of_pages = ceil($Total_no_of_lease_available / $lease_to_be_displayed);
+	if (isset($_GET["page_id"])) {
+		$Pageid = $_GET["page_id"];
+	} else {
+		$Pageid = 1;
+	}
+	$offset  = ($Pageid - 1) * $lease_to_be_displayed;
+	// offset- The number after which need to fetch the rows.
+	$exce_for_pagination = mysqli_query($con, $query1."LIMIT {$offset},{$lease_to_be_displayed};");
+
 }
-$offset  = ($Pageid - 1) * $lease_to_be_displayed;
-// offset- The number after which need to fetch the rows.
-$query_for_pagniation = "select * from leasing_master where isDeleted=0 and FK_Status = 8 LIMIT {$offset},{$lease_to_be_displayed}";
-$exce_for_pagination = mysqli_query($con, $query_for_pagniation);
+// $offset  = ($Pageid - 1) * $lease_to_be_displayed;
+// // offset- The number after which need to fetch the rows.
+// $query_for_pagniation = "select * from leasing_master where isDeleted=0 and FK_Status = 8 LIMIT {$offset},{$lease_to_be_displayed}";
+// $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
+else{
+
+	echo "first time";
+
+	$query1 = "SELECT * FROM leasing_master";
+
+$filtered_get = array_filter($_POST); // removes empty values from $_GET
+// echo "<br>";
+print_r($filtered_get);
+// echo "<br>";
+
+if (count($filtered_get)) { // not empty
+
+	$query1 .= " WHERE isDeleted = 0 and FK_Status = 8 AND";
+	$count = count($filtered_get);
+
+	$keynames = array_keys($filtered_get); // make array of key names from $filtered_get
+	// print_r($keynames);
+
+	foreach ($filtered_get as $key => $value) {
+
+		if ($key == "Location") {
+			$range = $value;
+			$query1 .= " $key between '$value' AND '$value'";
+		} else {
+			$range = explode("-", $value);
+			$query1 .= " $key between $range[0] AND $range[1]";
+		}
+
+		if ($count > 1) {
+			$query1 .= " AND";
+			$count--;
+		}
+	}
+}
+// echo $query1;
+$query2 = $query1.";";
+$exce = mysqli_query($con, $query2);
+
+
+//------- PAGINATION STARTS------
+
+
+				$Total_no_of_lease_available = mysqli_num_rows($exce);
+				$lease_to_be_displayed = "6";
+				$no_of_pages = ceil($Total_no_of_lease_available / $lease_to_be_displayed);
+
+				if (isset($_GET["page_id"])) {
+					$Pageid = $_GET["page_id"];
+				} else {
+					$Pageid = 1;
+				}
+				$offset  = ($Pageid - 1) * $lease_to_be_displayed;
+				// offset- The number after which need to fetch the rows.
+
+				$query3 = $query1." LIMIT {$offset},{$lease_to_be_displayed};";
+				// $query_for_pagniation = 
+				$exce_for_pagination = mysqli_query($con, $query3);
+echo $query1;
+	
+}
+
+
+
+
+//------- PAGINATION ENDS------
+
+
+
+
+// print_r(array_values($_POST));
+// $count = 0;
+
+// $filter_keys = array();
+// $filter_values = array();
+
+// foreach ($_POST as $key => $value) {
+
+
+// 	if ($value != null ) {
+// 	$count++;
+//    array_push($filter_keys,$key);
+//    array_push($filter_values,$value);
+// 	}
+
+
+// }
+
+
+// if(isset($_GET['location'])){
+// 	echo "success";
+// 	echo $_GET['location'];
+// 	array_push($filter_keys,"Location");
+// 	array_push($filter_values,$_GET['location']);
+
+// }
+// echo $_GET['count'];
+// print_r($filter_keys);
+// echo "<br>";
+// print_r($filter_values);
+
+
+
+
+
+
+
+
+// 		if($count == 1 || $_GET['count'] == 1){
+// 			echo "check 2";
+// 			if( in_array("Price",$filter_keys) || in_array("BuildUpArea",$filter_keys) || in_array("Packs",$filter_keys)){
+// 				echo "1check 3";
+// 				$range = explode("-",$filter_values[0]);
+// 				print_r($range);
+// 				$query_to_filter_data_by_range = mysqli_query($con,"select * from leasing_master where isDeleted = 0 and FK_Status = 8 and $filter_keys[0] between $range[0] and $range[1]");
+
+// 				$Total_no_of_lease_available = mysqli_num_rows($query_to_filter_data_by_range);
+// 				$lease_to_be_displayed = "6";
+// 				$no_of_pages = ceil($Total_no_of_lease_available / $lease_to_be_displayed);
+
+// 				if (isset($_GET["page_id"])) {
+// 					$Pageid = $_GET["page_id"];
+// 				} else {
+// 					$Pageid = 1;
+// 				}
+// 				$offset  = ($Pageid - 1) * $lease_to_be_displayed;
+// 				// offset- The number after which need to fetch the rows.
+// 				$query_for_pagniation = "select * from leasing_master where isDeleted=0 and FK_Status = 8 and $filter_keys[0] between $range[0] and $range[1] LIMIT {$offset},{$lease_to_be_displayed}";
+// 				$exce_for_pagination = mysqli_query($con, $query_for_pagniation);
+
+
+
+
+
+
+
+
+
+// 			}elseif( in_array("Location",$filter_keys)){
+// 				echo "1check 4";
+// 				$query_to_filter_data_by_range = mysqli_query($con,"select * from leasing_master where isDeleted = 0 and FK_Status = 8 and Location = $filter_keys[0] ");
+
+
+// 				$Total_no_of_lease_available = mysqli_num_rows($query_to_filter_data_by_range);
+// 				$lease_to_be_displayed = "6";
+// 				$no_of_pages = ceil($Total_no_of_lease_available / $lease_to_be_displayed);
+
+// 				if (isset($_GET["page_id"])) {
+// 					$Pageid = $_GET["page_id"];
+// 				} else {
+// 					$Pageid = 1;
+// 				}
+// 				$offset  = ($Pageid - 1) * $lease_to_be_displayed;
+// 				// offset- The number after which need to fetch the rows.
+// 				$query_for_pagniation = "select * from leasing_master where isDeleted=0 and FK_Status = 8 and Location = $filter_keys[0] LIMIT {$offset},{$lease_to_be_displayed}";
+// 				$exce_for_pagination = mysqli_query($con, $query_for_pagniation);
+
+// 			}
+
+
+// 		}elseif ($count == 2) {
+// 			echo "2 check 1";
+// 			if(in_array("Price",$filter_keys) || in_array("BuildUpArea",$filter_keys) || in_array("Packs",$filter_keys)){
+// 				if(in_array("Location",$filter_keys)){
+// 					$range = explode("-",$filter_values[1]);
+// 					$query_to_filter_data_by_range = mysqli_query($con,"select * from leasing_master where isDeleted = 0 and FK_Status = 8 and $filter_keys[1] between $range[0] and $range[1] and Location = '$filter_values[0]' ");
+
+
+// 				}else{
+// 					$range1 = explode("-",$filter_values[0]);
+// 					$range2 = explode("-",$filter_values[1]);
+
+
+// 					$query_to_filter_data_by_range = mysqli_query($con,"select * from leasing_master where isDeleted = 0 and FK_Status = 8 and $filter_keys[0] between $range1[0] and $range1[1] and $filter_keys[1] between $range2[0] and $range2[1] ");
+// 				}
+
+
+// 			}
+
+
+
+
+// 		}elseif($count == 3){
+// 			echo "count 3 check 1";
+
+// 		}elseif($count == 4){
+
+// 			echo "count 4 check 1";
+
+// 			$range1 = explode("-",$filter_values[1]);
+// 			$range2 = explode("-",$filter_values[2]);
+// 			$range3 = explode("-",$filter_values[3]);
+
+
+// 			$query_to_filter_data_by_range = mysqli_query($con,"select * from leasing_master where isDeleted = 0 and FK_Status = 8 and Location = '$filter_values[0]' and $filter_keys[1] between $range1[0] and $range1[1]  and $filter_keys[2] between $range2[0] and $range2[1] and $filter_keys[3] between $range3[0] and $rang3[1]");
+
+// 		}
+
+
+
+//    Pagination
+
+// 		echo "<pre>";
+// 		print_r($query_to_filter_data_by_range);
+// echo "</pre>";
+
+
+
+
+
+
+
+
+
+
+
+// if($count == 1){
+
+// 	if()
+
+
+
+// }elseif($count == 2){
+
+// }elseif($count == 3){
+
+
+// }elseif($count == 4){
+
+// }
+
+
+
+
+
+
+
+
+
+
+// if (isset($_POST['filter_search_range'])) {
+// 	// echo $_POST['filter_search_range'];
+// 	$a = $_POST['filter_search_range'];
+// 	$range = explode("-",$a);
+// 	// print_r($range);
+// 	$query_to_filter_data_by_range =mysqli_query($con,"select * from leasing_master where isDeleted = 0 and FK_Status = 8 and Price between $range[0] and $range[1]");
+// 	if($query_to_filter_data_by_range){
+// 		echo "success";
+// 		while($row = mysqli_fetch_array($query_to_filter_data_by_range)){
+// 			echo $row['Price'];
+// 	}
+
+// }else{
+// 	echo "failsd";
+// }
+
+// }
+
+
+
+
+// while($row = mysqli_fetch_array($query_to_filter_data)){
+// 	echo $row['Price'];
+// }
+
+
+// filter_search_location
+// filter_search_range
+// filter_search_capacity
+// echo "<pre>";
+// if(isset($_POST['filter_search_location'])){
+
+// echo $_POST['filter_search_location'];
+// echo "<br>";
+// }
+// if (isset($_POST['filter_search_range'])) {
+// 	echo $_POST['filter_search_range'];
+// 	echo "<br>";
+// }
+// if (isset($_POST['filter_search_capacity'])) {
+// 	echo $_POST['filter_search_capacity'];
+// 	echo "<br>";
+// }
+// if (isset($_POST['filter_search_square_ft'])) {
+// 	echo $_POST['filter_search_square_ft'];
+// 	echo "<br>";
+// }
+// echo "</pre>";
+
+
+
+
+
+
 
 
 
@@ -219,9 +536,8 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
 						for ($i = 1; $i <= $no_of_pages; $i++) {
 						?>
 
-							<li class="<?php if ($Pageid == $i) echo 'active'; ?>"> <a id="hover" href="leasing.php?page_id=<?php echo $i; ?>"><?php echo $i; ?></a>
-							<li>
-
+										<li class="<?php if ($Pageid == $i) echo 'active'; ?>"> <a id="hover" href="leasing.php?page_id=<?php echo $i; ?>&query=<?php echo $query1; ?>&count=<?php echo $Total_no_of_lease_available; ?>"><?php echo $i; ?></a>
+								<li>
 							<?php } ?>
 
 
