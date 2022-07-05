@@ -40,11 +40,7 @@
                 <div class="menu-main-menu-container">
                     <ul id="menu-main-menu" class="menu">
                         <li id="menu-item-19214" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-18618 current_page_item no-megamenu   "><a class="menu-item-link" href="index.php">Home</a></li>
-<<<<<<< HEAD
-                        <li id="menu-item-20475" class="menu-item menu-item-type-custom menu-item-object-custom no-megamenu   "><a class="menu-item-link" target="" href="aboutUs.php">About US</a></li>
-=======
                         <li id="menu-item-20475" class="menu-item menu-item-type-custom menu-item-object-custom no-megamenu   "><a class="menu-item-link" href="aboutUs.php">About US</a></li>
->>>>>>> 35986880079da8b009e685f0fa1f12c580803d2b
                         <li id="menu-item-837" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children no-megamenu   ">
                             <a class="menu-item-link" href="leasing.php">Leasing</a>
                             <!-- <ul  class="  sub-menu ">
