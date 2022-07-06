@@ -31,6 +31,7 @@ if ($row = mysqli_fetch_array($exce)) {
     $VideoURL = $row['VideoURL'];
     $Furnished_Unfurnished = $row['Furnished/Unfurnished'];
     $BuildUpArea = $row['BuildUpArea'];
+    $OfficeNumber = $row['office_number'];
 
     $Keywords = $row['Keywords'];
     $MetaTitle = $row['MetaTitle'];
@@ -137,25 +138,33 @@ if ($isUpdate == 1) {
                                                                                                                                                                                                                 echo $ad['CarpetArea'];
                                                                                                                                                                                                             } ?>">
                                                 </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-tel-input" class="form-label">BuildUp Area</label>
+                                                    <input required value="<?php echo $BuildUpArea ?>" placeholder="BuildUp Area" type="number" name="BuildUpArea" id="BuildUpAread" class="form-control">
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-text-input" class="form-label">Price</label>
+                                                    <input required value="<?php echo $Price ?>" class="form-control" type="number" placeholder="Price" id="Price" name="Price" value="<?php if ($isUpdate == 1) {
+                                                                                                                                                                                            echo $ad['Price'];
+                                                                                                                                                                                        } ?>">
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-tel-input" class="form-label">Display Order</label>
+                                                    <input required value="<?php echo $DisplayOrder ?>" placeholder="Display Order" type="number" name="DisplayOrder" id="DisplayOrder" class="form-control">
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-tel-input" class="form-label">Office Number</label>
+                                                    <input required value="<?php echo $OfficeNumber; ?>" placeholder="Office Number" type="number" name="OfficeNumber" id="OfficeNumber" class="form-control">
+                                                </div>
 
-                                                <div class="col-xl-6 col-md-6 mb-3">
-                                                    <label for="example-search-input" class="form-label">Short Description </label>
-                                                    <textarea class="form-control" type="search" placeholder="Short Description" rows="2" id="ShortDescription" name="ShortDescription"><?php echo $ShortDescription ?></textarea>
-                                                </div>
-                                                <div class="col-xl-6 col-md-6 mb-3">
-                                                    <label for="example-search-input" class="form-label">Long Description</label>
-                                                    <textarea class="form-control" type="search" placeholder="Long Description" rows="2" id="ShortDescription" name="LongDescription"><?php echo $LongDescription ?></textarea>
-                                                </div>
+                                               
                                                 <br>
                                                 <br>
 
 
 
 
-                                                <div class="col-xl-6 col-md-6 mb-3">
-                                                    <label for="example-search-input" class="form-label">Complete Address</label>
-                                                    <textarea required class="form-control" type="search" placeholder="CompleteAddress" rows="2" id="CompleteAddress" name="CompleteAddress"><?php echo $CompleteAddress ?></textarea>
-                                                </div>
+                                              
 
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label class="form-label">Location</label>
@@ -171,16 +180,11 @@ if ($isUpdate == 1) {
                                                 </div>
 
 
-                                                <div class="col-xl-6 col-md-6 mb-3">
-                                                    <label for="example-text-input" class="form-label">Price</label>
-                                                    <input required value="<?php echo $Price ?>" class="form-control" type="text" placeholder="Price" id="Price" name="Price" value="<?php if ($isUpdate == 1) {
-                                                                                                                                                                                            echo $ad['Price'];
-                                                                                                                                                                                        } ?>">
-                                                </div>
+                                             
 
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-text-input" class="form-label">Packs</label>
-                                                    <input value="<?php echo $Packs ?>" class="form-control" type="text" placeholder="Packs" reqired id="Packs" name="Packs" value="<?php if ($isUpdate == 1) {
+                                                    <input value="<?php echo $Packs ?>" class="form-control" type="number" placeholder="Packs" reqired id="Packs" name="Packs" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                         echo $ad['Packs'];
                                                                                                                                                                                     } ?>">
                                                 </div>
@@ -191,14 +195,21 @@ if ($isUpdate == 1) {
                                                     <label for="example-tel-input" class="form-label">Furnished/Unfurnished</label>
                                                     <input required value="<?php echo $Furnished_Unfurnished ?>" placeholder="Furnished/Unfurnished" type="text" name="Furnished/Unfurnished" id="Furnished/Unfurnished" class="form-control">
                                                 </div>
+
                                                 <div class="col-xl-6 col-md-6 mb-3">
-                                                    <label for="example-tel-input" class="form-label">Display Order</label>
-                                                    <input required value="<?php echo $DisplayOrder ?>" placeholder="Display Order" type="text" name="DisplayOrder" id="DisplayOrder" class="form-control">
+                                                    <label for="example-search-input" class="form-label">Short Description </label>
+                                                    <textarea class="form-control" type="search" placeholder="Short Description" rows="2" id="ShortDescription" name="ShortDescription"><?php echo $ShortDescription ?></textarea>
                                                 </div>
                                                 <div class="col-xl-6 col-md-6 mb-3">
-                                                    <label for="example-tel-input" class="form-label">BuildUp Area</label>
-                                                    <input required value="<?php echo $BuildUpArea ?>" placeholder="BuildUp Area" type="text" name="BuildUpArea" id="BuildUpAread" class="form-control">
+                                                    <label for="example-search-input" class="form-label">Long Description</label>
+                                                    <textarea class="form-control" type="search" placeholder="Long Description" rows="2" id="ShortDescription" name="LongDescription"><?php echo $LongDescription ?></textarea>
                                                 </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-search-input" class="form-label">Complete Address</label>
+                                                    <textarea required class="form-control" type="search" placeholder="CompleteAddress" rows="2" id="CompleteAddress" name="CompleteAddress"><?php echo $CompleteAddress ?></textarea>
+                                                </div>
+                                               
+                                               
                                            
                                                
                                             </div>
@@ -212,17 +223,26 @@ if ($isUpdate == 1) {
                                                 <div class="row">
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
-                                                        <label for="example-text-input" class="form-label">Thumbnail URL</label>
-                                                        <input required value="<?php echo $ThumbnailURL; ?>" class="form-control" type="text" placeholder="ThumbnailURL" id="ThumbnailURL" name="ThumbnailURL" value="<?php if ($isUpdate == 1) {
+                                                        <label for="example-text-input" class="form-label">Thumbnail Image</label>
+                                                        <input required value="<?php echo $ThumbnailURL; ?>" class="form-control" type="file" placeholder="ThumbnailURL" id="ThumbnailURL" name="ThumbnailURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                                                             echo $ad['ThumbnailURL'];
                                                                                                                                                                                                                         } ?>">
+                                                                                               <br>                                                                                                                            <div class="image-area">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ThumbnailURL'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <a class="remove-image" style="display: inline;">&#215;</a>
+                                                        </div>
                                                     </div>
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
-                                                        <label for="example-text-input" class="form-label">FloorPlan URL</label>
-                                                        <input value="<?php echo $FloorPlanURL; ?>" class="form-control" type="text" placeholder="FloorPlanURL" id="FloorPlanURL" name="FloorPlanURL" value="<?php if ($isUpdate == 1) {
+                                                        <label for="example-text-input" class="form-label">FloorPlan Image</label>
+                                                        <input value="<?php echo $FloorPlanURL; ?>" class="form-control" type="file" placeholder="FloorPlanURL" id="FloorPlanURL" name="FloorPlanURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                                                     echo $ad['FloorPlanURL'];
                                                                                                                                                                                                                 } ?>">
+                                                                                                        <br>                                                                                                           <div class="image-area">
+
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['FloorPlanURL'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <a class="remove-image" style="display: inline;">&#215;</a>
+                                                        </div>
                                                     </div>
 
 
@@ -238,7 +258,12 @@ if ($isUpdate == 1) {
                                                     </div>
                                                     <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-tel-input" class="form-label">Video URL</label>
-                                                        <input value="<?php echo $VideoURL ?>" placeholder="Video URL" type="text" name="VideoURL" id="VideoURL" class="form-control">
+                                                        <input value="<?php echo $VideoURL ?>" placeholder="Video URL" type="file" name="VideoURL" id="VideoURL" class="form-control">
+                                                        <br>
+                                                        <div class="image-area">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['VideoURL'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <a class="remove-image" style="display: inline;">&#215;</a>
+                                                        </div>
                                                     </div>
 
 
@@ -398,6 +423,7 @@ if ($isUpdate == 1) {
                 <div>
                     <button type="submit" name="submit" class="btn btn-primary w-md">Submit</button>
                 </div>
+                <br>
             </form>
         </div>
     </div>

@@ -5,43 +5,20 @@
 include("../../Helper/connect.php");
 
 
-
-
-
-
-
-
-
-
-
-
 $Lease_Name = $_POST['LeaseName'];
 $Lease_Alias = $_POST['LeaseAlias'];
 $ShortDescription = $_POST['ShortDescription'];
 $LongDescription = $_POST['LongDescription'];
-// $CarpetArea = $_POST['CarpetArea'];
+$CarpetArea = $_POST['CarpetArea'];
 $CompleteAddress = $_POST['CompleteAddress'];
 $Location = $_POST['Location'];
 $Price = $_POST['Price'];
 $Packs = $_POST['Packs'];
-$FloorPlanURL = $_POST['FloorPlanURL'];
-// $Images = $_POST['Images'];
-$ThumbnailURL = $_POST['ThumbnailURL'];
-$VideoURL = $_POST['VideoURL'];
+// $FloorPlanURL = $_POST['FloorPlanURL'];
+
+// $ThumbnailURL = $_POST['ThumbnailURL'];
+// $VideoURL = $_POST['VideoURL'];
 $Furnished_Unfurnished = $_POST['Furnished/Unfurnished'];
-// $BuildUpArea = $_POST['BuildUpArea'];
-// $CabinsCount = $_POST['CabinsCount'];
-// $ReceptionArea = $_POST['ReceptionArea'];
-// $W_S = $_POST['W/S'];
-// $SR_Manage = $_POST['SRManage'];
-// $ConferenceRoomCount = $_POST['ConferenceRoomCount'];
-// $MeetingRoomCount = $_POST['MeetingRoomCount'];
-// $ServerRoomCount = $_POST['ServerRoomCount'];
-// $StoreroomCount = $_POST['StoreroomCount'];
-// $GeneralWashroomCount = $_POST['GeneralWashroomCount'];
-// $GentsWashroomCount = $_POST['GentsWashroomCount'];
-// $ladiesWashroom = $_POST['ladiesWashroom'];
-// $PantryCount = $_POST['PantryCount'];
 
 
 // Seo tools
@@ -82,7 +59,7 @@ $altTag = $_POST['altTag'];
 
 
         if($errMsg == ''){
-            $ad= $link->insert("leasing_master",array("Lease_Name"=>$Lease_Name,"Lease_Alias"=>$Lease_Alias,"ShortDescription"=>$ShortDescription,"LongDescription"=>$LongDescription,"CompleteAddress"=>$CompleteAddress,"Location"=>$Location,"Price"=>$Price,"Packs"=>$Packs,"ThumbnailURL"=>$ThumbnailURL,"FloorPlanURL"=>$FloorPlanURL,"VideoURL"=>$VideoURL,"Furnished/Unfurnished"=>$Furnished_Unfurnished,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords,"LeaseOgTag"=>$LeaseOgTag,"LeaseOgTitle"=>$LeaseOgTitle,"altTag"=>$altTag,"LeaseOgTitle"=>$LeaseOgTitle,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle,"DisplayOrder"=>$DisplayOrder,"FK_Status"=>$FK_Status));
+            $ad= $link->insert("leasing_master",array("Lease_Name"=>$Lease_Name,"Lease_Alias"=>$Lease_Alias,"ShortDescription"=>$ShortDescription,"LongDescription"=>$LongDescription,"CompleteAddress"=>$CompleteAddress,"Location"=>$Location,"Price"=>$Price,"Packs"=>$Packs,"CarpetArea"=>$CarpetArea,"Furnished/Unfurnished"=>$Furnished_Unfurnished,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords,"LeaseOgTag"=>$LeaseOgTag,"LeaseOgTitle"=>$LeaseOgTitle,"altTag"=>$altTag,"LeaseOgTitle"=>$LeaseOgTitle,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle,"DisplayOrder"=>$DisplayOrder,"FK_Status"=>$FK_Status));
     }
 
    
@@ -108,51 +85,54 @@ $altTag = $_POST['altTag'];
             }
             
         }
-    //     if ($_FILES['ProjectFloorPlantURL']['size'] > 0) {
-    //         $result = addImage('ProjectFloorPlantURL');
-    //         if($result)
-    //         {
-    //             $link->where('PK_Lease',$ad);
-    //                 $a1=$link->update("lease_master",array("ProjectFloorPlantURL"=>$result));
-    //                 if($a1)
-    //                 {		
-    //                 }	
-    //                 else {
-    //                     //echo $ad;
-    //                 }
-    //         }
+        if ($_FILES['ThumbnailURL']['size'] > 0) {
+            $result = addImage('ThumbnailURL');
+            if($result)
+            {
+                $link->where('PK_Lease',$ad);
+                    $a1=$link->update("leasing_master",array("ThumbnailURL"=>$result));
+                    if($a1)
+                    {		
+                        echo "successfully uploded";
+                    }	
+                    else {
+                        echo "failed";
+                    }
+            }
             
-    //     }
-    //     if ($_FILES['ProductBrocherURL']['size'] > 0) {
-    //         $result = addImage('ProductBrocherURL');
-    //         if($result)
-    //         {
-    //             $link->where('PK_Lease',$ad);
-    //                 $a1=$link->update("lease_master",array("ProductBrocherURL"=>$result));
-    //                 if($a1)
-    //                 {		
-    //                 }	
-    //                 else {
-    //                     //echo $ad;
-    //                 }
-    //         }
+        }
+        if ($_FILES['FloorPlanURL']['size'] > 0) {
+            $result = addImage('FloorPlanURL');
+            if($result)
+            {
+                $link->where('PK_Lease',$ad);
+                    $a1=$link->update("leasing_master",array("FloorPlanURL"=>$result));
+                    if($a1)
+                    {		
+                        echo "successfully uploded";
+                    }	
+                    else {
+                        echo "failed";
+                    }
+            }
             
-    //     }
-    //     if ($_FILES['ProductImage1']['size'] > 0) {
-    //         $result = addImage('ProductImage1');
-    //         if($result)
-    //         {
-    //             $link->where('PK_Lease',$ad);
-    //                 $a1=$link->update("lease_master",array("ProductImage1"=>$result));
-    //                 if($a1)
-    //                 {		
-    //                 }	
-    //                 else {
-    //                     //echo $ad;
-    //                 }
-    //         }
+        }
+        if ($_FILES['Video']['size'] > 0) {
+            $result = addImage('Video');
+            if($result)
+            {
+                $link->where('PK_Lease',$ad);
+                    $a1=$link->update("leasing_master",array("Video"=>$result));
+                    if($a1)
+                    {		
+                        echo "successfully uploded";
+                    }	
+                    else {
+                        echo "failed";
+                    }
+            }
             
-    //     }
+        }
     //     if ($_FILES['ProductImage2']['size'] > 0) {
     //         $result = addImage('ProductImage2');
     //         if($result)

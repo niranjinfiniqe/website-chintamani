@@ -50,12 +50,13 @@ $exce = mysqli_query($con, $query);
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
                     <div class="card-body p-4">
                     <form  action="addinterior.php " class="needs-validation" novalidate method="post" name="f1"  enctype="multipart/form-data">
         <div class="row">
-            
+             <h3 class="mb-4">Details</h3>
             <div class="col-lg-6">
+               
                 <div>
                     <div class="mb-3">
                         <label for="example-text-input" class="form-label">Interior Title</label>
@@ -69,7 +70,7 @@ $exce = mysqli_query($con, $query);
                         <label for="example-text-input" class="form-label">Alt Tag</label>
                         <input name="altTag"  class="form-control" type="text" placeholder="" id="BlogTitle">
                     </div>
-
+                     <h3 class="mb-3">Gallery</h3>
                     <div class="mb-3">
                         <label for="example-tel-input" class="form-label">Gallery Image1</label>
 						<input  type="file" name="GalleryImage1" id="GalleryImage1" class="form-control">
@@ -98,6 +99,8 @@ $exce = mysqli_query($con, $query);
                         <label for="example-text-input" class="form-label">Keywords</label>
                         <input name="Keywords" class="form-control" type="text" placeholder="" id="BlogTitle">
                     </div>
+                    <br>
+                    <br>
                     <div class="mb-3">
                         <label for="example-tel-input" class="form-label">Gallery Image2</label>
 						<input type="file" name="GalleryImage2" id="GalleryImage2" class="form-control">

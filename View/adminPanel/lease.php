@@ -92,7 +92,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                             <th>Lease Name</th>
 
                                             <th>Short Description</th>
-                                            <th>Long Description</th>
+                                            <th>Display Order</th>
                                             <th>Location</th>
                                             <th>Office Number</th>
                                             <th>Price</th>
@@ -112,7 +112,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                     <th scope="row"><?php echo $count++; ?></th>
                                                     <td><?php echo $row['Lease_Name'] ?></td>
                                                     <td><?php echo $row['ShortDescription'] ?></td>
-                                                    <td><?php echo $row['LongDescription'] ?></td>
+                                                    <td><?php echo $row['DisplayOrder'] ?></td>
                                                     <td><?php echo $row['Location'] ?></td>
                                                     <td><?php echo $row['office_number'] ?></td>
                                                     <td><?php echo $row['Price'] ?></td>

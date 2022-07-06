@@ -13,25 +13,12 @@ $CompleteAddress = $_POST['CompleteAddress'];
 $Location = $_POST['Location'];
 $Price = $_POST['Price'];
 $Packs = $_POST['Packs'];
-$FloorPlanURL = $_POST['FloorPlanURL'];
-// $Images = $_POST['Images'];
-$ThumbnailURL = $_POST['ThumbnailURL'];
-$VideoURL = $_POST['VideoURL'];
+$OfficeNumber = $_POST['OfficeNumber'];
+
+
 $Furnished_Unfurnished = $_POST['Furnished/Unfurnished'];
 $BuildUpArea = $_POST['BuildUpArea'];
-// $CabinsCount = $_POST['CabinsCount'];
-// $ReceptionArea = $_POST['ReceptionArea'];
-// $W_S = $_POST['W/S'];
-// $SR_Manage = $_POST['SRManage'];
-// $ConferenceRoomCount = $_POST['ConferenceRoomCount'];
-// $MeetingRoomCount = $_POST['MeetingRoomCount'];
-// $ServerRoomCount = $_POST['ServerRoomCount'];
-// $StoreroomCount = $_POST['StoreroomCount'];
-// $GeneralWashroomCount = $_POST['GeneralWashroomCount'];
-// $GentsWashroomCount = $_POST['GentsWashroomCount'];
-// $ladiesWashroom = $_POST['ladiesWashroom'];
-// $PantryCount = $_POST['PantryCount'];
-// $SR_Manage = $_POST['SR_Manage'];
+
 $Keywords = $_POST['Keywords'];
 $MetaTitle = $_POST['MetaTitle'];
 $DisplayOrder = $_POST['DisplayOrder'];
@@ -51,10 +38,10 @@ $errMsg = '';
 
 if ($errMsg == '') {
     $link->where('PK_lease', $id);
-    $ad = $link->update("leasing_master", array("Lease_Name" => $Lease_Name, "Lease_Alias" => $Lease_Alias, "ShortDescription" => $ShortDescription, "LongDescription" => $LongDescription, "CarpetArea" => $CarpetArea, "CompleteAddress" => $CompleteAddress, "Location" => $Location, "Price" => $Price, "Packs" => $Packs, "ThumbnailURL" => $ThumbnailURL, "FloorPlanURL" => $FloorPlanURL, "VideoURL" => $VideoURL, "Furnished/Unfurnished" => $Furnished_Unfurnished, "BuildUpArea" => $BuildUpArea, "TwitterTag" => $TwitterTag, "HiTag" => $HiTag, "Keywords" => $Keywords, "LeaseOgTag" => $LeaseOgTag, "LeaseOgTitle" => $LeaseOgTitle, "altTag" => $altTag, "LeaseOgTitle" => $LeaseOgTitle, "MetaDescription" => $MetaDescription, "MetaTitle" => $MetaTitle, "DisplayOrder" => $DisplayOrder, "FK_Status" => $FK_Status));
+    $ad = $link->update("leasing_master", array("Lease_Name" => $Lease_Name, "Lease_Alias" => $Lease_Alias, "ShortDescription" => $ShortDescription, "LongDescription" => $LongDescription, "CarpetArea" => $CarpetArea,"office_number"=>$OfficeNumber, "CompleteAddress" => $CompleteAddress, "Location" => $Location, "Price" => $Price, "Packs" => $Packs, "Furnished/Unfurnished" => $Furnished_Unfurnished, "BuildUpArea" => $BuildUpArea, "TwitterTag" => $TwitterTag, "HiTag" => $HiTag, "Keywords" => $Keywords, "LeaseOgTag" => $LeaseOgTag, "LeaseOgTitle" => $LeaseOgTitle, "altTag" => $altTag, "LeaseOgTitle" => $LeaseOgTitle, "MetaDescription" => $MetaDescription, "MetaTitle" => $MetaTitle, "DisplayOrder" => $DisplayOrder, "FK_Status" => $FK_Status));
 }
 
-
+if($ad) {
 if ($_FILES['Images']['size'] > 0) {
     echo "image section";
     $result = addImage('Images');
@@ -68,6 +55,58 @@ if ($_FILES['Images']['size'] > 0) {
         }
     }
     
+}
+
+
+
+if ($_FILES['ThumbnailURL']['size'] > 0) {
+    $result = addImage('ThumbnailURL');
+    if($result)
+    {
+        $link->where('PK_Lease',$id);
+            $a1=$link->update("leasing_master",array("ThumbnailURL"=>$result));
+            if($a1)
+            {		
+                echo "successfully uploded";
+            }	
+            else {
+                echo "failed";
+            }
+    }
+    
+}
+if ($_FILES['FloorPlanURL']['size'] > 0) {
+    $result = addImage('FloorPlanURL');
+    if($result)
+    {
+        $link->where('PK_Lease',$id);
+            $a1=$link->update("leasing_master",array("FloorPlanURL"=>$result));
+            if($a1)
+            {		
+                echo "successfully uploded";
+            }	
+            else {
+                echo "failed";
+            }
+    }
+    
+}
+if ($_FILES['Video']['size'] > 0) {
+    $result = addImage('Video');
+    if($result)
+    {
+        $link->where('PK_Lease',$id);
+            $a1=$link->update("leasing_master",array("Video"=>$result));
+            if($a1)
+            {		
+                echo "successfully uploded";
+            }	
+            else {
+                echo "failed";
+            }
+    }
+    
+}
 }
 
 

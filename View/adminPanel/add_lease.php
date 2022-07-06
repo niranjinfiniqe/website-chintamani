@@ -5,7 +5,7 @@ $pLeaseId = 0;
 
 
 // Mridul's code
-$query = "SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='chintamani_db_updated' 
+$query = "SELECT `COLUMN_NAME` FROM `INFORMATION_SCHEMA`.`COLUMNS` WHERE `TABLE_SCHEMA`='chintamani_db' 
     AND `TABLE_NAME`='leasing_master'";
 
 // $query = "SELECT * FROM `chintamani_db_updated`.`leasing_master` WHERE `leasing_master`.`PK_lease`";
@@ -92,14 +92,11 @@ $exce = mysqli_query($con, $query);
                                         </div>
                                         <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-text-input" class="form-label">Carpet Area</label>
-                                            <input class="form-control" type="text" placeholder="CarpetArea" required id="CarpetArea" name="CarpetArea" value="<?php if ($isUpdate == 1) {
+                                            <input class="form-control" type="number" placeholder="CarpetArea" required id="CarpetArea" name="CarpetArea" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                     echo $ad['CarpetArea'];
                                                                                                                                                                 } ?>">
                                         </div>
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">Reception Area</label>
-                                            <input placeholder="Reception Area " type="number" name="ReceptionArea" id="ReceptionArea" class="form-control">
-                                        </div>
+                                      
                                         <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-tel-input" class="form-label">BuildUp Area</label>
                                             <input placeholder="BuildUp Area" type="number" name="BuildUpArea" id="BuildUpArea" class="form-control">
@@ -113,8 +110,16 @@ $exce = mysqli_query($con, $query);
 
                                         <div class="col-xl-6 col-md-6 mb-3">
                                             <label for="example-tel-input" class="form-label">Display Order</label>
-                                            <input placeholder="Display order" type="text" name="DisplayOrder" id="DisplayOrder" class="form-control">
+                                            <input placeholder="Display order" type="number" name="DisplayOrder" id="DisplayOrder" class="form-control">
                                         </div>
+                                        <div class="col-xl-6 col-md-6 mb-3">
+                                            <label for="example-tel-input" class="form-label">Office Number</label>
+                                            <input placeholder="Office Number" type="number" name="officenumber" id="officenumber" class="form-control">
+                                        </div>
+                                        <div class="col-xl-6 col-md-6 mb-3">
+                                                        <label for="example-tel-input" class="form-label">Furnished/Unfurnished</label>
+                                                        <input required placeholder="Furnished/Unfurnished" type="text" name="Furnished/Unfurnished" id="Furnished/Unfurnished" class="form-control">
+                                                    </div>
                                         <div class="col-xl-6 col-md-6 mb-3">
                                             <label class="form-label">Location</label>
                                             <select required class="form-select" id="Location" name="Location">
@@ -124,7 +129,7 @@ $exce = mysqli_query($con, $query);
                                                         } ?>>Goregaon</option>
                                                 <option <?php if ($isUpdate == 1 && $ad['FK_Location'] == "2") {
                                                             echo "selected";
-                                                        } ?>>Delhi</option>
+                                                        } ?>>Andheri</option>
                                             </select>
                                         </div>
                                         <div class="col-xl-6 col-md-6 mb-3">
@@ -174,25 +179,22 @@ $exce = mysqli_query($con, $query);
                                                     </div>
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
-                                                        <label for="example-tel-input" class="form-label">Video URL</label>
-                                                        <input placeholder="Video URL" type="text" name="VideoURL" id="VideoURL" class="form-control">
+                                                        <label for="example-tel-input" class="form-label">Video </label>
+                                                        <input placeholder="Video URL" type="file" name="VideoURL" id="VideoURL" class="form-control">
                                                     </div>
 
-                                                    <div class="col-xl-6 col-md-6 mb-3">
-                                                        <label for="example-tel-input" class="form-label">Furnished/Unfurnished</label>
-                                                        <input required placeholder="Furnished/Unfurnished" type="text" name="Furnished/Unfurnished" id="Furnished/Unfurnished" class="form-control">
-                                                    </div>
+                                                   
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
-                                                        <label for="example-text-input" class="form-label">Thumbnail URL</label>
-                                                        <input class="form-control" type="text" placeholder="ThumbnailURL" required id="ThumbnailURL" name="ThumbnailURL" value="<?php if ($isUpdate == 1) {
+                                                        <label for="example-text-input" class="form-label">Thumbnail Image</label>
+                                                        <input class="form-control" type="file" placeholder="ThumbnailURL" required id="ThumbnailURL" name="ThumbnailURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                         echo $ad['ThumbnailURL'];
                                                                                                                                                                                     } ?>">
                                                     </div>
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
-                                                        <label for="example-text-input" class="form-label">FloorPlan URL</label>
-                                                        <input class="form-control" type="text" placeholder="FloorPlanURL" id="FloorPlanURL" name="FloorPlanURL" value="<?php if ($isUpdate == 1) {
+                                                        <label for="example-text-input" class="form-label">FloorPlan Image</label>
+                                                        <input class="form-control" type="file" placeholder="FloorPlanURL" id="FloorPlanURL" name="FloorPlanURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                             echo $ad['FloorPlanURL'];
                                                                                                                                                                         } ?>">
                                                     </div>
@@ -404,19 +406,11 @@ $exce = mysqli_query($con, $query);
             // console.log("#amenities_qty_div"+val.trim());
            
             $("#amenities_qty_div"+val.trim()).css("display", "block");
-            // $("#amenities_qty_div" + val.trim()).css("display", "block");
-            // $("#product_price" + val.trim()).removeAttr("disabled");
-            // $("#inventory_qty" + val.trim()).removeAttr("disabled");
-            // $("#inventory" + val.trim()).css("display", "block");
-            // $("#product_gallery_thumb" + val.trim()).removeAttr("disabled");
+         
         } else {
             // console.log("bad"+val);
             $("#amenities_qty_div" + val.trim()).css("display", "none");
-            // $("#amenities_qty_div" + val.trim()).css("display", "none");
-            // $("#product_price" + val.trim()).attr("disabled", "disabled");
-            // $("#inventory_qty" + val.trim()).attr("disabled", "disabled");
-            // $("#inventory" + val.trim()).css("display", "none");
-            // $("#product_gallery_thumb" + val.trim()).attr("disabled", "disabled");
+            $("#amenities_qty_div" + val.trim()).val(null);
         }
     }
 </script>

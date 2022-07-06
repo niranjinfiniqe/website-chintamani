@@ -52,22 +52,16 @@ $id = $_GET['pid'];
                 <div class="card-body" >
                     <div class="card-body p-4">
                         <form action="editproject.php " class="needs-validation" novalidate method="post" name="f1"  enctype="multipart/form-data">
-                            <div class="row">
+                            <div class="row shadow-lg p-3 mb-5 bg-body rounded">
                                 <!-- right pannel details-->
-                                <div class="col-lg-6">
-                                    <div>
+                                <h3 class="mb-4" >Details</h3>
+                                <div class="col-lg-6 ">
+                                    <div class="">
                                         <div class="mb-3">
                                             <label for="example-text-input" class="form-label">Project Name</label>
                                             <input class="form-control" type="text"  value="<?php  if($isUpdate==1){ echo $ad['ProjectName'];} ?>" required id="specificfield" name="ProjectName" id="ProjectName">
                                             <input type="hidden" value="<?php echo $id; ?>" name="pid" id="pid">
                                         </div>
-                                        
-                                        <div class="col-lg-12">
-                                            <label for="example-search-input" class="form-label">Short Description</label>
-                                            <textarea class="form-control" type="text" rows="2"  id="ProjectShortDescription" name="ProjectShortDescription" ><?php  if($isUpdate==1){ echo $ad['ShortDescription'];} ?></textarea>
-                                        </div>
-                                        <br>
-                                        <br>
                                         <div class="mb-3">
                                             <label class="form-label">Status</label>
                                             <select class="form-select" name="ProjectStatus" id="ProjectStatus">
@@ -76,6 +70,14 @@ $id = $_GET['pid'];
                                                 <option <?php if($ad['FK_Status']=="5"){echo "selected";} ?>>Completed</option>
                                             </select>
                                         </div>
+                                        
+                                        <div class="col-lg-12">
+                                            <label for="example-search-input" class="form-label">Short Description</label>
+                                            <textarea class="form-control" type="text" rows="2"  id="ProjectShortDescription" name="ProjectShortDescription" ><?php  if($isUpdate==1){ echo $ad['ShortDescription'];} ?></textarea>
+                                        </div>
+                                        <br>
+                                        <br>
+                                      
                                         
                                     </div>
                                 </div>
@@ -86,10 +88,7 @@ $id = $_GET['pid'];
                                                 <label for="example-text-input" class="form-label">Project Alias</label>
                                                 <input onkeyup="aliascheck(this.value)" required class="form-control" type="text" name="ProjectAlias" id="ProjectAlias" value="<?php  if($isUpdate==1){ echo $ad['Alias'];} ?>">
                                             </div>
-                                            <div class="col-lg-12">
-                                                <label for="example-search-input" class="form-label">Long Description</label>
-                                                <textarea class="form-control" type="text"  rows="4" id="ProjectLongDescription" name="ProjectLongDescription"><?php  if($isUpdate==1){ echo $ad['LongDescription'];} ?></textarea>
-                                            </div>
+                                           
                                             <div class="mb-3">
                                                 <label class="form-label" >Project Type</label>
                                                 <select required class="form-select" id="ProjectType" name="ProjectType" >
@@ -106,12 +105,16 @@ $id = $_GET['pid'];
                                                     <option>Residential</option>
                                                 </select>
                                             </div>
+                                            <div class="col-lg-12">
+                                                <label for="example-search-input" class="form-label">Long Description</label>
+                                                <textarea class="form-control" type="text"  rows="4" id="ProjectLongDescription" name="ProjectLongDescription"><?php  if($isUpdate==1){ echo $ad['LongDescription'];} ?></textarea>
+                                            </div>
                                 </div>
                             </div>
-
-                            <div class="card-body">
+                            <h3 class="mb-4">Project SEO Details</h3>
+                            <div class="">
                                 <div>
-                                    <h5 class="card-title mb-4">Project SEO Details</h5>
+                                   
                                         <div class="row">
                                             <div class="col-xl-4 col-md-6">
                                                 <div class="form-group mb-3">
@@ -167,7 +170,7 @@ $id = $_GET['pid'];
 
                             <div class="card-body">
                                 <div>
-                                    <h5 class="card-title mb-4">Project Gallery Details</h5>
+                                    <h3 class=" mb-4">Project Gallery Details</h3>
                                         <div class="row">
                                             <div class="col-xl-4 col-md-6"  >
                                                     <label>Brochure Image</label>
