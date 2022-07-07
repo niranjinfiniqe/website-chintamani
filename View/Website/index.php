@@ -828,6 +828,102 @@ foreach ($sql as $pro)
 															<div class="elementor-element elementor-element-880f14b elementor-invisible elementor-widget elementor-widget-Wpresidence_Blog_Post_List" data-id="880f14b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="Wpresidence_Blog_Post_List.default">
 																<div class="elementor-widget-container">
 																	<div class="article_container  wpestate_latest_listings_sh bottom-post blogs_wrapper" data-category_ids="" data-number="4" data-row-number="4" data-card-version="3" data-sort-by="0" data-page="1">
+																	<?php
+																	   $sql = $link->rawQuery("select * from blog_master where isDeleted=0");
+																		
+																		 foreach ($sql as $blog)	
+																		{
+																		
+																		?>
+																		<div  class="col-md-3 shortcode-col  listing_wrapper blog3v">
+																			<div class="property_listing_blog" data-link="">
+
+
+																				<div class="featured_gradient"></div>
+																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2016/03/portrait__interior9-525x328.jpg);"></div>
+																				<div class="blog_unit_content_v3">
+																					<div class="blog_unit_meta">
+																						Mar 04, 2016 
+																					</div>
+																					<h4>
+																						<a href="" class="blog_unit_title"><?php echo $blog['BlogTitle'] ?></a>
+																					</h4>
+																					<a class="read_more" href="Singleblog.php?pid=<?php echo $blog["PK_BlogID"]; ?>"> Continue reading<i class="fas fa-angle-right"></i> </a>
+																				</div>
+																			
+																			
+																			</div>
+																		
+																			</div>
+																			<?php
+																			}
+																			?>
+																		<!-- <div class="col-md-3 shortcode-col  listing_wrapper blog3v">
+																			<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/">
+																				<div class="featured_gradient"></div>
+																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/portrait_july2019-525x328.jpg);"></div>
+																				<div class="blog_unit_content_v3">
+																					<div class="blog_unit_meta">
+																						May 28, 2014 
+																					</div>
+																					<h4>
+																						<a href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/" class="blog_unit_title">The top 5 most livable Las Vegas neighbourho...</a>
+																					</h4>
+																					<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/28/the-top-5-most-livable-las-vegas-neighbourhoods/"> Continue reading<i class="fas fa-angle-right"></i> </a>
+																				</div>
+																			</div>
+																		</div> -->
+																		<!-- <div class="col-md-3 shortcode-col  listing_wrapper blog3v">
+																			<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/">
+																				<div class="featured_gradient"></div>
+																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2021/11/house_4-525x328.jpeg);"></div>
+																				<div class="blog_unit_content_v3">
+																					<div class="blog_unit_meta">
+																						May 27, 2014 
+																					</div>
+																					<h4>
+																						<a href="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/" class="blog_unit_title">In Las Vegas home prices have doubled in the...</a>
+																					</h4>
+																					<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/in-las-vegas-home-prices-have-doubled-in-the-past-5-years/"> Continue reading<i class="fas fa-angle-right"></i> </a>
+																				</div>
+																			</div>
+																		</div> -->
+																		<!-- <div class="col-md-3 shortcode-col  listing_wrapper blog3v">
+																			<div class="property_listing_blog" data-link="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/">
+																				<div class="featured_gradient"></div>
+																				<div class="blog_unit_image" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2021/09/interior47-525x328.jpg);"></div>
+																				<div class="blog_unit_content_v3">
+																					<div class="blog_unit_meta">
+																						May 27, 2014 
+																					</div>
+																					<h4>
+																						<a href="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/" class="blog_unit_title">Las Vegas neighbourhoods where it’s better t...</a>
+																					</h4>
+																					<a class="read_more" href="https://lasvegas.wpresidence.net/2014/05/27/las-vegas-neighbourhoods-where-its-better-to-buy-a-condo-apartment/"> Continue reading<i class="fas fa-angle-right"></i> </a>
+																				</div>
+																			</div>
+																		</div> -->
+																		<div class="wpestate_listing_sh_loader">
+																			<div class="new_prelader"></div>
+																		</div>
+																		<!-- <div class="listinglink-wrapper_sh_listings">
+																			<a href="blogList.php"><span class="wpresidence_button wpestate_item_list_sh blog_list_loader"> load articles </span></a>
+																		</div> -->
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+
+											<section class="elementor-section elementor-inner-section elementor-element elementor-element-0994559 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0994559" data-element_type="section">
+												<div class="elementor-container elementor-column-gap-default">
+													<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-1e6eefe" data-id="1e6eefe" data-element_type="column">
+														<div class="elementor-widget-wrap elementor-element-populated">
+															<div class="elementor-element elementor-element-880f14b elementor-invisible elementor-widget elementor-widget-Wpresidence_Blog_Post_List" data-id="880f14b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="Wpresidence_Blog_Post_List.default">
+																<div class="elementor-widget-container">
+																	<div class="article_container  wpestate_latest_listings_sh bottom-post blogs_wrapper" data-category_ids="" data-number="4" data-row-number="4" data-card-version="3" data-sort-by="0" data-page="1">
 																		<?php
 																			$sql = $link->rawQuery("select * FROM blog_master WHERE isDeleted=0 AND FK_Status in(Select PK_status from status_master where STATUS='Published') LIMIT 4");
 																			foreach ($sql as $blog)
