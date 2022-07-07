@@ -55,14 +55,29 @@ else{
 
 $filtered_get = array_filter($_POST); // removes empty values from $_GET
 // echo "<br>";
-print_r($filtered_get);
+// print_r($filtered_get);
 // echo "<br>";
 
 
 
 if (count($filtered_get)) { // not empty
-	$location = $filtered_get['Location'];
-	echo $location;
+	if( $filtered_get['Location']  ){
+		$location = $filtered_get['Location'];
+		
+		
+
+
+	}elseif($filtered_get['Price']){
+		$price = $filtered_get['Price'];
+
+	}elseif ($filtered_get['Packs']) {
+		$capacity = $filtered_get['Packs'];
+	}elseif ( $filtered_get['BuildUpArea']) {
+		$squarefeet = $filtered_get['BuildUpArea'];
+	}
+	
+
+
 	
 
 	$query1 .= " WHERE isDeleted = 0 and FK_Status = 8 AND";
@@ -386,21 +401,72 @@ echo $query1;
 							</ul>
 						</div>
 						<div class="dropdown listing_filter_select filter_category">
-							<div data-toggle="dropdown" id="a_filter_categ" class="filter_menu_trigger" data-value="Categories"> Price Range<span class="caret caret_filter"></span> </div>
+							<div data-toggle="dropdown" id="a_filter_categ" class="filter_menu_trigger" data-value="Categories">
+							<?php 
+						  if(isset($price)){
+							if($price != null){
+								echo $price; 
+							
+							}
+
+						  }
+							else{
+								echo "Price Range";
+							} ?>	
+							<span class="caret caret_filter"></span> </div>
 							<ul class="dropdown-menu filter_menu" role="menu" aria-labelledby="a_filter_categ">
-								<li role="presentation" data-value="all">Categories</li>
-								<li role="presentation" data-value="apartments">Apartments</li>
-								<li role="presentation" data-value="condos">Condos</li>
-								<li role="presentation" data-value="duplexes">Duplexes</li>
-								<li role="presentation" data-value="houses">Houses</li>
-								<li role="presentation" data-value="villas">Villas</li>
+							<li role="presentation" data-value="100000-200000">100k-200k</li>
+							<li role="presentation" data-value="200000-300000">200k-300k</li>
+							<li role="presentation" data-value="200000-300000">200k-300k</li>
+							<li role="presentation" data-value="300000-400000">300k-400k</li>
 							</ul>
 						</div>
 						<div class="dropdown listing_filter_select filter_county">
-							<div data-toggle="dropdown" id="a_filter_county" class="filter_menu_trigger" data-value="States"> Capacity <span class="caret caret_filter"></span> </div>
+							<div data-toggle="dropdown" id="a_filter_county" class="filter_menu_trigger" data-value="States">
+							<?php 
+						  if(isset($capacity)){
+							if($capacity != null){
+								echo $capacity; 
+							
+							}
+
+						  }
+							else{
+								echo "Capacity";
+							} ?> 
+								 <span class="caret caret_filter"></span> </div>
 							<ul id="filter_county" class="dropdown-menu filter_menu" role="menu" aria-labelledby="a_filter_county">
-								<li role="presentation" data-value="all" data-value2="all">States</li>
-								<li role="presentation" data-value="nevada" data-value2="nevada">Nevada</li>
+							<li role="presentation" data-value="5-10">5-10</li>
+							<li role="presentation" data-value="10-15">10-15</li>
+							<li role="presentation" data-value="15-20">15-20</li>
+							<li role="presentation" data-value="20-25">20-25</li>
+							<li role="presentation" data-value="25-30">25-30</li>
+							<li role="presentation" data-value="30-35">30-35</li>
+							<li role="presentation" data-value="35-40">35-40</li>
+							</ul>
+						</div>
+						<div class="dropdown listing_filter_select filter_county">
+							<div data-toggle="dropdown" id="a_filter_county" class="filter_menu_trigger" data-value="States"> 
+							<?php 
+						  if(isset($squarefeet)){
+							if($squarefeet != null){
+								echo $squarefeet; 
+							
+							}
+
+						  }
+							else{
+								echo "Square feet";
+							} ?> 	
+							 <span class="caret caret_filter"></span> </div>
+							<ul id="filter_county" class="dropdown-menu filter_menu" role="menu" aria-labelledby="a_filter_county">
+							<li role="presentation" data-value="5-10">5-10</li>
+							<li role="presentation" data-value="10-15">10-15</li>
+							<li role="presentation" data-value="15-20">15-20</li>
+							<li role="presentation" data-value="20-25">20-25</li>
+							<li role="presentation" data-value="25-30">25-30</li>
+							<li role="presentation" data-value="30-35">30-35</li>
+							<li role="presentation" data-value="35-40">35-40</li>
 							</ul>
 						</div>
 						<div class="dropdown listing_filter_select filter_county">

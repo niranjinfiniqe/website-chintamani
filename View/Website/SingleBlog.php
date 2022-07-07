@@ -804,7 +804,7 @@
 			</div>
 			<?php include("subFooter.php"); ?>
 		</div>
-			<!-- <div id="modal_login_wrapper">
+			 <!-- <div id="modal_login_wrapper">
 				<div class="modal_login_back"></div>
 				<div class="modal_login_container " style='height:520px;'>
 					<div id="login-modal_close"></div>
@@ -857,7 +857,7 @@
 						</div>
 					</div>
 				</div>
-			</div> -->
+			</div>  -->
 			<div class="navigational_links">
 				<div class="nav-prev-wrapper">
 					<div class="nav-prev">

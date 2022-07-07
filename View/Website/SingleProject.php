@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-US">
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <?php 
-	include("header.php");  
-	include ("../../Helper/connect.php");
-	//form 
-	if(isset($_POST['name']) && isset($_POST['EmailId']) &&  isset($_POST['phone_number']) &&  isset($_POST['message'])){
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<?php
+include("header.php");
+include("../../Helper/connect.php");
+//form 
+if (isset($_POST['name']) && isset($_POST['EmailId']) &&  isset($_POST['phone_number']) &&  isset($_POST['message'])) {
 
 
-	    $name = $_POST['name'];
-		$EmailId = $_POST['EmailId'];
-		$phone_number= $_POST['phone_number'];
-		$message= $_POST['message'];
+	$name = $_POST['name'];
+	$EmailId = $_POST['EmailId'];
+	$phone_number = $_POST['phone_number'];
+	$message = $_POST['message'];
 
 
-		
-		// Performing insert query execution
-		$sql =mysqli_query( $con,"INSERT INTO inquiry (first_name,EmailId,phone_number,project_message,FK_Status) VALUES ('$name',
-		'$EmailId','$phone_number','$message','1')" ) ;
-		}
-		?>
 
-   <?php
-	$pid = $_GET['pid'] ;
-	$pro=$link->rawQueryOne("select * from project_master where PK_Project=?",array($_REQUEST['pid']));
-	echo $pro;
-	// if($link->count > 0) {
-	// 	$project_id=$pro['PK_Project'];
-	// }
-	
-	?>
+	// Performing insert query execution
+	$sql = mysqli_query($con, "INSERT INTO inquiry (first_name,EmailId,phone_number,project_message,FK_Status) VALUES ('$name',
+		'$EmailId','$phone_number','$message','1')");
+}
+?>
 
-	<!-- <head>
+<?php
+$pid = $_GET['pid'];
+$pro = $link->rawQueryOne("select * from project_master where PK_Project=?", array($_REQUEST['pid']));
+echo $pro;
+// if($link->count > 0) {
+// 	$project_id=$pro['PK_Project'];
+// }
+
+
+
+
+
+?>
+
+<!-- <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 		<link rel="pingback" href="https://lasvegas.wpresidence.net/xmlrpc.php" />
@@ -115,7 +119,7 @@
 			}		
 		</style>
 	</head> -->
-	<!-- <body class="estate_agent-template-default single single-estate_agent postid-57 using-mobile-header-sticky elementor-default elementor-kit-22">
+<!-- <body class="estate_agent-template-default single single-estate_agent postid-57 using-mobile-header-sticky elementor-default elementor-kit-22">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
 			<defs>
 				<filter id="wp-duotone-dark-grayscale">
@@ -316,9 +320,9 @@
 				</div>
 			</div>
 		</div> -->
-		<div class="website-wrapper" id="all_wrapper">
-			<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
-				<!-- <div class="master_header   wide   topbar_transparent  ">
+<div class="website-wrapper" id="all_wrapper">
+	<div class="container main_wrapper  wide  has_header_type1   topbar_transparent   contentheader_center  cheader_center ">
+		<!-- <div class="master_header   wide   topbar_transparent  ">
 					<div class="mobile_header mobile_header_sticky_yes">
 						<div class="mobile-trigger"><i class="fas fa-bars"></i></div>
 						<div class="mobile-logo">
@@ -421,137 +425,141 @@
 						</div>
 					</div>
 				</div> -->
-                <?php include("subHeader.php"); ?>
-				<div class="pre_search_wrapper"></div>
-				<div class="container content_wrapper">
-					<div class="row">
-                    <div id="gmap_wrapper" class=" with_open_street " data-post_id="57" data-cur_lat="" data-cur_long="" style="height:450px">
-						<div id="googleMap" class="" style="height:450px"></div>
-						<div class="tooltip"> click to enable zoom</div>
-						<div id="gmap-loading">
-							loading...
-							<div class="new_prelader"></div>
-						</div>
-						<div id="gmap-noresult">
-							We didn&#039;t find any results 
-						</div>
-						<div class="gmap-controls  with_open_street  ">
-							<div id="openmap"><i class="fas fa-angle-down"></i>open map</div>
-							<div id="gmap-control">
-								<span id="map-view"><i class="far fa-image"></i>View</span>
-								<span id="map-view-roadmap" class="map-type">Roadmap</span>
-								<span id="map-view-satellite" class="map-type">Satellite</span>
-								<span id="map-view-hybrid" class="map-type">Hybrid</span>
-								<span id="map-view-terrain" class="map-type">Terrain</span>
-								<span id="geolocation-button"><i class="fas fa-map-marker-alt"></i>My Location</span>
-								<span id="gmap-full"><i class="fas fa-arrows-alt"></i>Fullscreen</span>
-								<span id="gmap-prev"><i class="fas fa-chevron-left"></i>Prev</span>
-								<span id="gmap-next">Next<i class="fas fa-chevron-right"></i></span>
-							</div>
-							<div id="gmapzoomplus"><i class="fas fa-plus"></i> </div>
-							<div id="gmapzoomminus"><i class="fas fa-minus"></i></div>
-						</div>
+		<?php include("subHeader.php"); ?>
+		<div class="pre_search_wrapper"></div>
+		<div class="container content_wrapper">
+			<div class="row">
+				<div id="gmap_wrapper" class=" with_open_street " data-post_id="57" data-cur_lat="" data-cur_long="" style="height:450px">
+					<div id="googleMap" class="" style="height:450px"></div>
+					<div class="tooltip"> click to enable zoom</div>
+					<div id="gmap-loading">
+						loading...
+						<div class="new_prelader"></div>
 					</div>
-						<div class="col-xs-12 col-md-12 breadcrumb_container">
-							<ol class="breadcrumb">
-								<li><a href="https://lasvegas.wpresidence.net/">Home</a></li>
-								<li class="active">Michaela Finney</li>
-							</ol>
+					<div id="gmap-noresult">
+						We didn&#039;t find any results
+					</div>
+					<div class="gmap-controls  with_open_street  ">
+						<div id="openmap"><i class="fas fa-angle-down"></i>open map</div>
+						<div id="gmap-control">
+							<span id="map-view"><i class="far fa-image"></i>View</span>
+							<span id="map-view-roadmap" class="map-type">Roadmap</span>
+							<span id="map-view-satellite" class="map-type">Satellite</span>
+							<span id="map-view-hybrid" class="map-type">Hybrid</span>
+							<span id="map-view-terrain" class="map-type">Terrain</span>
+							<span id="geolocation-button"><i class="fas fa-map-marker-alt"></i>My Location</span>
+							<span id="gmap-full"><i class="fas fa-arrows-alt"></i>Fullscreen</span>
+							<span id="gmap-prev"><i class="fas fa-chevron-left"></i>Prev</span>
+							<span id="gmap-next">Next<i class="fas fa-chevron-right"></i></span>
 						</div>
-						<div class=" col-md-9 rightmargin ">
-							<span class="entry-title listing_loader_title">Your search results</span>
-							<div class="spinner" id="listing_loader">
-								<div class="rect1"></div>
-								<div class="rect2"></div>
-								<div class="rect3"></div>
-								<div class="rect4"></div>
-								<div class="rect5"></div>
-							</div>
-							<div id="listing_ajax_container">
-							
-							</div>
-							<div id="content_container">
-								<div class="container_agent">
-									<div class="single-content single-agent">
-										<div class="wpestate_agent_details_wrapper">
-											<div class="col-md-5 agentpic-wrapper">
-												<div class="agent-listing-img-wrapper" data-link="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/">
-													<div class="agentpict" style="background-image:url(https://las-vegas.b-cdn.net/wp-content/uploads/2014/05/person7-21-500x328.png)"> </div>
-												</div>
-												<div class="agent_unit_social_single">
-													<a href="#" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a> <a href="#" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a> <a href="#" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a> <a href="#" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a> <a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-												</div>
+						<div id="gmapzoomplus"><i class="fas fa-plus"></i> </div>
+						<div id="gmapzoomminus"><i class="fas fa-minus"></i></div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-12 breadcrumb_container">
+					<ol class="breadcrumb">
+						<li><a href="https://lasvegas.wpresidence.net/">Home</a></li>
+						<li class="active">Michaela Finney</li>
+					</ol>
+				</div>
+				<div class=" col-md-9 rightmargin ">
+					<span class="entry-title listing_loader_title">Your search results</span>
+					<div class="spinner" id="listing_loader">
+						<div class="rect1"></div>
+						<div class="rect2"></div>
+						<div class="rect3"></div>
+						<div class="rect4"></div>
+						<div class="rect5"></div>
+					</div>
+					<div id="listing_ajax_container">
+
+					</div>
+					<div id="content_container">
+						<div class="container_agent">
+							<div class="single-content single-agent">
+								<div class="wpestate_agent_details_wrapper">
+									<div class="col-md-5 agentpic-wrapper">
+										<div class="agent-listing-img-wrapper" data-link="https://lasvegas.wpresidence.net/estate_agent/michaela-finney/">
+											<div class="agentpict" style="background-image:url(<?php echo $pro['ThumbnailImageURL'] ?>)"> </div>
+										</div>
+										<div class="agent_unit_social_single">
+											<a href="#" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a> <a href="#" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a> <a href="#" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a> <a href="#" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a> <a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+										</div>
+									</div>
+									<div class="col-md-7 agent_details">
+										<h3><a href=""><?php echo $pro['ProjectName'] ?></a></h3>
+										<div class="agent_position"><?php echo $pro['ProjectType'] ?></div>
+										<div class="agent_detail agent_phone_class"><i class="fas fa-phone"></i><a href="tel:(305) 555-4555">(305) 555-4555</a></div>
+										<div class="agent_detail agent_mobile_class"><i class="fas fa-mobile"></i></i><a href="tel:(305) 555-4555">(305) 555-4555</a></div>
+										<div class="agent_detail agent_email_class"><i class="far fa-envelope"></i><a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#016c68626960646d41766463726875642f6f6475"><span class="__cf_email__" data-cfemail="e08d89838881858ca097858293899485ce8e8594">[email&#160;protected]</span></a></div>
+										<div class="agent_detail agent_skype_class"><i class="fab fa-skype"></i>michaela.roja</div>
+										<div class="agent_detail agent_web_class"><i class="fas fa-desktop"></i><a href="http://website.net/" target="_blank">website.net</a></div>
+									</div>
+									<div class="row custom_details_container">
+										<a class="wpresidence_button send_email_agent" href="#show_contact">
+											Send Email </a>
+										<a class="wpresidence_button wpresidence_button_inverse realtor_call" href="tel:(305) 555-4555 ">
+											<i class="fas fa-phone"></i>
+											Call <span class="agent_call_no">(305) 555-4555</span></a>
+										<a class="wpresidence_button wpresidence_button_inverse realtor_whatsapp" href="https://api.whatsapp.com/send?phone=(305)%20555-4555&amp;text=Hello%20I'm%20interested%20in%20one%20of%20your%20listings.">
+											<i class="fab fa-whatsapp"></i>
+											WhatsApp</a>
+										<a class="wpresidence_button wpresidence_button_inverse realtor_whatsapp" href="<?php echo $pro['BrochureURL'] ?>" target="_blank">
+											<i class="fas fa-download"></i>
+											Download Brochure</a>
+
+										<div class="custom_parameter_wrapper">
+											<div class="col-md-4">
+												<span class="custom_parameter_label">
+													Location </span>
+												<span class="custom_parameter_value">
+													18 years as Expert Realtor at Madrid Realty </span>
 											</div>
-											<div class="col-md-7 agent_details">
-												<h3><a href=""><?php echo $pro['ProjectName'] ?></a></h3>
-												<div class="agent_position"><?php echo $pro['ProjectType'] ?></div>
-												<div class="agent_detail agent_phone_class"><i class="fas fa-phone"></i><a href="tel:(305) 555-4555">(305) 555-4555</a></div>
-												<div class="agent_detail agent_mobile_class"><i class="fas fa-mobile"></i></i><a href="tel:(305) 555-4555">(305) 555-4555</a></div>
-												<div class="agent_detail agent_email_class"><i class="far fa-envelope"></i><a href="https://lasvegas.wpresidence.net/cdn-cgi/l/email-protection#016c68626960646d41766463726875642f6f6475"><span class="__cf_email__" data-cfemail="e08d89838881858ca097858293899485ce8e8594">[email&#160;protected]</span></a></div>
-												<div class="agent_detail agent_skype_class"><i class="fab fa-skype"></i>michaela.roja</div>
-												<div class="agent_detail agent_web_class"><i class="fas fa-desktop"></i><a href="http://website.net/" target="_blank">website.net</a></div>
+											<div class="col-md-4">
+												<span class="custom_parameter_label">
+													Office Address</span>
+												<span class="custom_parameter_value">
+													Best Realtor in Madrid from 2000-2018 </span>
 											</div>
-											<div class="row custom_details_container">
-												<a class="wpresidence_button send_email_agent" href="#show_contact">
-												Send Email </a>
-												<a class="wpresidence_button wpresidence_button_inverse realtor_call" href="tel:(305) 555-4555 ">
-												<i class="fas fa-phone"></i>
-												Call <span class="agent_call_no">(305) 555-4555</span></a>
-												<a class="wpresidence_button wpresidence_button_inverse realtor_whatsapp" href="https://api.whatsapp.com/send?phone=(305)%20555-4555&amp;text=Hello%20I'm%20interested%20in%20one%20of%20your%20listings.">
-												<i class="fab fa-whatsapp"></i>
-												WhatsApp</a>
-												<div class="custom_parameter_wrapper">
-													<div class="col-md-4">
-														<span class="custom_parameter_label">
-														Location </span>
-														<span class="custom_parameter_value">
-														18 years as Expert Realtor at Madrid Realty </span>
-													</div>
-													<div class="col-md-4">
-														<span class="custom_parameter_label">
-														 Office Address</span>
-														<span class="custom_parameter_value">
-														Best Realtor in Madrid from 2000-2018 </span>
-													</div>
-													<div class="col-md-4">
-														<span class="custom_parameter_label">
-														Office Hours </span>
-														<span class="custom_parameter_value">
-														9 AM - 5 PM, Monday - Saturday </span>
-													</div>
-													<!-- <div class="col-md-4">
+											<div class="col-md-4">
+												<span class="custom_parameter_label">
+													Office Hours </span>
+												<span class="custom_parameter_value">
+													9 AM - 5 PM, Monday - Saturday </span>
+											</div>
+											<!-- <div class="col-md-4">
 														<span class="custom_parameter_label">
 														MLS Number </span>
 														<span class="custom_parameter_value">
 														12345 MYID - Until 12/12/2025 </span>
 													</div> -->
-													<!-- <div class="col-md-4">
+											<!-- <div class="col-md-4">
 														<span class="custom_parameter_label">
 														Languages Spoken </span>
 														<span class="custom_parameter_value">
 														French, Spanish, English </span>
 													</div> -->
-													<!-- <div class="col-md-4">
+											<!-- <div class="col-md-4">
 														<span class="custom_parameter_label">
 														Office Address </span>
 														<span class="custom_parameter_value">
 														Calle de Toledo, 28005 Madrid, Spain </span>
 													</div> -->
-												</div>
-												<!-- <div class="developer_taxonomy agent_taxonomy">
+										</div>
+										<!-- <div class="developer_taxonomy agent_taxonomy">
 													<h4>Specialties &amp; Service Areas</h4>
 													<a href="https://lasvegas.wpresidence.net/property_county_state_agent/comunidad-de-madrid/" rel="tag">Comunidad de Madrid</a><a href="https://lasvegas.wpresidence.net/property_city_agent/madrid/" rel="tag">Madrid</a><a href="https://lasvegas.wpresidence.net/property_area_agent/malasana/" rel="tag">Malasaña</a><a href="https://lasvegas.wpresidence.net/property_category_agent/residential/" rel="tag">Residential</a><a href="https://lasvegas.wpresidence.net/property_action_category_agent/commercial/" rel="tag">Commercial</a>
 												</div> -->
-											</div>
-										</div>
-										<div class="agent_content col-md-12">
-											<h4>About Me </h4>
-											<p><?php echo $pro['LongDescription'] ?></p>
-											
-										</div>
-										
 									</div>
-									<!-- <div class="agent_contanct_form ">
+								</div>
+								<div class="agent_content col-md-12">
+									<h4>About Me </h4>
+									<p><?php echo $pro['LongDescription'] ?></p>
+
+								</div>
+
+							</div>
+							<!-- <div class="agent_contanct_form ">
 										<h4 id="show_contact">Contact Me</h4>
 										<div class="schedule_meeting">Schedule a showing?</div>
 										<div class="alert-box error">
@@ -629,8 +637,8 @@
 										<input name="prop_id" type="hidden" id="agent_id" value="57">
 										<input type="hidden" name="contact_ajax_nonce" id="agent_property_ajax_nonce" value="66dc2680ca" />
 									</div> -->
-								</div>
-								<!-- <div class="mylistings agent_listing agency_listings_title single_listing_block">
+						</div>
+						<!-- <div class="mylistings agent_listing agency_listings_title single_listing_block">
 									<h3 class="agent_listings_title">My Listings</h3>
 									<input type="hidden" id="wpestate_agent_listings_nonce" value="8b4cdabddc" />
 									<div class="term_bar_wrapper" data-agent_id="-1" data-post_id="57">
@@ -961,13 +969,13 @@
 										<input type="button" class="wpresidence_button listing_load_more" value="Load More Properties">
 									</div>
 								</div> -->
-								<!-- <div class="property_reviews_wrapper agent_reviews_wrapper">
+						<!-- <div class="property_reviews_wrapper agent_reviews_wrapper">
 									<h4>Agent Reviews </h4>
 									<h5 class="review_notice">You need to <span id="login_trigger_modal">login</span> in order to post a review </h5>
 								</div> -->
-							</div>
-						</div>
-						<!-- <div class="clearfix visible-xs"></div>
+					</div>
+				</div>
+				<!-- <div class="clearfix visible-xs"></div>
 						<div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
 							<div id="primary_sidebar_wrapper">
 								<ul class="xoxo">
@@ -1200,61 +1208,48 @@
 							</div>
 						</div>
 					</div> -->
-					<div class="clearfix visible-xs"></div>
-						<div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
-							<div id="primary_sidebar_wrapper">
-								<ul class="xoxo">
-									<li id="ag_ag_dev_search_widget-1" class="widget-container advanced_search_sidebar ag_ag_dev_search_widget boxed_widget">
-										<h3 class="widget-title-sidebar">For More Inquiry</h3>
-										<form  method="post" action="">
-											<input type="text"   name="name" class="form-control" placeholder="Name" required/>
-											<input type="email"   name="EmailId" class="form-control" placeholder="email id" required/>
-											<input type="tel"  name="phone_number" class="form-control" placeholder="Phone number" required/>
-											<textarea type="text"  name="message" class="form-control" placeholder="Message" rows="3" cols="50" required>  </textarea>
-											<button type="submit" class="wpresidence_button" id="advanced_submit_widget" name="submit">Submit</button>
-										</form>
-									</li>
-									<li id="footer_latest_widget-2" class="widget-container latest_listings">
-										<?php include("latestlisting.php");  ?>
+				<div class="clearfix visible-xs"></div>
+				<div class="col-xs-12 col-md-3 widget-area-sidebar" id="primary">
+					<div id="primary_sidebar_wrapper">
+						<ul class="xoxo">
+							<li id="ag_ag_dev_search_widget-1" class="widget-container advanced_search_sidebar ag_ag_dev_search_widget boxed_widget">
+								<h3 class="widget-title-sidebar">For More Inquiry</h3>
+								<form method="post" action="">
+									<input type="text" name="name" class="form-control" placeholder="Name" required />
+									<input type="email" name="EmailId" class="form-control" placeholder="email id" required />
+									<input type="tel" name="phone_number" class="form-control" placeholder="Phone number" required />
+									<textarea placeholder="Enter your query here..." type="text" name="message" class="form-control" rows="3" cols="50" required></textarea>
+									<button type="submit" class="wpresidence_button" id="advanced_submit_widget" name="submit">Submit</button>
+								</form>
+							</li>
+							<li id="footer_latest_widget-2" class="widget-container latest_listings">
+								<?php include("latestlisting.php");  ?>
 
-										<!-- <h3 class="widget-title-sidebar">Latest Listings</h3>
-										<script data-cfasync="false" src="https://lasvegas.wpresidence.net/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
-											//<![CDATA[
-											jQuery(document).ready(function(){
-											   estate_sidebar_slider_carousel();
-											});
-											//]]>
-										</script>
-										<div class="latest_listings list_type"> -->
-										<?php
-											// $sql = $link->rawQuery("SELECT * from leasing_master WHERE isDeleted = 0 ORDER BY Lease_Name ASC LIMIT 3");
-											// foreach ($sql as $pr)
-											// {
-											?>
-											<!-- <div class="widget_latest_internal" data-link="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/">
-												<div class="widget_latest_listing_image"> <a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/"><img src="<?php echo $pr['ThumbnailURL'] ?>" alt="slider-thumb" data-original="https://las-vegas.b-cdn.net/wp-content/uploads/2021/10/house8-105x70.jpg" class="lazyload img_responsive" height="70" width="105" /></a> </div>
-												<div class="listing_name "><span class=widget_latest_title><a href="https://lasvegas.wpresidence.net/estate_property/villa-with-amazing-panoramic-view/"><?php echo $pr['Lease_Name'] ?>"</a></span> <span class=widget_latest_price><?php echo $pr['Price'] ?><span class="price_label"></span></span> </div>
-											</div> -->
-											<?php
-											//}
-											?>
-											
-										</div>
-										
-									</li>
-								</ul>
-							</div>
-						</div>
+
+								<?php
+
+								?>
+
+								<?php
+
+								?>
+
 					</div>
+
+					</li>
+					</ul>
 				</div>
-				
 			</div>
-				</div>
-			</div>
-			<?php include("subFooter.php"); ?>
 		</div>
-        <?php include("footer.php"); ?>
-		<!-- <div id="modal_login_wrapper">
+	</div>
+
+</div>
+</div>
+</div>
+<?php include("subFooter.php"); ?>
+</div>
+<?php include("footer.php"); ?>
+<!-- <div id="modal_login_wrapper">
 			<div class="modal_login_back"></div>
 			<div class="modal_login_container " style='height:520px;'>
 				<div id="login-modal_close"></div>
@@ -1423,4 +1418,5 @@
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/ajaxcalls.js?ver=4.4' id='ajaxcalls-js'></script>
 		<script type='text/javascript' src='https://las-vegas.b-cdn.net/wp-content/themes/wpresidence/js/owl.carousel.min.js?ver=4.4' id='owl_carousel-js'></script>
 	</body> -->
+
 </html>
