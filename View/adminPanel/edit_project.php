@@ -17,8 +17,8 @@ $id = $_GET['pid'];
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Projects</a></li>
-                            <li class="breadcrumb-item active">Projects</li>
+                            <li class="breadcrumb-item"><a href="projects.php">Projects</a></li>
+                            <li class="breadcrumb-item active"> Edit Projects</li>
                         </ol>
                     </div>
 
@@ -97,14 +97,6 @@ $id = $_GET['pid'];
                                                     <option <?php if($ad['ProjectType']=="Residential"){echo "selected";} ?>>Residential</option>
                                                 </select>
                                             </div>
-                                            <div class="mb-3">
-                                                <label class="form-label" id="ProjectAminities">Aminities</label>
-                                                <select class="form-select">
-                                                    <option>Select</option>
-                                                    <option>Commercial</option>
-                                                    <option>Residential</option>
-                                                </select>
-                                            </div>
                                             <div class="col-lg-12">
                                                 <label for="example-search-input" class="form-label">Long Description</label>
                                                 <textarea class="form-control" type="text"  rows="4" id="ProjectLongDescription" name="ProjectLongDescription"><?php  if($isUpdate==1){ echo $ad['LongDescription'];} ?></textarea>
@@ -177,32 +169,47 @@ $id = $_GET['pid'];
                                                     <div class="card-body">
 									                    <input type="file" name="BrochureURL" id="BrochureURL" class="form-control">
                                                         <br>
+                                                        <?php 
+                                                            if(strlen($ad['BrochureURL']) > 0 )
+                                                            {
+                                                        ?>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['BrochureURL']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php } ?>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>Thumbnail Image  </label>
+                                                    <label>Thumbnail Image</label>
                                                     <div class="card-body">
 									                    <input required type="file" name="ThumbnailImageURL" id="ThumbnailImageURL" class="form-control">
                                                         <br>
+                                                        <?php 
+                                                            if(strlen($ad['ThumbnailImageURL']) > 0 )
+                                                            {
+                                                        ?>
                                                         <div class="image-area">
-                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ThumbnailImageURL']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
+                                                            <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ThumbnailImageURL']; ?>"  class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php } ?>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
-                                                    <label>FloorPlant Image </label>
+                                                    <label>FloorPlan Image </label>
                                                     <div class="card-body">
 									                    <input type="file" name="FloorPlantImageURL" id="product_image" class="form-control">
                                                         <br>
+                                                        <?php 
+                                                            if(strlen($ad['FloorPlantImageURL']) > 0 )
+                                                            {
+                                                        ?>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['FloorPlantImageURL']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php } ?>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
@@ -210,10 +217,15 @@ $id = $_GET['pid'];
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage1" id="product_image" class="form-control">
                                                         <br>
+                                                        <?php 
+                                                            if(strlen($ad['ProjectImage1']) > 0 )
+                                                            {
+                                                        ?>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage1']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php } ?>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
@@ -221,10 +233,15 @@ $id = $_GET['pid'];
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage2" id="ProjectImage2" class="form-control">
                                                         <br>
+                                                        <?php 
+                                                            if(strlen($ad['ProjectImage2']) > 0 )
+                                                            {
+                                                        ?>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage2']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php } ?>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
@@ -232,10 +249,15 @@ $id = $_GET['pid'];
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage3" id="ProjectImage3" class="form-control">
                                                         <br>
+                                                        <?php 
+                                                            if(strlen($ad['ProjectImage3']) > 0 )
+                                                            {
+                                                        ?>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage3']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php } ?>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
@@ -243,10 +265,15 @@ $id = $_GET['pid'];
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage4" id="ProjectImage4" class="form-control">
                                                         <br>
+                                                        <?php 
+                                                            if(strlen($ad['ProjectImage4']) > 0 )
+                                                            {
+                                                        ?>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage4']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php } ?>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
@@ -254,10 +281,15 @@ $id = $_GET['pid'];
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage5" id="ProjectImage5" class="form-control">
                                                         <br>
+                                                        <?php 
+                                                            if(strlen($ad['ProjectImage5']) > 0 )
+                                                            {
+                                                        ?>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage5']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php } ?>
 									                </div> 
                                             </div>
                                             <div class="col-xl-4 col-md-6"  >
@@ -265,10 +297,15 @@ $id = $_GET['pid'];
                                                     <div class="card-body">
 									                    <input type="file" name="ProjectImage6" id="ProjectImage6" class="form-control">
                                                         <br>
+                                                        <?php 
+                                                            if(strlen($ad['ProjectImage6']) > 0 )
+                                                            {
+                                                        ?>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ProjectImage6']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php } ?>
 									                </div> 
                                             </div>
                                         </div> <!-- End Row -->

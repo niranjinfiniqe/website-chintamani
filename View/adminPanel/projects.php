@@ -37,14 +37,6 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                         <h4 class="mb-sm-0 font-size-18">Projects</h4>
-
-                        <div class="page-title-right">
-                            <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Projects</a></li>
-                                <li class="breadcrumb-item active">Projects</li>
-                            </ol>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -84,28 +76,9 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                         <a value="commercial" class="dropdown-item">Commercial</a>
                                         <a value="residential" class="dropdown-item">Residential</a>
                                     </div>
-                                    <!-- <select id="fetchvalue" name="fetchvalue">
-                                <option value="Commercial">Commercial</option>
-                                <option value="Residential">Residential</option>
-                            </select> -->
                                 </div>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Status<i class="mdi mdi-chevron-down"></i>
-                                    </button>
-                                    <div id="fetchvalue1" name="fetchvalue1" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a onclick="hello('5')" class="dropdown-item">Compeleted</a>
-                                        <a onclick="hello('7')" class="dropdown-item">In-Progress</a>
-                                    </div>
-                                </div>
-
                             </div>
-
-
-                            <br />
                             <div class="testing">
-
-
                                 <table class="table mb-0 ">
                                     <thead>
                                         <tr>
@@ -113,10 +86,10 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                             <th>Project Name</th>
                                             <th>Alias</th>
                                             <th>Short Description</th>
-                                            <th>BrochureURL</th>
+                                            <th>Project Type</th>
+                                            <th>Project Status</th>
                                             <th>ThumbnailImageURL</th>
                                             <th>FloorPlantImageURL</th>
-                                            <th>Images</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
                                         </tr>
@@ -133,17 +106,23 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                     <td><?php echo $row['ProjectName'] ?></td>
                                                     <td><?php echo $row['Alias'] ?></td>
                                                     <td><?php echo $row['ShortDescription'] ?></td>
+                                                    <td><?php echo $row['ProjectType'] ?></td>
+                                                    <td>
+                                                        <?php 
+                                                        $status= $row['FK_Status'];
+                                                        if($status==5) {
+                                                            echo "Completed";
+
+                                                        } else if($status==8) {
+                                                            echo "In-Progress";
+
+                                                        }
+                                                        ?>
+                                                    </td>
                                                     <td><img src="<?php echo $row['BrochureURL'] ?>" width="70px" height="70px" />
                                                     </td>
                                                     <td><img src="<?php echo $row['ThumbnailImageURL'] ?>" width="70px" height="70px" />
                                                     </td>
-                                                    <td><img src="<?php echo $row['FloorPlantImageURL'] ?>" width="70px" height="70px" />
-                                                    </td>
-                                                    <td><img src="<?php echo $row['ProjectImage1'] ?>" width="70px" height="70px" />
-                                                        <!-- <img src="<?php echo $row['ProjectImage2'] ?>" width="70px" height="70px"  />
-                                        <img src="<?php echo $row['ProjectImage3'] ?>" width="70px" height="70px"  />
-                                        <img src="<?php echo $row['ProjectImage4'] ?>" width="70px" height="70px"  /></td> -->
-
                                                     <td>
                                                         <a href="edit_project.php?pid=<?php echo $row['PK_Project']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                                                     </td>

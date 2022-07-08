@@ -16,8 +16,8 @@ $pid = 0;
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Projects</a></li>
-                                <li class="breadcrumb-item active">Projects</li>
+                                <li class="breadcrumb-item"><a href="projects.php">Projects</a></li>
+                                <li class="breadcrumb-item active">Add Projects</li>
                             </ol>
                         </div>
 
@@ -34,21 +34,18 @@ $pid = 0;
                             <form action="addproject.php?pid=<?php echo $pid ?> " class="needs-validation" novalidate method="post" name="f1" enctype="multipart/form-data">
                                 <div class="row">
                                     <!-- right pannel details-->
-                                    <h3 class=" mb-4">Details</h3>
+                                    <h3 class=" mb-4">Basic Details</h3>
                                     <div class="col-lg-6 ">
-                                   
-                                
-                                    
                                         <div>
                                             <div class="mb-3">
                                                 <label for="example-text-input" class="form-label">Project Name</label>
-                                                <input class="form-control" placeholder="Project Name" type="text" required id="specificfield" name="ProjectName" id="ProjectName">
+                                                <input class="form-control" placeholder="Project Name" type="text" required  name="ProjectName" id="ProjectName">
                                             </div>
                                            
                                             <div class="mb-3">
                                                 <label class="form-label">Status</label>
-                                                <select class="form-select" name="ProjectStatus" id="ProjectStatus">
-                                                    <option>Select</option>
+                                                <select class="form-control"  name="ProjectStatus" id="ProjectStatus">
+                                                    <option >Select</option>
                                                     <option>In Progress</option>
                                                     <option>Completed</option>
                                                 </select>
@@ -56,7 +53,7 @@ $pid = 0;
 
                                             <div class="col-lg-12">
                                                 <label for="example-search-input" class="form-label">Short Description</label>
-                                                <textarea class="form-control" type="text" rows="2" id="ProjectShortDescription" name="ProjectShortDescription"></textarea>
+                                                <textarea class="form-control" type="text" rows="2" placeholder="Short Description" id="ProjectShortDescription" name="ProjectShortDescription"></textarea>
                                             </div>
                                             <br>
                                             <br>
@@ -68,20 +65,20 @@ $pid = 0;
                                                 <input required type="file" name="ThumbnailImageURL" id="ProjectImage" class="form-control">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="example-tel-input" class="form-label">FloorPlant Url</label>
+                                                <label for="example-tel-input" class="form-label">FloorPlan Url</label>
                                                 <input type="file" name="FloorPlantImageURL" id="ProjectFloorPlant" class="form-control">
                                             </div>
                                             
                                             <div class="mb-3">
-                                                <label for="example-tel-input" class="form-label">Product Image1</label>
+                                                <label for="example-tel-input" class="form-label">Project Image1</label>
                                                 <input type="file" name="ProjectImage1" id="ProjectImage1" class="form-control">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="example-tel-input" class="form-label">Product Image3</label>
+                                                <label for="example-tel-input" class="form-label">Project Image3</label>
                                                 <input type="file" name="ProjectImage3" id="ProjectImage3" class="form-control">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="example-tel-input" class="form-label">Product Image5</label>
+                                                <label for="example-tel-input" class="form-label">Project Image5</label>
                                                 <input type="file" name="ProjectImage5" id="ProjectImage5" class="form-control">
                                             </div>
                                         </div>
@@ -106,7 +103,7 @@ $pid = 0;
                                             </div>
                                             <div class="col-lg-12">
                                                 <label for="example-search-input" class="form-label">Long Description</label>
-                                                <textarea class="form-control" type="text" rows="4" id="ProjectLongDescription" name="ProjectLongDescription"></textarea>
+                                                <textarea class="form-control" type="text" rows="4" id="ProjectLongDescription"  placeholder="LongDescription" name="ProjectLongDescription"></textarea>
                                             </div>
                                             <br>
                                             <br>
@@ -123,15 +120,15 @@ $pid = 0;
                                             
                                           
                                             <div class="mb-3">
-                                                <label for="example-tel-input" class="form-label">Product Image2</label>
+                                                <label for="example-tel-input" class="form-label">Project Image2</label>
                                                 <input type="file" name="ProjectImage2" id="ProjectImage2" class="form-control">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="example-tel-input" class="form-label">Product Image4</label>
+                                                <label for="example-tel-input" class="form-label">Project Image4</label>
                                                 <input type="file" name="ProjectImage4" id="ProjectImage4" class="form-control">
                                             </div>
                                             <div class="mb-3">
-                                                <label for="example-tel-input" class="form-label">Product Image6</label>
+                                                <label for="example-tel-input" class="form-label">Project Image6</label>
                                                 <input type="file" name="ProjectImage6" id="ProjectImage6" class="form-control">
                                             </div>
                                         </div>

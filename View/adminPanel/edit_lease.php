@@ -66,16 +66,6 @@ if ($isUpdate == 1) {
 
 
 
-
-
-
-
-
-
-
-
-
-
 ?>
 <div class="main-content">
 
@@ -227,10 +217,15 @@ if ($isUpdate == 1) {
                                                         <input required value="<?php echo $ThumbnailURL; ?>" class="form-control" type="file" placeholder="ThumbnailURL" id="ThumbnailURL" name="ThumbnailURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                                                             echo $ad['ThumbnailURL'];
                                                                                                                                                                                                                         } ?>">
-                                                                                               <br>                                                                                                                            <div class="image-area">
+                                                                                               <br>   
+                                                                                               <?php 
+                                                            if(strlen($ad['FloorPlantImageURL']) > 0 )
+                                                            {
+                                                        ?>                                                                                                                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ThumbnailURL'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image" style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php } ?>
                                                     </div>
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
@@ -238,7 +233,11 @@ if ($isUpdate == 1) {
                                                         <input value="<?php echo $FloorPlanURL; ?>" class="form-control" type="file" placeholder="FloorPlanURL" id="FloorPlanURL" name="FloorPlanURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                                                     echo $ad['FloorPlanURL'];
                                                                                                                                                                                                                 } ?>">
-                                                                                                        <br>                                                                                                           <div class="image-area">
+                                                                                                        <br>  
+                                                                                                        <?php 
+                                                            if(strlen($ad['FloorPlantImageURL']) > 0 )
+                                                            {
+                                                        ?>                                                                                                          <div class="image-area">
 
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['FloorPlanURL'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image" style="display: inline;">&#215;</a>
@@ -278,7 +277,7 @@ if ($isUpdate == 1) {
 
 
 
-                                        <h3 class=" mb-4">Project SEO Details</h3>
+                                        <h3 class=" mb-4">Leasing SEO Details</h3>
                                         <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
 
                                             <div>

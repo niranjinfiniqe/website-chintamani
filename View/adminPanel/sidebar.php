@@ -4,6 +4,12 @@
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title" data-key="t-menu">Menu</li>
+                <li>
+                    <a href="home.php">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Dashbord</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="projects.php">
@@ -26,7 +32,7 @@
                 <li>
                     <a href="inquiry.php">
                         <i data-feather="grid"></i>
-                        <span data-key="t-apps">inquiry</span>
+                        <span data-key="t-apps">Inquiries</span>
                     </a>
                 </li>
                 <li>
