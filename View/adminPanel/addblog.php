@@ -7,15 +7,11 @@ include("../../Helper/connect.php");
 	$BlogTitle=$_POST['BlogTitle'];
 	$BlogOwner=$_POST['BlogOwner'];
 	$BlogDate=$_POST['BlogDate'];
-	// $BlogThumbImage = $_POST['BlogThumbImage'];
 	$BlogAlias = $_POST['BlogAlias'];
 	$ReadingTime = $_POST["ReadingTime"];
 	$BlogStatus = $_POST["BlogStatus"];
-	// $BlogImage = $_POST["BlogImage"];
-	$BlogDescription = $_POST['BlogDescription'];
-  
-    
-
+	$DisplayOrder = $_POST["DisplayOrder"];
+    $BlogDescription = $_POST["BlogDescription"];
 	// SEO tool
 	$MetaTitle = $_POST["MetaTitle"];
 	$MetaDescription =$_POST["MetaDescription"];
@@ -28,28 +24,18 @@ include("../../Helper/connect.php");
 
 	$errMsg = '';
 	$status = '';
-	//add status code instead of name
-	// if($project_status === 'In Progress'){
-	// 	$status = 7;
 
-	// } else if ($project_status === 'Completed') {
-	// 	$status = 5;
-	// } 
-
-	// if(isset($_REQUEST['pid']) && $_REQUEST['pid'] >0) {
-	// 	$pid = $_REQUEST['pid'];
-	// 	$link->where("PK_Project",$pid);
-	// 	$ad=$link->update("project_master",array("ProjectName"=>$project_name,"Alias"=>$project_alias,"ShortDescription"=>$project_shortDes,"LongDescription"=>$project_longdesc,"ProjectType"=>$project_type,"FK_Status"=>$status,"Keywords"=>$project_keywords,"HiTag"=>$project_HiTag,"Metatitle"=>$project_Metatitle,"MetaDescription"=>$project_MetaDescription,"altTag"=>$project_altTag,"ProjectOgTitle"=>$project_ProjectOgTitle,"ProjectOgTag"=>$project_ProjectOgTag,"TwitterTag"=>$project_TwitterTag));
-	// } else if($errMsg == ''){
-	// 		$ad= $link->insert("project_master", array("ProjectName"=>$project_name,"Alias"=>$project_alias,"ShortDescription"=>$project_shortDes,"LongDescription"=>$project_longdesc,"ProjectType"=>$project_type,"FK_Status"=>$status,"Keywords"=>$project_keywords,"HiTag"=>$project_HiTag,"Metatitle"=>$project_Metatitle,"MetaDescription"=>$project_MetaDescription,"altTag"=>$project_altTag,"ProjectOgTitle"=>$project_ProjectOgTitle,"ProjectOgTag"=>$project_ProjectOgTag,"TwitterTag"=>$project_TwitterTag));
-	// }
+	if($BlogDate === ""  ){
+		date_default_timezone_set('Asia/Kolkata');
+		$date = date('d-m-y');
+		$BlogDate = $date;
+	}
 
 	if($errMsg == ''){
-	  $ad= $link->insert("blog_master", array("BlogTitle"=>$BlogTitle,"BlogOwner"=>$BlogOwner,"BlogDate"=>$BlogDate,"BlogAlias"=>$BlogAlias,"ReadingTime"=>$ReadingTime,"BlogStatus"=>$BlogStatus,"MetaTitle"=>$MetaTitle,"MetaDescription"=>$MetaDescription,"altTag"=>$altTag,"BlogOgTitle"=>$BlogOgTitle,"BlogOgTag"=>$BlogOgTag,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords));
+	  $ad= $link->insert("blog_master", array("BlogTitle"=>$BlogTitle,"BlogOwner"=>$BlogOwner,"BlogDate"=>$BlogDate,"BlogAlias"=>$BlogAlias,"ReadingTime"=>$ReadingTime,"FK_Status"=>$BlogStatus,"BlogDescription"=>$BlogDescription,"DisplayOrder"=>$DisplayOrder,"MetaTitle"=>$MetaTitle,"MetaDescription"=>$MetaDescription,"altTag"=>$altTag,"BlogOgTitle"=>$BlogOgTitle,"BlogOgTag"=>$BlogOgTag,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords));
 	}
 
 //   Code to add images to database
-
 if ($ad) {
 
 	if ($_FILES['BlogThumbImage']['size'] > 0) {

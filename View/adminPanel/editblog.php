@@ -6,22 +6,14 @@ include("../../Helper/connect.php");
 
 
 $id = $_POST['pid'];
-$BlogTitle = $_POST['BlogTitle'];
-$BlogOwner = $_POST['BlogOwner'];
-// $BlogImage = $_POST['BlogImage'];
-// $BlogDescription = $_POST['BlogDescription'];
-// if($_POST['BlogStatus'] == "Published"){
-//     $BlogStatus = 10;
-
-// }elseif($_POST['BlogStatus'] == "draft"){
-//     $BlogStatus = 11
-
-// }
-$BlogStatus = $_POST['BlogStatus'];
-echo $BlogStatus;
-
-$BlogDate = $_POST['BlogDate'];
-$ReadingTime = $_POST['ReadingTime'];
+$BlogTitle=$_POST['BlogTitle'];
+$BlogOwner=$_POST['BlogOwner'];
+$BlogDate=$_POST['BlogDate'];
+$BlogAlias = $_POST['BlogAlias'];
+$ReadingTime = $_POST["ReadingTime"];
+$BlogStatus = $_POST["BlogStatus"];
+$DisplayOrder = $_POST["DisplayOrder"];
+$BlogDescription = $_POST["BlogDescription"];
 
 
 // Seo tools
@@ -34,16 +26,21 @@ $altTag = $_POST['altTag'];
 $MetaDescription = $_POST['MetaDescription'];
 $MetaTitle = $_POST['MetaTitle'];
 
-// $DisplayOrder = $_POST['DisplayOrder'];
-// $FK_Status = $_POST['FK_Status'];
 $Keywords = $_POST['Keywords'];
 
 $errMsg = '';
 
+if($BlogDate === ""  ){
+    date_default_timezone_set('Asia/Kolkata');
+    $date = date('d-m-y');
+    $BlogDate = $date;
+}
+
+
 
 
 if($errMsg == ''){
-    $link->where('PK_BlogID',$id)->update("blog_master", array("BlogTitle"=>$BlogTitle,"BlogOwner"=>$BlogOwner,"BlogDate"=>$BlogDate,"BlogAlias"=>$BlogAlias,"ReadingTime"=>$ReadingTime,"BlogStatus"=>$BlogStatus,"MetaTitle"=>$MetaTitle,"MetaDescription"=>$MetaDescription,"altTag"=>$altTag,"BlogOgTitle"=>$BlogOgTitle,"BlogOgTag"=>$BlogOgTag,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords));
+    $link->where('PK_BlogID',$id)->update("blog_master", array("BlogTitle"=>$BlogTitle,"BlogOwner"=>$BlogOwner,"BlogDate"=>$BlogDate,"BlogAlias"=>$BlogAlias,"ReadingTime"=>$ReadingTime,"FK_Status"=>$BlogStatus,"BlogDescription"=>$BlogDescription,"DisplayOrder"=>$DisplayOrder,"MetaTitle"=>$MetaTitle,"MetaDescription"=>$MetaDescription,"altTag"=>$altTag,"BlogOgTitle"=>$BlogOgTitle,"BlogOgTag"=>$BlogOgTag,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords));
   }
 
 //   Code to add images to database

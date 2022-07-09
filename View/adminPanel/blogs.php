@@ -55,10 +55,10 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                             <tr>
                                                 <th>#</th>
                                                 <th>Blog Title</th>
+                                                <th>Blog Alias</th>
+                                                <th>Blog Date</th>
                                                 <th>Blog Owner</th>
                                                 <th>Blog Thumbnail Image</th>
-                                                <th>Blog Image</th>
-                                                <th>BlogDescription</th>
                                                 <th>Blog Status</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
@@ -73,11 +73,11 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                     <tr>
                                                         <th scope="row"><?php echo $count++; ?></th>
                                                         <td><?php echo $row['BlogTitle'] ?></td>
+                                                        <td><?php echo $row['BlogAlias'] ?></td>
+                                                        <td><?php echo $row['BlogDate'] ?></td>
                                                         <td><?php echo $row['BlogOwner'] ?></td>
                                                         <td><img src="<?php echo $row['BlogThumbImage'] ?>" width="70px" height="70px" /></td>
-                                                        <td><img src="<?php echo $row['BlogImage'] ?>" width="70px" height="70px" /></td>
-                                                        <td><?php echo $row['BlogDescription'] ?></td>
-                                                        <td><?php if($row['BlogStatus'] == 10){echo "Published";}elseif($row['BlogStatus'] == 11){echo "Draft"; }?></td>
+                                                        <td><?php if($row['FK_Status'] == 10){echo "Published";}elseif($row['FK_Status'] == 11){echo "Draft"; }?></td>
                                                         <td>
                                                             <a  href="edit_blog.php?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                                                         </td>

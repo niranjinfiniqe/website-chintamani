@@ -72,7 +72,7 @@ if ($isUpdate == 1) {
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">blogs</a></li>
+                            <li class="breadcrumb-item"><a href="blogs.php">Blogs</a></li>
                             <li class="breadcrumb-item active">Edit Blog</li>
                         </ol>
                     </div>
@@ -94,7 +94,7 @@ if ($isUpdate == 1) {
                                         <div class="col-lg-6">
                                             <div>
                                                 <div class="mb-3">
-                                                    <label for="example-text-input" class="form-label">Blog Title</label>
+                                                    <label for="example-text-input" class="form-label">Blog Title<span class="required"> *</span></label>
                                                     <input required type="hidden" name="pid" id="pid" value="<?php echo $id; ?> ">
                                                     <input class="form-control" name="BlogTitle" type="text" value="<?php echo $BlogTitle; ?>"  id="BlogTitle">
                                                 </div>
@@ -106,17 +106,18 @@ if ($isUpdate == 1) {
                                                     <label for="example-search-input" class="form-label">Blog Date</label>
                                                     <input class="form-control" name="BlogDate" type="Date" value="<?php echo $BlogDate; ?>"   id="ProjectAlias">
                                                 </div>
-
-
-
                                                 <div class="mb-3">
-                                                    <label for="example-tel-input" class="form-label"> Blog Thumb Image</label>
+                                                    <label for="example-tel-input" class="form-label"> Blog Thumb Image<span class="required"> *</span></label>
                                                     <input required type="file" name="BlogThumbImage" id=" BlogThumbImage" value="<?php echo $BlogThumbImage; ?>" class="form-control">
                                                     <br>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['BlogThumbImage']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image"  style="display: inline;">&#215;</a>
                                                         </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="example-tel-input" class="form-label">Display Order <span class="required"> *</span></label>
+                                                    <input type="number" name="DisplayOrder" required id=" DisplayOrder" class="form-control">
                                                 </div>
 
                                             </div>
@@ -125,7 +126,7 @@ if ($isUpdate == 1) {
                                         <div class="col-lg-6">
                                             <div class="mt-3 mt-lg-0">
                                                 <div class="mb-3">
-                                                    <label for="example-text-input" class="form-label">Blog Alias</label>
+                                                    <label for="example-text-input" class="form-label">Blog Alias<span class="required"> *</span></label>
                                                     <input onkeyup="aliascheck(this.value)" required class="form-control" name="BlogAlias" type="text" value="<?php echo $BlogAlias; ?>"  id="BlogAlias">
                                                 </div>
                                                 <div class="mb-3">
@@ -133,7 +134,7 @@ if ($isUpdate == 1) {
                                                     <input class="form-control" name="ReadingTime" type="number" value="<?php echo $ReadingTime; ?>"  id="ReadingTime">
                                                 </div>
                                                 <div class="mb-3">
-                                                    <label for="example-search-input" class="form-label">Blog Status</label>
+                                                    <label for="example-search-input" class="form-label">Blog Status<span class="required"> *</span></label>
                                                     <select required class="form-select" id="BlogStatus" name="BlogStatus">
                                                         <option>select</option>
                                                         <option value="10" <?php if($BlogStatus == 10){echo "selected";} ?> >Publised</option>
@@ -153,24 +154,23 @@ if ($isUpdate == 1) {
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <h4 class="card-title">Blog description</h4>
+                                                        <h4 class="card-title">Blog Data<span class="required"> *</span></h4>
                                                     </div>
-                                                    <div class="card-body">
-                                                        <div id="ckeditor-classic"></div>
-                                                    </div>
+                                                    <textarea type="text" name="BlogDescription" placeholder="Enter Blog Details" class="form-control" id="ckeExample" value=<?php echo $ad['BlogDescription']; ?>></textarea>
+                                                
                                                 </div>
                                             </div>
                                             <!-- end col -->
                                         </div>
 
+
                                         <div class="card-body">
                                             <div>
-                                                <h5 class="card-title mb-4">Project SEO Details</h5>
+                                                <h5 class="card-title mb-4">Blog SEO Details</h5>
                                                 <input type="hidden" />
                                                 <div class="row">
                                                     <div class="col-xl-4 col-md-6">
@@ -251,7 +251,36 @@ if ($isUpdate == 1) {
             </div>
 
             <!-- ckeditor -->
-            <script src="assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.3.2/ckeditor.js" ></script>
+        <script>
+	
+            var ckEditorID;
+    
+            ckEditorID = 'ckeExample';
+    
+            CKEDITOR.config.forcePasteAsPlainText = true;
+            CKEDITOR.replace( ckEditorID,
+                {
+                    toolbar :
+                    [
+                    { name: 'document', items: [ 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
+                    { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+                    { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
+                    { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
+                    '/',
+                    { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
+                    { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
+                    { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+                    { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
+                    '/',
+                    { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
+                    { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
+                    { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
+                    { name: 'about', items: [ 'About' ] }
+                    ]
+                
+                })
+        </script>    
 
 
             <!-- ckeditor -->
