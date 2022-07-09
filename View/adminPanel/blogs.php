@@ -1,6 +1,6 @@
 <?php
-include("header.php");
-include("../../Helper/connect.php");
+include ("header.php");
+include ("../../Helper/connect.php");
 $query = "select * from blog_master WHERE isDeleted = 0";
 $exce = mysqli_query($con, $query);
 
@@ -8,16 +8,18 @@ $Total_no_of_rows = mysqli_num_rows($exce);
 $rows_to_be_displayed = "3";
 $no_of_pages = ceil($Total_no_of_rows / $rows_to_be_displayed);
 
-if (isset($_GET["page_id"])) {
+if (isset($_GET["page_id"]))
+{
     $Pageid = $_GET["page_id"];
-} else {
+}
+else
+{
     $Pageid = 1;
 }
-$offset  = ($Pageid - 1) * $rows_to_be_displayed;
+$offset = ($Pageid - 1) * $rows_to_be_displayed;
 // offset- The number after which need to fetch the rows.
 $query_for_pagniation = "select * from blog_master where isDeleted=0 LIMIT {$offset},{$rows_to_be_displayed}";
 $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
-
 
 ?>
 <div class="main-content">
@@ -66,10 +68,12 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $count = ($rows_to_be_displayed * ($Pageid - 1)) + 1;
-                                            if (mysqli_num_rows($exce_for_pagination) > 0) {
-                                                while ($row = mysqli_fetch_array($exce_for_pagination)) {
-                                            ?>
+$count = ($rows_to_be_displayed * ($Pageid - 1)) + 1;
+if (mysqli_num_rows($exce_for_pagination) > 0)
+{
+    while ($row = mysqli_fetch_array($exce_for_pagination))
+    {
+?>
                                                     <tr>
                                                         <th scope="row"><?php echo $count++; ?></th>
                                                         <td><?php echo $row['BlogTitle'] ?></td>
@@ -77,7 +81,14 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                         <td><?php echo $row['BlogDate'] ?></td>
                                                         <td><?php echo $row['BlogOwner'] ?></td>
                                                         <td><img src="<?php echo $row['BlogThumbImage'] ?>" width="70px" height="70px" /></td>
-                                                        <td><?php if($row['FK_Status'] == 10){echo "Published";}elseif($row['FK_Status'] == 11){echo "Draft"; }?></td>
+                                                        <td><?php if ($row['FK_Status'] == 10)
+        {
+            echo "Published";
+        }
+        elseif ($row['FK_Status'] == 11)
+        {
+            echo "Draft";
+        } ?></td>
                                                         <td>
                                                             <a  href="edit_blog.php?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                                                         </td>
@@ -86,42 +97,36 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                         </td>
                                                     </tr>
                                             <?php
-                                                }
-                                            }
-                                            ?>
+    }
+}
+?>
                                         </tbody>
                                     </table>
                                 </div>
                                 <br />
                                 <nav aria-label="...">
                                     <ul class="pagination  justify-content-end mb-0">
-                                        <!-- <li class="page-item disabled">
-                                    <span class="page-link"><i class="mdi mdi-chevron-left"></i></span>
-                                </li> -->
                                         <?php
-                                        for ($i = 1; $i <= $no_of_pages; $i++) {
+for ($i = 1;$i <= $no_of_pages;$i++)
+{
 
-                                        ?>
-                                            <li class="page-item <?php if ($i == $Pageid) {
-                                                                        echo 'active';
-                                                                    } ?> "><a class="page-link" href="projects.php?page_id=<?php echo $i; ?>">
+?>
+                                            <li class="page-item <?php if ($i == $Pageid)
+    {
+        echo 'active';
+    } ?> "><a class="page-link" href="blogs.php?page_id=<?php echo $i; ?>">
                                                     <?php echo $i; ?></a></li>
 
                                         <?php
-                                        }
-                                        ?>
+}
+?>
 
-                                        <!-- <li class="page-item">
-                                    <a class="page-link" href="#"><i class="mdi mdi-chevron-right"></i></a>
-                                </li> -->
                                     </ul>
                                 </nav>
-
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <script>
                     function confirmationDelete(anchor) {
                         var conf = confirm('Are You Sure Want To Delete ?');
@@ -132,5 +137,5 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
 
 
                 <?php
-                include("footer.php")
-                ?>
+include ("footer.php")
+?>
