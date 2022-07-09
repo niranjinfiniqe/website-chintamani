@@ -46,28 +46,6 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                     </div>
                     <div class="card-body">
 
-                    <!-- Mridul removebtn -->
-                    <!-- <div class="d-flex flex-wrap gap-2 ">
-                            <button type="button" class="btn btn-secondary waves-effect waves-light" >All Projects</button>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                   Type of Project <i class="mdi mdi-chevron-down"></i>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Commercial</a>
-                                    <a class="dropdown-item" href="#">Residential</a>
-                                </div>
-                            </div>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                   Status<i class="mdi mdi-chevron-down"></i>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Compelete</a>
-                                    <a class="dropdown-item" href="#">In-Progress</a>
-                                </div>
-                            </div>
-                        </div> -->
                         <br/>
                         <div class="table-responsive">
                             <table class="table mb-0">
@@ -128,7 +106,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                         ?>
                                             <li class="page-item <?php if ($i == $Pageid) {
                                                                         echo 'active';
-                                                                    } ?> "><a class="page-link" href="projects.php?page_id=<?php echo $i; ?>">
+                                                                    } ?> "><a class="page-link" href="Interior.php?page_id=<?php echo $i; ?>">
                                                     <?php echo $i; ?></a></li>
 
                                         <?php

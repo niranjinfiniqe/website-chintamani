@@ -2,11 +2,41 @@
 include("header.php");
 include("../../Helper/connect.php");
 
-$query = "select * from project_master where isDeleted=0";
-$exce = mysqli_query($con, $query);
 
 
-// For Pagination
+if(isset($_GET['ProjectType'])){
+    $projectType =$_GET['ProjectType'];
+
+
+
+
+    $query = "SELECT * FROM project_master WHERE ProjectType = '$projectType' AND isDeleted=0";
+    $result = mysqli_query($con, $query);
+    
+
+    $Total_no_of_rows = mysqli_num_rows($result);
+    $rows_to_be_displayed = "5";
+    $no_of_pages = ceil($Total_no_of_rows / $rows_to_be_displayed);
+
+if (isset($_GET["page_id"])) {
+    $Pageid = $_GET["page_id"];
+} else {
+
+    $Pageid = 1;
+}
+$offset  = ($Pageid - 1) * $rows_to_be_displayed;
+// offset- The number after which need to fetch the rows.
+$query_for_pagniation = "select * from project_master where ProjectType = '$projectType' and isDeleted=0 LIMIT {$offset},{$rows_to_be_displayed}";
+$exce_for_pagination = mysqli_query($con, $query_for_pagniation);
+
+
+}else{
+
+    $query = "select * from project_master where isDeleted=0";
+    $exce = mysqli_query($con, $query);
+
+
+    // For Pagination
 $Total_no_of_rows = mysqli_num_rows($exce);
 $rows_to_be_displayed = "5";
 $no_of_pages = ceil($Total_no_of_rows / $rows_to_be_displayed);
@@ -21,6 +51,11 @@ $offset  = ($Pageid - 1) * $rows_to_be_displayed;
 // offset- The number after which need to fetch the rows.
 $query_for_pagniation = "select * from project_master where isDeleted=0 LIMIT {$offset},{$rows_to_be_displayed}";
 $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
+
+
+}
+
+
 
 
 
@@ -73,11 +108,12 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                         Project Type<i class="mdi mdi-chevron-down"></i>
                                     </button>
                                     <div id="fetchvalue" name="fetchvalue" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a value="commercial" class="dropdown-item">Commercial</a>
-                                        <a value="residential" class="dropdown-item">Residential</a>
+                                        <a href="projects.php?ProjectType=Commercial" value="commercial" class="dropdown-item">Commercial</a>
+                                        <a href="projects.php?ProjectType=Residential"  value="residential" class="dropdown-item">Residential</a>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="testing">
                                 <table class="table mb-0 ">
                                     <thead>
@@ -127,7 +163,14 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                         <a href="edit_project.php?pid=<?php echo $row['PK_Project']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                                                     </td>
                                                     <td>
-                                                        <a a onClick='javascript:confirmationDelete($(this));return false;' href="deleteproject.php/?pid=<?php echo $row['PK_Project']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                                        <a a onClick='javascript:confirmationDelete($(this));return false;' href="deleteproject.php?pid=<?php echo $row['PK_Project'];
+                                                        if(isset($_GET['ProjectType'])){
+                                                            echo "&ProjectType=".$_GET['ProjectType'];
+                                                        }
+                                                      
+                                                        
+                                                        ?>"
+                                                        class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                         <?php
@@ -136,7 +179,9 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                         ?>
                                     </tbody>
                                 </table>
-                            </div>
+
+                           
+                          
                             <br />
 
                             <!-- Pagination Starts here -->
@@ -153,7 +198,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                     ?>
                                         <li class="page-item <?php if ($i == $Pageid) {
                                                                     echo 'active';
-                                                                } ?> "><a class="page-link" href="projects.php?page_id=<?php echo $i; ?>">
+                                                                } ?> "><a class="page-link" href="projects.php?page_id=<?php echo $i; ?><?php if(isset($_GET['ProjectType'])){echo "&ProjectType=".$_GET['ProjectType'];} ?>">
                                                 <?php echo $i; ?></a></li>
 
                                     <?php
@@ -163,6 +208,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
 
                                 </ul>
                             </nav>
+                            </div>
 
                         </div>
                     </div>
@@ -225,7 +271,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                 success: function(data) {
 
                     $(".testing").html(data);
-                    // console.log(data);
+                    console.log(data);
                     // $(".testing").html("<h1>loading...</h1>");
                 }
             });

@@ -37,8 +37,8 @@ $exce = mysqli_query($con, $query);
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Leasing</a></li>
-                                <li class="breadcrumb-item active">Leasing</li>
+                                <li class="breadcrumb-item"><a href="lease.php">Leasing</a></li>
+                                <li class="breadcrumb-item active">Add Leasing</li>
                             </ol>
                         </div>
 
@@ -206,7 +206,7 @@ $exce = mysqli_query($con, $query);
                                             </div>
                                         </div>
   
-                                        <h3 class=" mb-4">Project SEO Details</h3>
+                                        <h3 class=" mb-4">Lease SEO Details</h3>
                                         
                             <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
                             

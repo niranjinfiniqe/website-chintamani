@@ -1,12 +1,19 @@
 <?php
 include("header.php");
 include("../../Helper/connect.php");
-$query = "select * from leasing_master where isDeleted=0";
-$exce = mysqli_query($con, $query);
 
 
-// For pagination
-$Total_no_of_rows = mysqli_num_rows($exce);
+
+
+
+if (isset($_GET['Location'])) {
+    $request = $_GET['Location'];
+    $query = "SELECT * FROM leasing_master WHERE Location = '$request' AND isDeleted=0";
+    $result = mysqli_query($con, $query);
+
+
+    // For pagination
+$Total_no_of_rows = mysqli_num_rows($result);
 $rows_to_be_displayed = "5";
 $no_of_pages = ceil($Total_no_of_rows / $rows_to_be_displayed);
 
@@ -17,8 +24,37 @@ if (isset($_GET["page_id"])) {
 }
 $offset  = ($Pageid - 1) * $rows_to_be_displayed;
 // offset- The number after which need to fetch the rows.
-$query_for_pagniation = "select * from leasing_master where isDeleted=0 LIMIT {$offset},{$rows_to_be_displayed}";
+$query_for_pagniation = "select * from leasing_master where Location = '$request' and isDeleted=0 LIMIT {$offset},{$rows_to_be_displayed}";
 $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
+
+}
+else{
+
+    $query = "select * from leasing_master where isDeleted=0";
+    $result = mysqli_query($con, $query);
+
+    // For pagination
+    $Total_no_of_rows = mysqli_num_rows($result);
+    $rows_to_be_displayed = "5";
+    $no_of_pages = ceil($Total_no_of_rows / $rows_to_be_displayed);
+    
+    if (isset($_GET["page_id"])) {
+        $Pageid = $_GET["page_id"];
+    } else {
+        $Pageid = 1;
+    }
+    $offset  = ($Pageid - 1) * $rows_to_be_displayed;
+    // offset- The number after which need to fetch the rows.
+    $query_for_pagniation = "select * from leasing_master where isDeleted=0 LIMIT {$offset},{$rows_to_be_displayed}";
+    $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
+
+
+}
+
+
+
+
+
 
 ?>
 <div class="main-content">
@@ -48,19 +84,21 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                         </div>
                         <div class="card-body">
                             <div class="d-flex flex-wrap gap-2">
-                                <button onclick="loadAllData()" type="button" class="btn btn-secondary waves-effect waves-light"> All Lease</button>
+                                <button onclick="loadAllData()" type="button" class="btn btn-secondary waves-effect waves-light">
+                                <a style="text-decoration:none ;color:white" href="lease.php?page_id=1">All Lease</a> </button>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownLocationfilterButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Loction<i class="mdi mdi-chevron-down"></i>
+                                        Location<i class="mdi mdi-chevron-down"></i>
                                     </button>
                                     <div id="fetchvalue" name="fetchvalue" class="dropdown-menu" aria-labelledby="dropdownLocationfilterButton">
-                                        <a class="dropdown-item">Goregaon</a>
-                                        <a class="dropdown-item">Andheri</a>
-                                        <a class="dropdown-item">Chakala</a>
+                                        <a href="lease.php?Location=Goregaon" class="dropdown-item">Goregaon</a>
+                                        <a href="lease.php?Location=Andheri" class="dropdown-item">Andheri</a>
+                                        <a href="lease.php?Location=Chakala" class="dropdown-item">Chakala</a>
                                     </div>
                                 </div>
                             </div>
                             <br />
+                           
                             <div class="testing" class="table-responsive">
                                 <table class="table mb-0">
                                     <thead>
@@ -105,7 +143,11 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                         <a href="edit_lease.php?pid=<?php echo $row['PK_lease']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                                                     </td>
                                                     <td>
-                                                        <a onClick='javascript:confirmationDelete($(this));return false;' href="deletelease.php/?pid=<?php echo $row['PK_lease']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                                        <a onClick='javascript:confirmationDelete($(this));return false;' href="deletelease.php?pid=<?php echo $row['PK_lease'];
+                                                        if(isset($_GET['Location'])){
+                                                            echo "&Location=".$_GET['Location'];
+                                                        }
+                                                         ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                         <?php
@@ -114,26 +156,29 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                         ?>
                                     </tbody>
                                 </table>
-                            </div>
+                           
                             <br />
                             <!-- Pagination starts here -->
                             <nav aria-label="...">
                                 <ul class="pagination  justify-content-end mb-0">
-                                    <!-- <li class="page-item disabled">
-                                        <span class="page-link"><i class="mdi mdi-chevron-left"></i></span>
-                                    </li> -->
+                                  
                                     <?php
                                     for($i=1;$i<=$no_of_pages;$i++)
                                     { 
                                     ?> 
-                                    <li class="page-item <?php if($i == $Pageid){echo 'active';}  ?>"><a class="page-link" href="lease.php?page_id=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                                    <li class="page-item <?php if($i == $Pageid){echo 'active';}  ?>"><a class="page-link" href="lease.php?page_id=<?php echo $i;
+                                   if(isset($_GET['Location'])){
+                                    echo "&Location=".$_GET['Location'];
+
+
+                                   }
+                                    
+                                    ?>"><?php echo $i; ?></a></li>
                                     <?php } ?>
                                  
-                                    <!-- <li class="page-item">
-                                        <a class="page-link" href="#"><i class="mdi mdi-chevron-right"></i></a>
-                                    </li> -->
                                 </ul>
                             </nav>
+                            </div>
                         </div>
                     </div>
                 </div>

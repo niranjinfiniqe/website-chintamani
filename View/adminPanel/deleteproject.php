@@ -3,6 +3,10 @@
 ?>
 <?php
 		include("../../Helper/connect.php");
+
+
+
+echo $page_id,$ProjectType;
 		
 		
 		$id=$_REQUEST['pid'];
@@ -10,7 +14,17 @@
 		$a=$link->update("project_master",array("isDeleted"=>1));
 		if($a)
 		{		
-			header('location:../projects.php');
+
+			if(isset($_GET['ProjectType'])){
+				
+$ProjectType = $_GET['ProjectType'];
+				$page = "location:projects.php?ProjectType=$ProjectType";
+				header($page);
+
+			}else{
+				header("location:projects.php");
+			}
+			
 		}
 		
 ?>

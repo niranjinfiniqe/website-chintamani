@@ -67,6 +67,8 @@ if ($isUpdate == 1) {
 
 
 ?>
+
+
 <div class="main-content">
 
     <div class="page-content">
@@ -80,7 +82,7 @@ if ($isUpdate == 1) {
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="javascript: void(0);">Leasing</a></li>
+                                <li class="breadcrumb-item"><a href="lease.php">Leasing</a></li>
                                 <li class="breadcrumb-item active">Edit lease</li>
                             </ol>
                         </div>
@@ -219,7 +221,7 @@ if ($isUpdate == 1) {
                                                                                                                                                                                                                         } ?>">
                                                                                                <br>   
                                                                                                <?php 
-                                                            if(strlen($ad['FloorPlantImageURL']) > 0 )
+                                                            if(strlen($ad['FloorPlanURL']) > 0 )
                                                             {
                                                         ?>                                                                                                                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ThumbnailURL'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
@@ -235,13 +237,14 @@ if ($isUpdate == 1) {
                                                                                                                                                                                                                 } ?>">
                                                                                                         <br>  
                                                                                                         <?php 
-                                                            if(strlen($ad['FloorPlantImageURL']) > 0 )
+                                                            if(strlen($ad['FloorPlanURL']) > 0 )
                                                             {
                                                         ?>                                                                                                          <div class="image-area">
 
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['FloorPlanURL'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
                                                             <a class="remove-image" style="display: inline;">&#215;</a>
                                                         </div>
+                                                        <?php }?>
                                                     </div>
 
 

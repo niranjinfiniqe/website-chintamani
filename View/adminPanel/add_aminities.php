@@ -62,115 +62,15 @@ $exce = mysqli_query($con, $query);
                         <input name="amenity name" required class="form-control" type="text" placeholder="" id="BlogTitle">
                     </div>
                    
-                    <!-- <div class="mb-3">
-                        <label for="example-text-input" class="form-label">Alt Tag</label>
-                        <input name="altTag"  class="form-control" type="text" placeholder="" id="BlogTitle">
-                    </div> -->
-
-                    <!-- <div class="mb-3">
-                        <label for="example-tel-input" class="form-label">Gallery Image1</label>
-						<input  type="file" name="GalleryImage1" id="GalleryImage1" class="form-control">
-                    </div> -->
-                    
-                    <!-- <div class="mb-3">
-                        <label for="example-tel-input" class="form-label">Gallery Image3</label>
-						<input type="file" name="GalleryImage3" id="GalleryImage3" class="form-control">
-                    </div> -->
-                   
+                 
                 </div>
             </div>
 
            <div class="col-lg-6">
-                <!-- <div class="mt-3 mt-lg-0">
-                    <div class="mb-3">
-                        <label for="example-text-input" class="form-label">Interior Alias</label>
-                        <input onkeyup="aliascheck(this.value)" required class="form-control" name="InteriorAlias" type="text" placeholder="" id="ProjectAlias">
-                    </div>
-                    <div class="mb-3">
-                        <label for="example-text-input" class="form-label">Meta Description</label>
-                        <input name="MetaDescription" class="form-control" type="text" placeholder="" id="BlogTitle">
-                    </div>
-                   
-                    <div class="mb-3">
-                        <label for="example-text-input" class="form-label">Keywords</label>
-                        <input name="Keywords" class="form-control" type="text" placeholder="" id="BlogTitle">
-                    </div>
-                    <div class="mb-3">
-                        <label for="example-tel-input" class="form-label">Gallery Image2</label>
-						<input type="file" name="GalleryImage2" id="GalleryImage2" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label for="example-tel-input" class="form-label">Gallery Image4</label>
-						<input type="file" name="GalleryImage4" id="GalleryImage4" class="form-control">
-                    </div>
-                </div> -->
+               
             </div>
 
-            <!-- <div class="card-body">
-                                            <div>
-                                                <h5 class="card-title mb-4">Project SEO Details</h5>
-                                                <input type="hidden" />
-                                                <div class="row">
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Meta Title</label>
-                                                            <input type="text" class="form-control" id="MetaTitle" name="MetaTitle">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Meta Description</label>
-                                                            <input type="text" class="form-control" id="MetaDescription" name="MetaDescription">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Alt Tag</label>
-                                                            <input type="text" class="form-control" id="altTag" name="altTag">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Blog OG Title</label>
-                                                            <input type="text" id="BlogOgTitle" name="BlogOgTitle" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Blog OG Tag</label>
-                                                            <input type="text" id="BlogOgTag" name="BlogOgTag" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Twitter Tag</label>
-                                                            <input type="text" id="TwitterTag" name="TwitterTag" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>HI Tag</label>
-                                                            <input type="text" id="HiTag" name="HiTag" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Keywords</label>
-                                                            <input type="text" id="Keywords" name="Keywords" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <!-- <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Project OG Tag</label>
-                                                            <input type="text" id="ProjectOgTag" name="ProjectOgTag" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Project OG Tag</label>
-                                                            <input type="text" id="ProjectOgTag" name="ProjectOgTag" class="form-control" />
-                                                        </div>
-                                                    </div> -->
+         
                                                 </div>
                                                 <!-- end row -->
                                             </div>
@@ -179,7 +79,7 @@ $exce = mysqli_query($con, $query);
 
 
           <div> 
-                <button type="submit" class="btn btn-primary w-md">Submit</button>
+                <button type="submit" class=" mx-3 my-3 btn btn-primary w-md">Submit</button>
             </div> 
         </div>
     </div> 

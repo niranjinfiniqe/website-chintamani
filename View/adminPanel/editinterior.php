@@ -3,10 +3,9 @@
 ?>
 <?php
 include("../../Helper/connect.php");
-
+$id = $_POST['pid'];
 $InteriorTitle = $_POST['InteriorTitle'];
 $InteriorAlias = $_POST['InteriorAlias'];
-
 
 // Seo tools
 $Keywords = $_POST['Keywords'];
@@ -17,30 +16,12 @@ $altTag = $_POST['altTag'];
     $errMsg = '';
   
 
-    //add Aminities ID
-    // if($aminities == 'Commercial'){
-    //     $aminitiesId = 1;
-    // }else if($aminities == 'Residential'){
-    //     $aminitiesId = 2;
-    // }
-    // //Add Location ID
-    // if($location == 'Commercial'){
-    //     $locationId = 1;
-    // }else if($location == 'Residential'){
-    //     $locationId = 2;
-    // }
-
-    // if(isset($_REQUEST['pid']) && $_REQUEST['pid'] >0) {
-    //     $pid = $_REQUEST['pid'];
-    //     $link->where("PK_Lease",$pid);
-    //     $ad=$link->update("leasing_master",array("ProjectName"=>$leaseProjectName,"Alias"=>$projectAlias,"ShortDescription"=>$shortDescription,"LongDescription"=>$longDescription,"Price"=>$price,"FK_Location"=>$locationId,"Area"=>$area,"ParkingSpace"=>$parkingSpace,"FK_Aminities"=>$aminitiesId));
-    // } else
-
 
    
     
     if($errMsg == ''){
-            $ad= $link->insert("interior_master",array("InteriorTitle"=>$InteriorTitle,"Alias"=>$InteriorAlias,"Keywords"=>$Keywords,"altTag"=>$altTag,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle));
+          $link->where('PK_interior ', $id);
+            $ad= $link->update("interior_master",array("InteriorTitle"=>$InteriorTitle,"Alias"=>$InteriorAlias,"Keywords"=>$Keywords,"altTag"=>$altTag,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle));
     }
 
     if($ad) {

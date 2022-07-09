@@ -1,6 +1,6 @@
 
         <!--- Sidemenu -->
-        <div id="sidebar-menu">
+        <div id="sidebar-menu" >
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title" data-key="t-menu">Menu</li>
