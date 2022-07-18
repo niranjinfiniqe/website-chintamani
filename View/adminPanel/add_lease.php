@@ -37,7 +37,7 @@ $exce = mysqli_query($con, $query);
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="lease.php">Leasing</a></li>
+                                <li class="breadcrumb-item"><a href="lease">Leasing</a></li>
                                 <li class="breadcrumb-item active">Add Leasing</li>
                             </ol>
                         </div>
@@ -73,128 +73,129 @@ $exce = mysqli_query($con, $query);
 
                                     <div class="row ">
 
-                                    <h3 class=" mb-4">Details</h3>
-                                    <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
-                                        <div class="row">
+                                        <h3 class=" mb-4">Details</h3>
+                                        <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
+                                            <div class="row">
 
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-text-input" class="form-label">Lease Name</label>
-                                            <input class="form-control" type="text" placeholder="Lease Name" required id="Lease_Name" name="LeaseName" value="<?php if ($isUpdate == 1) {
-                                                                                                                                                                    echo $ad['Lease_Name'];
-                                                                                                                                                                } ?>">
-                                        </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-text-input" class="form-label">Lease Name</label>
+                                                    <input class="form-control" type="text" placeholder="Lease Name" required id="Lease_Name" name="LeaseName" value="<?php if ($isUpdate == 1) {
+                                                                                                                                                                            echo $ad['Lease_Name'];
+                                                                                                                                                                        } ?>">
+                                                </div>
 
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-text-input" class="form-label">Lease Alias</label>
-                                            <input onkeyup="aliascheck(this.value)" required class="form-control" type="text" placeholder="Lease Alias" id="Lease_Alias" name="LeaseAlias" value="<?php if ($isUpdate == 1) {
-                                                                                                                                                                                                        echo $ad['Lease_Alias'];
-                                                                                                                                                                                                    } ?>">
-                                        </div>
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-text-input" class="form-label">Carpet Area</label>
-                                            <input class="form-control" type="number" placeholder="CarpetArea" required id="CarpetArea" name="CarpetArea" value="<?php if ($isUpdate == 1) {
-                                                                                                                                                                    echo $ad['CarpetArea'];
-                                                                                                                                                                } ?>">
-                                        </div>
-                                      
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">BuildUp Area</label>
-                                            <input placeholder="BuildUp Area" type="number" name="BuildUpArea" id="BuildUpArea" class="form-control">
-                                        </div>
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-text-input" class="form-label">Price</label>
-                                            <input class="form-control" type="number" placeholder="Price" required id="Price" name="Price" value="<?php if ($isUpdate == 1) {
-                                                                                                                                                        echo $ad['Price'];
-                                                                                                                                                    } ?>">
-                                        </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-text-input" class="form-label">Lease Alias</label>
+                                                    <input onkeyup="aliascheck(this.value)" required class="form-control" type="text" placeholder="Lease Alias" id="Lease_Alias" name="LeaseAlias" value="<?php if ($isUpdate == 1) {
+                                                                                                                                                                                                                echo $ad['Lease_Alias'];
+                                                                                                                                                                                                            } ?>">
+                                                    <p style="color:red" id="aliasAlert"></p>
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-text-input" class="form-label">Carpet Area</label>
+                                                    <input class="form-control" type="number" placeholder="CarpetArea" required id="CarpetArea" name="CarpetArea" value="<?php if ($isUpdate == 1) {
+                                                                                                                                                                                echo $ad['CarpetArea'];
+                                                                                                                                                                            } ?>">
+                                                </div>
 
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">Display Order</label>
-                                            <input placeholder="Display order" type="number" name="DisplayOrder" id="DisplayOrder" class="form-control">
-                                        </div>
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">Office Number</label>
-                                            <input placeholder="Office Number" type="number" name="officenumber" id="officenumber" class="form-control">
-                                        </div>
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                                        <label for="example-tel-input" class="form-label">Furnished/Unfurnished</label>
-                                                        <input required placeholder="Furnished/Unfurnished" type="text" name="Furnished/Unfurnished" id="Furnished/Unfurnished" class="form-control">
-                                                    </div>
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label class="form-label">Location</label>
-                                            <select required class="form-select" id="Location" name="Location">
-                                                <option>Select</option>
-                                                <option <?php if ($isUpdate == 1 && $ad['FK_Location'] == "1") {
-                                                            echo "selected";
-                                                        } ?>>Goregaon</option>
-                                                <option <?php if ($isUpdate == 1 && $ad['FK_Location'] == "2") {
-                                                            echo "selected";
-                                                        } ?>>Andheri</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-text-input" class="form-label">Packs</label>
-                                            <input class="form-control" type="number" placeholder="Packs" required id="packs" name="Packs" value="">
-                                        </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-tel-input" class="form-label">BuildUp Area</label>
+                                                    <input placeholder="BuildUp Area" type="number" name="BuildUpArea" id="BuildUpArea" class="form-control">
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-text-input" class="form-label">Price</label>
+                                                    <input class="form-control" type="number" placeholder="Price" required id="Price" name="Price" value="<?php if ($isUpdate == 1) {
+                                                                                                                                                                echo $ad['Price'];
+                                                                                                                                                            } ?>">
+                                                </div>
 
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-search-input" class="form-label">Short Description</label>
-                                            <textarea class="form-control" type="search" placeholder="Short Description" rows="2" id="ShortDescription" name="ShortDescription" value="<?php if ($isUpdate == 1) {
-                                                                                                                                                                                            echo $ad['ShortDescription'];
-                                                                                                                                                                                        } ?>"></textarea>
-                                        </div>
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-search-input" class="form-label">Long Description</label>
-                                            <textarea class="form-control" type="search" placeholder="Long Description" rows="2" id="ShortDescription" name="LongDescription" value="<?php if ($isUpdate == 1) {
-                                                                                                                                                                                            echo $ad['LongDescription'];
-                                                                                                                                                                                        } ?>"></textarea>
-                                        </div>
-                                        <br>
-                                        <br>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-tel-input" class="form-label">Display Order</label>
+                                                    <input placeholder="Display order" type="number" name="DisplayOrder" id="DisplayOrder" class="form-control">
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-tel-input" class="form-label">Office Number</label>
+                                                    <input placeholder="Office Number" type="number" name="officenumber" id="officenumber" class="form-control">
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-tel-input" class="form-label">Furnished/Unfurnished</label>
+                                                    <input required placeholder="Furnished/Unfurnished" type="text" name="Furnished/Unfurnished" id="Furnished/Unfurnished" class="form-control">
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label class="form-label">Location</label>
+                                                    <select required class="form-select" id="Location" name="Location">
+                                                        <option>Select</option>
+                                                        <option <?php if ($isUpdate == 1 && $ad['FK_Location'] == "1") {
+                                                                    echo "selected";
+                                                                } ?>>Goregaon</option>
+                                                        <option <?php if ($isUpdate == 1 && $ad['FK_Location'] == "2") {
+                                                                    echo "selected";
+                                                                } ?>>Andheri</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-text-input" class="form-label">Packs</label>
+                                                    <input class="form-control" type="number" placeholder="Packs" required id="packs" name="Packs" value="">
+                                                </div>
+
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-search-input" class="form-label">Short Description</label>
+                                                    <textarea class="form-control" type="search" placeholder="Short Description" rows="2" id="ShortDescription" name="ShortDescription" value="<?php if ($isUpdate == 1) {
+                                                                                                                                                                                                    echo $ad['ShortDescription'];
+                                                                                                                                                                                                } ?>"></textarea>
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-search-input" class="form-label">Long Description</label>
+                                                    <textarea class="form-control" type="search" placeholder="Long Description" rows="2" id="ShortDescription" name="LongDescription" value="<?php if ($isUpdate == 1) {
+                                                                                                                                                                                                    echo $ad['LongDescription'];
+                                                                                                                                                                                                } ?>"></textarea>
+                                                </div>
+                                                <br>
+                                                <br>
 
 
 
 
-                                        <div class="col-xl-6 col-md-6 mb-3">
-                                            <label for="example-search-input" class="form-label">Complete Address</label>
-                                            <textarea required class="form-control" type="search" placeholder="CompleteAddress" rows="2" id="CompleteAddress" name="CompleteAddress" value="<?php if ($isUpdate == 1) {
-                                                                                                                                                                                                echo $ad['CompleteAddress'];
-                                                                                                                                                                                            } ?>"></textarea>
-                                        </div>
+                                                <div class="col-xl-6 col-md-6 mb-3">
+                                                    <label for="example-search-input" class="form-label">Complete Address</label>
+                                                    <textarea required class="form-control" type="search" placeholder="CompleteAddress" rows="2" id="CompleteAddress" name="CompleteAddress" value="<?php if ($isUpdate == 1) {
+                                                                                                                                                                                                        echo $ad['CompleteAddress'];
+                                                                                                                                                                                                    } ?>"></textarea>
+                                                </div>
 
-                                        </div> 
+                                            </div>
                                         </div>
 
 
                                         <h3 class=" mb-4">Gallery </h3>
-                                        
+
                                         <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
                                             <div>
-                                                
+
                                                 <input type="hidden" />
                                                 <div class="row">
                                                     <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-tel-input" class="form-label">Images</label>
-                                                        <input type="file" name="Images" id="ProductImage" class="form-control">
+                                                        <input type="file" name="Images" id="ProductImage" class="form-control unique_image">
                                                     </div>
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-tel-input" class="form-label">Video </label>
-                                                        <input placeholder="Video URL" type="file" name="VideoURL" id="VideoURL" class="form-control">
+                                                        <input placeholder="Video URL" type="file" name="VideoURL" id="VideoURL" class="form-control unique_image">
                                                     </div>
 
-                                                   
+
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-text-input" class="form-label">Thumbnail Image</label>
-                                                        <input class="form-control" type="file" placeholder="ThumbnailURL" required id="ThumbnailURL" name="ThumbnailURL" value="<?php if ($isUpdate == 1) {
+                                                        <input class="form-control unique_image" type="file" placeholder="ThumbnailURL" required id="ThumbnailURL" name="ThumbnailURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                         echo $ad['ThumbnailURL'];
                                                                                                                                                                                     } ?>">
                                                     </div>
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-text-input" class="form-label">FloorPlan Image</label>
-                                                        <input class="form-control" type="file" placeholder="FloorPlanURL" id="FloorPlanURL" name="FloorPlanURL" value="<?php if ($isUpdate == 1) {
+                                                        <input class="form-control unique_image" type="file" placeholder="FloorPlanURL" id="FloorPlanURL" name="FloorPlanURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                             echo $ad['FloorPlanURL'];
                                                                                                                                                                         } ?>">
                                                     </div>
@@ -205,79 +206,79 @@ $exce = mysqli_query($con, $query);
                                                 <!-- end row -->
                                             </div>
                                         </div>
-  
+
                                         <h3 class=" mb-4">Lease SEO Details</h3>
-                                        
-                            <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
-                            
 
-                                    <div class="row">
-                         
-                                    
-                                            <div>
-                                               
-                                                <input type="hidden" />
-                                                <div class="row">
-                                                    <div class="col-xl-4 col-md-6 mb-3">
-                                                        <div class="form-group mb-3">
-                                                            <label>Meta Title</label>
-                                                            <input type="text" class="form-control" id="MetaTitle" name="MetaTitle">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6 mb-3">
-                                                        <div class="form-group mb-3">
-                                                            <label>Meta Description</label>
-                                                            <input type="text" class="form-control" id="MetaDescription" name="MetaDescription">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6 mb-3">
-                                                        <div class="form-group mb-3">
-                                                            <label>Alt Tag</label>
-                                                            <input type="text" class="form-control" id="altTag" name="altTag">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6 mb-3">
-                                                        <div class="form-group mb-3">
-                                                            <label>Lease OG Title</label>
-                                                            <input type="text" id="LeaseOgTitle" name="LeaseOgTitle" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6 mb-3">
-                                                        <div class="form-group mb-3">
-                                                            <label>Lease OG Tag</label>
-                                                            <input type="text" id="LeaseOgTag" name="LeaseOgTag" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6 mb-3">
-                                                        <div class="form-group mb-3">
-                                                            <label>Twitter Tag</label>
-                                                            <input type="text" id="TwitterTag" name="TwitterTag" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6 mb-3">
-                                                        <div class="form-group mb-3">
-                                                            <label>HI Tag</label>
-                                                            <input type="text" id="HiTag" name="HiTag" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6 mb-3">
-                                                        <div class="form-group mb-3">
-                                                            <label>Keywords</label>
-                                                            <input type="text" id="Keywords" name="Keywords" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6 mb-3">
-                                                        <label for="example-tel-input" class="form-label">Twitter Tag </label>
-                                                        <input type="text" name="TwitterTag" id="TwitterTag" class="form-control">
-                                                    </div>
+                                        <div class="card-body shadow-lg p-3 mb-5 bg-body rounded">
 
+
+                                            <div class="row">
+
+
+                                                <div>
+
+                                                    <input type="hidden" />
+                                                    <div class="row">
+                                                        <div class="col-xl-4 col-md-6 mb-3">
+                                                            <div class="form-group mb-3">
+                                                                <label>Meta Title</label>
+                                                                <input type="text" class="form-control" id="MetaTitle" name="MetaTitle">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-6 mb-3">
+                                                            <div class="form-group mb-3">
+                                                                <label>Meta Description</label>
+                                                                <input type="text" class="form-control" id="MetaDescription" name="MetaDescription">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-6 mb-3">
+                                                            <div class="form-group mb-3">
+                                                                <label>Alt Tag</label>
+                                                                <input type="text" class="form-control" id="altTag" name="altTag">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-6 mb-3">
+                                                            <div class="form-group mb-3">
+                                                                <label>Lease OG Title</label>
+                                                                <input type="text" id="LeaseOgTitle" name="LeaseOgTitle" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-6 mb-3">
+                                                            <div class="form-group mb-3">
+                                                                <label>Lease OG Tag</label>
+                                                                <input type="text" id="LeaseOgTag" name="LeaseOgTag" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-6 mb-3">
+                                                            <div class="form-group mb-3">
+                                                                <label>Twitter Tag</label>
+                                                                <input type="text" id="TwitterTag" name="TwitterTag" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-6 mb-3">
+                                                            <div class="form-group mb-3">
+                                                                <label>HI Tag</label>
+                                                                <input type="text" id="HiTag" name="HiTag" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-6 mb-3">
+                                                            <div class="form-group mb-3">
+                                                                <label>Keywords</label>
+                                                                <input type="text" id="Keywords" name="Keywords" class="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-4 col-md-6 mb-3">
+                                                            <label for="example-tel-input" class="form-label">Twitter Tag </label>
+                                                            <input type="text" name="TwitterTag" id="TwitterTag" class="form-control">
+                                                        </div>
+
+                                                    </div>
                                                 </div>
-                                                </div>
-                                </div>
-                          
-                                                <!-- end row -->
                                             </div>
-                                    
+
+                                            <!-- end row -->
+                                        </div>
+
 
                                     </div>
                                 </div>
@@ -287,95 +288,37 @@ $exce = mysqli_query($con, $query);
                     </div>
 
                     <div class="col-5 ">
-                        
+
                         <div class="card shadow-lg p-3 mb-5 bg-body rounded">
-                        <h3 class="my-3" >Amenities</h3>
+                            <h3 class="my-3">Amenities</h3>
                             <div class="card-body">
                                 <div class="card-body p-2">
                                     <div class="row">
 
 
 
-                                        
-
-                                            
-                                    <?php
-                                    // $pri = $link->rawQuery("select * from amenities_master where inventory_delete = 0 order by inventory_priority");
-                                    $pri = $link->rawQuery("select * from amenities_master where isDeleted = 0 ");
-                                    if ($link->count > 0) {
-                                        // echo "good going";
-                                        foreach ($pri as $amen) {
-                                    ?>
-                                       <div class="col-xl-12 col-md-6  d-flex p-2 bd-highlight">
-                                            
-                                            <div class="form-check mx-2 my-2">
-                                                <input value="<?php echo $amen['PK_amenities']; ?>" class="form-check-input" type="checkbox" id="inv-<?php echo $amen['PK_amenities'] ?>" onclick="inventory(this.value)"  >
-
-                                            </div>
-                                            <label for="myCheck" class="form-label mx-1 my-2"><?php echo $amen['amenity_name']; ?> </label>
-
-                                            <input id="amenities_qty_div<?php echo $amen['PK_amenities']; ?>" style="display: none;" class="form-control mx-4" min="0" type="number" placeholder="quantity"  name="<?php echo $amen['PK_amenities']; ?>" />
-                                            </div>
-                                                                                                                                                                         <?php }}?>
-                                   
-
-                                       
 
 
 
-<!-- 
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <div class="form-check mx-2 my-2">
-                                                <input class="form-check-input" type="checkbox" id="CabinsCount" onclick="myFunction()">
+                                        <?php
+                                        // $pri = $link->rawQuery("select * from amenities_master where inventory_delete = 0 order by inventory_priority");
+                                        $pri = $link->rawQuery("select * from amenities_master where isDeleted = 0 ");
+                                        if ($link->count > 0) {
+                                            // echo "good going";
+                                            foreach ($pri as $amen) {
+                                        ?>
+                                                <div class="col-xl-12 col-md-6  d-flex p-2 bd-highlight">
 
-                                            </div>
+                                                    <div class="form-check mx-2 my-2">
+                                                        <input value="<?php echo $amen['PK_amenities']; ?>" class="form-check-input" type="checkbox" id="inv-<?php echo $amen['PK_amenities'] ?>" onclick="inventory(this.value)">
 
-                                            <label for="example-tel-input" class="form-label">Cabins Count</label>
-                                            <input placeholder="Cabins Count" type="number" name="CabinsCount" id="CabinsCount_input" class="form-control">
-                                        </div>
+                                                    </div>
+                                                    <label for="myCheck" class="form-label mx-1 my-2"><?php echo $amen['amenity_name']; ?> </label>
 
-
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">W/S</label>
-                                            <input placeholder="W/S" type="number" name="W/S" id="W/S" class="form-control">
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">SR Manage</label>
-                                            <input placeholder="SR Manage" type="number" name="SRManage" id="ReceptionArea" class="form-control">
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">ConferenceRoom Count</label>
-                                            <input placeholder="ConferenceRoom Count" type="number" name="ConferenceRoomCount" id="ConferenceRoomCount" class="form-control">
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">MeetingRoom Count</label>
-                                            <input placeholder="MeetingRoom Count" type="number" name="MeetingRoomCount" id="MeetingRoomCount" class="form-control">
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">ServerRoom Count</label>
-                                            <input placeholder="ServerRoom Count" type="number" name="ServerRoomCount" id="ServerRoomCount" class="form-control">
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">GentsWashroom Count</label>
-                                            <input placeholder="GentsWashroom Count" type="number" name="GentsWashroomCount" id="GentsWashroomCount" class="form-control">
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">GeneralWashroom Count</label>
-                                            <input placeholder="GeneralWashroom Count" type="number" name="GeneralWashroomCount" id="GentsWashroomCount" class="form-control">
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">Ladies Washroom</label>
-                                            <input placeholder="Ladies Washroom" type="number" name="ladiesWashroom" id="ladiesWashroom" class="form-control">
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">Pantry Count</label>
-                                            <input placeholder="Pantry Count" type="number" name="PantryCount" id="PantryCount" class="form-control">
-                                        </div>
-                                        <div class="col-xl-12 col-md-6 mb-3">
-                                            <label for="example-tel-input" class="form-label">Storeroom Count </label>
-                                            <input placeholder="Storeroom Count" type="number" name="StoreroomCount" id="StoreroomCount" class="form-control">
-                                        </div> -->
-
+                                                    <input id="amenities_qty_div<?php echo $amen['PK_amenities']; ?>" style="display: none;" class="form-control mx-4" min="0" type="number" placeholder="quantity" name="<?php echo $amen['PK_amenities']; ?>" />
+                                                </div>
+                                        <?php }
+                                        } ?>
                                     </div>
                                 </div>
                             </div>
@@ -383,12 +326,12 @@ $exce = mysqli_query($con, $query);
                     </div>
 
                     <div>
-                <button type="submit" name="submit" class="btn btn-primary w-md my-2">Submit</button>
-                 </div>
+                        <button type="submit" name="submit" class="btn btn-primary w-md my-2">Submit</button>
+                    </div>
                 </div>
-                
-        </form>
-           
+
+            </form>
+
         </div>
     </div>
 </div>
@@ -397,18 +340,11 @@ $exce = mysqli_query($con, $query);
 
 <script>
     function inventory(val) {
-        
-        //alert(val);
-        //to check checkbox checked
-        //var val2=$("#inv-"+val).is(":checked");
-        //alert(val2);
-        if ($("#inv-"+val.trim()).is(":checked")) {
-            // console.log("#amenities_qty_div"+val.trim());
-           
-            $("#amenities_qty_div"+val.trim()).css("display", "block");
-         
+
+
+        if ($("#inv-" + val.trim()).is(":checked")) {
+            $("#amenities_qty_div" + val.trim()).css("display", "block");
         } else {
-            // console.log("bad"+val);
             $("#amenities_qty_div" + val.trim()).css("display", "none");
             $("#amenities_qty_div" + val.trim()).val(null);
         }
@@ -425,26 +361,74 @@ $exce = mysqli_query($con, $query);
 <!-- form validation -->
 <script src="assets/js/pages/form-validation.init.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 <script>
     function aliascheck(val) {
         $.ajax({
             type: "POST",
             url: "alias_check.php",
-            data: "alias_add_lease=" + val,
+            data: {
+                leasing_master: val
+            },
 
             // serializes the form's elements.
             success: function(data) {
-                //  console.log(data);
-                if (data === val + 'already') {
-                    console.log("Data already exits");
+                console.log(data);
+                if (data === 'already') {
+                    $('#aliasAlert').html('Alias name already exists');
                 } else {
-                    console.log("Data accepted");
+                    $('#aliasAlert').html('');
                 }
             }
 
         });
 
     }
+
+
+
+    // To check unique image 
+
+    $(".unique_image").change(function(e) {
+
+
+        $.ajax({
+            type: "POST",
+            url: "unique_image_check.php",
+            data: {
+                directory: e.target.value,
+                name: 'lease'
+            },
+
+            // serializes the form's elements.
+            success: function(data) {
+                console.log(data);
+                var tag = document.createElement("p");
+                tag.style.color = "red";
+                tag.setAttribute('class', 'uniqueImage')
+                var text = document.createTextNode("Image already exits");
+                var emptytext = document.createTextNode('');
+                if (data === 'already') {
+                    // if($(".uniqueImage"))
+                    if (document.querySelector('.uniqueImage') !== null) {
+                        $(".uniqueImage").remove();
+                    }
+
+                    tag.appendChild(text);
+                    e.target.parentElement.append(tag);
+
+                } else {
+                    $(".uniqueImage").remove();
+
+                }
+
+            }
+
+        });
+
+
+
+    })
 </script>
 
 <!-- <script>
@@ -462,7 +446,3 @@ $exce = mysqli_query($con, $query);
 <?php
 include("footer.php")
 ?>
-
-
-
-

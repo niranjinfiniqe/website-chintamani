@@ -11,7 +11,7 @@ $password = $_POST['password'];
 		session_start();
 		
 		$_SESSION['admin_id'] = $sql['admin_id'];
-		header('location:../adminPanel/home.php');
+		header('location:../adminPanel/home');
 		//echo "";
 	}
 	elseif($password==null || $username==null)

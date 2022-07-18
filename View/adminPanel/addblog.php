@@ -32,7 +32,7 @@ include("../../Helper/connect.php");
 	}
 
 	if($errMsg == ''){
-	  $ad= $link->insert("blog_master", array("BlogTitle"=>$BlogTitle,"BlogOwner"=>$BlogOwner,"BlogDate"=>$BlogDate,"BlogAlias"=>$BlogAlias,"ReadingTime"=>$ReadingTime,"FK_Status"=>$BlogStatus,"BlogDescription"=>$BlogDescription,"DisplayOrder"=>$DisplayOrder,"MetaTitle"=>$MetaTitle,"MetaDescription"=>$MetaDescription,"altTag"=>$altTag,"BlogOgTitle"=>$BlogOgTitle,"BlogOgTag"=>$BlogOgTag,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords));
+	  $ad= $link->insert("blog_master", array("BlogTitle"=>$BlogTitle,"BlogOwner"=>$BlogOwner,"BlogDate"=>$BlogDate,"Alias"=>$BlogAlias,"ReadingTime"=>$ReadingTime,"FK_Status"=>$BlogStatus,"BlogDescription"=>$BlogDescription,"DisplayOrder"=>$DisplayOrder,"MetaTitle"=>$MetaTitle,"MetaDescription"=>$MetaDescription,"altTag"=>$altTag,"BlogOgTitle"=>$BlogOgTitle,"BlogOgTag"=>$BlogOgTag,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords));
 	}
 
 //   Code to add images to database

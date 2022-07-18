@@ -59,7 +59,7 @@ $altTag = $_POST['altTag'];
 
 
         if($errMsg == ''){
-            $ad= $link->insert("leasing_master",array("Lease_Name"=>$Lease_Name,"Lease_Alias"=>$Lease_Alias,"ShortDescription"=>$ShortDescription,"LongDescription"=>$LongDescription,"CompleteAddress"=>$CompleteAddress,"Location"=>$Location,"Price"=>$Price,"Packs"=>$Packs,"CarpetArea"=>$CarpetArea,"Furnished/Unfurnished"=>$Furnished_Unfurnished,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords,"LeaseOgTag"=>$LeaseOgTag,"LeaseOgTitle"=>$LeaseOgTitle,"altTag"=>$altTag,"LeaseOgTitle"=>$LeaseOgTitle,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle,"DisplayOrder"=>$DisplayOrder,"FK_Status"=>$FK_Status));
+            $ad= $link->insert("leasing_master",array("Lease_Name"=>$Lease_Name,"Alias"=>$Lease_Alias,"ShortDescription"=>$ShortDescription,"LongDescription"=>$LongDescription,"CompleteAddress"=>$CompleteAddress,"Location"=>$Location,"Price"=>$Price,"Packs"=>$Packs,"CarpetArea"=>$CarpetArea,"Furnished/Unfurnished"=>$Furnished_Unfurnished,"TwitterTag"=>$TwitterTag,"HiTag"=>$HiTag,"Keywords"=>$Keywords,"LeaseOgTag"=>$LeaseOgTag,"LeaseOgTitle"=>$LeaseOgTitle,"altTag"=>$altTag,"LeaseOgTitle"=>$LeaseOgTitle,"MetaDescription"=>$MetaDescription,"MetaTitle"=>$MetaTitle,"DisplayOrder"=>$DisplayOrder,"FK_Status"=>$FK_Status));
     }
 
    
@@ -208,9 +208,10 @@ $altTag = $_POST['altTag'];
     //         }
             
     //     }
-        header('location:lease.php');
+       
         
     }
+     header('location:lease');
 
     function  addImage($imageName){
 		$target_dir = "../../uploads/lease";

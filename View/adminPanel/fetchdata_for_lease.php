@@ -107,10 +107,10 @@ if (isset($_POST['request_all_data_from_lease'])) {
 
 
                     <td>
-                        <a href="edit_lease.php?pid=<?php echo $row['PK_lease']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                        <a href="edit_lease?pid=<?php echo $row['PK_lease']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                     </td>
                     <td>
-                        <a onClick='javascript:confirmationDelete($(this));return false;' href="deletelease.php?pid=<?php echo $row['PK_lease']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                        <a onClick='javascript:confirmationDelete($(this));return false;' href="deletelease?pid=<?php echo $row['PK_lease']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
                     </td>
                 </tr>
             <?php
@@ -130,7 +130,7 @@ if (isset($_POST['request_all_data_from_lease'])) {
         ?>
             <li class="page-item <?php if ($i == $Pageid) {
                                         echo 'active';
-                                    }  ?>"><a class="page-link" href="lease.php?page_id=<?php echo $i; ?>&Location=<?php echo $request; ?>"><?php echo $i; ?></a></li>
+                                    }  ?>"><a class="page-link" href="lease?page_id=<?php echo $i; ?>&Location=<?php echo $request; ?>"><?php echo $i; ?></a></li>
         <?php } ?>
 
     </ul>

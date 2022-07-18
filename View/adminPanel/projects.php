@@ -90,7 +90,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex flex-wrap gap-2 justify-content-end">
-                                <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_project.php" style="color: white;">Add New Project</a></button>
+                                <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_project" style="color: white;">Add New Project</a></button>
                             </div>
                         </div>
 
@@ -98,7 +98,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                             <div class="d-flex flex-wrap gap-4 mb-3">
 
                                 <button class="btn btn-secondary " type="button" id="loadAllData" onclick="loadAllData()">
-                                    <a style="text-decoration:none ;color:white" href="projects.php?page_id=1"> All Projects</a>
+                                    <a style="text-decoration:none ;color:white" href="projects?page_id=1"> All Projects</a>
                                 </button>
 
 
@@ -108,8 +108,8 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                         Project Type<i class="mdi mdi-chevron-down"></i>
                                     </button>
                                     <div id="fetchvalue" name="fetchvalue" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a href="projects.php?ProjectType=Commercial" value="commercial" class="dropdown-item">Commercial</a>
-                                        <a href="projects.php?ProjectType=Residential"  value="residential" class="dropdown-item">Residential</a>
+                                        <a href="projects?ProjectType=Commercial" value="commercial" class="dropdown-item">Commercial</a>
+                                        <a href="projects?ProjectType=Residential"  value="residential" class="dropdown-item">Residential</a>
                                     </div>
                                 </div>
                             </div>
@@ -155,15 +155,15 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                         }
                                                         ?>
                                                     </td>
-                                                    <td><img src="<?php echo $row['BrochureURL'] ?>" width="70px" height="70px" />
-                                                    </td>
                                                     <td><img src="<?php echo $row['ThumbnailImageURL'] ?>" width="70px" height="70px" />
                                                     </td>
-                                                    <td>
-                                                        <a href="edit_project.php?pid=<?php echo $row['PK_Project']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                                    <td><img src="<?php echo $row['FloorPlantImageURL'] ?>" width="70px" height="70px" />
                                                     </td>
                                                     <td>
-                                                        <a a onClick='javascript:confirmationDelete($(this));return false;' href="deleteproject.php?pid=<?php echo $row['PK_Project'];
+                                                        <a href="edit_project?pid=<?php echo $row['PK_Project']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                                    </td>
+                                                    <td>
+                                                        <a a onClick='javascript:confirmationDelete($(this));return false;' href="deleteproject?pid=<?php echo $row['PK_Project'];
                                                         if(isset($_GET['ProjectType'])){
                                                             echo "&ProjectType=".$_GET['ProjectType'];
                                                         }
@@ -198,7 +198,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                     ?>
                                         <li class="page-item <?php if ($i == $Pageid) {
                                                                     echo 'active';
-                                                                } ?> "><a class="page-link" href="projects.php?page_id=<?php echo $i; ?><?php if(isset($_GET['ProjectType'])){echo "&ProjectType=".$_GET['ProjectType'];} ?>">
+                                                                } ?> "><a class="page-link" href="projects?page_id=<?php echo $i; ?><?php if(isset($_GET['ProjectType'])){echo "&ProjectType=".$_GET['ProjectType'];} ?>">
                                                 <?php echo $i; ?></a></li>
 
                                     <?php

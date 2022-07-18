@@ -18,7 +18,7 @@ if(mysqli_num_rows($excValidationQuery) > 0)
         $db_userName = $row['Username'];
         if( $emailId==$db_emailId || $userName == $db_userName){
             $validationEmail = $db_emailId;
-            header("Location:auth-register.php?duplicateEmailOrUserName");
+            header("Location:auth-register?duplicateEmailOrUserName");
         }
     }
 }
@@ -26,6 +26,6 @@ printf($validationEmail);
 if($validationEmail = ''){
     $insertQuery = "Insert into user values ('','$userName','$password','','$emailId','',true)";
     $excValidationQuery = mysqli_query($con, $insertQuery);
-    header("Location:index.php?successMessage");
+    header("Location:index?successMessage");
 }
 ?>

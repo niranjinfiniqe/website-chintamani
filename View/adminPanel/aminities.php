@@ -47,7 +47,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex flex-wrap gap-2 justify-content-end">
-                            <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_aminities.php" style="color: white;">Add New Aminities</button>
+                            <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_aminities" style="color: white;">Add New Aminities</button>
                         </div>
                     </div>
                     <div class="card-body">
@@ -73,9 +73,9 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                         <th scope="row"><?php echo $count ++; ?></th>
                                         <td><?php echo $row['amenity_name'] ?></td>
                                       <td>
-                                            <a href="edit_aminities.php?pid=<?php echo $row['PK_amenities']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a> </td>
+                                            <a href="edit_aminities?pid=<?php echo $row['PK_amenities']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a> </td>
                                         <td>
-                                            <a a onClick='javascript:confirmationDelete($(this));return false;'  href="deleteaminities.php?pid=<?php echo $row['PK_amenities']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                            <a a onClick='javascript:confirmationDelete($(this));return false;'  href="deleteaminities?pid=<?php echo $row['PK_amenities']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php
@@ -94,7 +94,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                 for($i=1;$i<=$no_of_pages;$i++){
                                 ?>
                                 
-                                <li class="page-item <?php if($i == $Pageid){echo "active";} ?>"><a class="page-link" href="aminities.php?page_id=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                                <li class="page-item <?php if($i == $Pageid){echo "active";} ?>"><a class="page-link" href="aminities?page_id=<?php echo $i; ?>"><?php echo $i; ?></a></li>
 
                                 <?php }?>
                                 

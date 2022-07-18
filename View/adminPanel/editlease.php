@@ -38,7 +38,7 @@ $errMsg = '';
 
 if ($errMsg == '') {
     $link->where('PK_lease', $id);
-    $ad = $link->update("leasing_master", array("Lease_Name" => $Lease_Name, "Lease_Alias" => $Lease_Alias, "ShortDescription" => $ShortDescription, "LongDescription" => $LongDescription, "CarpetArea" => $CarpetArea,"office_number"=>$OfficeNumber, "CompleteAddress" => $CompleteAddress, "Location" => $Location, "Price" => $Price, "Packs" => $Packs, "Furnished/Unfurnished" => $Furnished_Unfurnished, "BuildUpArea" => $BuildUpArea, "TwitterTag" => $TwitterTag, "HiTag" => $HiTag, "Keywords" => $Keywords, "LeaseOgTag" => $LeaseOgTag, "LeaseOgTitle" => $LeaseOgTitle, "altTag" => $altTag, "LeaseOgTitle" => $LeaseOgTitle, "MetaDescription" => $MetaDescription, "MetaTitle" => $MetaTitle, "DisplayOrder" => $DisplayOrder, "FK_Status" => $FK_Status));
+    $ad = $link->update("leasing_master", array("Lease_Name" => $Lease_Name, "Alias" => $Lease_Alias, "ShortDescription" => $ShortDescription, "LongDescription" => $LongDescription, "CarpetArea" => $CarpetArea,"office_number"=>$OfficeNumber, "CompleteAddress" => $CompleteAddress, "Location" => $Location, "Price" => $Price, "Packs" => $Packs, "Furnished/Unfurnished" => $Furnished_Unfurnished, "BuildUpArea" => $BuildUpArea, "TwitterTag" => $TwitterTag, "HiTag" => $HiTag, "Keywords" => $Keywords, "LeaseOgTag" => $LeaseOgTag, "LeaseOgTitle" => $LeaseOgTitle, "altTag" => $altTag, "LeaseOgTitle" => $LeaseOgTitle, "MetaDescription" => $MetaDescription, "MetaTitle" => $MetaTitle, "DisplayOrder" => $DisplayOrder, "FK_Status" => $FK_Status));
 }
 
 if($ad) {

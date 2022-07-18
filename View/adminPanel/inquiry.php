@@ -150,7 +150,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                     ?>
                                         <li class="page-item <?php if ($i == $Pageid) {
                                                                     echo 'active';
-                                                                } ?> "><a class="page-link" href="inquiry.php?page_id=<?php echo $i; ?>">
+                                                                } ?> "><a class="page-link" href="inquiry?page_id=<?php echo $i; ?>">
                                                 <?php echo $i; ?></a></li>
 
                                     <?php

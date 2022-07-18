@@ -42,7 +42,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex flex-wrap gap-2 justify-content-end">
-                                <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_blog.php" style="color: white;">Add New Blog </button>
+                                <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_blog" style="color: white;">Add New Blog </button>
                             </div>
                         </div>
                         <div class="card-body">
@@ -77,7 +77,7 @@ if (mysqli_num_rows($exce_for_pagination) > 0)
                                                     <tr>
                                                         <th scope="row"><?php echo $count++; ?></th>
                                                         <td><?php echo $row['BlogTitle'] ?></td>
-                                                        <td><?php echo $row['BlogAlias'] ?></td>
+                                                        <td><?php echo $row['Alias'] ?></td>
                                                         <td><?php echo $row['BlogDate'] ?></td>
                                                         <td><?php echo $row['BlogOwner'] ?></td>
                                                         <td><img src="<?php echo $row['BlogThumbImage'] ?>" width="70px" height="70px" /></td>
@@ -90,10 +90,10 @@ if (mysqli_num_rows($exce_for_pagination) > 0)
             echo "Draft";
         } ?></td>
                                                         <td>
-                                                            <a  href="edit_blog.php?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                                            <a  href="edit_blog?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                                                         </td>
                                                         <td>
-                                                            <a a onclick='javascript:confirmationDelete($(this));return false;' href="deleteblog.php?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                                            <a a onclick='javascript:confirmationDelete($(this));return false;' href="deleteblog?pid=<?php echo $row['PK_BlogID']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
                                                         </td>
                                                     </tr>
                                             <?php
@@ -114,7 +114,7 @@ for ($i = 1;$i <= $no_of_pages;$i++)
                                             <li class="page-item <?php if ($i == $Pageid)
     {
         echo 'active';
-    } ?> "><a class="page-link" href="blogs.php?page_id=<?php echo $i; ?>">
+    } ?> "><a class="page-link" href="blogs?page_id=<?php echo $i; ?>">
                                                     <?php echo $i; ?></a></li>
 
                                         <?php

@@ -8,6 +8,7 @@
         <title>Dashboard </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -40,7 +41,7 @@
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
                             <!-- Need to change-->
-                            <a href="home.php" class="logo logo-dark">
+                            <a href="home" class="logo logo-dark">
                                 <span class="logo-sm">
                                     <img src="assets/images/logo-sm.svg" alt="" height="24">
                                 </span>
@@ -52,15 +53,15 @@
                     </div>
 
                     <style>
-                        #vertical-menu-btn{
-                            display: none;
-                        }
-                        @media screen and (max-width: 991.98px){
-                            #vertical-menu-btn{
-                            display: block;
-                        }
+                        /*#vertical-menu-btn{*/
+                        /*    display: none;*/
+                        /*}*/
+                        /*@media screen and (max-width: 991.98px){*/
+                        /*    #vertical-menu-btn{*/
+                        /*    display: block;*/
+                        /*}*/
 
-                        }
+                        /*}*/
                     </style>
 
                         <button type="button" class="btn btn-sm px-3 font-size-16 header-item" id="vertical-menu-btn">
@@ -84,7 +85,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="index.php"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
+                                <a class="dropdown-item" href="index"><i class="mdi mdi-logout font-size-16 align-middle me-1"></i> Logout</a>
                             </div>
                         </div>
 

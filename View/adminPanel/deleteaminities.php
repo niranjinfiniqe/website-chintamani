@@ -15,7 +15,7 @@
 			$a1=$link->update("lease_amenities",array("isDeleted"=>1));
 			if($a1)
 			{
-				header('location:aminities.php');
+				header('location:aminities');
 			}
 		}
 		

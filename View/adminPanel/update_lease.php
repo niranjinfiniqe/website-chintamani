@@ -82,7 +82,7 @@ else{
  echo "uploaded failed";
 
 }
-header("location:lease.php");
+header("location:lease");
 
 
     

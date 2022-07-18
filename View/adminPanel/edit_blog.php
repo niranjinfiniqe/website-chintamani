@@ -4,37 +4,7 @@ include("../../Helper/connect.php");
 
 // Mridul's code
 $id =  $_GET['pid'];
-$query = "SELECT * FROM `blog_master` WHERE `PK_BlogID` = $id";
-$exce = mysqli_query($con, $query);
-echo $id;
-if ($row = mysqli_fetch_array($exce)) {
 
-    $BlogTitle = $row['BlogTitle'];
-    $BlogOwner = $row['BlogOwner'];
-    $BlogImage = $row['BlogImage'];
-    $BlogThumbImage = $row['BlogThumbImage'];
-    $BlogDescription = $row['BlogDescription'];
-    $BlogStatus = $row['BlogStatus'];
-    $BlogOgTag = $row['BlogOgTag'];
-    $BlogOgTitle = $row['BlogOgTitle'];
-    $BlogAlias = $row['BlogAlias'];
-    $BlogDate = $row['BlogDate'];
-    $ReadingTime = $row['ReadingTime'];
-    $TwitterTag = $row['TwitterTag'];
-    $HiTag = $row['HiTag'];
-    
-
-    $altTag = $row['altTag'];
-    $MetaDescription = $row['MetaDescription'];
-    $MetaTitle = $row['MetaTitle'];
-    $DisplayOrder = $row['DisplayOrder'];
-    $FK_Status = $row['FK_Status'];
-    $Keywords = $row['Keywords'];
-
-    
-    
-}
-// echo $BlogAlias;
 
 //check for edit
 if (isset($_REQUEST['pid']) && $_REQUEST['pid'] > 0) {
@@ -45,16 +15,11 @@ if (isset($_REQUEST['pid']) && $_REQUEST['pid'] > 0) {
 }
 
 if ($isUpdate == 1) {
-    $ad = $link->rawQueryOne("select * from Blog_master where PK_BLogID=?", array($_REQUEST['pid']));
+    $ad = $link->rawQueryOne("select * from blog_master where PK_BLogID=?", array($_REQUEST['pid']));
     if ($link->count > 0) {
         $project_id = $ad['PK_BlogID'];
     }
 }
-
-
-
-
-
 
 
 
@@ -72,7 +37,7 @@ if ($isUpdate == 1) {
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="blogs.php">Blogs</a></li>
+                            <li class="breadcrumb-item"><a href="blog">Blogs</a></li>
                             <li class="breadcrumb-item active">Edit Blog</li>
                         </ol>
                     </div>
@@ -96,28 +61,34 @@ if ($isUpdate == 1) {
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Title<span class="required"> *</span></label>
                                                     <input required type="hidden" name="pid" id="pid" value="<?php echo $id; ?> ">
-                                                    <input class="form-control" name="BlogTitle" type="text" value="<?php echo $BlogTitle; ?>"  id="BlogTitle">
+                                                    <input class="form-control" name="BlogTitle" type="text" value="<?php echo $ad['BlogTitle']; ?>"  id="BlogTitle">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Owner</label>
-                                                    <input class="form-control" name="BlogOwner" type="text" value="<?php echo $BlogOwner; ?>"  id="ProjectAlias">
+                                                    <input class="form-control" name="BlogOwner" type="text" value="<?php echo $ad['BlogOwner']; ?>"  id="ProjectAlias">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Blog Date</label>
-                                                    <input class="form-control" name="BlogDate" type="Date" value="<?php echo $BlogDate; ?>"   id="ProjectAlias">
+                                                    <input class="form-control" name="BlogDate" type="Date" value="<?php echo $ad['BlogDate']; ?>"   id="ProjectAlias">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-tel-input" class="form-label"> Blog Thumb Image<span class="required"> *</span></label>
-                                                    <input required type="file" name="BlogThumbImage" id=" BlogThumbImage" value="<?php echo $BlogThumbImage; ?>" class="form-control">
+                                                    <input required type="file" name="BlogThumbImage" id=" BlogThumbImage" value="<?php echo $ad['BlogThumbImage']; ?>" class="form-control unique_image">
                                                     <br>
+                                                    <?php
+                                                        if (strlen($ad['BlogThumbImage']) > 0) {
+                                                        ?>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['BlogThumbImage']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
-                                                            <a class="remove-image"  style="display: inline;">&#215;</a>
+                                                            <a onclick="deleteimage('<?php echo $ad['BlogThumbImage'];  ?>','BlogThumbImage')" class="remove-image" data-toggle="tooltip" data-placement="top" title="Delete Image">
+                                                                    &#215;
+                                                                </a>
                                                         </div>
+                                                        <?php }?>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-tel-input" class="form-label">Display Order <span class="required"> *</span></label>
-                                                    <input type="number" name="DisplayOrder" required id=" DisplayOrder" class="form-control">
+                                                    <input type="number" value="<?php echo $ad['DisplayOrder'] ?>" name="DisplayOrder" required id=" DisplayOrder" class="form-control">
                                                 </div>
 
                                             </div>
@@ -127,30 +98,37 @@ if ($isUpdate == 1) {
                                             <div class="mt-3 mt-lg-0">
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Alias<span class="required"> *</span></label>
-                                                    <input onkeyup="aliascheck(this.value)" required class="form-control" name="BlogAlias" type="text" value="<?php echo $BlogAlias; ?>"  id="BlogAlias">
+                                                    <input onkeyup="aliascheck(this.value)" required class="form-control" name="BlogAlias" type="text" value="<?php echo $ad['Alias']; ?>"  id="BlogAlias">
+                                                    <p style="color:red" id="aliasAlert" ></p>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Reading Time (in mins.)</label>
-                                                    <input class="form-control" name="ReadingTime" type="number" value="<?php echo $ReadingTime; ?>"  id="ReadingTime">
+                                                    <input class="form-control" name="ReadingTime" type="number" value="<?php echo $ad['ReadingTime']; ?>"  id="ReadingTime">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Blog Status<span class="required"> *</span></label>
                                                     <select required class="form-select" id="BlogStatus" name="BlogStatus">
                                                         <option>select</option>
-                                                        <option value="10" <?php if($BlogStatus == 10){echo "selected";} ?> >Publised</option>
-                                                        <option value="11" <?php if($BlogStatus == 11){echo "selected";} ?> >Draft</option>
+                                                        <option value="10" <?php if($ad['BlogStatus'] == 10){echo "selected";} ?> >Publised</option>
+                                                        <option value="11" <?php if($ad['BlogStatus'] == 11){echo "selected";} ?> >Draft</option>
                                                     </select>
                                                 </div>
 
 
                                                 <div class="mb-3">
                                                     <label for="example-tel-input" class="form-label">Blog Image</label>
-                                                    <input required type="file" name="BlogImage" id="BlogImage" value="<?php echo $BlogImage; ?>" class="form-control">
+                                                    <input required type="file" name="BlogImage" id="BlogImage" value="<?php echo $ad['BlogImage']; ?>" class="form-control unique_image">
                                                     <br>
+                                                    <?php
+                                                        if (strlen($ad['BlogImage']) > 0) {
+                                                        ?>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['BlogImage']; ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
-                                                            <a class="remove-image"  style="display: inline;">&#215;</a>
+                                                            <a onclick="deleteimage('<?php echo $ad['BlogImage'];  ?>','BlogImage')" class="remove-image" data-toggle="tooltip" data-placement="top" title="Delete Image">
+                                                                    &#215;
+                                                                </a>
                                                         </div>
+                                                        <?php } ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -176,63 +154,52 @@ if ($isUpdate == 1) {
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Meta Title</label>
-                                                            <input type="text" class="form-control" id="MetaTitle" value="<?php echo $MetaTitle; ?>" name="MetaTitle">
+                                                            <input type="text" class="form-control" id="MetaTitle" value="<?php echo $ad['MetaTitle']; ?>" name="MetaTitle">
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Meta Description</label>
-                                                            <input type="text" value="<?php echo $MetaDescription; ?>" class="form-control" id="MetaDescription" name="MetaDescription">
+                                                            <input type="text" value="<?php echo $ad['MetaDescription']; ?>" class="form-control" id="MetaDescription" name="MetaDescription">
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Alt Tag</label>
-                                                            <input type="text" class="form-control" id="altTag" value="<?php echo $altTag; ?>" name="altTag">
+                                                            <input type="text" class="form-control" id="altTag" value="<?php echo $ad['altTag']; ?>" name="altTag">
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Blog OG Title</label>
-                                                            <input type="text" id="BlogOgTitle" name="BlogOgTitle" value="<?php echo $BlogOgTitle; ?>" class="form-control" />
+                                                            <input type="text" id="BlogOgTitle" name="BlogOgTitle" value="<?php echo $ad['BlogOgTitle']; ?>" class="form-control" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Blog OG Tag</label>
-                                                            <input type="text" id="BlogOgTag" name="BlogOgTag" value="<?php echo $BlogOgTag; ?>" class="form-control" />
+                                                            <input type="text" id="BlogOgTag" name="BlogOgTag" value="<?php echo $ad['BlogOgTag']; ?>" class="form-control" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Twitter Tag</label>
-                                                            <input type="text" id="TwitterTag" name="TwitterTag" value="<?php echo $TwitterTag; ?>" class="form-control" />
+                                                            <input type="text" id="TwitterTag" name="TwitterTag" value="<?php echo $ad['TwitterTag']; ?>" class="form-control" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>HI Tag</label>
-                                                            <input type="text" id="HiTag" name="HiTag" value="<?php echo $HiTag; ?>" class="form-control" />
+                                                            <input type="text" id="HiTag" name="HiTag" value="<?php echo $ad['HiTag']; ?>" class="form-control" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6">
                                                         <div class="form-group mb-3">
                                                             <label>Keywords</label>
-                                                            <input type="text" id="Keywords" name="Keywords" value="<?php echo $Keywords; ?>" class="form-control" />
+                                                            <input type="text" id="Keywords" name="Keywords" value="<?php echo $ad['Keywords']; ?>" class="form-control" />
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Project OG Tag</label>
-                                                            <input type="text" id="ProjectOgTag" name="ProjectOgTag" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Project OG Tag</label>
-                                                            <input type="text" id="ProjectOgTag" name="ProjectOgTag" class="form-control" />
-                                                        </div>
-                                                    </div> -->
+                                                  
                                                 </div>
                                                 <!-- end row -->
                                             </div>
@@ -298,25 +265,107 @@ if ($isUpdate == 1) {
             $.ajax({
               type: "POST",
                url: "alias_check.php",
-               data: "alias_edit_blog="+val,
+               data: {blog_master:val},
                   
                     // serializes the form's elements.
                success: function(data)
                {
-                //  console.log(data);
-                    if(data === val+'already')
+                 console.log(data);
+                    if(data === 'already')
                     {
-                        console.log( "Data already exits");
+                        $('#aliasAlert').html('Alias name already exists');
                     }
                     else
                     {
-                       console.log("Data accepted");
+                        $('#aliasAlert').html('');
                     }
                }
            
             });
           
         }
+
+// To check unique image 
+
+        $(".unique_image").change(function(e) {
+
+
+$.ajax({
+    type: "POST",
+    url: "unique_image_check.php",
+    data: {
+        directory: e.target.value,
+        name: 'blog'
+    },
+
+    // serializes the form's elements.
+    success: function(data) {
+        // console.log(data);
+        var tag = document.createElement("p");
+        tag.style.color = "red";
+        tag.setAttribute('class', 'uniqueImage')
+        var text = document.createTextNode("Image already exits");
+        var emptytext = document.createTextNode('');
+        if (data === 'already') {
+            // if($(".uniqueImage"))
+            if (document.querySelector('.uniqueImage') !== null) {
+                $(".uniqueImage").remove();
+            }
+
+            tag.appendChild(text);
+            e.target.parentElement.append(tag);
+
+        } else {
+            $(".uniqueImage").remove();
+
+        }
+
+    }
+
+});
+
+})
+
+
+
+
+            //  delete image fucntionality
+            function deleteimage(val, type) {
+                var conf = confirm("Are you sure??");
+                if (conf) {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "delete_image.php",
+                        data: {
+                            directory: val,
+                            col_name: type,
+                            page_id: <?php echo $id; ?>,
+                            table_name: "blog_master",
+                            id_col_name: "PK_BlogID"
+                        },
+
+                        // serializes the form's elements.
+                        success: function(data) {
+                            if (data == "success") {
+                                location.reload();
+                            }
+
+
+                        }
+
+                    });
+
+                }
+
+            }
+
+
+
+
+
+
+
 </script>
 
 

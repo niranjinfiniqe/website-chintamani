@@ -16,7 +16,7 @@ $pid = 0;
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="projects.php">Projects</a></li>
+                                <li class="breadcrumb-item"><a href="projects">Projects</a></li>
                                 <li class="breadcrumb-item active">Add Projects</li>
                             </ol>
                         </div>
@@ -39,13 +39,13 @@ $pid = 0;
                                         <div>
                                             <div class="mb-3">
                                                 <label for="example-text-input" class="form-label">Project Name</label>
-                                                <input class="form-control" placeholder="Project Name" type="text" required  name="ProjectName" id="ProjectName">
+                                                <input class="form-control" placeholder="Project Name" type="text" required name="ProjectName" id="ProjectName">
                                             </div>
-                                           
+
                                             <div class="mb-3">
                                                 <label class="form-label">Status</label>
-                                                <select class="form-control"  name="ProjectStatus" id="ProjectStatus">
-                                                    <option >Select</option>
+                                                <select class="form-control" name="ProjectStatus" id="ProjectStatus">
+                                                    <option>Select</option>
                                                     <option>In Progress</option>
                                                     <option>Completed</option>
                                                 </select>
@@ -59,27 +59,28 @@ $pid = 0;
                                             <br>
 
                                             <h3 class="mb-3">Gallery</h3>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="example-tel-input" class="form-label">Thumbnail Image</label>
-                                                <input required type="file" name="ThumbnailImageURL" id="ProjectImage" class="form-control">
+                                                <input required type="file" name="ThumbnailImageURL" id="ProjectImage" class="form-control unique_image">
+
                                             </div>
                                             <div class="mb-3">
                                                 <label for="example-tel-input" class="form-label">FloorPlan Url</label>
-                                                <input type="file" name="FloorPlantImageURL" id="ProjectFloorPlant" class="form-control">
+                                                <input type="file" name="FloorPlantImageURL" id="ProjectFloorPlant" class="form-control unique_image">
                                             </div>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="example-tel-input" class="form-label">Project Image1</label>
-                                                <input type="file" name="ProjectImage1" id="ProjectImage1" class="form-control">
+                                                <input type="file" name="ProjectImage1" id="ProjectImage1" class="form-control unique_image">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="example-tel-input" class="form-label">Project Image3</label>
-                                                <input type="file" name="ProjectImage3" id="ProjectImage3" class="form-control">
+                                                <input type="file" name="ProjectImage3" id="ProjectImage3" class="form-control unique_image">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="example-tel-input" class="form-label">Project Image5</label>
-                                                <input type="file" name="ProjectImage5" id="ProjectImage5" class="form-control">
+                                                <input type="file" name="ProjectImage5" id="ProjectImage5" class="form-control unique_image">
                                             </div>
                                         </div>
 
@@ -91,8 +92,11 @@ $pid = 0;
                                             <div class="mb-3">
                                                 <label for="example-text-input" class="form-label">Project Alias</label>
                                                 <input onkeyup="aliascheck(this.value);" placeholder="Project Alias" required class="form-control" type="text" name="ProjectAlias" id="ProjectAlias">
+                                                <p style="color:red" id="aliasAlert"></p>
+
+
                                             </div>
-                                         
+
                                             <div class="mb-3">
                                                 <label class="form-label">Project Type</label>
                                                 <select required class="form-select" id="ProjectType" name="ProjectType">
@@ -103,7 +107,7 @@ $pid = 0;
                                             </div>
                                             <div class="col-lg-12">
                                                 <label for="example-search-input" class="form-label">Long Description</label>
-                                                <textarea class="form-control" type="text" rows="4" id="ProjectLongDescription"  placeholder="LongDescription" name="ProjectLongDescription"></textarea>
+                                                <textarea class="form-control" type="text" rows="4" id="ProjectLongDescription" placeholder="LongDescription" name="ProjectLongDescription"></textarea>
                                             </div>
                                             <br>
                                             <br>
@@ -111,25 +115,25 @@ $pid = 0;
                                             <br>
                                             <br>
                                             <br>
-                                            
-                                            
+
+
                                             <div class="mb-3">
                                                 <label for="example-tel-input" class="form-label">Upload Brochure</label>
                                                 <input type="file" name="ProjectBrochureURL" id="ProjectBrochureURL" class="form-control">
                                             </div>
-                                            
-                                          
+
+
                                             <div class="mb-3">
                                                 <label for="example-tel-input" class="form-label">Project Image2</label>
-                                                <input type="file" name="ProjectImage2" id="ProjectImage2" class="form-control">
+                                                <input type="file" name="ProjectImage2" id="ProjectImage2" class="form-control unique_image">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="example-tel-input" class="form-label">Project Image4</label>
-                                                <input type="file" name="ProjectImage4" id="ProjectImage4" class="form-control">
+                                                <input type="file" name="ProjectImage4" id="ProjectImage4" class="form-control unique_image">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="example-tel-input" class="form-label">Project Image6</label>
-                                                <input type="file" name="ProjectImage6" id="ProjectImage6" class="form-control">
+                                                <input type="file" name="ProjectImage6" id="ProjectImage6" class="form-control unique_image">
                                             </div>
                                         </div>
                                     </div>
@@ -187,18 +191,7 @@ $pid = 0;
                                                         <input type="text" id="Keywords" name="Keywords" class="form-control" />
                                                     </div>
                                                 </div>
-                                                <!-- <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Project OG Tag</label>
-                                                            <input type="text" id="ProjectOgTag" name="ProjectOgTag" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xl-4 col-md-6">
-                                                        <div class="form-group mb-3">
-                                                            <label>Project OG Tag</label>
-                                                            <input type="text" id="ProjectOgTag" name="ProjectOgTag" class="form-control" />
-                                                        </div>
-                                                    </div> -->
+                                           
                                             </div>
                                             <!-- end row -->
                                         </div>
@@ -213,43 +206,92 @@ $pid = 0;
             </div>
         </div>
     </div>
-    </div>
-    
-
-
-    <!-- Main form End-->
+</div>
 
 
 
-    <!-- pristine js -->
-    <script src="assets/libs/pristinejs/pristine.min.js"></script>
-    <!-- form validation -->
-    <script src="assets/js/pages/form-validation.init.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<!-- Main form End-->
 
-    <script>
-        function aliascheck(val) {
-            $.ajax({
-                type: "POST",
-                url: "alias_check.php",
-                data: "alias_add_project=" + val,
 
-                // serializes the form's elements.
-                success: function(data) {
-                    //  console.log(data);
-                    if (data === val + 'already') {
-                        console.log("Data already exits");
-                    } else {
-                        console.log("Data accepted");
+
+<!-- pristine js -->
+<script src="assets/libs/pristinejs/pristine.min.js"></script>
+<!-- form validation -->
+<script src="assets/js/pages/form-validation.init.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+
+<script>
+    function aliascheck(val) {
+        $.ajax({
+            type: "POST",
+            url: "alias_check.php",
+            data: {
+                project_master: val
+            },
+
+            // serializes the form's elements.
+            success: function(data) {
+                //  console.log(data);
+                if (data == 'already') {
+                    // console.log("Data already exits");
+                    $('#aliasAlert').html('Alias name already exists');
+                } else {
+                    // console.log("Data accepted");
+                    $('#aliasAlert').html('');
+
+                }
+            }
+
+        });
+
+    }
+
+
+
+    $(".unique_image").change(function(e) {
+
+
+        $.ajax({
+            type: "POST",
+            url: "unique_image_check.php",
+            data: {
+                directory: e.target.value,
+                name:'project'
+            },
+
+            // serializes the form's elements.
+            success: function(data) {
+                // console.log(data);
+                var tag = document.createElement("p");
+                tag.style.color = "red";
+                tag.setAttribute('class', 'uniqueImage')
+                var text = document.createTextNode("Image already exits");
+                var emptytext = document.createTextNode('');
+                if (data === 'already') {
+                    if(document.querySelector('.uniqueImage') !== null ){
+                        $(".uniqueImage").remove();
                     }
+                  
+                    tag.appendChild(text);
+                    e.target.parentElement.append(tag);
+                  
+                } else {
+                    $(".uniqueImage").remove();
+                   
                 }
 
-            });
+            }
 
-        }
-    </script>
+        });
 
 
-    <?php
-    //include("footer.php")
-    ?>
+
+    })
+
+</script>
+
+
+<?php
+include("footer.php")
+?>

@@ -10,7 +10,7 @@ include("../../Helper/connect.php");
 		// // echo $a;
 		if($a)
 		{		
-		header("location:./blogs.php");
+		header("location:blogs.php");
         
 		}
 

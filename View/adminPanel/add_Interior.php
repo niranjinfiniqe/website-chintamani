@@ -21,7 +21,7 @@ include("../../Helper/connect.php");
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="Interior.php">Interiors</a></li>
+                                <li class="breadcrumb-item"><a href="Interior">Interiors</a></li>
                                 <li class="breadcrumb-item active">Add Interior</li>
                             </ol>
                         </div>
@@ -61,7 +61,8 @@ include("../../Helper/connect.php");
 
                                                     <div class="mb-3">
                                                         <label for="example-text-input" class="form-label">Interior Alias</label>
-                                                        <input required name="InteriorAlias" required class="form-control" type="text" placeholder="Interior Alias" id="BlogTitle">
+                                                        <input onkeyup="aliascheck(this.value)" required name="InteriorAlias" required class="form-control" type="text" placeholder="Interior Alias" id="BlogTitle">
+                                                        <p style="color:red" id="aliasAlert"></p>
                                                     </div>
 
 
@@ -85,11 +86,11 @@ include("../../Helper/connect.php");
 
                                                         <div class="mb-3">
                                                             <label for="example-tel-input" class="form-label">Gallery Image1</label>
-                                                            <input type="file" name="GalleryImage1" id="GalleryImage1" class="form-control">
+                                                            <input type="file" name="GalleryImage1" id="GalleryImage1" class="form-control unique_image">
                                                         </div>
                                                         <div class="mb-3">
                                                             <label for="example-tel-input" class="form-label">Gallery Image3</label>
-                                                            <input type="file" name="GalleryImage3" id="GalleryImage3" class="form-control">
+                                                            <input type="file" name="GalleryImage3" id="GalleryImage3" class="form-control unique_image">
                                                         </div>
 
 
@@ -106,14 +107,14 @@ include("../../Helper/connect.php");
 
                                                         <div class="mb-3">
                                                             <label for="example-tel-input" class="form-label">Gallery Image2</label>
-                                                            <input type="file" name="GalleryImage2" id="GalleryImage2" class="form-control">
+                                                            <input type="file" name="GalleryImage2" id="GalleryImage2" class="form-control unique_image">
                                                         </div>
 
 
 
                                                         <div class="mb-3">
                                                             <label for="example-tel-input" class="form-label">Gallery Image4</label>
-                                                            <input type="file" name="GalleryImage4" id="GalleryImage4" class="form-control">
+                                                            <input type="file" name="GalleryImage4" id="GalleryImage4" class="form-control unique_image">
                                                         </div>
 
                                                     </div>
@@ -154,6 +155,7 @@ include("../../Helper/connect.php");
                                                         <div class="form-group mb-3">
                                                             <label>Interior Alias</label>
                                                             <input type="text" id="BlogOgTitle" name="BlogOgTitle" class="form-control" />
+                                                            <p style="color:red" id="aliasAlert"></p>
                                                         </div>
                                                     </div>
 
@@ -197,7 +199,7 @@ include("../../Helper/connect.php");
 
 
 <!-- ckeditor -->
-<script src="assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+<!--<script src="assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>-->
 
 
 <!-- ckeditor -->
@@ -209,27 +211,73 @@ include("../../Helper/connect.php");
 <script src="assets/js/app.js"></script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<!-- <script>
+<script>
     function aliascheck(val) {
         $.ajax({
             type: "POST",
             url: "alias_check.php",
-            data: "alias_add_interior=" + val,
+            data: {
+                interior_master: val
+            },
 
             // serializes the form's elements.
             success: function(data) {
-                //  console.log(data);
-                if (data === val + 'already') {
-                    console.log("Data already exits");
+                console.log(data);
+                if (data === 'already') {
+                    // console.log("Data already exits");
+                    $('#aliasAlert').html('Alias name already exists');
                 } else {
-                    console.log("Data accepted");
+                    // console.log("Data accepted");
+                    $('#aliasAlert').html('');
                 }
             }
 
         });
 
     }
-</script> -->
+
+
+    $(".unique_image").change(function(e) {
+
+
+        $.ajax({
+            type: "POST",
+            url: "unique_image_check.php",
+            data: {
+                directory: e.target.value,
+                name: 'interior'
+            },
+
+            // serializes the form's elements.
+            success: function(data) {
+                // console.log(data);
+                var tag = document.createElement("p");
+                tag.style.color = "red";
+                tag.setAttribute('class', 'uniqueImage')
+                var text = document.createTextNode("Image already exits");
+                var emptytext = document.createTextNode('');
+                if (data === 'already') {
+                    // if($(".uniqueImage"))
+                    if (document.querySelector('.uniqueImage') !== null) {
+                        $(".uniqueImage").remove();
+                    }
+
+                    tag.appendChild(text);
+                    e.target.parentElement.append(tag);
+
+                } else {
+                    $(".uniqueImage").remove();
+
+                }
+
+            }
+
+        });
+
+
+
+    })
+</script>
 
 <?php
 include("footer.php")

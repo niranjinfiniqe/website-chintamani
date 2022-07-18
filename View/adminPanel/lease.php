@@ -79,21 +79,21 @@ else{
                     <div class="card">
                         <div  class="card-header mx-2 my-2" style="padding:0;padding-bottom:10px">
                             <div  class="d-flex flex-wrap justify-content-end">
-                                <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_lease.php" style="color: white;">Add New Lease</a></button>
+                                <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_lease" style="color: white;">Add New Lease</a></button>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="d-flex flex-wrap gap-2">
                                 <button onclick="loadAllData()" type="button" class="btn btn-secondary waves-effect waves-light">
-                                <a style="text-decoration:none ;color:white" href="lease.php?page_id=1">All Lease</a> </button>
+                                <a style="text-decoration:none ;color:white" href="lease?page_id=1">All Lease</a> </button>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownLocationfilterButton" data-bs-toggle="dropdown" aria-expanded="false">
                                         Location<i class="mdi mdi-chevron-down"></i>
                                     </button>
                                     <div id="fetchvalue" name="fetchvalue" class="dropdown-menu" aria-labelledby="dropdownLocationfilterButton">
-                                        <a href="lease.php?Location=Goregaon" class="dropdown-item">Goregaon</a>
-                                        <a href="lease.php?Location=Andheri" class="dropdown-item">Andheri</a>
-                                        <a href="lease.php?Location=Chakala" class="dropdown-item">Chakala</a>
+                                        <a href="lease?Location=Goregaon" class="dropdown-item">Goregaon</a>
+                                        <a href="lease?Location=Andheri" class="dropdown-item">Andheri</a>
+                                        <a href="lease?Location=Chakala" class="dropdown-item">Chakala</a>
                                     </div>
                                 </div>
                             </div>
@@ -140,10 +140,10 @@ else{
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <a href="edit_lease.php?pid=<?php echo $row['PK_lease']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                                        <a href="edit_lease?pid=<?php echo $row['PK_lease']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                                                     </td>
                                                     <td>
-                                                        <a onClick='javascript:confirmationDelete($(this));return false;' href="deletelease.php?pid=<?php echo $row['PK_lease'];
+                                                        <a onClick='javascript:confirmationDelete($(this));return false;' href="deletelease?pid=<?php echo $row['PK_lease'];
                                                         if(isset($_GET['Location'])){
                                                             echo "&Location=".$_GET['Location'];
                                                         }
@@ -166,7 +166,7 @@ else{
                                     for($i=1;$i<=$no_of_pages;$i++)
                                     { 
                                     ?> 
-                                    <li class="page-item <?php if($i == $Pageid){echo 'active';}  ?>"><a class="page-link" href="lease.php?page_id=<?php echo $i;
+                                    <li class="page-item <?php if($i == $Pageid){echo 'active';}  ?>"><a class="page-link" href="lease?page_id=<?php echo $i;
                                    if(isset($_GET['Location'])){
                                     echo "&Location=".$_GET['Location'];
 

@@ -129,10 +129,10 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                                     <td><img src="<?php echo $row['ThumbnailImageURL'] ?>" width="70px" height="70px" />
                                                     </td>
                                                     <td>
-                                                        <a href="edit_project.php?pid=<?php echo $row['PK_Project']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                                        <a href="edit_project?pid=<?php echo $row['PK_Project']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
                                                     </td>
                                                     <td>
-                                                        <a a onClick='javascript:confirmationDelete($(this));return false;' href="deleteproject.php/?pid=<?php echo $row['PK_Project']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                                        <a a onClick='javascript:confirmationDelete($(this));return false;' href="deleteproject/?pid=<?php echo $row['PK_Project']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
                                                     </td>
                                                 </tr>
             <?php
@@ -156,7 +156,7 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
                                     ?>
                                         <li class="page-item <?php if ($i == $Pageid) {
                                                                     echo 'active';
-                                                                } ?> "><a class="page-link" href="projects.php?page_id=<?php echo $i; ?>&ProjectType=<?php echo $request ?>">
+                                                                } ?> "><a class="page-link" href="projects?page_id=<?php echo $i; ?>&ProjectType=<?php echo $request ?>">
                                                 <?php echo $i; ?></a></li>
 
                                     <?php

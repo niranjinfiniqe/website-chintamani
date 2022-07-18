@@ -15,7 +15,7 @@ include("../../Helper/connect.php");
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                            <li class="breadcrumb-item"><a href="blogs.php">Blogs</a></li>
+                                <li class="breadcrumb-item"><a href="blogs">Blogs</a></li>
                                 <li class="breadcrumb-item active"> Add Blog</li>
                             </ol>
                         </div>
@@ -30,26 +30,26 @@ include("../../Helper/connect.php");
                     <div class="card">
                         <div class="card-body">
                             <div class="card-body p-4">
-                                <form  action="addblog.php " class="needs-validation" novalidate method="post" name="f1"  enctype="multipart/form-data">
+                                <form action="addblog.php " class="needs-validation" novalidate method="post" name="f1" enctype="multipart/form-data">
                                     <div class="row">
 
                                         <div class="col-lg-6">
                                             <div>
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Title <span class="required"> *</span></label>
-                                                    <input class="form-control" required name="BlogTitle" type="text"  id="BlogTitle">
+                                                    <input class="form-control" required name="BlogTitle" type="text" id="BlogTitle">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Owner</label>
-                                                    <input class="form-control" name="BlogOwner" type="text"  id="BlogAlias">
+                                                    <input class="form-control" name="BlogOwner" type="text" id="BlogAlias">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Blog Date</label>
-                                                    <input class="form-control" name="BlogDate" type="Date"  id="BlogDate">
+                                                    <input class="form-control" name="BlogDate" type="Date" id="BlogDate">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-tel-input" class="form-label"> Blog Thumb Image <span class="required"> *</span></label>
-                                                    <input type="file" name="BlogThumbImage" required id=" BlogThumbImage" class="form-control">
+                                                    <input type="file" name="BlogThumbImage" required id=" BlogThumbImage" class="form-control unique_image">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-tel-input" class="form-label">Display Order <span class="required"> *</span></label>
@@ -62,23 +62,24 @@ include("../../Helper/connect.php");
                                             <div class="mt-3 mt-lg-0">
                                                 <div class="mb-3">
                                                     <label for="example-text-input" class="form-label">Blog Alias <span class="required"> *</span></label>
-                                                    <input onkeyup="aliascheck(this.value)" required class="form-control" name="BlogAlias" type="text"  id="BlogAlias">
+                                                    <input onkeyup="aliascheck(this.value)" required class="form-control" name="BlogAlias" type="text" id="BlogAlias">
+                                                    <p style="color:red" id="aliasAlert" ></p>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" class="form-label">Reading Time</label>
-                                                    <input class="form-control" name="ReadingTime" type="number"  id="ReadingTime">
+                                                    <input class="form-control" name="ReadingTime" type="number" id="ReadingTime">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-search-input" required class="form-label">Blog Status <span class="required"> *</span></label>
                                                     <select class="form-select" required id="BlogStatus" name="BlogStatus">
                                                         <option>Select</option>
-                                                        <option value="10" >Published</option>
-                                                        <option value="11" >Draft</option>
+                                                        <option value="10">Published</option>
+                                                        <option value="11">Draft</option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="example-tel-input" class="form-label">Blog Image</label>
-                                                    <input type="file" name="BlogImage"  id="BlogImage" class="form-control">
+                                                    <input type="file" name="BlogImage" id="BlogImage" class="form-control unique_image">
                                                 </div>
                                             </div>
                                         </div>
@@ -163,81 +164,149 @@ include("../../Helper/connect.php");
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
 
-            <!-- init js -->
-            <script src="assets/js/pages/form-editor.init.js"></script>
+<!-- init js -->
+<script src="assets/js/pages/form-editor.init.js"></script>
 
-            <script src="assets/js/app.js"></script>
+<script src="assets/js/app.js"></script>
 
-                 <!-- pristine js -->
-       <script src="assets/libs/pristinejs/pristine.min.js"></script>
-        <!-- form validation -->
-       <script src="assets/js/pages/form-validation.init.js"></script>
-       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.3.2/ckeditor.js" ></script>
-        <script>
-	
-            var ckEditorID;
+<!-- pristine js -->
+<script src="assets/libs/pristinejs/pristine.min.js"></script>
+<!-- form validation -->
+<script src="assets/js/pages/form-validation.init.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.3.2/ckeditor.js"></script>
+<script>
+    var ckEditorID;
+
+    ckEditorID = 'ckeExample';
+
+    CKEDITOR.config.forcePasteAsPlainText = true;
+    CKEDITOR.replace(ckEditorID, {
+        toolbar: [{
+                name: 'document',
+                items: ['Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates']
+            },
+            {
+                name: 'clipboard',
+                items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo']
+            },
+            {
+                name: 'editing',
+                items: ['Find', 'Replace', '-', 'SelectAll', '-', 'Scayt']
+            },
+            {
+                name: 'forms',
+                items: ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField']
+            },
+            '/',
+            {
+                name: 'basicstyles',
+                items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat']
+            },
+            {
+                name: 'paragraph',
+                items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language']
+            },
+            {
+                name: 'links',
+                items: ['Link', 'Unlink', 'Anchor']
+            },
+            {
+                name: 'insert',
+                items: ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']
+            },
+            '/',
+            {
+                name: 'styles',
+                items: ['Styles', 'Format', 'Font', 'FontSize']
+            },
+            {
+                name: 'colors',
+                items: ['TextColor', 'BGColor']
+            },
+            {
+                name: 'tools',
+                items: ['Maximize', 'ShowBlocks']
+            },
+            {
+                name: 'about',
+                items: ['About']
+            }
+        ]
+
+    })
+</script>
+
+<script>
+    function aliascheck(val) {
+        $.ajax({
+            type: "POST",
+            url: "alias_check.php",
+            data: {blog_master:val},
+
+            // serializes the form's elements.
+            success: function(data) {
+                 console.log(data);
+                if (data ===  'already') {
+                    $('#aliasAlert').html('Alias name already exists');
+                } else {
+                    $('#aliasAlert').html('');
+                }
+            }
+
+        });
+
+    }
+
+
     
-            ckEditorID = 'ckeExample';
-    
-            CKEDITOR.config.forcePasteAsPlainText = true;
-            CKEDITOR.replace( ckEditorID,
-                {
-                    toolbar :
-                    [
-                    { name: 'document', items: [ 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
-                    { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
-                    { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
-                    { name: 'forms', items: [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField' ] },
-                    '/',
-                    { name: 'basicstyles', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting', 'RemoveFormat' ] },
-                    { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl', 'Language' ] },
-                    { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
-                    { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe' ] },
-                    '/',
-                    { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-                    { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
-                    { name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
-                    { name: 'about', items: [ 'About' ] }
-                    ]
-                
-                })
-        </script>    
+    $(".unique_image").change(function(e) {
 
-       <script>
-    function aliascheck(val)
-        {
-            $.ajax({
-              type: "POST",
-               url: "alias_check.php",
-               data: "alias_add_blog="+val,
-                  
-                    // serializes the form's elements.
-               success: function(data)
-               {
-                //  console.log(data);
-                    if(data === val+'already')
-                    {
-                        console.log( "Data already exits");
-                    }
-                    else
-                    {
-                       console.log("Data accepted");
-                    }
-               }
-           
-            });
+
+$.ajax({
+    type: "POST",
+    url: "unique_image_check.php",
+    data: {
+        directory: e.target.value,
+        name:'blog'
+    },
+
+    // serializes the form's elements.
+    success: function(data) {
+        // console.log(data);
+        var tag = document.createElement("p");
+        tag.style.color = "red";
+        tag.setAttribute('class', 'uniqueImage')
+        var text = document.createTextNode("Image already exits");
+        var emptytext = document.createTextNode('');
+        if (data === 'already') {
+            // if($(".uniqueImage"))
+            if(document.querySelector('.uniqueImage') !== null ){
+                $(".uniqueImage").remove();
+            }
           
+            tag.appendChild(text);
+            e.target.parentElement.append(tag);
+          
+        } else {
+            $(".uniqueImage").remove();
+           
         }
 
+    }
+
+});
 
 
 
-
+})
 </script>
 
 
-            <?php
-            include("footer.php")
-            ?>
+<?php
+include("footer.php")
+?>

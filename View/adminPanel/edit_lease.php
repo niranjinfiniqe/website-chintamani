@@ -8,43 +8,7 @@ $pLeaseId = 0;
 
 // Mridul's code
 $id =  $_GET['pid'];
-$query = "SELECT * FROM `leasing_master` WHERE `PK_lease` = $id";
-$exce = mysqli_query($con, $query);
 
-
-if ($row = mysqli_fetch_array($exce)) {
-
-
-
-    $Lease_Name = $row['Lease_Name'];
-    $Lease_Alias = $row['Lease_Alias'];
-    $ShortDescription = $row['ShortDescription'];
-    $LongDescription = $row['LongDescription'];
-    $CarpetArea = $row['CarpetArea'];
-    $CompleteAddress = $row['CompleteAddress'];
-    $Location = $row['Location'];
-    $Price = $row['Price'];
-    $Packs = $row['Packs'];
-    $FloorPlanURL = $row['FloorPlanURL'];
-    $Images = $row['Images'];
-    $ThumbnailURL = $row['ThumbnailURL'];
-    $VideoURL = $row['VideoURL'];
-    $Furnished_Unfurnished = $row['Furnished/Unfurnished'];
-    $BuildUpArea = $row['BuildUpArea'];
-    $OfficeNumber = $row['office_number'];
-
-    $Keywords = $row['Keywords'];
-    $MetaTitle = $row['MetaTitle'];
-    $DisplayOrder = $row['DisplayOrder'];
-    $FK_Status = $row['DisplayOrder'];
-    $isDeleted = $row['isDeleted'];
-    $LeaseOgTitle = $row['LeaseOgTitle'];
-    $LeaseOgTag = $row['LeaseOgTag'];
-    $MetaDescription = $row['MetaDescription'];
-    $HiTag = $row['HiTag'];
-    $TwitterTag = $row['TwitterTag'];
-    $altTag = $row['altTag'];
-}
 
 
 
@@ -82,7 +46,7 @@ if ($isUpdate == 1) {
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="lease.php">Leasing</a></li>
+                                <li class="breadcrumb-item"><a href="lease">Leasing</a></li>
                                 <li class="breadcrumb-item active">Edit lease</li>
                             </ol>
                         </div>
@@ -111,7 +75,7 @@ if ($isUpdate == 1) {
 
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-text-input" class="form-label">Lease Name</label>
-                                                    <input required value="<?php echo $Lease_Name ?>" class="form-control" type="text" placeholder="Lease Name" id="ProjectName" name="LeaseName" value="<?php if ($isUpdate == 1) {
+                                                    <input required value="<?php echo $ad['Lease_Name'] ?>" class="form-control" type="text" placeholder="Lease Name" id="ProjectName" name="LeaseName" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                                                 echo $ad['Lease_Name'];
                                                                                                                                                                                                             } ?>">
                                                     <input type="hidden" name="pid" value=" <?php echo $id; ?>">
@@ -120,33 +84,34 @@ if ($isUpdate == 1) {
 
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-text-input" class="form-label">Lease Alias</label>
-                                                    <input onkeyup="aliascheck(this.value)" required value="<?php echo $Lease_Alias ?>" class="form-control" type="text" placeholder="Lease Alias" id="Lease_Alias" name="LeaseAlias" value="<?php if ($isUpdate == 1) {
-                                                                                                                                                                                                                                                    echo $ad['Lease_Alias'];
+                                                    <input onkeyup="aliascheck(this.value)" required  class="form-control" type="text" placeholder="Lease Alias" id="Lease_Alias" name="LeaseAlias" value="<?php if ($isUpdate == 1) {
+                                                                                                                                                                                                                                                    echo $ad['Alias'];
                                                                                                                                                                                                                                                 } ?>">
+                                                                                                                                                                                                                                                <p style="color:red" id="aliasAlert" ></p>
                                                 </div>
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-text-input" class="form-label">Carpet Area</label>
-                                                    <input required value="<?php echo $CarpetArea ?>" class="form-control" type="text" placeholder="CarpetArea" id="CarpetArea" name="CarpetArea" value="<?php if ($isUpdate == 1) {
+                                                    <input required value="<?php  echo $ad['CarpetArea']; ?>" class="form-control" type="text" placeholder="CarpetArea" id="CarpetArea" name="CarpetArea" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                                                 echo $ad['CarpetArea'];
                                                                                                                                                                                                             } ?>">
                                                 </div>
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-tel-input" class="form-label">BuildUp Area</label>
-                                                    <input required value="<?php echo $BuildUpArea ?>" placeholder="BuildUp Area" type="number" name="BuildUpArea" id="BuildUpAread" class="form-control">
+                                                    <input required value="<?php echo $ad['BuildUpArea'] ?>" placeholder="BuildUp Area" type="number" name="BuildUpArea" id="BuildUpAread" class="form-control">
                                                 </div>
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-text-input" class="form-label">Price</label>
-                                                    <input required value="<?php echo $Price ?>" class="form-control" type="number" placeholder="Price" id="Price" name="Price" value="<?php if ($isUpdate == 1) {
+                                                    <input required value="<?php  echo $ad['Price']; ?>" class="form-control" type="number" placeholder="Price" id="Price" name="Price" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                             echo $ad['Price'];
                                                                                                                                                                                         } ?>">
                                                 </div>
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-tel-input" class="form-label">Display Order</label>
-                                                    <input required value="<?php echo $DisplayOrder ?>" placeholder="Display Order" type="number" name="DisplayOrder" id="DisplayOrder" class="form-control">
+                                                    <input required value="<?php echo $ad['DisplayOrder'] ?>" placeholder="Display Order" type="number" name="DisplayOrder" id="DisplayOrder" class="form-control">
                                                 </div>
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-tel-input" class="form-label">Office Number</label>
-                                                    <input required value="<?php echo $OfficeNumber; ?>" placeholder="Office Number" type="number" name="OfficeNumber" id="OfficeNumber" class="form-control">
+                                                    <input required value="<?php echo $ad['office_number']; ?>" placeholder="Office Number" type="number" name="OfficeNumber" id="OfficeNumber" class="form-control">
                                                 </div>
 
                                                
@@ -176,7 +141,7 @@ if ($isUpdate == 1) {
 
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-text-input" class="form-label">Packs</label>
-                                                    <input value="<?php echo $Packs ?>" class="form-control" type="number" placeholder="Packs" reqired id="Packs" name="Packs" value="<?php if ($isUpdate == 1) {
+                                                    <input value="<?php  echo $ad['Packs']; ?>" class="form-control" type="number" placeholder="Packs" reqired id="Packs" name="Packs" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                         echo $ad['Packs'];
                                                                                                                                                                                     } ?>">
                                                 </div>
@@ -185,20 +150,20 @@ if ($isUpdate == 1) {
 
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-tel-input" class="form-label">Furnished/Unfurnished</label>
-                                                    <input required value="<?php echo $Furnished_Unfurnished ?>" placeholder="Furnished/Unfurnished" type="text" name="Furnished/Unfurnished" id="Furnished/Unfurnished" class="form-control">
+                                                    <input required value="<?php echo $ad['Furnished/Unfurnished'] ?>" placeholder="Furnished/Unfurnished" type="text" name="Furnished/Unfurnished" id="Furnished/Unfurnished" class="form-control">
                                                 </div>
 
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-search-input" class="form-label">Short Description </label>
-                                                    <textarea class="form-control" type="search" placeholder="Short Description" rows="2" id="ShortDescription" name="ShortDescription"><?php echo $ShortDescription ?></textarea>
+                                                    <textarea class="form-control" type="search" placeholder="Short Description" rows="2" id="ShortDescription" name="ShortDescription"><?php echo $ad['ShortDescription'] ?></textarea>
                                                 </div>
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-search-input" class="form-label">Long Description</label>
-                                                    <textarea class="form-control" type="search" placeholder="Long Description" rows="2" id="ShortDescription" name="LongDescription"><?php echo $LongDescription ?></textarea>
+                                                    <textarea class="form-control" type="search" placeholder="Long Description" rows="2" id="ShortDescription" name="LongDescription"><?php echo $ad['LongDescription'] ?></textarea>
                                                 </div>
                                                 <div class="col-xl-6 col-md-6 mb-3">
                                                     <label for="example-search-input" class="form-label">Complete Address</label>
-                                                    <textarea required class="form-control" type="search" placeholder="CompleteAddress" rows="2" id="CompleteAddress" name="CompleteAddress"><?php echo $CompleteAddress ?></textarea>
+                                                    <textarea required class="form-control" type="search" placeholder="CompleteAddress" rows="2" id="CompleteAddress" name="CompleteAddress"><?php echo $ad['CompleteAddress'] ?></textarea>
                                                 </div>
                                                
                                                
@@ -216,23 +181,25 @@ if ($isUpdate == 1) {
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-text-input" class="form-label">Thumbnail Image</label>
-                                                        <input required value="<?php echo $ThumbnailURL; ?>" class="form-control" type="file" placeholder="ThumbnailURL" id="ThumbnailURL" name="ThumbnailURL" value="<?php if ($isUpdate == 1) {
+                                                        <input required value="<?php   echo $ad['ThumbnailURL']; ?>" class="form-control unique_image" type="file" placeholder="ThumbnailURL" id="ThumbnailURL" name="ThumbnailURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                                                             echo $ad['ThumbnailURL'];
                                                                                                                                                                                                                         } ?>">
                                                                                                <br>   
                                                                                                <?php 
-                                                            if(strlen($ad['FloorPlanURL']) > 0 )
+                                                            if(strlen($ad['ThumbnailURL']) > 0 )
                                                             {
                                                         ?>                                                                                                                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['ThumbnailURL'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
-                                                            <a class="remove-image" style="display: inline;">&#215;</a>
+                                                            <a onclick="deleteimage('<?php echo $ad['ThumbnailURL'];  ?>','ThumbnailURL')" class="remove-image" data-toggle="tooltip" data-placement="top" title="Delete Image">
+                                                                    &#215;
+                                                                </a>
                                                         </div>
                                                         <?php } ?>
                                                     </div>
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-text-input" class="form-label">FloorPlan Image</label>
-                                                        <input value="<?php echo $FloorPlanURL; ?>" class="form-control" type="file" placeholder="FloorPlanURL" id="FloorPlanURL" name="FloorPlanURL" value="<?php if ($isUpdate == 1) {
+                                                        <input value="<?php  echo $ad['FloorPlanURL']; ?>" class="form-control unique_image" type="file" placeholder="FloorPlanURL" id="FloorPlanURL" name="FloorPlanURL" value="<?php if ($isUpdate == 1) {
                                                                                                                                                                                                                     echo $ad['FloorPlanURL'];
                                                                                                                                                                                                                 } ?>">
                                                                                                         <br>  
@@ -242,7 +209,9 @@ if ($isUpdate == 1) {
                                                         ?>                                                                                                          <div class="image-area">
 
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['FloorPlanURL'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
-                                                            <a class="remove-image" style="display: inline;">&#215;</a>
+                                                            <a onclick="deleteimage('<?php echo $ad['FloorPlanURL'];  ?>','FloorPlanURL')" class="remove-image" data-toggle="tooltip" data-placement="top" title="Delete Image">
+                                                                    &#215;
+                                                                </a>
                                                         </div>
                                                         <?php }?>
                                                     </div>
@@ -251,20 +220,24 @@ if ($isUpdate == 1) {
 
                                                     <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-tel-input" class="form-label">Images</label>
-                                                        <input type="file" name="Images" id="ProductImage" class="form-control">
+                                                        <input type="file" name="Images" id="ProductImage" class="form-control unique_image">
                                                         <br>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['Images'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
-                                                            <a class="remove-image" style="display: inline;">&#215;</a>
+                                                            <a onclick="deleteimage('<?php echo $ad['Images'];  ?>','Images')" class="remove-image" data-toggle="tooltip" data-placement="top" title="Delete Image">
+                                                                    &#215;
+                                                                </a>
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-6 col-md-6 mb-3">
                                                         <label for="example-tel-input" class="form-label">Video URL</label>
-                                                        <input value="<?php echo $VideoURL ?>" placeholder="Video URL" type="file" name="VideoURL" id="VideoURL" class="form-control">
+                                                        <input value="<?php echo $ad['VideoURL'] ?>" placeholder="Video URL" type="file" name="VideoURL" id="VideoURL" class="form-control unique_image">
                                                         <br>
                                                         <div class="image-area">
                                                             <img class="photo" image-id="123" data-id="1" src="<?php echo $ad['VideoURL'] ?>" alt="" class="img-fluid rounded" style="height: 70px;width: 70px;">
-                                                            <a class="remove-image" style="display: inline;">&#215;</a>
+                                                            <a onclick="deleteimage('<?php echo $ad['VideoURL'];  ?>','VideoURL')" class="remove-image" data-toggle="tooltip" data-placement="top" title="Delete Image">
+                                                                    &#215;
+                                                                </a>
                                                         </div>
                                                     </div>
 
@@ -290,49 +263,49 @@ if ($isUpdate == 1) {
                                                     <div class="col-xl-4 col-md-6 mb-3">
                                                         <div class="form-group mb-3">
                                                             <label>Meta Title</label>
-                                                            <input value="<?php echo $MetaTitle ?>" type="text" class="form-control" id="MetaTitle" name="MetaTitle">
+                                                            <input value="<?php echo $ad['MetaTitle']; ?>" type="text" class="form-control" id="MetaTitle" name="MetaTitle">
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6 mb-3">
                                                         <div class="form-group mb-3">
                                                             <label>Meta Description</label>
-                                                            <input type="text" value="<?php echo $MetaDescription ?>" class="form-control" id="MetaDescription" name="MetaDescription">
+                                                            <input type="text" value="<?php echo $ad['MetaDescription']; ?>" class="form-control" id="MetaDescription" name="MetaDescription">
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6 mb-3">
                                                         <div class="form-group mb-3">
                                                             <label>Alt Tag</label>
-                                                            <input value="<?php echo $altTag ?>" type="text" class="form-control" id="altTag" name="altTag">
+                                                            <input value="<?php echo $ad['altTag']; ?>" type="text" class="form-control" id="altTag" name="altTag">
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6 mb-3">
                                                         <div class="form-group mb-3">
                                                             <label>Lease OG Title</label>
-                                                            <input value="<?php echo $LeaseOgTitle ?>" type="text" id="LeaseOgTitle" name="LeaseOgTitle" class="form-control" />
+                                                            <input value="<?php echo $ad['LeaseOgTitle']; ?>" type="text" id="LeaseOgTitle" name="LeaseOgTitle" class="form-control" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6 mb-3">
                                                         <div class="form-group mb-3">
                                                             <label>Lease OG Tag</label>
-                                                            <input value="<?php echo $LeaseOgTag ?>" type="text" id="LeaseOgTag" name="LeaseOgTag" class="form-control" />
+                                                            <input value="<?php echo $ad['LeaseOgTag']; ?>" type="text" id="LeaseOgTag" name="LeaseOgTag" class="form-control" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6 mb-3">
                                                         <div class="form-group mb-3">
                                                             <label>Twitter Tag</label>
-                                                            <input value="<?php echo $TwitterTag; ?>" type="text" id="TwitterTag" name="TwitterTag" class="form-control" />
+                                                            <input value="<?php echo $ad['TwitterTag']; ?>" type="text" id="TwitterTag" name="TwitterTag" class="form-control" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6 mb-3">
                                                         <div class="form-group mb-3">
                                                             <label>HI Tag</label>
-                                                            <input value="<?php echo $HiTag ?>" type="text" id="HiTag" name="HiTag" class="form-control" />
+                                                            <input value="<?php echo $ad['HiTag'] ?>" type="text" id="HiTag" name="HiTag" class="form-control" />
                                                         </div>
                                                     </div>
                                                     <div class="col-xl-4 col-md-6 mb-3">
                                                         <div class="form-group mb-3">
                                                             <label>Keywords</label>
-                                                            <input value="<?php echo $Keywords ?>" type="text" id="Keywords" name="Keywords" class="form-control" />
+                                                            <input value="<?php echo $ad['Keywords'] ?>" type="text" id="Keywords" name="Keywords" class="form-control" />
                                                         </div>
                                                     </div>
 
@@ -414,13 +387,6 @@ if ($isUpdate == 1) {
 
 
 
-
-
-
-
-
-
-
                 </div>
                 <div>
                     <button type="submit" name="submit" class="btn btn-primary w-md">Submit</button>
@@ -437,15 +403,15 @@ if ($isUpdate == 1) {
         $.ajax({
             type: "POST",
             url: "alias_check.php",
-            data: "alias_edit_lease=" + val,
+            data: {leasing_master:val},
 
             // serializes the form's elements.
             success: function(data) {
                 //  console.log(data);
-                if (data === val + 'already') {
-                    console.log("Data already exits");
+                if (data === 'already') {
+                    $('#aliasAlert').html('Alias name already exists');
                 } else {
-                    console.log("Data accepted");
+                    $('#aliasAlert').html('');
                 }
             }
 
@@ -471,6 +437,82 @@ if ($isUpdate == 1) {
 
         }
     }
+
+    $(".unique_image").change(function(e) {
+
+
+$.ajax({
+    type: "POST",
+    url: "unique_image_check.php",
+    data: {
+        directory: e.target.value,
+        name: 'lease'
+    },
+
+    // serializes the form's elements.
+    success: function(data) {
+        // console.log(data);
+        var tag = document.createElement("p");
+        tag.style.color = "red";
+        tag.setAttribute('class', 'uniqueImage')
+        var text = document.createTextNode("Image already exits");
+        var emptytext = document.createTextNode('');
+        if (data === 'already') {
+            // if($(".uniqueImage"))
+            if (document.querySelector('.uniqueImage') !== null) {
+                $(".uniqueImage").remove();
+            }
+
+            tag.appendChild(text);
+            e.target.parentElement.append(tag);
+
+        } else {
+            $(".uniqueImage").remove();
+
+        }
+
+    }
+
+});
+
+
+
+})
+
+
+
+            //  delete image fucntionality
+            function deleteimage(val, type) {
+                var conf = confirm("Are you sure??");
+                if (conf) {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "delete_image.php",
+                        data: {
+                            directory: val,
+                            col_name: type,
+                            page_id: <?php echo $id; ?>,
+                            table_name: "leasing_master",
+                            id_col_name: "PK_lease"
+                        },
+
+                        // serializes the form's elements.
+                        success: function(data) {
+                            if (data == "success") {
+                                location.reload();
+                            }
+
+
+                        }
+
+                    });
+
+                }
+
+            }
+
+    
 </script>
 
 <?php

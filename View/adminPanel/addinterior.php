@@ -108,7 +108,7 @@ $altTag = $_POST['altTag'];
     
      
     }
-    header('location:interior.php');
+    header('location:Interior.php');
 
     function  addImage($imageName){
 		$target_dir = "../../uploads/interior";

@@ -1,7 +1,7 @@
 <?php
 include("header.php");
 include("../../Helper/connect.php");
-$query="select * from interior_master where isDeleted=0";
+$query = "select * from interior_master where isDeleted=0";
 $exce = mysqli_query($con, $query);
 
 // For Pagination
@@ -25,114 +25,116 @@ $exce_for_pagination = mysqli_query($con, $query_for_pagniation);
 ?>
 <div class="main-content">
 
-<div class="page-content">
-    <div class="container-fluid">
-        <!-- start page title -->
-        <div class="row">
-            <div class="col-12">
-                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0 font-size-18">Interior</h4>
+    <div class="page-content">
+        <div class="container-fluid">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Interior</h4>
+                    </div>
                 </div>
             </div>
-        </div>
-         <!-- end page title -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="d-flex flex-wrap gap-2 justify-content-end">
-                            <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_interior.php" style="color: white;">Add New Interior</button>
+            <!-- end page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="d-flex flex-wrap gap-2 justify-content-end">
+                                <button type="button" class="btn btn-success waves-effect waves-light"><a href="add_Interior" style="color: white;">Add New Interior</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body">
+                        <div class="card-body">
 
-                        <br/>
-                        <div class="table-responsive">
-                            <table class="table mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Interior title</th>
-                                        <th>Alias</th>
-                                        <th>Gallery</th>
-                                        <th>Edit</th>
-                                        <th>Delete</th>
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                     $count = ($rows_to_be_displayed * ($Pageid - 1)) + 1;
-                                    if(mysqli_num_rows($exce_for_pagination) > 0)
-                                    {
-                                     while($row = mysqli_fetch_array($exce_for_pagination))
-                                     {
-                                    ?>
-                                    <tr>
-                                        <th scope="row"><?php echo $count ++; ?></th>
-                                        <td><?php echo $row['InteriorTitle'] ?></td>
-                                        <td><?php echo $row['Alias'] ?></td>
-                                        <td>
-                                            <img src="<?php echo $row['GalleryImage1'];?>" width="70px" height="70px" />
-                                            <img src="<?php echo $row['GalleryImage2'];?>" width="70px" height="70px" />
-                                            <img src="<?php echo $row['GalleryImage3'];?>" width="70px" height="70px" />
-                                            <img src="<?php echo $row['GalleryImage4'];?>" width="70px" height="70px" />
-                                        </td>
-                                        <td>
-                                            <a href="edit_interior.php?pid=<?php echo $row['PK_interior']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
-                                        </td>
-                                        <td>
-                                            <a a onClick='javascript:confirmationDelete($(this));return false;'  href="deleteinterior.php?pid=<?php echo $row['PK_interior']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                    <?php
-                                     }
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
-                        <br/>
-                        
-                            <!-- Pagination Starts here -->
-                        <nav aria-label="...">
-                        <ul class="pagination  justify-content-end mb-0">
-                                        <!-- <li class="page-item disabled">
-                                    <span class="page-link"><i class="mdi mdi-chevron-left"></i></span>
-                                </li> -->
+                            <br />
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Interior title</th>
+                                            <th>Alias</th>
+                                            <th>Gallery</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                                         <?php
-                                        for ($i = 1; $i <= $no_of_pages; $i++) {
-
+                                        $count = ($rows_to_be_displayed * ($Pageid - 1)) + 1;
+                                        if (mysqli_num_rows($exce_for_pagination) > 0) {
+                                            while ($row = mysqli_fetch_array($exce_for_pagination)) {
                                         ?>
-                                            <li class="page-item <?php if ($i == $Pageid) {
-                                                                        echo 'active';
-                                                                    } ?> "><a class="page-link" href="Interior.php?page_id=<?php echo $i; ?>">
-                                                    <?php echo $i; ?></a></li>
-
+                                                <tr>
+                                                    <th scope="row"><?php echo $count++; ?></th>
+                                                    <td><?php echo $row['InteriorTitle'] ?></td>
+                                                    <td><?php echo $row['Alias'] ?></td>
+                                                    <td>
+                                                        <img src="<?php echo $row['GalleryImage1']; ?>" width="70px" height="70px" />
+                                                        <img src="<?php echo $row['GalleryImage2']; ?>" width="70px" height="70px" />
+                                                        <img src="<?php echo $row['GalleryImage3']; ?>" width="70px" height="70px" />
+                                                        <img src="<?php echo $row['GalleryImage4']; ?>" width="70px" height="70px" />
+                                                    </td>
+                                                    <td>
+                                                        <a href="edit_interior?pid=<?php echo $row['PK_interior']; ?>" class="btn btn-outline-secondary" title="Edit"><i class="fas fa-pen"></i></a>
+                                                    </td>
+                                                    <td>
+                                                        <a a onClick='javascript:confirmationDelete($(this));return false;' href="deleteinterior?pid=<?php echo $row['PK_interior']; ?>" class="btn btn-outline-secondary" title="Delete"><i class="fas fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
                                         <?php
+                                            }
                                         }
                                         ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br />
 
-                                        <!-- <li class="page-item">
+                            <!-- Pagination Starts here -->
+                            <nav aria-label="...">
+                                <ul class="pagination  justify-content-end mb-0">
+                                    <!-- <li class="page-item disabled">
+                                    <span class="page-link"><i class="mdi mdi-chevron-left"></i></span>
+                                </li> -->
+                                    <?php
+                                    for ($i = 1; $i <= $no_of_pages; $i++) {
+
+                                    ?>
+                                        <li class="page-item <?php if ($i == $Pageid) {
+                                                                    echo 'active';
+                                                                } ?> "><a class="page-link" href="Interior?page_id=<?php echo $i; ?>">
+                                                <?php echo $i; ?></a></li>
+
+                                    <?php
+                                    }
+                                    ?>
+
+                                    <!-- <li class="page-item">
                                     <a class="page-link" href="#"><i class="mdi mdi-chevron-right"></i></a>
                                 </li> -->
-                                    </ul>
-                        </nav>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <script>
-               function confirmationDelete(anchor) {
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmationDelete(anchor) {
         var conf = confirm('Are You Sure Want To Delete ?');
         if (conf)
             window.location = anchor.attr("href");
     }
-        </script>
-         
+</script>
 
-    
+
+
 <?php
 include("footer.php")
 ?>
