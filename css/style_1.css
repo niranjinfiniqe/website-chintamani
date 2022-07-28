@@ -14903,7 +14903,7 @@ input[type=checkbox]:checked:before {
 }
 
 #colophon {
-    background-color: #2c2c2c;
+    background-color:#f4ebe4;
     color: #bbb
 }
 
@@ -15110,7 +15110,7 @@ input[type=checkbox]:checked:before {
 .sub_footer {
     width: 100%;
     height: 60px;
-    background-color: #272727
+    background-color: #f4ebe4;
 }
 
 .sub_footer_content {

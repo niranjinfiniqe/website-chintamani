@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<?php include("header.php"); ?>
+	<?php include("header.php"); 
+	include ("Helper/connect.php");
+	//form
+	if (isset($_POST['name']) && isset($_POST['EmailId']) && isset($_POST['phone_number']) && isset($_POST['message']))
+	{
+	
+		$name = $_POST['name'];
+		$EmailId = $_POST['EmailId'];
+		$phone_number = $_POST['phone_number'];
+		$message = $_POST['message'];
+	
+		// Performing insert query execution
+		$sql = mysqli_query($con, "INSERT INTO inquiry (first_name,EmailId,phone_number,project_message,FK_Status) VALUES ('$name','$EmailId','$phone_number','$message','1')");
+	}
+	
+	?>
 	 <head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -873,10 +888,11 @@
 														</div>
 														<div class="elementor-element elementor-element-23b79285 elementor-button-align-stretch elementor-invisible elementor-widget elementor-widget-WpResidence_Contact_Form_Builder" data-id="23b79285" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:50}" data-widget_type="WpResidence_Contact_Form_Builder.default">
 															<div class="elementor-widget-container">
-																<form class="elementor-form wpresidence_elementor_form" id="wpresidence-elementor-form-23b79285" method="post">
-																	<div class="alert-box error">
+																
+															<form id="wpresidence-elementor-form-23b79285" method="post" action="">
+																	<!-- <div class="alert-box error">
 																		<div class="alert-message" id="alert-agent-contact"></div>
-																	</div>
+																	</div> -->
 																	<input name="prop_id" type="hidden" id="agent_property_id" value="">
 																	<input name="prop_id" type="hidden" id="agent_id" value="">
 																	<input name="prop_id" type="hidden" id="contact_form_elementor" value="1">
@@ -884,14 +900,18 @@
 																	<input type="hidden" id="wpresidence_form_id" name="wpresidence_form_id" value="wpresidence_form_7883" />
 																	<input type="hidden" id="elementor_email_subject" name="email_suject" value="New email from &quot;WpResidence Real Estate Demo&quot; " />
 																	<div class="elementor-form-fields-wrapper elementor-labels-above">
-																		<div class="elementor-field-group elementor-column form-group elementor-field-group-name elementor-field-required elementor-col-50"><label for="form-field-name" class="elementor-field-label">Last name*</label><input type="text" name="last_name" id="form-field-name" class="elementor-field form-control elementor-size-sm elementor-field-textual" required="required" placeholder="Last name"></div>
-																		<div class="elementor-field-group elementor-column form-group elementor-field-group-5217b40 elementor-field-required elementor-col-50"><label for="form-field-5217b40" class="elementor-field-label">First name*</label><input type="text" name="first_name" id="form-field-5217b40" class="elementor-field form-control elementor-size-sm elementor-field-textual" required="required" placeholder="First name"></div>
-																		<div class="elementor-field-group elementor-column form-group elementor-field-group-email elementor-field-required elementor-col-50"><label for="form-field-email" class="elementor-field-label">Email*</label><input type="email" name="email" id="form-field-email" class="elementor-field form-control elementor-size-sm elementor-field-textual" required="required" placeholder="Email"></div>
-																		<div class="elementor-field-group elementor-column form-group elementor-field-group-e5a3521 elementor-col-50"><label for="form-field-e5a3521" class="elementor-field-label">Mobile</label><input type="text" name="mobile" id="form-field-e5a3521" class="elementor-field form-control elementor-size-sm elementor-field-textual" placeholder="Mobile"></div>
+																		<div class="elementor-field-group elementor-column form-group elementor-field-group-name elementor-field-required elementor-col-50"><label for="form-field-name" class="elementor-field-label">Last name*</label><input type="text" name="name" id="form-field-name" class="elementor-field form-control elementor-size-sm elementor-field-textual" required="required" placeholder="Name"></div>
+																		<!-- <div class="elementor-field-group elementor-column form-group elementor-field-group-5217b40 elementor-field-required elementor-col-50"><label for="form-field-5217b40" class="elementor-field-label">First name*</label><input type="text" name="first_name" id="form-field-5217b40" class="elementor-field form-control elementor-size-sm elementor-field-textual" required="required" placeholder="First name"></div> -->
+																		<div class="elementor-field-group elementor-column form-group elementor-field-group-email elementor-field-required elementor-col-50"><label for="form-field-email" class="elementor-field-label">Email*</label><input type="email" name="EmailId" id="form-field-email" class="elementor-field form-control elementor-size-sm elementor-field-textual" required="required" placeholder="Email"></div>
+																		<div class="elementor-field-group elementor-column form-group elementor-field-group-e5a3521 elementor-col-50"><label for="form-field-e5a3521" class="elementor-field-label">Mobile</label><input type="text" name="phone_number" id="form-field-e5a3521" class="elementor-field form-control elementor-size-sm elementor-field-textual" placeholder="Mobile"></div>
 																		<div class="elementor-field-group elementor-column form-group elementor-field-group-message elementor-col-100"><label for="form-field-message" class="elementor-field-label">Message</label><textarea class="form-control elementor-field-textual elementor-field elementor-size-sm" name="message" id="form-field-message" rows="4" placeholder="Message"></textarea></div>
 																		<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100">
-																			<button style="background-color:#f07d00 ;" type="submit" class="agent_submit_class_elementor wpresidence_button wpresidence_button_elementor elementor-button elementor-size-md">
-																			Send Email </button>
+																			<!-- <button style="background-color:#f07d00 ;" type="submit" class="agent_submit_class_elementor wpresidence_button wpresidence_button_elementor elementor-button elementor-size-md">
+																			Send Email </button> -->
+																			<button type="submit" class="wpresidence_button wpresidence_button_elementor elementor-button elementor-size-md" name="submit">
+																				Submit </button>
+																			<!-- <button style="background-color:#f07d00 ;" type="submit" class="agent_submit_class_elementor wpresidence_button wpresidence_button_elementor elementor-button elementor-size-md" name="submit">Submit </button> -->
+																		</div>
 																		</div>
 																	</div>
 																</form>
