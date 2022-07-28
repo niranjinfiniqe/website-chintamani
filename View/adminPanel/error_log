@@ -1,0 +1,418 @@
+[13-Jul-2022 07:02:54 UTC] PHP Notice:  Undefined index: admin_id in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/logincode.php on line 13
+[13-Jul-2022 07:03:02 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:03:02 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:03:02 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:03:06 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php on line 20
+[13-Jul-2022 07:03:06 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(48): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 07:04:59 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 07:05:00 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:00 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:00 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:01 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:01 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:01 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:01 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:01 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:01 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:02 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 07:05:09 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:09 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:05:09 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 07:21:03 UTC] PHP Warning:  move_uploaded_file(../../uploads/projectscreenshot.png): failed to open stream: No such file or directory in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addproject.php on line 231
+[13-Jul-2022 07:21:03 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpvf7qV5' to '../../uploads/projectscreenshot.png' in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addproject.php on line 231
+[13-Jul-2022 07:22:12 UTC] PHP Warning:  move_uploaded_file(../../uploads/projectdownload.png): failed to open stream: No such file or directory in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addproject.php on line 231
+[13-Jul-2022 07:22:12 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpgffOCZ' to '../../uploads/projectdownload.png' in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addproject.php on line 231
+[13-Jul-2022 07:31:28 UTC] PHP Warning:  move_uploaded_file(../../uploads/projectscreenshot (1).png): failed to open stream: No such file or directory in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/editproject.php on line 221
+[13-Jul-2022 07:31:28 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpbCCSKc' to '../../uploads/projectscreenshot (1).png' in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/editproject.php on line 221
+[13-Jul-2022 07:31:33 UTC] PHP Notice:  Undefined variable: page_id in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/deleteproject.php on line 9
+[13-Jul-2022 07:31:33 UTC] PHP Notice:  Undefined variable: ProjectType in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/deleteproject.php on line 9
+[13-Jul-2022 07:33:41 UTC] PHP Fatal error:  Uncaught Exception: Unknown column 'Alias' in 'where clause' query687y2y383293983: select * from leasing_master where Alias LIKE ? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from l...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/alias_check.php(13): MysqliDb->rawQueryOne('select * from l...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 07:33:41 UTC] PHP Fatal error:  Uncaught Exception: Unknown column 'Alias' in 'where clause' query687y2y383293983: select * from leasing_master where Alias LIKE ? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from l...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/alias_check.php(13): MysqliDb->rawQueryOne('select * from l...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 07:33:41 UTC] PHP Fatal error:  Uncaught Exception: Unknown column 'Alias' in 'where clause' query687y2y383293983: select * from leasing_master where Alias LIKE ? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from l...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/alias_check.php(13): MysqliDb->rawQueryOne('select * from l...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 07:33:54 UTC] PHP Fatal error:  Uncaught Exception: Unknown column 'Alias' in 'where clause' query687y2y383293983: select * from leasing_master where Alias LIKE ? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from l...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/alias_check.php(13): MysqliDb->rawQueryOne('select * from l...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 07:33:54 UTC] PHP Fatal error:  Uncaught Exception: Unknown column 'Alias' in 'where clause' query687y2y383293983: select * from leasing_master where Alias LIKE ? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from l...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/alias_check.php(13): MysqliDb->rawQueryOne('select * from l...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 07:33:54 UTC] PHP Fatal error:  Uncaught Exception: Unknown column 'Alias' in 'where clause' query687y2y383293983: select * from leasing_master where Alias LIKE ? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from l...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/alias_check.php(13): MysqliDb->rawQueryOne('select * from l...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 07:47:35 UTC] PHP Notice:  Undefined index: first_name in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 118
+[13-Jul-2022 07:47:35 UTC] PHP Notice:  Undefined index: phone_number in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 120
+[13-Jul-2022 07:47:35 UTC] PHP Notice:  Undefined index: first_name in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 118
+[13-Jul-2022 07:47:35 UTC] PHP Notice:  Undefined index: phone_number in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 120
+[13-Jul-2022 07:47:35 UTC] PHP Notice:  Undefined index: first_name in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 118
+[13-Jul-2022 07:47:35 UTC] PHP Notice:  Undefined index: phone_number in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 120
+[13-Jul-2022 07:47:35 UTC] PHP Notice:  Undefined index: first_name in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 118
+[13-Jul-2022 07:47:35 UTC] PHP Notice:  Undefined index: phone_number in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 120
+[13-Jul-2022 07:47:35 UTC] PHP Notice:  Undefined index: first_name in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 118
+[13-Jul-2022 07:47:35 UTC] PHP Notice:  Undefined index: phone_number in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 120
+[13-Jul-2022 08:00:21 UTC] PHP Fatal error:  Uncaught Exception: Unknown column 'Lease_Alias' in 'field list' query687y2y383293983: INSERT  INTO leasing_master (`Lease_Name`, `Lease_Alias`, `ShortDescription`, `LongDescription`, `CompleteAddress`, `Location`, `Price`, `Packs`, `CarpetArea`, `Furnished/Unfurnished`, `TwitterTag`, `HiTag`, `Keywords`, `LeaseOgTag`, `LeaseOgTitle`, `altTag`, `MetaDescription`, `MetaTitle`, `DisplayOrder`, `FK_Status`)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(1566): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(1504): MysqliDb->_buildQuery('leasing_master', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(765): MysqliDb->_buildInsert('leasing_master', Array, 'INSERT')
+#3 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php(62): MysqliDb->insert('l in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 08:03:35 UTC] PHP Warning:  move_uploaded_file(../../uploads/leaseavengers-endgame-characters-uhdpaper.com-4K-135.jpg): failed to open stream: No such file or directory in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 246
+[13-Jul-2022 08:03:35 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php6kghas' to '../../uploads/leaseavengers-endgame-characters-uhdpaper.com-4K-135.jpg' in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 246
+[13-Jul-2022 08:03:35 UTC] PHP Notice:  Undefined index: Video in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 120
+[13-Jul-2022 08:04:39 UTC] PHP Notice:  Undefined index: Lease_Alias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_lease.php on line 20
+[13-Jul-2022 08:05:04 UTC] PHP Notice:  Undefined index: Lease_Alias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_lease.php on line 20
+[13-Jul-2022 08:05:13 UTC] PHP Fatal error:  Uncaught Exception: Unknown column 'Lease_Alias' in 'field list' query687y2y383293983: UPDATE leasing_master SET `Lease_Name` = ?, `Lease_Alias` = ?, `ShortDescription` = ?, `LongDescription` = ?, `CarpetArea` = ?, `office_number` = ?, `CompleteAddress` = ?, `Location` = ?, `Price` = ?, `Packs` = ?, `Furnished/Unfurnished` = ?, `BuildUpArea` = ?, `TwitterTag` = ?, `HiTag` = ?, `Keywords` = ?, `LeaseOgTag` = ?, `LeaseOgTitle` = ?, `altTag` = ?, `MetaDescription` = ?, `MetaTitle` = ?, `DisplayOrder` = ?, `FK_Status` = ? WHERE  PK_lease = ?  in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(1566): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(854): MysqliDb->_buildQuery(NULL, Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/editlease.php(41): MysqliDb->update('leasing_master', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 08:15:22 UTC] PHP Notice:  Undefined index: OfficeNumber in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_lease.php on line 150
+[13-Jul-2022 08:15:22 UTC] PHP Notice:  Undefined index: Furnished_Unfurnished in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_lease.php on line 189
+[13-Jul-2022 08:15:22 UTC] PHP Warning:  Use of undefined constant ad - assumed 'ad' (this will throw an Error in a future version of PHP) in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_lease.php on line 294
+[13-Jul-2022 08:15:22 UTC] PHP Warning:  Illegal string offset '$MetaTitle' in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_lease.php on line 294
+[13-Jul-2022 08:34:57 UTC] PHP Notice:  Undefined index: OfficeNumber in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_lease.php on line 150
+[13-Jul-2022 08:34:57 UTC] PHP Notice:  Undefined index: Furnished_Unfurnished in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_lease.php on line 189
+[13-Jul-2022 08:34:57 UTC] PHP Warning:  Use of undefined constant ad - assumed 'ad' (this will throw an Error in a future version of PHP) in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_lease.php on line 294
+[13-Jul-2022 08:34:57 UTC] PHP Warning:  Illegal string offset '$MetaTitle' in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_lease.php on line 294
+[13-Jul-2022 10:07:37 UTC] PHP Warning:  move_uploaded_file(../../uploads/leaseiron.jpg): failed to open stream: No such file or directory in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 246
+[13-Jul-2022 10:07:37 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpWRE515' to '../../uploads/leaseiron.jpg' in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 246
+[13-Jul-2022 10:07:37 UTC] PHP Notice:  Undefined index: Video in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 120
+[13-Jul-2022 10:21:48 UTC] PHP Notice:  Undefined index: first_name in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 118
+[13-Jul-2022 10:21:48 UTC] PHP Notice:  Undefined index: phone_number in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 120
+[13-Jul-2022 10:21:48 UTC] PHP Notice:  Undefined index: first_name in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 118
+[13-Jul-2022 10:21:48 UTC] PHP Notice:  Undefined index: phone_number in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 120
+[13-Jul-2022 10:21:48 UTC] PHP Notice:  Undefined index: first_name in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 118
+[13-Jul-2022 10:21:48 UTC] PHP Notice:  Undefined index: phone_number in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 120
+[13-Jul-2022 10:21:48 UTC] PHP Notice:  Undefined index: first_name in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 118
+[13-Jul-2022 10:21:48 UTC] PHP Notice:  Undefined index: phone_number in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 120
+[13-Jul-2022 10:21:48 UTC] PHP Notice:  Undefined index: first_name in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 118
+[13-Jul-2022 10:21:48 UTC] PHP Notice:  Undefined index: phone_number in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 120
+[13-Jul-2022 10:21:50 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:21:50 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:21:50 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:21:54 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:21:54 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:21:54 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:21:56 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:22:02 UTC] PHP Notice:  Undefined variable: query in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/add_aminities.php on line 11
+[13-Jul-2022 10:22:02 UTC] PHP Warning:  mysqli_query(): Empty query in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/add_aminities.php on line 11
+[13-Jul-2022 10:22:21 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:22:21 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:22:21 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 15:54:03 Asia/Kolkata] PHP Fatal error:  Uncaught Exception: Unknown column 'BlogAlias' in 'field list' query687y2y383293983: INSERT  INTO blog_master (`BlogTitle`, `BlogOwner`, `BlogDate`, `BlogAlias`, `ReadingTime`, `FK_Status`, `BlogDescription`, `DisplayOrder`, `MetaTitle`, `MetaDescription`, `altTag`, `BlogOgTitle`, `BlogOgTag`, `TwitterTag`, `HiTag`, `Keywords`)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(1566): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(1504): MysqliDb->_buildQuery('blog_master', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(765): MysqliDb->_buildInsert('blog_master', Array, 'INSERT')
+#3 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addblog.php(35): MysqliDb->insert('blog_master', Array)
+#4 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 15:54:58 Asia/Kolkata] PHP Warning:  move_uploaded_file(../../uploads/blogdownload.png): failed to open stream: No such file or directory in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addblog.php on line 109
+[13-Jul-2022 15:54:58 Asia/Kolkata] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpeqGIRY' to '../../uploads/blogdownload.png' in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addblog.php on line 109
+[13-Jul-2022 10:24:58 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:24:58 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:24:58 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:25:03 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:25:03 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:25:03 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:25:06 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:26:16 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:26:47 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:26:56 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:26:56 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:26:56 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:26:58 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:26:58 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:26:58 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:27:00 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:27:00 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:27:00 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:27:07 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:29:25 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:25 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:25 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:27 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:27 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:27 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:32 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:32 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:32 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:32 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:32 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:32 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:34 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:29:41 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:41 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:41 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:43 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:43 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:29:43 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:30:25 UTC] PHP Notice:  Undefined variable: query in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/add_aminities.php on line 11
+[13-Jul-2022 10:30:25 UTC] PHP Warning:  mysqli_query(): Empty query in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/add_aminities.php on line 11
+[13-Jul-2022 10:30:25 UTC] PHP Notice:  Undefined variable: query in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/add_aminities.php on line 11
+[13-Jul-2022 10:30:25 UTC] PHP Warning:  mysqli_query(): Empty query in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/add_aminities.php on line 11
+[13-Jul-2022 10:30:53 UTC] PHP Notice:  Undefined variable: query in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/add_aminities.php on line 11
+[13-Jul-2022 10:30:53 UTC] PHP Warning:  mysqli_query(): Empty query in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/add_aminities.php on line 11
+[13-Jul-2022 10:34:57 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:34:57 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:34:57 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:05 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:05 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:05 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:06 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:06 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:06 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:09 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:35:30 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:30 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:30 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:36 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:35:43 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:43 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:43 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:45 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:45 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:35:45 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:36:42 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:36:42 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:36:42 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:36:44 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:36:47 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:36:47 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:36:47 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:36:50 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:36:50 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:36:51 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:37:02 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:37:02 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:37:04 UTC] PHP Fatal error:  Uncaught Exception: Table 'chintamani_db.Blog_master' doesn't exist query687y2y383293983: select * from Blog_master where PK_BLogID=? in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from B...', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/edit_blog.php(18): MysqliDb->rawQueryOne('select * from B...', Array)
+#3 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[13-Jul-2022 10:47:48 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:47:48 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:47:48 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:47:57 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:47:57 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:47:57 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:48:37 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:48:37 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:48:37 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:48:54 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:48:54 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:48:54 UTC] PHP Notice:  Undefined index: BlogAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 80
+[13-Jul-2022 10:52:45 UTC] PHP Warning:  move_uploaded_file(../../uploads/projectdownload.png): failed to open stream: No such file or directory in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addproject.php on line 231
+[13-Jul-2022 10:52:45 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpilOO8Y' to '../../uploads/projectdownload.png' in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addproject.php on line 231
+[13-Jul-2022 11:17:37 UTC] PHP Notice:  Undefined index: Video in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 120
+[14-Jul-2022 06:21:54 UTC] PHP Notice:  Undefined index: admin_id in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/logincode.php on line 13
+[20-Jul-2022 09:02:46 UTC] PHP Notice:  Undefined index: admin_id in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/logincode.php on line 13
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: LeaseName in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 8
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: LeaseAlias in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 9
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: ShortDescription in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 10
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: LongDescription in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 11
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: CarpetArea in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 12
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: CompleteAddress in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 13
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: Location in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 14
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: Price in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 15
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: Packs in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 16
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: Furnished/Unfurnished in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 18
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: Keywords in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 22
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: MetaTitle in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 23
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: DisplayOrder in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 24
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: DisplayOrder in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 25
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: LeaseOgTitle in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 26
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: LeaseOgTag in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 27
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: MetaDescription in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 28
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: HiTag in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 29
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: TwitterTag in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 30
+[20-Jul-2022 10:06:27 UTC] PHP Notice:  Undefined index: altTag in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 31
+[20-Jul-2022 10:32:08 UTC] PHP Notice:  Undefined variable: BuildUpArea in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 40
+[20-Jul-2022 10:32:08 UTC] PHP Notice:  Undefined variable: oofficenumber in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 40
+[20-Jul-2022 10:32:08 UTC] PHP Notice:  Undefined variable: ad in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 47
+[20-Jul-2022 10:39:13 UTC] PHP Notice:  Undefined variable: BuildUpArea in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 40
+[20-Jul-2022 10:39:13 UTC] PHP Notice:  Undefined variable: officenumber in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 40
+[20-Jul-2022 10:39:13 UTC] PHP Notice:  Undefined variable: ad in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 47
+[20-Jul-2022 10:47:31 UTC] PHP Notice:  Undefined variable: ad in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 49
+[20-Jul-2022 10:49:05 UTC] PHP Notice:  Undefined variable: ad in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 49
+[20-Jul-2022 10:58:35 UTC] PHP Fatal error:  Uncaught Exception: Unknown column 'officenumber' in 'field list' query687y2y383293983: INSERT  INTO leasing_master (`Lease_Name`, `Alias`, `ShortDescription`, `LongDescription`, `CompleteAddress`, `Location`, `Price`, `Packs`, `CarpetArea`, `Furnished/Unfurnished`, `TwitterTag`, `HiTag`, `Keywords`, `LeaseOgTag`, `LeaseOgTitle`, `altTag`, `MetaDescription`, `MetaTitle`, `DisplayOrder`, `BuildUpArea`, `officenumber`)  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:1978
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(1566): MysqliDb->_prepareQuery()
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(1504): MysqliDb->_buildQuery('leasing_master', Array)
+#2 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(765): MysqliDb->_buildInsert('leasing_master', Array, 'INSERT')
+#3 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php(41): Mys in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 1978
+[20-Jul-2022 11:01:19 UTC] PHP Notice:  Undefined index: Video in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 97
+[20-Jul-2022 11:02:45 UTC] PHP Notice:  Undefined index: Video in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 97
+[20-Jul-2022 11:05:52 UTC] PHP Notice:  Undefined index: Video in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addlease.php on line 97
+[20-Jul-2022 11:33:34 UTC] PHP Notice:  Undefined index: FK_Status in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addproject.php on line 8
+[20-Jul-2022 11:33:34 UTC] PHP Notice:  Undefined variable: project_status in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addproject.php on line 26
+[20-Jul-2022 11:33:34 UTC] PHP Notice:  Undefined variable: project_status in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/addproject.php on line 29
+[20-Jul-2022 18:40:34 UTC] PHP Notice:  Undefined index: admin_id in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/logincode.php on line 13
+[21-Jul-2022 04:56:53 UTC] PHP Notice:  Undefined index: admin_id in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/logincode.php on line 13
+[21-Jul-2022 05:48:48 UTC] PHP Notice:  Undefined index: admin_id in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/logincode.php on line 13
+[21-Jul-2022 06:24:34 UTC] PHP Notice:  Undefined variable: page_id in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/deleteproject.php on line 9
+[21-Jul-2022 06:24:34 UTC] PHP Notice:  Undefined variable: ProjectType in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/deleteproject.php on line 9
+[21-Jul-2022 07:45:55 UTC] PHP Notice:  Undefined index: admin_id in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/logincode.php on line 13
+[21-Jul-2022 10:26:47 UTC] PHP Notice:  Undefined index: admin_id in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/logincode.php on line 13
+[26-Jul-2022 11:51:31 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/connect.php on line 5
+[26-Jul-2022 11:51:31 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 295
+[26-Jul-2022 11:51:31 UTC] PHP Fatal error:  Uncaught Exception: Connect Error 1045: Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:298
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(377): MysqliDb->connect('default')
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(1959): MysqliDb->mysqli()
+#2 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#3 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from u...', Array)
+#4 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/logincode.php(8): MysqliDb->rawQueryOne('select * from u...', Array)
+#5 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 298
+[26-Jul-2022 11:51:40 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/connect.php on line 5
+[26-Jul-2022 11:51:40 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 295
+[26-Jul-2022 11:51:40 UTC] PHP Fatal error:  Uncaught Exception: Connect Error 1045: Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php:298
+Stack trace:
+#0 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(377): MysqliDb->connect('default')
+#1 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(1959): MysqliDb->mysqli()
+#2 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(516): MysqliDb->_prepareQuery()
+#3 /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php(550): MysqliDb->rawQuery('select * from u...', Array)
+#4 /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/logincode.php(8): MysqliDb->rawQueryOne('select * from u...', Array)
+#5 {main}
+  thrown in /home/vu6qxnqas956/public_html/chintamani.com/Helper/MysqliDb.php on line 298
+[26-Jul-2022 11:53:04 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/connect.php on line 5
+[26-Jul-2022 11:53:04 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/lease.php on line 34
+[26-Jul-2022 11:53:04 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/lease.php on line 37
+[26-Jul-2022 11:53:04 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/lease.php on line 49
+[26-Jul-2022 11:53:04 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/lease.php on line 122
+[26-Jul-2022 11:53:06 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/connect.php on line 5
+[26-Jul-2022 11:53:06 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/projects.php on line 36
+[26-Jul-2022 11:53:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/projects.php on line 40
+[26-Jul-2022 11:53:06 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/projects.php on line 53
+[26-Jul-2022 11:53:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/projects.php on line 137
+[26-Jul-2022 11:53:07 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/connect.php on line 5
+[26-Jul-2022 11:53:07 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/lease.php on line 34
+[26-Jul-2022 11:53:07 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/lease.php on line 37
+[26-Jul-2022 11:53:07 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/lease.php on line 49
+[26-Jul-2022 11:53:07 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/lease.php on line 122
+[26-Jul-2022 11:53:08 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/connect.php on line 5
+[26-Jul-2022 11:53:08 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/Interior.php on line 5
+[26-Jul-2022 11:53:08 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/Interior.php on line 8
+[26-Jul-2022 11:53:08 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/Interior.php on line 20
+[26-Jul-2022 11:53:08 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/Interior.php on line 66
+[26-Jul-2022 11:53:09 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/connect.php on line 5
+[26-Jul-2022 11:53:09 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 6
+[26-Jul-2022 11:53:09 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 9
+[26-Jul-2022 11:53:09 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 22
+[26-Jul-2022 11:53:09 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/inquiry.php on line 113
+[26-Jul-2022 11:53:10 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/vu6qxnqas956/public_html/chintamani.com/Helper/connect.php on line 5
+[26-Jul-2022 11:53:10 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 5
+[26-Jul-2022 11:53:10 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 7
+[26-Jul-2022 11:53:10 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 22
+[26-Jul-2022 11:53:10 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/vu6qxnqas956/public_html/chintamani.com/View/adminPanel/blogs.php on line 72
